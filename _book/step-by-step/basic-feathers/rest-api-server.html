@@ -1,0 +1,606 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>A REST API server · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="rest-client.html" />
+    
+    
+    <link rel="prev" href="database-connector.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../readme.html">
+            
+                <a href="../readme.html">
+            
+                    
+                    Step by step intro to basic Feathers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../intro/readme.html">
+            
+                <a href="../intro/readme.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../intro/not-worry.html">
+            
+                <a href="../intro/not-worry.html">
+            
+                    
+                    What not to worry about right now
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    Basic Feathers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="database-connector.html">
+            
+                <a href="database-connector.html">
+            
+                    
+                    A database connector
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2.2" data-path="rest-api-server.html">
+            
+                <a href="rest-api-server.html">
+            
+                    
+                    A REST API server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="rest-client.html">
+            
+                <a href="rest-client.html">
+            
+                    
+                    A Feathers REST client
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="socket-client.html">
+            
+                <a href="socket-client.html">
+            
+                    
+                    A Feathers websocket client
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="ah-ha.html">
+            
+                <a href="ah-ha.html">
+            
+                    
+                    The "ah-ha" moment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="hooks-1.html">
+            
+                <a href="hooks-1.html">
+            
+                    
+                    Hooks, part 1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="hooks-2.html">
+            
+                <a href="hooks-2.html">
+            
+                    
+                    Hooks, part 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../generators/readme.html">
+            
+                <a href="../generators/readme.html">
+            
+                    
+                    Generators
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../generators/app.html">
+            
+                <a href="../generators/app.html">
+            
+                    
+                    Generating an app
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../generators/service.html">
+            
+                <a href="../generators/service.html">
+            
+                    
+                    Adding a service
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../what-next.html">
+            
+                <a href="../what-next.html">
+            
+                    
+                    What next?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../production-ready.html">
+            
+                <a href="../production-ready.html">
+            
+                    
+                    Is Feathers production ready?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../appendix/readme.html">
+            
+                <a href="../appendix/readme.html">
+            
+                    
+                    Appendix
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="../appendix/what-is-this.html">
+            
+                <a href="../appendix/what-is-this.html">
+            
+                    
+                    What is 'this'?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >A REST API server</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="writing-a-rest-api-server">Writing a REST API server</h1>
+<p>Our database connector will function as a full fledged REST API server.
+We need only add a HTTP server to it.</p>
+<blockquote>
+<p><strong>HTTP servers.</strong> The present Auk version of Feathers is tied into
+the popular HTTP server framework <a href="http://expressjs.com/" target="_blank">Express</a>.
+Future versions will support multiple frameworks, starting with
+<a href="https://github.com/koajs/koa" target="_blank">koa</a>.</p>
+</blockquote>
+<h2 id="working-example">Working example</h2>
+<p>| Source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/02/b/1.js" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/02/b/1.js</a></p>
+<p>| Run it: <code>node ./examples/02/b/1</code></p>
+<h2 id="implementing-a-rest-api-server">Implementing a REST API server</h2>
+<p>This is our previous example with the database method calls removed,
+and with an Express server added.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> NeDB = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;nedb&apos;</span>);
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>);
+
+<span class="hljs-keyword">const</span> service = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;feathers-nedb&apos;</span>);
+<span class="hljs-keyword">const</span> rest = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;feathers-rest&apos;</span>);
+
+<span class="hljs-keyword">const</span> httpServerConfig = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;../common/httpServerConfig&apos;</span>);
+<span class="hljs-keyword">const</span> middleware = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;../common/middleware&apos;</span>);
+
+<span class="hljs-keyword">const</span> app = httpServerConfig()
+  .configure(rest())
+  .configure(services)
+  .configure(middleware);
+
+<span class="hljs-keyword">const</span> server = app.listen(<span class="hljs-number">3030</span>);
+server.on(<span class="hljs-string">&apos;listening&apos;</span>, () =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Feathers application started on port 3030`</span>));
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">services</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">this</span>.use(<span class="hljs-string">&apos;/users&apos;</span>, service({ Model: userModel() }));
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">userModel</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> NeDB({
+    filename: path.join(<span class="hljs-string">&apos;examples&apos;</span>, <span class="hljs-string">&apos;data&apos;</span>, <span class="hljs-string">&apos;users.db&apos;</span>),
+    autoload: <span class="hljs-literal">true</span>
+  });
+}
+</code></pre>
+<p>The Express server is configured as follows.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> bodyParser = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;body-parser&apos;</span>);
+<span class="hljs-keyword">const</span> compress = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;compression&apos;</span>);
+<span class="hljs-keyword">const</span> cors = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;cors&apos;</span>);
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>);
+<span class="hljs-keyword">const</span> feathers = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;feathers&apos;</span>);
+
+<span class="hljs-built_in">module</span>.exports = () =&gt; {
+  <span class="hljs-comment">// do the HTTP server part of the config</span>
+  <span class="hljs-keyword">const</span> app = feathers()
+    .use(compress())
+    .options(<span class="hljs-string">&apos;*&apos;</span>, cors())
+    .use(cors())
+    .use(<span class="hljs-string">&apos;/&apos;</span>, feathers.static(path.join(__dirname, <span class="hljs-string">&apos;public&apos;</span>)))
+    .use(bodyParser.json())
+    .use(bodyParser.urlencoded({ extended: <span class="hljs-literal">true</span> }));
+
+  <span class="hljs-keyword">return</span> app;
+};
+</code></pre>
+<p>The Express middleware handles logging, pages not found, and general errors.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> handler = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;feathers-errors/handler&apos;</span>);
+<span class="hljs-keyword">const</span> notFound = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./not-found-handler&apos;</span>);
+<span class="hljs-keyword">const</span> logger = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./logger&apos;</span>);
+
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> app = <span class="hljs-keyword">this</span>;
+
+  app.use(notFound());
+  app.use(logger(app));
+  app.use(handler());
+};
+</code></pre>
+<blockquote>
+<p><strong>Boilerplate.</strong> The server configuration and middleware are standard Express.
+They have little to do with Feathers other than feed REST requests to it.</p>
+</blockquote>
+<h2 id="running-the-server">Running the server</h2>
+<p>We can now made REST API calls to the server.</p>
+<p>In the previous example we created 3 user items and then printed the user file.
+We can now do the same thing with the following
+<a href="http://www.slashroot.in/curl-command-tutorial-linux-example-usage" target="_blank">curl</a>
+commands:</p>
+<pre><code class="lang-text">curl -H &quot;Content-Type: application/json&quot; -X POST -d &apos;{&quot;email&quot;:&quot;jane.doe@gmail.com&quot;,&quot;password&quot;:&quot;X2y6&quot;,&quot;role&quot;:&quot;admin&quot;}&apos; http://localhost:3030/users
+curl -H &quot;Content-Type: application/json&quot; -X POST -d &apos;{&quot;email&quot;:&quot;john.doe@gmail.com&quot;,&quot;password&quot;:&quot;i6He&quot;,&quot;role&quot;:&quot;user&quot;}&apos; http://localhost:3030/users
+curl -H &quot;Content-Type: application/json&quot; -X POST -d &apos;{&quot;email&quot;:&quot;judy.doe@gmail.com&quot;,&quot;password&quot;:&quot;7jHw&quot;,&quot;role&quot;:&quot;user&quot;}&apos; http://localhost:3030/users
+curl -X GET http://localhost:3030/users
+</code></pre>
+<p>Run them with <code>./examples/02/b/curl-requests.sh</code> and the following is displayed:</p>
+<pre><code class="lang-text">feathers-an-introduction$ ./examples/02/b/curl-requests.sh
+POST Jane Doe
+{&quot;email&quot;:&quot;jane.doe@gmail.com&quot;,&quot;password&quot;:&quot;X2y6&quot;,&quot;role&quot;:&quot;admin&quot;,&quot;_id&quot;:&quot;sbkXV7LVkMhx1NyY&quot;}
+POST John Doe
+{&quot;email&quot;:&quot;john.doe@gmail.com&quot;,&quot;password&quot;:&quot;i6He&quot;,&quot;role&quot;:&quot;user&quot;,&quot;_id&quot;:&quot;uKhqOp4R4hABw9oO&quot;}
+POST Judy Doe
+{&quot;email&quot;:&quot;judy.doe@gmail.com&quot;,&quot;password&quot;:&quot;7jHw&quot;,&quot;role&quot;:&quot;user&quot;,&quot;_id&quot;:&quot;pvcmh9X2i9VZgqWJ&quot;}
+GET all users
+[
+ {&quot;email&quot;:&quot;judy.doe@gmail.com&quot;,&quot;password&quot;:&quot;7jHw&quot;,&quot;role&quot;:&quot;user&quot;,&quot;_id&quot;:&quot;pvcmh9X2i9VZgqWJ&quot;},
+ {&quot;email&quot;::&quot;jane.doe@gmail.com&quot;,&quot;password&quot;:&quot;X2y6&quot;,&quot;role&quot;:&quot;admin&quot;,&quot;_id&quot;:&quot;sbkXV7LVkMhx1NyY&quot;},
+ {&quot;email&quot;:&quot;john.doe@gmail.com&quot;,&quot;password&quot;:&quot;i6He&quot;,&quot;role&quot;:&quot;user&quot;,&quot;_id&quot;:&quot;uKhqOp4R4hABw9oO&quot;}
+]
+</code></pre>
+<blockquote>
+<p><strong>Feathers.</strong> REST API calls are automatically converted into Feathers database method calls
+like the <code>users.create()</code> and <code>users.find()</code> ones we use in the previous example.
+How&apos;s that for flexibility?</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="database-connector.html" class="navigation navigation-prev " aria-label="Previous page: A database connector">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="rest-client.html" class="navigation navigation-next " aria-label="Next page: A Feathers REST client">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"A REST API server","level":"1.2.2.2","depth":3,"next":{"title":"A Feathers REST client","level":"1.2.2.3","depth":3,"path":"step-by-step/basic-feathers/rest-client.md","ref":"step-by-step/basic-feathers/rest-client.md","articles":[]},"previous":{"title":"A database connector","level":"1.2.2.1","depth":3,"path":"step-by-step/basic-feathers/database-connector.md","ref":"step-by-step/basic-feathers/database-connector.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors"],"pluginsConfig":{"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"feathers-collapsible-menu":{},"heading-anchors":{},"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/rest-api-server.md","mtime":"2016-12-27T19:29:00.505Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-28T21:37:35.406Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-feathers-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/1.2.1/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-heading-anchors/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,606 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Generating an app · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="service.html" />
+    
+    
+    <link rel="prev" href="readme.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../readme.html">
+            
+                <a href="../readme.html">
+            
+                    
+                    Step by step intro to basic Feathers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../intro/readme.html">
+            
+                <a href="../intro/readme.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../intro/not-worry.html">
+            
+                <a href="../intro/not-worry.html">
+            
+                    
+                    What not to worry about right now
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../basic-feathers/readme.html">
+            
+                <a href="../basic-feathers/readme.html">
+            
+                    
+                    Basic Feathers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../basic-feathers/database-connector.html">
+            
+                <a href="../basic-feathers/database-connector.html">
+            
+                    
+                    A database connector
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../basic-feathers/rest-api-server.html">
+            
+                <a href="../basic-feathers/rest-api-server.html">
+            
+                    
+                    A REST API server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../basic-feathers/rest-client.html">
+            
+                <a href="../basic-feathers/rest-client.html">
+            
+                    
+                    A Feathers REST client
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../basic-feathers/socket-client.html">
+            
+                <a href="../basic-feathers/socket-client.html">
+            
+                    
+                    A Feathers websocket client
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../basic-feathers/ah-ha.html">
+            
+                <a href="../basic-feathers/ah-ha.html">
+            
+                    
+                    The "ah-ha" moment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="../basic-feathers/hooks-1.html">
+            
+                <a href="../basic-feathers/hooks-1.html">
+            
+                    
+                    Hooks, part 1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="../basic-feathers/hooks-2.html">
+            
+                <a href="../basic-feathers/hooks-2.html">
+            
+                    
+                    Hooks, part 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    Generators
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.3.1" data-path="app.html">
+            
+                <a href="app.html">
+            
+                    
+                    Generating an app
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="service.html">
+            
+                <a href="service.html">
+            
+                    
+                    Adding a service
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../what-next.html">
+            
+                <a href="../what-next.html">
+            
+                    
+                    What next?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../production-ready.html">
+            
+                <a href="../production-ready.html">
+            
+                    
+                    Is Feathers production ready?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../appendix/readme.html">
+            
+                <a href="../appendix/readme.html">
+            
+                    
+                    Appendix
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="../appendix/what-is-this.html">
+            
+                <a href="../appendix/what-is-this.html">
+            
+                    
+                    What is 'this'?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Generating an app</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="generating-an-app">Generating an app</h1>
+<p>Let&apos;s generate a new project.</p>
+<h2 id="working-example">Working example</h2>
+<p>| Server source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/03/b/" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/03/b/</a></p>
+<p>| Client HTML code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/03/b/public/socketio.html" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/03/b/public/socketio.html</a></p>
+<p>| Client source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/03/b/public/feathers-app.js" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/03/b/public/feathers-app.js</a></p>
+<p>| Start the server: <code>node ./examples/03/b/src</code></p>
+<p>| Point the browser at: <code>//localhost:3030/socketio.html</code></p>
+<h2 id="creating-an-app">Creating an app</h2>
+<p>The <a href="https://docs.feathersjs.com/getting-started/scaffolding.html#generate-the-app" target="_blank">app generator</a>
+wrote most of <code>examples/03/b/</code> using</p>
+<pre><code class="lang-text">feathers-an-introduction$ mkdir ./examples/03/b
+feathers-an-introduction$ cd ./examples/03/b
+b$ feathers generate
+
+Project name: Feathers-guide-03-b
+Description: (enter)
+What type of API are you making: REST &amp; Realtime via Socket.io
+CORS configuration: Disabled
+What database do you primarily want to use?: NeDB
+What authentication providers would you like to support?: local
+Do you want to update this generator?: No
+
+b$ rm -rf node_modules
+</code></pre>
+<p>The generator ran <code>npm install</code> after generating the code, in order to load the app&apos;s dependencies.
+We remove those dependencies as they already installed as the root of <code>feathers-an-introduction</code>.</p>
+<h2 id="app-structure">App structure</h2>
+<p>The app organization is</p>
+<ul>
+<li><p><strong>config/</strong> The configuration files.
+<code>production.json</code> values override <code>default.json</code> ones when in production mode,
+i.e. when you run <code>NODE_ENV=production node ./example/03/b/src</code>.</p>
+</li>
+<li><p><strong>data/</strong> Where the NeDB tables reside.</p>
+</li>
+<li><p><strong>public/</strong> The contents have been copied from our previous examples.</p>
+</li>
+<li><p><strong>src/</strong> The server.</p>
+<ul>
+<li><p><strong>hooks/</strong> Your custom hooks which are general enough to used with multiple services.</p>
+</li>
+<li><p><strong>middleware/</strong> Standard Express middleware is set up for your convenience.</p>
+</li>
+<li><p><strong>services/</strong> Contains the services.
+<code>services/index.js</code> runs through the services, configuring them.</p>
+<ul>
+<li><p><strong>authentication/</strong> The local authentication service.</p>
+</li>
+<li><p><strong>user/</strong> The user service. It was added because its a dependency of local authentication.</p>
+<ul>
+<li><p><strong>user/index.js</strong> Configures the service.
+It includes <code>paginate: { default: 5, max: 25 }</code> which is something we have not seem before.
+It means the find method may never return more than 25 items at a time,
+and that by default it will return 5 items.</p>
+</li>
+<li><p><strong>hooks/</strong> The hooks for user. Called by <code>user/index.js</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>app.js</strong> Configures Feathers.</p>
+</li>
+<li><p><strong>index.js</strong> Starts the HTTP server.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>test/</strong> Test folder with some simple tests.</p>
+</li>
+</ul>
+<h2 id="the-app">The app</h2>
+<p>The app is very similar to <a href="../basic-feathers/socket-client.html">Writing a Feathers websocket Client</a>
+and you should have little trouble understanding the generated code.</p>
+<h2 id="the-results">The results</h2>
+<p>The results are similar to
+<a href="../basic-feathers/socket-client.html">Writing a Feathers websocket Client</a>.
+The result for find is different because user was configured with pagination.</p>
+<pre><code class="lang-text">created Jane Doe item
+ Object {email: &quot;jane.doe@gmail.com&quot;, role: &quot;admin&quot;, _id: &quot;UmH30nDOBjnn7QBB&quot;}
+created John Doe item
+ Object {email: &quot;john.doe@gmail.com&quot;, role: &quot;user&quot;, _id: &quot;edz7y7QF6ipR00z7&quot;}
+created Judy Doe item
+ Object {email: &quot;judy.doe@gmail.com&quot;, role: &quot;user&quot;, _id: &quot;QGqa4DxOtOFT4XPY&quot;}
+created Jack Doe item
+ Object {email: &quot;jack.doe@gmail.com&quot;, role: &quot;user&quot;, _id: &quot;HTel2m2xgDvHOFc7&quot;}
+
+Authenticated successfully.
+
+deleted Jack Doe item
+ Object {email: &quot;jack.doe@gmail.com&quot;, role: &quot;user&quot;, _id: &quot;HTel2m2xgDvHOFc7&quot;}
+find all items
+ Object {total: 3, limit: 5, skip: 0, data: Array[3]}
+   data: Array[3]
+     0: Object
+       _id: &quot;QGqa4DxOtOFT4XPY&quot;
+       email: &quot;judy.doe@gmail.com&quot;
+       role: &quot;user&quot;
+     1: Object
+       _id: &quot;UmH30nDOBjnn7QBB&quot;
+       email: &quot;jane.doe@gmail.com&quot;
+       role: &quot;admin&quot;
+     2: Object
+       _id: &quot;edz7y7QF6ipR00z7&quot;
+       email: &quot;john.doe@gmail.com&quot;
+       role: &quot;user&quot;
+     length: 3
+   limit: 5
+   skip: 0
+   total: 3
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="readme.html" class="navigation navigation-prev " aria-label="Previous page: Generators">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="service.html" class="navigation navigation-next " aria-label="Next page: Adding a service">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Generating an app","level":"1.2.3.1","depth":3,"next":{"title":"Adding a service","level":"1.2.3.2","depth":3,"path":"step-by-step/generators/service.md","ref":"step-by-step/generators/service.md","articles":[]},"previous":{"title":"Generators","level":"1.2.3","depth":2,"path":"step-by-step/generators/readme.md","ref":"step-by-step/generators/readme.md","articles":[{"title":"Generating an app","level":"1.2.3.1","depth":3,"path":"step-by-step/generators/app.md","ref":"step-by-step/generators/app.md","articles":[]},{"title":"Adding a service","level":"1.2.3.2","depth":3,"path":"step-by-step/generators/service.md","ref":"step-by-step/generators/service.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors"],"pluginsConfig":{"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"feathers-collapsible-menu":{},"heading-anchors":{},"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/generators/app.md","mtime":"2016-12-28T19:28:28.079Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-28T21:37:35.406Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-feathers-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/1.2.1/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-heading-anchors/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

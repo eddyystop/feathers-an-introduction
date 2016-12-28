@@ -3,7 +3,7 @@ Break into 10-min read sections, so they can each be published individually on M
 This likely means each 2nd level (DB connector, Wrap it in REST, ...) is a section.
 Have a repo which contains a working example of each section's code.
 
-'Step by Step Guide To Feathersjs'
+'Step by Step Guide To Basic Feathersjs'
 'The unbearable lightness of Feathersjs'
 
 - don't worry about
@@ -15,14 +15,22 @@ Have a repo which contains a working example of each section's code.
 
 - What is Feathersjs?
 
-PART 1 - 'Step by Step Introduction To Feathersjs'
+PART 1 - 'Step by Step Introduction To Basic Feathersjs'
 
-- Approach
-    - A pet peeve of mine are frameworks that make things “seem” easy by generating thousands of lines of code for you and in the process making it almost impossible to implement anything not supported out of the box by their generators.
-    - There are generators for Feathers (that are sometimes taken too seriously, probably because of the aforementioned experiences with other frameworks)
-    - a complete database backed CRUD REST and websocket API takes only 30 lines of code to write from scratch.
-    - So this guide will concentrate on actual code, you understand how Feathers works, so sre comfortable making changes after using the generators
-    - Then it'll introduce the generators.
+- 01) The goal of this introduction
+
+    - Approach
+        - A pet peeve of mine are frameworks that make things “seem” easy by generating thousands of lines of code for you and in the process making it almost impossible to implement anything not supported out of the box by their generators.
+        - There are generators for Feathers (that are sometimes taken too seriously, probably because of the aforementioned experiences with other frameworks)
+        - a complete database backed CRUD REST and websocket API takes only 30 lines of code to write from scratch.
+        - So this guide will concentrate on actual code, you understand how Feathers works, so sre comfortable making changes after using the generators
+        - Then it'll introduce the generators.
+        - This guide walks you through working examples.
+          We'll be showing most that code and explaining it in detail.
+          
+          Code samples alone can result in ambiguities and unanswered questions.
+          Working examples are less prone to that,
+          and they allow the reader to explore by modifying the code
 - 02) Getting rid of boilerplate. The "ah ha" moment.
     - a) DB connector ("So many DBs, so little time.")
         - 1) example
