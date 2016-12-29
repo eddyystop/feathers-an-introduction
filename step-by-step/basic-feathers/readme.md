@@ -6,6 +6,6 @@ A resource could be stored in a database, on another server or somewhere entirel
 
 > **Services.** In this guide we'll use services as database connectors only.
 That is not their only use in Feathers however.
-The companion guide [Feathers Patterns](todo) goes over some of the interesting things
+The companion guide [Feathers Patterns](/patterns/readme.md) goes over some of the interesting things
 they can used to implement:
 dashboards, proxy server, remote procedure calls, and resource management on the client.

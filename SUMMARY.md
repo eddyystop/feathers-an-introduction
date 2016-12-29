@@ -4,7 +4,7 @@
 
 * [Step by step intro to basic Feathers](step-by-step/readme.md)
     * [Introduction](step-by-step/intro/readme.md)
-        * [What not to worry about right now](step-by-step/intro/not-worry.md)
+        * [What not to worry about](step-by-step/intro/not-worry.md)
     * [Basic Feathers](step-by-step/basic-feathers/readme.md)
         * [A database connector](step-by-step/basic-feathers/database-connector.md)
         * [A REST API server](step-by-step/basic-feathers/rest-api-server.md)
@@ -20,3 +20,4 @@
     * [Is Feathers production ready?](step-by-step/production-ready.md)
     * [Appendix](step-by-step/appendix/readme.md)
         * [What is 'this'?](step-by-step/appendix/what-is-this.md)
+* [Feathers patterns](patterns/readme.md)

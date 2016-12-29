@@ -1,5 +1,5 @@
-# Step by step Introduction to Basic Feathers
+# Step by Step Intro to Basic Feathers
 
-"Getting you to Feathers' **ah-ha** moment as quickly as possible."
+| Getting you to Feathers' **ah-ha** moment as quickly as possible.
 
-> Warning: Featherjs is addictive.
+> Warning: Feathers is addictive.

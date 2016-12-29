@@ -19,7 +19,7 @@ Let's add another service.
 
 ## Generating a service
 
-We first copied `examples/03/b/` to `examples/03/d/`.
+We copied `examples/03/b/` to `examples/03/d/`, then
 
 ```text
 feathers-an-introduction$ cd ./examples/03/d
@@ -31,8 +31,8 @@ For which datbase? NeDB
 Does your service require users to be authenticated? Y (enter)
 ```
 
-The generator ran `npm install` after generating the code, in order to load the app's dependencies.
-We remove those dependencies as they already installed as the root of `feathers-an-introduction`.
+Once again we remove the dependencies loaded by the generator
+as they are already installed at the root of `feathers-an-introduction`.
 
 ## App structure
 
@@ -84,7 +84,6 @@ exports.before = {
 };
 
 exports.after = {
-  all: [],
   find: [ populate({ schema: populateSchema }), serialize(serializeSchema) ],
   get: [ populate({ schema: populateSchema }), serialize(serializeSchema) ],
 };
@@ -98,7 +97,7 @@ and the error object will be returned to the client automatically.
 
 #### - auth.populateUser()
 
-Add the user item to the information given to each hook.
+Add the user item to the information passed to each hook.
 
 #### - auth.restrictToAuthenticated()
 
@@ -125,7 +124,7 @@ include: [{
 The `users` service is used to obtain those user items whose `user._id` are included in
 `team.memberIds`. The resulting user items are added to the team item as the `members` property.
 
-We might get a result that look like:
+We might get a result that looks like:
 ```javascript
 {
     name: "Lee family",
@@ -145,9 +144,9 @@ Those items may themselves have other items joined to them recursively.
 
 #### - serialize(serializeSchema)
 
-The client often does not need all the information contained in the items,
-and in any joined items.
-Other information should not be exposed for security reasons.
+The client often does not need all the information contained in the base items,
+nor all in any joined items.
+Some information should not be exposed for security reasons.
 
 The schema passed to the
 [serialize hook](https://docs.feathersjs.com/v/auk/hooks/common/populate.html#serialize)
@@ -165,9 +164,9 @@ describes what information to keep.
 Here we simply drop 2 properties from team items,
 and only keep 2 from the newly joined members property.
 
-> **Serialize.** The serialize hook can also calculate new properties based on existing ones.
+> **Serialize.** The serialize hook can also compute new properties based on existing ones.
 
-> **Depopulate.** Should you modify your base items and want to `patch` the new values,
+> **Depopulate.** Should you modify your base items and want to `patch` the new values back to the table,
 the dePopulate() hook will remove all joined and calculated properties for you.
 
 ## The results
@@ -199,3 +198,6 @@ Lee family
     ]
  }]
 ```
+
+- The user items have onviously been joined to the team items.
+- Only the properties selected have been returned.

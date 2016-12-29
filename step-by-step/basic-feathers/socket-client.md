@@ -1,4 +1,4 @@
-# Writing a Feathers websocket Client
+# Writing a Feathers Websocket Client
 
 We already have a Feathers REST frontend.
 Its simple to convert that to one using websockets.
@@ -19,9 +19,10 @@ We will use the popular Socket.io in this guide.
 
 | Point the browser at: `//localhost:3030/socketio.html`
 
-## Change the server to support either Feathers client REST **or** websocket calls
+## Change the server to support clients using either Feathers REST **or** websocket calls
 
-Change the server code so it allows either REST **or** websocket calls from the Feathers client.
+Add 2 lines to the server code so it supports
+either REST **or** websocket calls from the Feathers client.
 
 ```html
 const rest = require('feathers-rest');

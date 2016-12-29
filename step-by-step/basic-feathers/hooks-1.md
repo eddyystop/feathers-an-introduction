@@ -74,14 +74,14 @@ We include support for hooks in the configuration.
 
 #### - this.configure(user);
 
-The user service will be more complex, so we configure it on its own.
+The user service is now more complex, so we configure it on its own.
  
 #### - const { validateSchema, setCreatedAt, setUpdatedAt, unless, remove } = commonHooks;
 
 Feathers comes with a library of useful hooks.
 Here we get some common hooks from `feathers-hooks-common`.
 More specialized hooks come bundled with their specialized packages,
-such as `feathers-authentication-local`.
+such as with `feathers-authentication-local`.
 
 #### - userService.before({ ... });
 
@@ -95,18 +95,18 @@ These hooks will be run before all `create` operations on the database.
 #### - validateSchema(userSchema(), Ajv)
 
 Validate the data we are to add using [ajv](https://github.com/epoberezkin/ajv).
-The user service [JSON schema](https://github.com/json-schema-org/json-schema-spec)
+The service's [JSON schema](https://github.com/json-schema-org/json-schema-spec)
 is provided by `function userSchema`.
 
 #### - authHooks.hashPassword()
 
 The data has a `password` field.
 This specialized authentication hook will replace it by an encoded version
-so it may be stored safely.
+so the password may be stored safely.
 
 #### - setCreatedAt(), setUpdatedAt()
 
-These hooks add `createdAt` and `updatedAt` fields to the data.
+These hooks add `createdAt` and `updatedAt` properties to the data.
 
 #### - userService.after({ ... });
 
@@ -117,7 +117,7 @@ They act on all the results returned by the operation.
 
 - `hook => hook.method === 'find'` returns true if the database operation was a `find`.
 All hooks are passed a [hook](https://docs.feathersjs.com/hooks/usage.html#after-hooks)
-contains information about the operation.
+which contains information about the operation.
 
 - `remove('password')`
 removes the `password` property from the results.
@@ -131,13 +131,13 @@ in the results.
 
 > **Hooks.** We are now doing some processing typical of apps.
 Before we add a new user, we verify the data, encode the password,
-and add createAt plus updatedAt fields.
+and add createdAt plus updatedAt properties.
 We remove the password field before we return the results to the client.
 
 ## Hooks
 
 Many of your common needs are already handled by hooks in the common hook library.
-This may significantly reduce the new code you need to write.
+This may significantly reduce the code you need to write.
 
 Hooks are just small middleware functions that get applied before and after a service method executes.
 

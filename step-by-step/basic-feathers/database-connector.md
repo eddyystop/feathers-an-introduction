@@ -1,7 +1,7 @@
 # Writing a Database Connector
 
 Our first Feathers example resides on the server only.
-We'll see how easy it is to use database table.
+We'll see how easy it is to use a database table.
 
 The example adds some user items to a NeDB database table,
 reads them back and displays them.
@@ -22,7 +22,7 @@ Everything we mention in this guide is applicable to all of them.
 ## Feathers is modular
 
 Feathers embodies the same spirit as the popular HTTP server framework [Express](http://expressjs.com/) .
-It is comprised of small modules that are all completely optional
+It is comprised of small modules that are all completely optional,
 and the core weighs in at just a few hundred lines of code.
 How's that for light weight!
 Now you can see where Feathers got its name.
@@ -70,8 +70,8 @@ Promise.all([
 ])
 ```
 
-Each create return a promise which resolves into the item added into the database.
-NeDB will always adds a `_id` property to the user item and the returned item will contain it.
+Each create returns a promise which resolves into the item added into the database.
+NeDB will always adds a unique `_id` property to the user item and the returned item will contain it.
 
 > **Callbacks and Promises.**
 `users.create({ ... }, {}, (err, data) => { ... })`
@@ -103,7 +103,12 @@ We issue a find for the entire table and print the results.
 })
 ```
 
-The following is displayed:
+> ** Promise Refresher.** `user.find().then(results => ...);`
+`user.find()` returns a Promise. `.then(results => ...)` waits for the Promise to resolve,
+i.e. for the find to finish.
+The zero, one or more items found in the table are returned in the `results` param.
+
+The server console displays:
 
 ```text
 feathers-an-introduction$ node ./examples/02/a/1

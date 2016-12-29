@@ -17,19 +17,8 @@ Let's write a Javascript frontend for it.
 
 ## Writing a server for Feathers client REST calls
 
-Our frontend will communicate with the server using the server's REST API.
-So we have to tell the server to allow REST calls from a Feathers client.
-
-```javascript
-const rest = require('feathers-rest'); // added
-
-const app = httpServerConfig()
-  .configure(rest()) // added
-  .configure(services)
-  .configure(middleware);
-```
-
-That's all!
+Our frontend will communicate with the current server using its REST API.
+**No changes are required!**
 
 ## Writing the frontend HTML
 
@@ -67,10 +56,12 @@ Open console to see results of <strong>feathers-rest</strong> calls.
 </html>
 ```
 
-- `//cdnjs.cloudflare.com/ajax/libs/core-js/2.1.4/core.min.js` loads a pollyfill for `fetch` if required.
-- `src="//unpkg.com/feathers-client@^1.8.0/dist/feathers.js"` loads Feathers client code.
-- `src="/serverUrl.js"` loads the URL of the server for the frontend.
+- `//cdnjs.cloudflare.com/ajax/libs/core-js/2.1.4/core.min.js`
+loads a pollyfill for [fetch](https://davidwalsh.name/fetch) if required.
+- `src="//unpkg.com/feathers-client@^1.8.0/dist/feathers.js"` loads the Feathers client code.
+- `src="/serverUrl.js"` loads the URL of the server.
 The default is `var serverUrl = 'http://localhost:3030';`.
+Change the value if you need to.
 - `const app = feathers()` instantiates a Feathers client.
 - `.configure(feathers.rest(serverUrl).fetch(fetch))` configures the client to use REST
 when communicating with the server.
@@ -114,8 +105,13 @@ Promise.all([
   .catch(err => console.log(err));
 ```
 
+> **Feathers "ah-ha" moment.**
+We can run **exactly** the same code on the frontend as on the server.
+We can code the frontend as if the database was sitting on it.
+This makes frontend development significantly simpler.
+
 The results in the console window of the browser are the same as they were
-running the database connector.
+running [Writing a Database Connector](./database-connector.md).
 
 ```text`
 created Jane Doe item
@@ -148,8 +144,3 @@ find all items
   length: 3
 3 "items returned."
 ```
-
-> **Feathers "ah-ha" moment.**
-We can run **exactly** the same code on the frontend as on the server.
-We can code the frontend as if the database was sitting on the frontend.
-This makes frontend development significantly simpler.

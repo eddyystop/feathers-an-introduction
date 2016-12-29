@@ -7,16 +7,17 @@ Generators are useful to
 
 - **Eliminate boilerplate.**
 We've seen that Feathers, even when coded "by hand",
-eliminates the majority of the boilerplate for a CRUD project.
+eliminates the majority of the boilerplate typically in a CRUD project.
 Generators will eliminate even more.
 
-> **Generators**
+> **Generators.**
 Feathers generators generate very little code because Feathers is so succinct.
 You can easily understand the generated code because its no different from what we've been
-coding so far "by hand".
+coding "by hand" so far.
 Some other frameworks make things “seem” easy by generating thousands of lines of code for you
 and in the process making it almost impossible to implement anything not supported out of the box
 by their generators.
+Not so Feathers.
 
 - **Organize your app.**
 The generated modules are structured as recommended by the Feathers team.

@@ -2,7 +2,7 @@
 
 If you have an archive of stock movements,
 you cannot simply delete a stock item you no longer want to keep.
-You will not be able to properly present history data if you do so.
+You would not be able to properly present historical data if you do so.
 
 The solution is to keep the data but mark it as deleted.
 We can ignore the `deleted` flag when we know we are accessing historical, and possibly deleted, items.
@@ -25,7 +25,7 @@ We can implement such a **soft delete** with the `softDelete` hook.
 ## Using softDelete
 
 We need to make just one change to our previous server example.
-We use the `when` hook to run the `softDelete` hook if the service methid is not find.
+We use the `when` hook to run the `softDelete` hook if the service method is not find.
 
 ```javascript
 const { softDelete, setCreatedAt, setUpdatedAt, when, unless, remove } = commonHooks;
@@ -93,7 +93,7 @@ find all items
 4 "items returned."
 ```
 
-- The result returned when the Jack Doe item was deleted contains a `deleted: true`.
+- The result returned when the Jack Doe item was deleted contains `deleted: true`.
 - The results returned for find also contain `deleted: true` for Jack Doe
-because how how we conditioned the softDelete hook.
+because of how we conditioned the softDelete hook.
  

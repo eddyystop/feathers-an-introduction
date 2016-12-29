@@ -35,8 +35,8 @@ Do you want to update this generator?: No
 b$ rm -rf node_modules
 ```
 
-The generator ran `npm install` after generating the code, in order to load the app's dependencies.
-We remove those dependencies as they already installed as the root of `feathers-an-introduction`.
+After generating the code, the generator ran `npm install` in order to load the app's dependencies.
+We remove those dependencies as they already installed at the root of `feathers-an-introduction`.
 
 ## App structure
 
@@ -68,13 +68,31 @@ i.e. when you run `NODE_ENV=production node ./example/03/b/src`.
             It means the find method may never return more than 25 items at a time,
             and that by default it will return 5 items.
         
-            - **hooks/** The hooks for user. Called by `user/index.js`.
+            - **hooks/** The hooks for the service. Called by `user/index.js`.
             
     - **app.js** Configures Feathers.
     
     - **index.js** Starts the HTTP server.
  
 - **test/** Test folder with some simple tests.
+
+## Authentication
+
+The frontend code includes
+```javascript
+app.authenticate({
+  type: 'local',
+  'email': 'jane.doe@gmail.com',
+  'password': '11111'
+})
+  .then(() => console.log('\nAuthenticated successfully.\n '))
+  .catch(err => console.error('\nError authenticating:', err));
+```
+
+This attempts to authenticate the user.
+
+> ** Promise Refresher.** Should an error occur during execution of a Promise
+or its `then` chain, the next `.catch(err => ...)` is executed.
 
 ## The app
 
@@ -85,7 +103,7 @@ and you should have little trouble understanding the generated code.
 
 The results are similar to
 [Writing a Feathers websocket Client](../basic-feathers/socket-client.md).
-The result for find is different because user was configured with pagination.
+The result for find is different because the user service was configured with pagination.
 
 ```text
 created Jane Doe item

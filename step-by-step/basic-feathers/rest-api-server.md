@@ -23,10 +23,8 @@ and with an Express server added.
 ```javascript
 const NeDB = require('nedb');
 const path = require('path');
-
 const service = require('feathers-nedb');
 const rest = require('feathers-rest');
-
 const httpServerConfig = require('../common/httpServerConfig');
 const middleware = require('../common/middleware');
 
@@ -53,6 +51,7 @@ function userModel() {
 The Express server is configured as follows.
 
 ```javascript
+// ../common/httpServerConfig
 const bodyParser = require('body-parser');
 const compress = require('compression');
 const cors = require('cors');
@@ -76,6 +75,7 @@ module.exports = () => {
 The Express middleware handles logging, pages not found, and general errors.
 
 ```javascript
+// ../common/middleware
 const handler = require('feathers-errors/handler');
 const notFound = require('./not-found-handler');
 const logger = require('./logger');
@@ -90,14 +90,14 @@ module.exports = function() {
 ```
 
 > **Boilerplate.** The server configuration and middleware are standard Express.
-They have little to do with Feathers other than feed REST requests to it.
+They have little to do with Feathers other than to feed REST requests to it.
 
 ## Running the server
 
 We can now made REST API calls to the server.
 
 In the previous example we created 3 user items and then printed the user file.
-We can now do the same thing with the following
+We can now do the same thing, but using REST, with the following
 [curl](http://www.slashroot.in/curl-command-tutorial-linux-example-usage)
 commands:
 
@@ -128,4 +128,4 @@ GET all users
 
 > **Feathers.** REST API calls are automatically converted into Feathers database method calls
 like the `users.create()` and `users.find()` ones we use in the previous example.
-How's that for flexibility?
+How's that for convenience?

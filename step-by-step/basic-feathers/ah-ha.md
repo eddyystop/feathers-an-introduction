@@ -18,4 +18,5 @@ without you needing to do anything.
 
 The "ah-ha" moment comes when you start to realize the significance of these features.
 Enormous amounts of boilerplate simply disappear.
-You might now start to appreciate why people are enthusiastic about Feathers.
+
+| You might now start to appreciate why people are enthusiastic about Feathers.
