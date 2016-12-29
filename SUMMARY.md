@@ -20,4 +20,4 @@
     * [Is Feathers production ready?](step-by-step/production-ready.md)
     * [Appendix](step-by-step/appendix/readme.md)
         * [What is 'this'?](step-by-step/appendix/what-is-this.md)
-* [Feathers patterns](patterns/readme.md)
+* [Feathers Pa]
