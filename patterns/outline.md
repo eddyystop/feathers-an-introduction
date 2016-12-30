@@ -41,6 +41,7 @@
     });
         
 - RPC
+    - https://github.com/feathersjs/feathers/issues/488#issuecomment-269653633
     - use 'create'
     - create a wrapper for the client
         
