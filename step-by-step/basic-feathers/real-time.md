@@ -29,6 +29,10 @@ we already have.
 
 | Server source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/c/1.js
 
+| Listener HTML code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener.html
+
+| Listener source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener-app.js
+
 | Client HTML code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/socketio.html
 
 | Client source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js
