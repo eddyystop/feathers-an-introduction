@@ -48,7 +48,6 @@ we already have.
 Implementing a listener is straight forward.
 
 ```javascript
-// examples/step/common/public/listener-app.js
 const users = app.service('/users');
 
 users.on('created', user => console.log('created', user));
