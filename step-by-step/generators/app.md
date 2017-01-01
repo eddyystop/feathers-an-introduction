@@ -4,24 +4,24 @@ Let's generate a new project.
 
 ## Working example
 
-| Server source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/03/b/
+| Server source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/a/
 
-| Client HTML code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/03/b/public/socketio.html
+| Client HTML code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/a/public/socketio.html
 
-| Client source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/03/b/public/feathers-app.js
+| Client source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/a/public/feathers-app.js
 
-| Start the server: `node ./examples/03/b/src`
+| Start the server: `node ./examples/step/02/a/src`
 
 | Point the browser at: `//localhost:3030/socketio.html`
 
 ## Creating an app
 
 The [app generator](https://docs.feathersjs.com/getting-started/scaffolding.html#generate-the-app)
-wrote most of `examples/03/b/` using
+wrote most of `examples/step/02/a/` using
 
 ```text
-feathers-an-introduction$ mkdir ./examples/03/b
-feathers-an-introduction$ cd ./examples/03/b
+feathers-an-introduction$ mkdir ./examples/step/02/a
+feathers-an-introduction$ cd ./examples/step/02/a
 b$ feathers generate
 
 Project name: Feathers-guide-03-b

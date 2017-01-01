@@ -243,6 +243,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.2.8" data-path="real-time.html">
+            
+                <a href="real-time.html">
+            
+                    
+                    Real-time
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -356,14 +369,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../../patterns/readme.html">
+        <li class="chapter " data-level="1.3" >
             
-                <a href="../../patterns/readme.html">
+                <span>
             
                     
-                    Feathers patterns
+                    [Feathers Pa]
             
-                </a>
+                </span>
             
 
             
@@ -418,22 +431,14 @@
 <p>We already have a Feathers REST API server from the previous example.
 Let&apos;s write a Javascript frontend for it.</p>
 <h2 id="working-example">Working example</h2>
-<p>| Server source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/02/b/3.js" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/02/b/3.js</a></p>
-<p>| Client HTML code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/02/common/public/rest.html" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/02/common/public/rest.html</a></p>
-<p>| Client source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/02/common/public/feathers-app.js" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/02/common/public/feathers-app.js</a></p>
-<p>| Start the server: <code>node ./examples/02/b/3</code></p>
+<p>| Server source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/b/2.js" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/b/2.js</a></p>
+<p>| Client HTML code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/rest.html" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/rest.html</a></p>
+<p>| Client source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js</a></p>
+<p>| Start the server: <code>node ./examples/step/01/b/2</code></p>
 <p>| Point the browser at: <code>//localhost:3030/rest.html</code></p>
 <h2 id="writing-a-server-for-feathers-client-rest-calls">Writing a server for Feathers client REST calls</h2>
-<p>Our frontend will communicate with the server using the server&apos;s REST API.
-So we have to tell the server to allow REST calls from a Feathers client.</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> rest = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;feathers-rest&apos;</span>); <span class="hljs-comment">// added</span>
-
-<span class="hljs-keyword">const</span> app = httpServerConfig()
-  .configure(rest()) <span class="hljs-comment">// added</span>
-  .configure(services)
-  .configure(middleware);
-</code></pre>
-<p>That&apos;s all!</p>
+<p>Our frontend will communicate with the current server using its REST API.
+<strong>No changes are required!</strong></p>
 <h2 id="writing-the-frontend-html">Writing the frontend HTML</h2>
 <p>We&apos;ll soon see most of the frontend doesn&apos;t care if we&apos;re communicating with the server
 using REST or websockets.
@@ -467,10 +472,12 @@ Open console to see results of <span class="hljs-tag">&lt;<span class="hljs-name
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
 <ul>
-<li><code>//cdnjs.cloudflare.com/ajax/libs/core-js/2.1.4/core.min.js</code> loads a pollyfill for <code>fetch</code> if required.</li>
-<li><code>src=&quot;//unpkg.com/feathers-client@^1.8.0/dist/feathers.js&quot;</code> loads Feathers client code.</li>
-<li><code>src=&quot;/serverUrl.js&quot;</code> loads the URL of the server for the frontend.
-The default is <code>var serverUrl = &apos;http://localhost:3030&apos;;</code>.</li>
+<li><code>//cdnjs.cloudflare.com/ajax/libs/core-js/2.1.4/core.min.js</code>
+loads a pollyfill for <a href="https://davidwalsh.name/fetch" target="_blank">fetch</a> if required.</li>
+<li><code>src=&quot;//unpkg.com/feathers-client@^1.8.0/dist/feathers.js&quot;</code> loads the Feathers client code.</li>
+<li><code>src=&quot;/serverUrl.js&quot;</code> loads the URL of the server.
+The default is <code>var serverUrl = &apos;http://localhost:3030&apos;;</code>.
+Change the value if you need to.</li>
 <li><code>const app = feathers()</code> instantiates a Feathers client.</li>
 <li><code>.configure(feathers.rest(serverUrl).fetch(fetch))</code> configures the client to use REST
 when communicating with the server.
@@ -510,8 +517,14 @@ The rest of the application is just a copy of what we used in
   })
   .catch(err =&gt; <span class="hljs-built_in">console</span>.log(err));
 </code></pre>
+<blockquote>
+<p><strong>Feathers &quot;ah-ha&quot; moment.</strong>
+We can run <strong>exactly</strong> the same code on the frontend as on the server.
+We can code the frontend as if the database was sitting on it.
+This makes frontend development significantly simpler.</p>
+</blockquote>
 <p>The results in the console window of the browser are the same as they were
-running the database connector.</p>
+running <a href="database-connector.html">Writing a Database Connector</a>.</p>
 <pre><code class="lang-text`">created Jane Doe item
  Object {email: &quot;jane.doe@gmail.com&quot;, password: &quot;11111&quot;, role: &quot;admin&quot;, _id: &quot;8zQ7mXay3XqiqP35&quot;}
 created John Doe item
@@ -542,12 +555,6 @@ find all items
   length: 3
 3 &quot;items returned.&quot;
 </code></pre>
-<blockquote>
-<p><strong>Feathers &quot;ah-ha&quot; moment.</strong>
-We can run <strong>exactly</strong> the same code on the frontend as on the server.
-We can code the frontend as if the database was sitting on the frontend.
-This makes frontend development significantly simpler.</p>
-</blockquote>
 
                                 
                                 </section>
@@ -591,7 +598,7 @@ This makes frontend development significantly simpler.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"A Feathers REST client","level":"1.2.2.3","depth":3,"next":{"title":"A Feathers websocket client","level":"1.2.2.4","depth":3,"path":"step-by-step/basic-feathers/socket-client.md","ref":"step-by-step/basic-feathers/socket-client.md","articles":[]},"previous":{"title":"A REST API server","level":"1.2.2.2","depth":3,"path":"step-by-step/basic-feathers/rest-api-server.md","ref":"step-by-step/basic-feathers/rest-api-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors"],"pluginsConfig":{"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"feathers-collapsible-menu":{},"heading-anchors":{},"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/rest-client.md","mtime":"2016-12-28T16:22:36.882Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-29T01:17:15.330Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"A Feathers REST client","level":"1.2.2.3","depth":3,"next":{"title":"A Feathers websocket client","level":"1.2.2.4","depth":3,"path":"step-by-step/basic-feathers/socket-client.md","ref":"step-by-step/basic-feathers/socket-client.md","articles":[]},"previous":{"title":"A REST API server","level":"1.2.2.2","depth":3,"path":"step-by-step/basic-feathers/rest-api-server.md","ref":"step-by-step/basic-feathers/rest-api-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors"],"pluginsConfig":{"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"feathers-collapsible-menu":{},"heading-anchors":{},"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/rest-client.md","mtime":"2016-12-31T19:13:46.278Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-01T14:08:14.012Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

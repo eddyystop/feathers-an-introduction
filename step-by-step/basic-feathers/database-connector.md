@@ -15,9 +15,9 @@ Everything we mention in this guide is applicable to all of them.
 
 ## Working example
 
-| Source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/02/a/1.js
+| Source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/a/1.js
 
-| Run it: `node ./examples/02/a/1`
+| Run it: `node ./examples/step/01/a/1`
 
 ## Feathers is modular
 
@@ -45,7 +45,7 @@ const app = feathers()
   .configure(services);
 ```
 
-`users` is the only service we need  and its a database table located at `examples/data/users.db`.
+`users` is the only service we need  and its a database table located at `examples/step/data/users.db`.
 
 ```javascript
 function services() {
@@ -111,7 +111,7 @@ The zero, one or more items found in the table are returned in the `results` par
 The server console displays:
 
 ```text
-feathers-an-introduction$ node ./examples/02/a/1
+feathers-an-introduction$ node ./examples/step/01/a/1
 created Jane Doe item
  { email: 'jane.doe@gmail.com',
   password: 'X2y6',

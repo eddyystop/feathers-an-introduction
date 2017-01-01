@@ -11,9 +11,9 @@ Future versions will support multiple frameworks, starting with
 
 ## Working example
 
-| Source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/02/b/1.js
+| Source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/b/1.js
 
-| Run it: `node ./examples/02/b/1`
+| Run it: `node ./examples/step/01/b/1`
 
 ## Implementing a REST API server
 
@@ -108,10 +108,10 @@ curl -H "Content-Type: application/json" -X POST -d '{"email":"judy.doe@gmail.co
 curl -X GET http://localhost:3030/users
 ```
 
-Run them with `./examples/02/b/curl-requests.sh` and the following is displayed:
+Run them with `./examples/step/01/b/curl-requests.sh` and the following is displayed:
 
 ```text
-feathers-an-introduction$ ./examples/02/b/curl-requests.sh
+feathers-an-introduction$ ./examples/step/01/b/curl-requests.sh
 POST Jane Doe
 {"email":"jane.doe@gmail.com","password":"X2y6","role":"admin","_id":"sbkXV7LVkMhx1NyY"}
 POST John Doe

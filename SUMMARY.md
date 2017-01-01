@@ -13,6 +13,7 @@
         * [The "ah-ha" moment](step-by-step/basic-feathers/ah-ha.md)
         * [Hooks, part 1](step-by-step/basic-feathers/hooks-1.md)
         * [Hooks, part 2](step-by-step/basic-feathers/hooks-2.md)
+        * [Real-time](step-by-step/basic-feathers/real-time.md)
     * [Generators](step-by-step/generators/readme.md)
         * [Generating an app](step-by-step/generators/app.md)
         * [Adding a service](step-by-step/generators/service.md)

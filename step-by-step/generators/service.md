@@ -7,22 +7,22 @@ Let's add another service.
 
 ## Working example
 
-| Server source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/03/d/
+| Server source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/b/
 
-| Client HTML code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/03/d/public/socketio.html
+| Client HTML code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/b/public/socketio.html
 
-| Client source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/03/d/public/feathers-app.js
+| Client source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/b/public/feathers-app.js
 
-| Start the server: `node ./examples/03/d/src`
+| Start the server: `node ./examples/step/02/b/src`
 
 | Point the browser at: `//localhost:3030/socketio.html`
 
 ## Generating a service
 
-We copied `examples/03/b/` to `examples/03/d/`, then
+We copied `examples/step/02/a/` to `examples/step/02/b/`, then
 
 ```text
-feathers-an-introduction$ cd ./examples/03/d
+feathers-an-introduction$ cd ./examples/step/02/b
 d$ feathers generate service
 
 What do you want to call your service?: teams

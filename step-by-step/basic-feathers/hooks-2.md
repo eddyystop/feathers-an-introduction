@@ -12,13 +12,13 @@ We can implement such a **soft delete** with the `softDelete` hook.
 
 ## Working example
 
-| Server source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/02/d/3.js
+| Server source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/d/2.js
 
-| Client HTML code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/02/common/public/rest.html
+| Client HTML code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/rest.html
 
-| Client source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/02/common/public/feathers-app.js
+| Client source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js
 
-| Start the server: `node ./examples/02/d/3`
+| Start the server: `node ./examples/step/01/d/2`
 
 | Point the browser at: `//localhost:3030/socketio.html`
 

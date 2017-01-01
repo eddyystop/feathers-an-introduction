@@ -3,11 +3,15 @@
 We will start with writing snippets of Feathers code by hand.
 We'll take a step by step approach, introducing a few new concepts each time.
 
-Each step is backed by a working example in `examples/`.
+Each step is backed by a working example in `examples/step/`.
 The code samples in the guide are extracts from those examples.
 Code snippets may be ambiguous, misleading or confusing.
 Working examples reduce these problems,
 as well as letting you learn more by modifying them yourself.
+
+> **Warning.** The clients in the examples log results to the browser console.
+So open the console log before pointing the pointer at an example URL.
+You won't see much otherwise.
 
 Feathers has a definite **ah-ha** moment,
 that moment when you realize how much it accomplishes and how simply.

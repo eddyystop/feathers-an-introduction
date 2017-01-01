@@ -243,6 +243,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.2.8" data-path="../basic-feathers/real-time.html">
+            
+                <a href="../basic-feathers/real-time.html">
+            
+                    
+                    Real-time
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -356,14 +369,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../../patterns/readme.html">
+        <li class="chapter " data-level="1.3" >
             
-                <a href="../../patterns/readme.html">
+                <span>
             
                     
-                    Feathers patterns
+                    [Feathers Pa]
             
-                </a>
+                </span>
             
 
             
@@ -419,14 +432,14 @@
 local authentication.</p>
 <p>Let&apos;s add another service.</p>
 <h2 id="working-example">Working example</h2>
-<p>| Server source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/03/d/" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/03/d/</a></p>
-<p>| Client HTML code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/03/d/public/socketio.html" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/03/d/public/socketio.html</a></p>
-<p>| Client source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/03/d/public/feathers-app.js" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/03/d/public/feathers-app.js</a></p>
-<p>| Start the server: <code>node ./examples/03/d/src</code></p>
+<p>| Server source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/b/" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/b/</a></p>
+<p>| Client HTML code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/b/public/socketio.html" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/b/public/socketio.html</a></p>
+<p>| Client source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/b/public/feathers-app.js" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/b/public/feathers-app.js</a></p>
+<p>| Start the server: <code>node ./examples/step/02/b/src</code></p>
 <p>| Point the browser at: <code>//localhost:3030/socketio.html</code></p>
 <h2 id="generating-a-service">Generating a service</h2>
-<p>We first copied <code>examples/03/b/</code> to <code>examples/03/d/</code>.</p>
-<pre><code class="lang-text">feathers-an-introduction$ cd ./examples/03/d
+<p>We copied <code>examples/step/02/a/</code> to <code>examples/step/02/b/</code>, then</p>
+<pre><code class="lang-text">feathers-an-introduction$ cd ./examples/step/02/b
 d$ feathers generate service
 
 What do you want to call your service?: teams
@@ -434,8 +447,8 @@ What type of service do you need?: database
 For which datbase? NeDB
 Does your service require users to be authenticated? Y (enter)
 </code></pre>
-<p>The generator ran <code>npm install</code> after generating the code, in order to load the app&apos;s dependencies.
-We remove those dependencies as they already installed as the root of <code>feathers-an-introduction</code>.</p>
+<p>Once again we remove the dependencies loaded by the generator
+as they are already installed at the root of <code>feathers-an-introduction</code>.</p>
 <h2 id="app-structure">App structure</h2>
 <p>The teams service has been added to the app at <code>src/services/teams/</code>.
 Its organized similarly to users.</p>
@@ -478,7 +491,6 @@ exports.before = {
 };
 
 exports.after = {
-  all: [],
   find: [ populate({ schema: populateSchema }), serialize(serializeSchema) ],
   get: [ populate({ schema: populateSchema }), serialize(serializeSchema) ],
 };
@@ -488,7 +500,7 @@ exports.after = {
 The hook will throw an error message should the token be invalid,
 and the error object will be returned to the client automatically.</p>
 <h4 id="-authpopulateuser">- auth.populateUser()</h4>
-<p>Add the user item to the information given to each hook.</p>
+<p>Add the user item to the information passed to each hook.</p>
 <h4 id="-authrestricttoauthenticated">- auth.restrictToAuthenticated()</h4>
 <p>Throw if the user is not yet authenticated.</p>
 <h4 id="-populate-schema-populateschema-">- populate({ schema: populateSchema })</h4>
@@ -506,7 +518,7 @@ describes what to join.</p>
 </code></pre>
 <p>The <code>users</code> service is used to obtain those user items whose <code>user._id</code> are included in
 <code>team.memberIds</code>. The resulting user items are added to the team item as the <code>members</code> property.</p>
-<p>We might get a result that look like:</p>
+<p>We might get a result that looks like:</p>
 <pre><code class="lang-javascript">{
     name: <span class="hljs-string">&quot;Lee family&quot;</span>,
     type: <span class="hljs-string">&quot;family&quot;</span>,
@@ -524,9 +536,9 @@ describes what to join.</p>
 Those items may themselves have other items joined to them recursively.</p>
 </blockquote>
 <h4 id="-serializeserializeschema">- serialize(serializeSchema)</h4>
-<p>The client often does not need all the information contained in the items,
-and in any joined items.
-Other information should not be exposed for security reasons.</p>
+<p>The client often does not need all the information contained in the base items,
+nor all in any joined items.
+Some information should not be exposed for security reasons.</p>
 <p>The schema passed to the
 <a href="https://docs.feathersjs.com/v/auk/hooks/common/populate.html#serialize" target="_blank">serialize hook</a>
 describes what information to keep.</p>
@@ -540,8 +552,8 @@ describes what information to keep.</p>
 <p>Here we simply drop 2 properties from team items,
 and only keep 2 from the newly joined members property.</p>
 <blockquote>
-<p><strong>Serialize.</strong> The serialize hook can also calculate new properties based on existing ones.</p>
-<p><strong>Depopulate.</strong> Should you modify your base items and want to <code>patch</code> the new values,
+<p><strong>Serialize.</strong> The serialize hook can also compute new properties based on existing ones.</p>
+<p><strong>Depopulate.</strong> Should you modify your base items and want to <code>patch</code> the new values back to the table,
 the dePopulate() hook will remove all joined and calculated properties for you.</p>
 </blockquote>
 <h2 id="the-results">The results</h2>
@@ -570,6 +582,10 @@ Lee family
     ]
  }]
 </code></pre>
+<ul>
+<li>The user items have onviously been joined to the team items.</li>
+<li>Only the properties selected have been returned.</li>
+</ul>
 
                                 
                                 </section>
@@ -613,7 +629,7 @@ Lee family
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Adding a service","level":"1.2.3.2","depth":3,"next":{"title":"What next?","level":"1.2.4","depth":2,"path":"step-by-step/what-next.md","ref":"step-by-step/what-next.md","articles":[]},"previous":{"title":"Generating an app","level":"1.2.3.1","depth":3,"path":"step-by-step/generators/app.md","ref":"step-by-step/generators/app.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors"],"pluginsConfig":{"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"feathers-collapsible-menu":{},"heading-anchors":{},"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/generators/service.md","mtime":"2016-12-28T21:39:40.569Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-29T01:17:15.330Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Adding a service","level":"1.2.3.2","depth":3,"next":{"title":"What next?","level":"1.2.4","depth":2,"path":"step-by-step/what-next.md","ref":"step-by-step/what-next.md","articles":[]},"previous":{"title":"Generating an app","level":"1.2.3.1","depth":3,"path":"step-by-step/generators/app.md","ref":"step-by-step/generators/app.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors"],"pluginsConfig":{"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"feathers-collapsible-menu":{},"heading-anchors":{},"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/generators/service.md","mtime":"2017-01-01T13:01:27.222Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-01T14:08:14.012Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

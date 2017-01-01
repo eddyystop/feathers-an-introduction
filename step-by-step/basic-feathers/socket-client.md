@@ -9,13 +9,13 @@ We will use the popular Socket.io in this guide.
 
 ## Working example
 
-| Server source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/02/c/1.js
+| Server source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/c/1.js
 
-| Client HTML code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/02/common/public/socketio.html
+| Client HTML code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/socketio.html
 
-| Client source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/02/common/public/feathers-app.js
+| Client source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js
 
-| Start the server: `node ./examples/02/c/1`
+| Start the server: `node ./examples/step/01/c/1`
 
 | Point the browser at: `//localhost:3030/socketio.html`
 
