@@ -105,8 +105,20 @@ on validating data with JSON schema.
 #### - authHooks.hashPassword()
 
 The data has a `password` field.
-This specialized authentication hook will replace it by an encoded version
+This specialized authentication hook will replace it by hashed version
 so the password may be stored safely.
+
+> **bcrypt.** Feathers hashes passwords using [bycrypt](https://www.npmjs.com/package/bcryptjs).
+Bcrypt has the best kind of repute that can be achieved for a cryptographic algorithm:
+it has been around for quite some time, used quite widely, "attracted attention",
+and yet remains unbroken to date.
+[Reference.](http://security.stackexchange.com/questions/4781/do-any-security-experts-recommend-bcrypt-for-password-storage)
+
+> **JSON webtoken.** Feathers Authentication uses JSON webtoken (JWT) for secure authentication
+between a client and server as opposed to cookies and sessions.
+The cookies vs token debate
+[favors token-based authentication](https://auth0.com/blog/cookies-vs-tokens-definitive-guide/).
+The avoidance of sessions makes Feathers apps more easily scalable.
 
 #### - setCreatedAt(), setUpdatedAt()
 
