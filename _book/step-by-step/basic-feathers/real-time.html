@@ -428,17 +428,17 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="real-time">Real-time</h1>
-<p>In Feathers, realtime means that services automatically send
+<p>In Feathers, real-time means that services automatically send
 created, updated, patched and removed events when
 a create, update, patch or remove service method is complete.
 Clients can listen for these events and then react accordingly.</p>
 <p><img src="../../img/real-time-events-flow.jpg" alt="Feathers Realtime"></p>
-<p>The client for a chat room app, for example,
+<p>The client in a chat room app, for example,
 could automatically receive all messages posted by any of the participants,
 and then display them.
-This is <strong>much</strong> simpler than the traditional design
+This is <strong>much</strong> simpler than the traditional design pattern
 which requires long-polling of the server.</p>
-<p>For another example, the client could maintain a local copy of
+<p>As another example, the client could maintain a local copy of
 part of a database table.
 It can keep it up to date by listening to events for that table.</p>
 <blockquote>
@@ -448,9 +448,11 @@ These would have implement a traditional long-polling design.
 <strong>Conclusion:</strong> Use Feathers websocket clients.</p>
 </blockquote>
 <p>Let&apos;s create an event listener for the <a href="socket-client.html">Feathers Websocket Client</a>
-we have.</p>
+we already have.</p>
 <h2 id="working-example">Working example</h2>
 <p>| Server source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/c/1.js" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/c/1.js</a></p>
+<p>| Listener HTML code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener.html" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener.html</a></p>
+<p>| Listener source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener-app.js" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener-app.js</a></p>
 <p>| Client HTML code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/socketio.html" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/socketio.html</a></p>
 <p>| Client source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js</a></p>
 <p>| Start the server: <code>node ./examples/step/01/c/1</code></p>
@@ -529,7 +531,7 @@ say maybe only ones that are authenticated.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Real-time","level":"1.2.2.8","depth":3,"next":{"title":"Generators","level":"1.2.3","depth":2,"path":"step-by-step/generators/readme.md","ref":"step-by-step/generators/readme.md","articles":[{"title":"Generating an app","level":"1.2.3.1","depth":3,"path":"step-by-step/generators/app.md","ref":"step-by-step/generators/app.md","articles":[]},{"title":"Adding a service","level":"1.2.3.2","depth":3,"path":"step-by-step/generators/service.md","ref":"step-by-step/generators/service.md","articles":[]}]},"previous":{"title":"Hooks, part 2","level":"1.2.2.7","depth":3,"path":"step-by-step/basic-feathers/hooks-2.md","ref":"step-by-step/basic-feathers/hooks-2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors"],"pluginsConfig":{"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"feathers-collapsible-menu":{},"heading-anchors":{},"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/real-time.md","mtime":"2017-01-01T14:08:04.761Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-01T14:08:14.012Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Real-time","level":"1.2.2.8","depth":3,"next":{"title":"Generators","level":"1.2.3","depth":2,"path":"step-by-step/generators/readme.md","ref":"step-by-step/generators/readme.md","articles":[{"title":"Generating an app","level":"1.2.3.1","depth":3,"path":"step-by-step/generators/app.md","ref":"step-by-step/generators/app.md","articles":[]},{"title":"Adding a service","level":"1.2.3.2","depth":3,"path":"step-by-step/generators/service.md","ref":"step-by-step/generators/service.md","articles":[]}]},"previous":{"title":"Hooks, part 2","level":"1.2.2.7","depth":3,"path":"step-by-step/basic-feathers/hooks-2.md","ref":"step-by-step/basic-feathers/hooks-2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors"],"pluginsConfig":{"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"feathers-collapsible-menu":{},"heading-anchors":{},"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/real-time.md","mtime":"2017-01-01T14:19:16.771Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-01T14:21:42.787Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
