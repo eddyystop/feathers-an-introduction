@@ -19,6 +19,7 @@ const populateSchema = {
 };
 
 const serializeSchema = {
+  only: [ '_id', 'text', 'createdAt' ],
   sentBy: {
     only: [ 'email', 'avatar' ]
   }

@@ -53,13 +53,13 @@
             user created {email: "lee@gmail.com", avatar: "https://s.gravatar.com/avatar/3b51941a9904ce23b87c58372d0c9aa2?s=60", _id: "bEd9fgn06Q4wFYRe"}
             message created {text: "Hello!", _id: "P71CPAehOTc0PVsE"}
 - c
+    - add authentication to messages.hooks.index
     - feathers generate hook
         - What do you want to call your hook? process
         - What type of hook do you need? before hook
         - What service is this hook for? **message**
         - What method is this hook for? (Press <space> to select)create
         - paste process
-    - add authentication to messages.hooks.index
     - feathers generate hook
         - What do you want to call your hook? restrict-to-sender
         - What type of hook do you need? before hook
@@ -75,7 +75,7 @@
         - client http://localhost:3030/socketio.html
             - On Sign Up screen: ying@qq.cn & ying123 & 'Add user'
             - On Sign In screen: ying@qq.cn & ying123 & 'Sign in'
-            - On Chat Room screen: Xīnnián kuàilè (Happy New Year in Simplified Chinese) && "Send message"
+            - On Chat Room screen: 新年快樂 (Happy New Year in Chinese) && "Send message"
             - displays
             user created
             { email: "ying@qq.cn",
@@ -83,11 +83,11 @@
               _id: "hQqkIjupqGKEyKO0" }
             message created
             { _id: "Wvm38PB310eykSSB",
-              _include: ['sentBy'],
               createdAt: 1483306202115
               sentBy: {
                 avatar: "https://s.gravatar.com/avatar/db67e5e4176f9c9aaf76e6bd17cf447d?s=60",
                 email: "ying@qq.cn"
               },
-              text: "Xīnnián kuàilè",
-              userId: "hQqkIjupqGKEyKO0" }
+              text: "新年快樂" }
+- d
+    - discuss feathers-authentication-management

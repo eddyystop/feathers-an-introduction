@@ -1,34 +1,30 @@
 
 // DOM
-const signUpEl = document.getElementById('sign-up');
-const emailSignUpEl = document.getElementById('email-signup');
-const passwordSignUpEl = document.getElementById('password-signup');
-document.getElementById('signup-user').addEventListener('click', addUser);
-document.getElementById('to-signin-user').addEventListener('click', () => router('sign-in'));
+handleClick('signup-user', signUpUser);
+handleClick('signin-user', signInUser);
+handleClick('signout-user', signOutUser);
+handleClick('send-message', sendMessage);
+handleClick('to-signin-user', () => router('sign-in'));
+handleClick('to-signup-user', () => router('sign-up'));
 
-const signInEl = document.getElementById('sign-in');
-const emailSignInEl = document.getElementById('email-signin');
-const passwordSignInEl = document.getElementById('password-signin');
-document.getElementById('signin-user').addEventListener('click', signIn);
-document.getElementById('to-signup-user').addEventListener('click', () => router('sign-up'));
-
-const chatEl = document.getElementById('chat');
-const messageEl = document.getElementById('message');
-document.getElementById('send-message').addEventListener('click', sendMessage);
-document.getElementById('sign-out').addEventListener('click', signOut);
+const els = {};
+['sign-up', 'email-signup', 'password-signup', 'sign-in', 'email-signin', 'password-signin', 'chat', 'message']
+  .forEach(id => els[id] = document.getElementById(id));
 
 // Routing
 const router = (newRoute) => {
-  signUpEl.style.display = newRoute === 'sign-up' ? 'block' : 'none';
-  signInEl.style.display = newRoute === 'sign-in' ? 'block' : 'none';
-  chatEl.style.display = newRoute === 'chat' ? 'block' : 'none';
+  els['sign-up'].style.display = newRoute === 'sign-up' ? 'block' : 'none';
+  els['sign-in'].style.display = newRoute === 'sign-in' ? 'block' : 'none';
+  els['chat'].style.display = newRoute === 'chat' ? 'block' : 'none';
 };
 router('sign-up');
 
 // Feathers
 app
   .configure(feathers.hooks())
-  .configure(feathers.authentication({ storage: window.localStorage }));
+  .configure(feathers.authentication({
+    storage: window.localStorage
+  }));
 
 const users = app.service('/users');
 const messages = app.service('/messages');
@@ -42,8 +38,12 @@ messages.on('removed', message => console.log('message removed', message));
 
 // Helpers
 
-function addUser() {
-  const user = { email: emailSignUpEl.value.trim(), password: passwordSignUpEl.value.trim() };
+function handleClick(id, func) {
+  document.getElementById(id).addEventListener('click', func);
+}
+
+function signUpUser() {
+  const user = { email: els['email-signup'].value.trim(), password: els['password-signup'].value.trim() };
   
   if (!user.email || !user.password) {
     console.log('ERROR: enter name, email and password');
@@ -55,9 +55,9 @@ function addUser() {
     .catch(err => console.log('ERROR creating user:', err));
 }
 
-function signIn() {
-  const email = emailSignInEl.value.trim();
-  const password = passwordSignInEl.value.trim();
+function signInUser() {
+  const email = els['email-signin'].value.trim();
+  const password = els['password-signin'].value.trim();
   
   if (!email || !password) {
     console.log('ERROR: enter email and password');
@@ -69,14 +69,14 @@ function signIn() {
     .catch(err => console.error('ERROR authenticating:', err));
 }
 
-function signOut() {
+function signOutUser() {
   app.logout()
     .then(() => router('sign-in'))
     .catch(err => console.log('ERROR logging out:', err));
 }
 
 function sendMessage() {
-  const message = { text: messageEl.value.trim() };
+  const message = { text: els['message'].value.trim() };
   
   if (!message.text) {
     console.log('ERROR: enter message');
@@ -84,6 +84,6 @@ function sendMessage() {
   }
   
   messages.create(message)
-    .then(() => messageEl.value = '')
+    .then(() => els['message'].value = '')
     .catch(err => console.log('ERROR creating message:', err));
 }
