@@ -23,11 +23,12 @@ but we understand what that scaffolding does.
 
 Where do we go from here? Our recommendation are:
 
-- Read the
-[Build a non-trival app.](https://docs.feathersjs.com/v/auk/getting-started/readme.html)
-guide.
+- Read the next section [Writing a Chat Room App](chat/readme.md).
+- Read the how to
+[write client front-ends](https://docs.feathersjs.com/v/auk/getting-started/frontend.html)
+for a similar chat room app.
 - Join the [Feathers slack community](https://feathersjs.slack.com/messages/general/).
 The #general, #help and #suggestion channels will be helpful.
-- Read the companion guide [Basic Feathers Patterns]().
+- Wait for more sections to be published in this guide.
 
 And don't be shy, speak to us on **slack**. We're there to help.
