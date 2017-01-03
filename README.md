@@ -60,6 +60,20 @@ http-server
 
 Then point your browser at `http://localhost:8080/_book`.
 
+#### Recreating the examples used in the guides
+
+Each guide is divided into sections, each section backed by a working example in `examples/`.
+The code samples in the guides are extracts from those examples.
+Code snippets may be ambiguous, misleading or confusing.
+Working examples reduce these problems,
+as well as letting you learn more by modifying them yourself.
+
+The guides go into details about how each example was created.
+You can recreate the themselves yourself if that helps your learning process.
+Create a folder called, say, `copy-an-introduction` with a subfolder `examples/`.
+You can run the same commands as mentioned in the guide
+and (hopefully!) get the same results.
+
 ## License
 
 Copyright (c) 2016-2017

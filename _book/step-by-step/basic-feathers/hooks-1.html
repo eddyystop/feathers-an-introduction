@@ -369,16 +369,93 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" >
+        <li class="chapter " data-level="1.3" data-path="../../chat/readme.html">
             
-                <span>
+                <a href="../../chat/readme.html">
             
                     
-                    [Feathers Pa]
+                    Writing a chat room app
             
-                </span>
+                </a>
             
 
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../chat/server/readme.html">
+            
+                <a href="../../chat/server/readme.html">
+            
+                    
+                    Server
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../chat/server/start-server.html">
+            
+                <a href="../../chat/server/start-server.html">
+            
+                    
+                    Starting the server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../../chat/server/start-front-end.html">
+            
+                <a href="../../chat/server/start-front-end.html">
+            
+                    
+                    Starting the front-end
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../../chat/server/finish-server.html">
+            
+                <a href="../../chat/server/finish-server.html">
+            
+                    
+                    Finishing the server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../../chat/server/user-mgnt.html">
+            
+                <a href="../../chat/server/user-mgnt.html">
+            
+                    
+                    User management
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -509,8 +586,20 @@ on validating data with JSON schema.</p>
 </blockquote>
 <h4 id="-authhookshashpassword">- authHooks.hashPassword()</h4>
 <p>The data has a <code>password</code> field.
-This specialized authentication hook will replace it by an encoded version
+This specialized authentication hook will replace it by hashed version
 so the password may be stored safely.</p>
+<blockquote>
+<p><strong>bcrypt.</strong> Feathers hashes passwords using <a href="https://www.npmjs.com/package/bcryptjs" target="_blank">bycrypt</a>.
+Bcrypt has the best kind of repute that can be achieved for a cryptographic algorithm:
+it has been around for quite some time, used quite widely, &quot;attracted attention&quot;,
+and yet remains unbroken to date.
+<a href="http://security.stackexchange.com/questions/4781/do-any-security-experts-recommend-bcrypt-for-password-storage" target="_blank">Reference.</a></p>
+<p><strong>JSON webtoken.</strong> Feathers Authentication uses JSON webtoken (JWT) for secure authentication
+between a client and server as opposed to cookies and sessions.
+The cookies vs token debate
+<a href="https://auth0.com/blog/cookies-vs-tokens-definitive-guide/" target="_blank">favors token-based authentication</a>.
+The avoidance of sessions makes Feathers apps more easily scalable.</p>
+</blockquote>
 <h4 id="-setcreatedat-setupdatedat">- setCreatedAt(), setUpdatedAt()</h4>
 <p>These hooks add <code>createdAt</code> and <code>updatedAt</code> properties to the data.</p>
 <h4 id="-userserviceafter--">- userService.after({ ... });</h4>
@@ -639,7 +728,7 @@ because of the special coding we included in the example.</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Hooks, part 1","level":"1.2.2.6","depth":3,"next":{"title":"Hooks, part 2","level":"1.2.2.7","depth":3,"path":"step-by-step/basic-feathers/hooks-2.md","ref":"step-by-step/basic-feathers/hooks-2.md","articles":[]},"previous":{"title":"The \"ah-ha\" moment","level":"1.2.2.5","depth":3,"path":"step-by-step/basic-feathers/ah-ha.md","ref":"step-by-step/basic-feathers/ah-ha.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors"],"pluginsConfig":{"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"feathers-collapsible-menu":{},"heading-anchors":{},"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/hooks-1.md","mtime":"2016-12-31T19:13:46.143Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-01T14:21:42.787Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Hooks, part 1","level":"1.2.2.6","depth":3,"next":{"title":"Hooks, part 2","level":"1.2.2.7","depth":3,"path":"step-by-step/basic-feathers/hooks-2.md","ref":"step-by-step/basic-feathers/hooks-2.md","articles":[]},"previous":{"title":"The \"ah-ha\" moment","level":"1.2.2.5","depth":3,"path":"step-by-step/basic-feathers/ah-ha.md","ref":"step-by-step/basic-feathers/ah-ha.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors"],"pluginsConfig":{"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"feathers-collapsible-menu":{},"heading-anchors":{},"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/hooks-1.md","mtime":"2017-01-01T16:55:52.618Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-03T18:06:31.413Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -32,4 +32,7 @@ module.exports = function(){
 
   // Set up our after hooks
   userService.after(hooks.after);
+
+// Send user events only to authenticated users. The remove hook already removed the password.
+  userService.filter((data, connection) => connection.user ? data : false);
 };

@@ -32,4 +32,7 @@ module.exports = function(){
 
   // Set up our after hooks
   messageService.after(hooks.after);
+  
+  // Send message events only to authenticated users.
+  messageService.filter((data, connection) => connection.user ? data : false);
 };

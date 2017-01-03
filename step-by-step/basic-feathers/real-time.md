@@ -83,3 +83,12 @@ You can control what data is sent to which clients with
 [event filters](https://docs.feathersjs.com/real-time/filtering.html).
 
 ![Feathers Realtime](/img/event-filter-diagram.jpg)
+
+For example, we could send `users` events only to authenticated users
+and remove `password` from the payload with:
+```javascript
+users.filter((data, connection) => {
+  delete data.password;
+  return connection.user ? data : false;
+});
+```

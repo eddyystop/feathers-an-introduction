@@ -1,0 +1,835 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Starting the front-end · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="finish-server.html" />
+    
+    
+    <link rel="prev" href="start-server.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../step-by-step/readme.html">
+            
+                <a href="../../step-by-step/readme.html">
+            
+                    
+                    Step by step intro to basic Feathers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../step-by-step/intro/readme.html">
+            
+                <a href="../../step-by-step/intro/readme.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../../step-by-step/intro/not-worry.html">
+            
+                <a href="../../step-by-step/intro/not-worry.html">
+            
+                    
+                    What not to worry about
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../step-by-step/basic-feathers/readme.html">
+            
+                <a href="../../step-by-step/basic-feathers/readme.html">
+            
+                    
+                    Basic Feathers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../../step-by-step/basic-feathers/database-connector.html">
+            
+                <a href="../../step-by-step/basic-feathers/database-connector.html">
+            
+                    
+                    A database connector
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../../step-by-step/basic-feathers/rest-api-server.html">
+            
+                <a href="../../step-by-step/basic-feathers/rest-api-server.html">
+            
+                    
+                    A REST API server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../../step-by-step/basic-feathers/rest-client.html">
+            
+                <a href="../../step-by-step/basic-feathers/rest-client.html">
+            
+                    
+                    A Feathers REST client
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../../step-by-step/basic-feathers/socket-client.html">
+            
+                <a href="../../step-by-step/basic-feathers/socket-client.html">
+            
+                    
+                    A Feathers websocket client
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../../step-by-step/basic-feathers/ah-ha.html">
+            
+                <a href="../../step-by-step/basic-feathers/ah-ha.html">
+            
+                    
+                    The "ah-ha" moment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="../../step-by-step/basic-feathers/hooks-1.html">
+            
+                <a href="../../step-by-step/basic-feathers/hooks-1.html">
+            
+                    
+                    Hooks, part 1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="../../step-by-step/basic-feathers/hooks-2.html">
+            
+                <a href="../../step-by-step/basic-feathers/hooks-2.html">
+            
+                    
+                    Hooks, part 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.8" data-path="../../step-by-step/basic-feathers/real-time.html">
+            
+                <a href="../../step-by-step/basic-feathers/real-time.html">
+            
+                    
+                    Real-time
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../step-by-step/generators/readme.html">
+            
+                <a href="../../step-by-step/generators/readme.html">
+            
+                    
+                    Generators
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../../step-by-step/generators/app.html">
+            
+                <a href="../../step-by-step/generators/app.html">
+            
+                    
+                    Generating an app
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../../step-by-step/generators/service.html">
+            
+                <a href="../../step-by-step/generators/service.html">
+            
+                    
+                    Adding a service
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../step-by-step/what-next.html">
+            
+                <a href="../../step-by-step/what-next.html">
+            
+                    
+                    What next?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../step-by-step/production-ready.html">
+            
+                <a href="../../step-by-step/production-ready.html">
+            
+                    
+                    Is Feathers production ready?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../step-by-step/appendix/readme.html">
+            
+                <a href="../../step-by-step/appendix/readme.html">
+            
+                    
+                    Appendix
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="../../step-by-step/appendix/what-is-this.html">
+            
+                <a href="../../step-by-step/appendix/what-is-this.html">
+            
+                    
+                    What is 'this'?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../readme.html">
+            
+                <a href="../readme.html">
+            
+                    
+                    Writing a chat room app
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    Server
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="start-server.html">
+            
+                <a href="start-server.html">
+            
+                    
+                    Starting the server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.1.2" data-path="start-front-end.html">
+            
+                <a href="start-front-end.html">
+            
+                    
+                    Starting the front-end
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="finish-server.html">
+            
+                <a href="finish-server.html">
+            
+                    
+                    Finishing the server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="user-mgnt.html">
+            
+                <a href="user-mgnt.html">
+            
+                    
+                    User management
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Starting the front-end</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="starting-the-front-end">Starting the front-end</h1>
+<p>We&apos;re going to start writing an SPA client in plain JavaScript.
+Our goal is to get authentication working
+and to rerun the tests of the last section using the client.</p>
+<h2 id="working-example">Working example</h2>
+<p>| Server source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/b/src/index.js.js" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/b/src/index.js.js</a></p>
+<p>| Client HTML code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/b/public/socketio.html" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/b/public/socketio.html</a></p>
+<p>| Client source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/b/public/socketio-app.js" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/b/public/socketio-app.js</a></p>
+<p>| Start the server: <code>node ./examples/chat/server/b/src</code></p>
+<p>| Point the browser at: <code>//localhost:3030/socketio.html</code></p>
+<h2 id="client-html">Client HTML</h2>
+<p>The client HTML is similar to that used in
+<a href="../../step-by-step/basic-feathers/socket-client.html">Writing a Feathers Websocket Client</a>.</p>
+<p>The page is divided into 3 sections identified by ids <code>sign-up</code>, <code>sign-in</code> and <code>chat</code>.
+They contain what you would expect of them.</p>
+<pre><code class="lang-HTML"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;sign-up&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Sign up<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;email-signup&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;email: a@a.com&quot;</span> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;15&quot;</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;password-signup&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;password: a&quot;</span> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;15&quot;</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;signup-user&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Add user&quot;</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;to-signin-user&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Sign in&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;sign-in&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none;&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Sign in<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;email-signin&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;email: a@a.com&quot;</span> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;15&quot;</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;password-signin&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;password: a&quot;</span> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;15&quot;</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;signin-user&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Sign in&quot;</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;to-signup-user&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Sign up&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chat&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: none;&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Chat room<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;message&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;New message&quot;</span> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;30&quot;</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;send-message&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Send message&quot;</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;signout-user&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Sign out&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>The sign-up section is displayed initially.</p>
+<h2 id="router">Router</h2>
+<pre><code class="lang-javascript"><span class="hljs-comment">// DOM</span>
+handleClick(<span class="hljs-string">&apos;signup-user&apos;</span>, signUpUser);
+handleClick(<span class="hljs-string">&apos;signin-user&apos;</span>, signInUser);
+handleClick(<span class="hljs-string">&apos;signout-user&apos;</span>, signOutUser);
+handleClick(<span class="hljs-string">&apos;send-message&apos;</span>, sendMessage);
+handleClick(<span class="hljs-string">&apos;to-signin-user&apos;</span>, () =&gt; router(<span class="hljs-string">&apos;sign-in&apos;</span>));
+handleClick(<span class="hljs-string">&apos;to-signup-user&apos;</span>, () =&gt; router(<span class="hljs-string">&apos;sign-up&apos;</span>));
+
+<span class="hljs-keyword">const</span> els = {};
+[<span class="hljs-string">&apos;sign-up&apos;</span>, <span class="hljs-string">&apos;email-signup&apos;</span>, <span class="hljs-string">&apos;password-signup&apos;</span>, <span class="hljs-string">&apos;sign-in&apos;</span>, <span class="hljs-string">&apos;email-signin&apos;</span>, <span class="hljs-string">&apos;password-signin&apos;</span>, <span class="hljs-string">&apos;chat&apos;</span>, <span class="hljs-string">&apos;message&apos;</span>]
+  .forEach(id =&gt; els[id] = <span class="hljs-built_in">document</span>.getElementById(id));
+
+<span class="hljs-comment">// Routing</span>
+<span class="hljs-keyword">const</span> router = (newRoute) =&gt; {
+  els[<span class="hljs-string">&apos;sign-up&apos;</span>].style.display = newRoute === <span class="hljs-string">&apos;sign-up&apos;</span> ? <span class="hljs-string">&apos;block&apos;</span> : <span class="hljs-string">&apos;none&apos;</span>;
+  els[<span class="hljs-string">&apos;sign-in&apos;</span>].style.display = newRoute === <span class="hljs-string">&apos;sign-in&apos;</span> ? <span class="hljs-string">&apos;block&apos;</span> : <span class="hljs-string">&apos;none&apos;</span>;
+  els[<span class="hljs-string">&apos;chat&apos;</span>].style.display = newRoute === <span class="hljs-string">&apos;chat&apos;</span> ? <span class="hljs-string">&apos;block&apos;</span> : <span class="hljs-string">&apos;none&apos;</span>;
+};
+router(<span class="hljs-string">&apos;sign-up&apos;</span>);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleClick</span>(<span class="hljs-params">id, func</span>) </span>{
+  <span class="hljs-built_in">document</span>.getElementById(id).addEventListener(<span class="hljs-string">&apos;click&apos;</span>, func);
+}
+</code></pre>
+<ul>
+<li><p>The client source starts by defining event handlers for all the HTML buttons.</p>
+</li>
+<li><p>Our primitive SPA page router <code>router</code> displays the proper section for the next route.
+So when the button <code>to-signin-user</code>, the router is called to display the <code>sign-in</code> section.</p>
+</li>
+<li><p>The DOM nodes for the section <code>div</code> and <code>input</code> tags are gathered.</p>
+</li>
+</ul>
+<h2 id="feathers-events-on-the-client">Feathers events on the client</h2>
+<pre><code class="lang-javascript"><span class="hljs-comment">// Feathers</span>
+<span class="hljs-keyword">let</span> userList = [];
+
+app
+  .configure(feathers.hooks())
+  .configure(feathers.authentication({
+    storage: <span class="hljs-built_in">window</span>.localStorage
+  }));
+
+<span class="hljs-keyword">const</span> users = app.service(<span class="hljs-string">&apos;/users&apos;</span>);
+<span class="hljs-keyword">const</span> messages = app.service(<span class="hljs-string">&apos;/messages&apos;</span>);
+
+users.on(<span class="hljs-string">&apos;created&apos;</span>, () =&gt; getUserList());
+users.on(<span class="hljs-string">&apos;updated&apos;</span>, () =&gt; getUserList());
+users.on(<span class="hljs-string">&apos;patched&apos;</span>, () =&gt; getUserList());
+users.on(<span class="hljs-string">&apos;removed&apos;</span>, () =&gt; getUserList());
+
+messages.on(<span class="hljs-string">&apos;created&apos;</span>, message =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;message created&apos;</span>, message));
+messages.on(<span class="hljs-string">&apos;updated&apos;</span>, message =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;message updated&apos;</span>, message));
+messages.on(<span class="hljs-string">&apos;patched&apos;</span>, message =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;message patched&apos;</span>, message));
+messages.on(<span class="hljs-string">&apos;removed&apos;</span>, message =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;message removed&apos;</span>, message));
+</code></pre>
+<ul>
+<li><p><code>userList</code> will contain the users, once we ourselves are authenticated.</p>
+</li>
+<li><p>The Feathers client configuration is completed,
+and the services are defined.</p>
+</li>
+<li><p>This section consists mainly of service event handlers.
+<code>userList</code> is updated on every change in the users table.
+Information is logged every time there is a change in the messages table.</p>
+</li>
+</ul>
+<h2 id="feathers-events-on-the-server">Feathers events on the server</h2>
+<p>We don&apos;t want to send users or messages events to clients
+until they have authenticated their users.
+So we have to set up event filters on the server.</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// src/services/user/index.js</span>
+<span class="hljs-comment">// Send user events only to authenticated users. The remove hook already removed the password.</span>
+userService.filter((data, connection) =&gt; connection.user ? data : <span class="hljs-literal">false</span>);
+<span class="hljs-string">`
+</span></code></pre>
+<pre><code class="lang-javascript"><span class="hljs-comment">// src/services/message/index.js</span>
+<span class="hljs-comment">// Send message events only to authenticated users.</span>
+messageService.filter((data, connection) =&gt; connection.user ? data : <span class="hljs-literal">false</span>);
+<span class="hljs-string">`
+</span></code></pre>
+<h2 id="helpers-for-users">Helpers for users</h2>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">signUpUser</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> user = { email: els[<span class="hljs-string">&apos;email-signup&apos;</span>].value.trim(), password: els[<span class="hljs-string">&apos;password-signup&apos;</span>].value.trim() };
+
+  <span class="hljs-keyword">if</span> (!user.email || !user.password) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;ERROR: enter name, email and password&apos;</span>);
+    <span class="hljs-keyword">return</span>;
+  }
+
+  users.create(user)
+    .then(() =&gt; router(<span class="hljs-string">&apos;sign-in&apos;</span>))
+    .catch(err =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;ERROR creating user:&apos;</span>, err));
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">signInUser</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> email = els[<span class="hljs-string">&apos;email-signin&apos;</span>].value.trim();
+  <span class="hljs-keyword">const</span> password = els[<span class="hljs-string">&apos;password-signin&apos;</span>].value.trim();
+
+  <span class="hljs-keyword">if</span> (!email || !password) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;ERROR: enter email and password&apos;</span>);
+    <span class="hljs-keyword">return</span>;
+  }
+
+  app.authenticate({ type: <span class="hljs-string">&apos;local&apos;</span>, email, password })
+    .then(() =&gt; {
+      getUserList();
+      router(<span class="hljs-string">&apos;chat&apos;</span>);
+    })
+    .catch(err =&gt; <span class="hljs-built_in">console</span>.error(<span class="hljs-string">&apos;ERROR authenticating:&apos;</span>, err));
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">signOutUser</span>(<span class="hljs-params"></span>) </span>{
+  app.logout()
+    .then(() =&gt; router(<span class="hljs-string">&apos;sign-in&apos;</span>))
+    .catch(err =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;ERROR logging out:&apos;</span>, err));
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getUserList</span>(<span class="hljs-params"></span>) </span>{
+  users.find()
+    .then(results =&gt; {
+      userList = results.data;
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Users in chat\n&apos;</span>, results.data.map(user =&gt; user.email));
+    });
+}
+</code></pre>
+<ul>
+<li><p><code>signUpUser</code> is called when <code>signup-user</code> is clicked.
+It adds a user item, and then displays the <code>sign-in</code> section.</p>
+</li>
+<li><p><code>signInUser</code> is called when <code>signin-user</code> is clicked.
+It authenticates the user and, when successful,
+gets the current <code>userList</code>.
+Finally it displays the <code>chat</code> section.</p>
+</li>
+<li><p><code>signOutUser</code> is called when <code>signout-user</code> is clicked.
+It logs the user off and then displays the <code>sign-in</code> section.</p>
+</li>
+<li><p><code>getUserList</code> reads all the user items.</p>
+</li>
+</ul>
+<h2 id="helpers-for-messages">Helpers for messages</h2>
+<pre><code class="lang-javascript`">function sendMessage() {
+  const message = { text: els[&apos;message&apos;].value.trim() };
+
+  if (!message.text) {
+    console.log(&apos;ERROR: enter message&apos;);
+    return;
+  }
+
+  messages.create(message)
+    .then(() =&gt; els[&apos;message&apos;].value = &apos;&apos;)
+    .catch(err =&gt; console.log(&apos;ERROR creating message:&apos;, err));
+}
+</code></pre>
+<ul>
+<li><code>sendMessage</code> add the new message to the messages table.
+This will cause that message to be sent to all connected clients
+by the messages real-time event.</li>
+</ul>
+<h2 id="running-the-client">Running the client</h2>
+<p>That&apos;s really all we need for the client at this time.</p>
+<p>Start the server in one terminal with <code>node ./examples/chat/server/b/src</code>.
+It will display:</p>
+<pre><code class="lang-text">feathers-an-introduction$ node ./examples/chat/server/b/src
+Feathers application started on localhost:3030
+messages table cleared.
+users table cleared.
+</code></pre>
+<p>Point the browser at: <code>//localhost:3030/socketio.html</code>.</p>
+<ul>
+<li>Sign up page:<ul>
+<li>Enter <code>ying@qq.cn</code> for the email.</li>
+<li>Enter <code>ying123</code> for the password.</li>
+<li>Click <code>Add user</code></li>
+</ul>
+</li>
+<li>Sign in page:<ul>
+<li>Enter <code>ying@qq.cn</code> for the email.</li>
+<li>Enter <code>ying123</code> for the password.</li>
+<li>Click <code>Sign in</code></li>
+</ul>
+</li>
+<li>Chat page:<ul>
+<li>Enter <code>&#x65B0;&#x5E74;&#x5FEB;&#x6A02;</code> (Happy New Year in Chinese) for the text.</li>
+<li>Click <code>Send message</code>.</li>
+</ul>
+</li>
+</ul>
+<p>The console will display</p>
+<pre><code class="lang-text">Users in chat
+[&quot;ying@qq.cn&quot;]
+message created
+{ _id: &quot;Wvm38PB310eykSSB&quot;,
+  text: &quot;&#x65B0;&#x5E74;&#x5FEB;&#x6A02;&quot; }
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="start-server.html" class="navigation navigation-prev " aria-label="Previous page: Starting the server">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="finish-server.html" class="navigation navigation-next " aria-label="Next page: Finishing the server">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Starting the front-end","level":"1.3.1.2","depth":3,"next":{"title":"Finishing the server","level":"1.3.1.3","depth":3,"path":"chat/server/finish-server.md","ref":"chat/server/finish-server.md","articles":[]},"previous":{"title":"Starting the server","level":"1.3.1.1","depth":3,"path":"chat/server/start-server.md","ref":"chat/server/start-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors"],"pluginsConfig":{"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"feathers-collapsible-menu":{},"heading-anchors":{},"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"chat/server/start-front-end.md","mtime":"2017-01-03T15:56:08.558Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-03T18:06:31.413Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-feathers-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/1.2.1/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-heading-anchors/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

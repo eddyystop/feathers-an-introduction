@@ -49,7 +49,7 @@ function user() {
 
 function userModel() {
   return new NeDB({
-    filename: path.join('examples', 'data', 'users.db'),
+    filename: path.join('examples', 'step', 'data', 'users.db'),
     autoload: true
   });
 }

@@ -21,4 +21,9 @@
     * [Is Feathers production ready?](step-by-step/production-ready.md)
     * [Appendix](step-by-step/appendix/readme.md)
         * [What is 'this'?](step-by-step/appendix/what-is-this.md)
-* [Feathers Pa]
+* [Writing a chat room app](chat/readme.md)
+    * [Server](chat/server/readme.md)
+        * [Starting the server](chat/server/start-server.md)
+        * [Starting the front-end](chat/server/start-front-end.md)
+        * [Finishing the server](chat/server/finish-server.md)
+        * [User management](chat/server/user-mgnt.md)
