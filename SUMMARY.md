@@ -27,3 +27,8 @@
         * [Starting the front-end](chat/server/start-front-end.md)
         * [Finishing the server](chat/server/finish-server.md)
         * [User management](chat/server/user-mgnt.md)
+    * [Client](chat/client/readme.md)
+        * [jQuery client](chat/client/jQuery.md)
+        * [OAuth jQuery client](chat/client/oauth.md)
+        * [Clients for other frameworks](chat/client/other-clients.md)
+        

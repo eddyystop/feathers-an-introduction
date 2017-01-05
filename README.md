@@ -69,7 +69,7 @@ Working examples reduce these problems,
 as well as letting you learn more by modifying them yourself.
 
 The guides go into details about how each example was created.
-You can recreate the themselves yourself if that helps your learning process.
+You can recreate the process yourself if that helps your learning process.
 Create a folder called, say, `copy-an-introduction` with a subfolder `examples/`.
 You can run the same commands as mentioned in the guide
 and (hopefully!) get the same results.
