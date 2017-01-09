@@ -17,9 +17,9 @@ xxxxxxxxxxxxxxxxxxxxxxx
 [import:'marker1'](js3.js)
 
 aaa
-[-u diff](/examples/step/01/diff-u.md)
+[-u diff](../../examples/step/01/diff.html)
 bbb
-[-y diff](/examples/step/01/diff-y.md)
+[-y diff](../../examples/step/01/diff-side.html)
 ccc
 
 
