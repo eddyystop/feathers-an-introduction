@@ -36,34 +36,17 @@ This'll help prevent confusion should the server be started multiple times.
 // examples/chat/server/a/src/app.js
 app.service('/users').remove(null)
   .then(() => console.log('users table cleared.'))
-  .catch(err => {
-    if (err.className !== 'not-found') {
-      console.log('ERROR clearing users table:', err);
-    }
-  });
+  .catch(err => console.log('ERROR clearing users table:', err));
 
 app.service('/messages').remove(null)
   .then(() => console.log('messages table cleared.'))
-  .catch(err => {
-    if (err.className !== 'not-found') {
-      console.log('ERROR clearing messages table:', err);
-    }
-  });
+  .catch(err => console.log('ERROR clearing messages table:', err));
 ```
 
-The `service.remove(null)` deletes all that service's items.
+- `service.remove(null)` deletes all of that service's items.
 
 > **Remove.** You have to be careful not to accidentally pass `null`.
 One way to protect yourself is by using a before hook that throws on `null`.
-
-> **Feathers errors.** Feathers
-[handles errors](https://docs.feathersjs.com/v/auk/middleware/error-handling.html)
-cleanly.
-One of the things it does is return a `className` on the `error` object
-which indicates the type of error which occurred.
-That lets you check error types without resorting to the risky alternative
-of comparing to `error.message`.
-In this case, we will not log an error if there were no items to delete.
 
 ## Running the server
 

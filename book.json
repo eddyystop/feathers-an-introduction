@@ -4,7 +4,8 @@
   },
   "plugins": [
     "feathers-collapsible-menu",
-    "heading-anchors"
+    "heading-anchors",
+    "include-codeblock"
   ],
   "pluginsConfig": {
     "lunr": {

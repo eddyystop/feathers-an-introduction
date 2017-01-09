@@ -108,6 +108,25 @@ We issue a find for the entire table and print the results.
 i.e. for the find to finish.
 The zero, one or more items found in the table are returned in the `results` param.
 
+## Service methods
+
+Feathers provides the following service methods:
+```javascript
+find(params)
+get(id, params)
+create(data, params)
+update(id, data, params)
+patch(id, data, params)
+remove(id, params)
+```
+
+`params` may be `{ query: { ... }, ... }` for `find`,
+and for `remove` if `id` is `null`.
+
+
+#### 
+## Results
+
 The server console displays:
 
 ```text

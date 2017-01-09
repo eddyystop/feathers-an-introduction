@@ -92,10 +92,14 @@ If the original call was made from, say, a Socketio client,
 we `get` the message looking like a Socketio client.
 This way all message hooks will treat the `get` properly for that context.
 
-- [`feathers-errors`](https://docs.feathersjs.com/v/auk/middleware/error-handling.html)
-makes it simple to properly format the error object.
-The error, in this case, is formatted as an authentication error,
-and one of things `feathers-errors` does is set `error.className` properly.
+> **Feathers errors.** Feathers
+[handles errors](https://docs.feathersjs.com/v/auk/middleware/error-handling.html)
+cleanly.
+One of the things it does is return a `className` on the `error` object
+which indicates the type of error which occurred.
+That lets you check error types without resorting to the risky alternative
+of comparing to `error.message`.
+In this case, `className` will be `notAuthenticated`.
 
 ## Processing messages
 
@@ -187,6 +191,42 @@ exports.before = {
 - The [`dePopulate`](https://docs.feathersjs.com/v/auk/hooks/common/populate.html#depopulate) hook
 removes all joined iitem from a base record.
 - We preform it before running the update and patch methods.
+
+## Running different hooks for server calls than for client ones
+
+You won't always want the same hooks to be executed.
+You may, for example, remove some properties before handing results to a client
+because of security considerations.
+However you usually won't have these security issues if the service call is
+being made on the server.
+
+> **Conditional hooks.** Feathers
+
+> **Different hooks for different folks.**
+You should develop the habit of reviewing which hooks you want to run
+for the client, then which you want to run for the server.
+This habit will save you having to track down unexpected behaviors.
+
+We want a client to be able to only remove its own user's messages,
+but we must allow the server to remove them all
+as we erase the databases in `src/app.js` before we start the server.
+ 
+```javascript
+const restrictToSenderOrServer = when(isProvider('external'), restrictToSender());
+
+exports.before = {
+  update: [ dePopulate(), restrictToSender() ],
+  patch: [ dePopulate(), restrictToSender() ],
+  remove: [ restrictToSenderOrServer ]
+};
+```
+
+- `isProvider('external')` is true if the service call was not made by the server.
+- `restrictToSender()` is the hook we created above.
+It throws if the user did not create the message.
+- `when` runs `restrictToSender()` if the service call was not made by the server.
+- `restrictToSenderOrServer` - As you can see, hooks are just functions
+and they can be manipulated with code.
 
 ## The results
 

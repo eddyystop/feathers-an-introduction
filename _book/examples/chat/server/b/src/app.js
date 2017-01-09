@@ -33,18 +33,10 @@ app.use(compress())
 
 app.service('/users').remove(null)
   .then(() => console.log('users table cleared.'))
-  .catch(err => {
-    if (err.className !== 'not-found') {
-      console.log('ERROR clearing users table:', err);
-    }
-  });
+  .catch(err => console.log('ERROR clearing users table:', err));
 
 app.service('/messages').remove(null)
   .then(() => console.log('messages table cleared.'))
-  .catch(err => {
-    if (err.className !== 'not-found') {
-      console.log('ERROR clearing messages table:', err);
-    }
-  });
+  .catch(err => console.log('ERROR clearing messages table:', err));
 
 module.exports = app;

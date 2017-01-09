@@ -94,5 +94,7 @@
               text: "新年快樂" }
 - d
     - discuss feathers-authentication-management
+    
+- webpack with client code
 
 = should generate app ask if to add feathers-authentication-management on local auth?

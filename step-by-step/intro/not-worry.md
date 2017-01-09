@@ -9,7 +9,7 @@ At worst, it shouldn't take more than 30 minutes to switch your app from one dat
 - **Authentication.**
 Feathers authentication wraps Passport so Feathers can do anything Passport does.
 - **How do I use Feathers with React, Angular, Vue?**
-These are covered in the companion guide [Feathers Patterns](/patterns/readme.md).
+These are covered in the companion guide [Feathers Recipes](/recipes/readme.md).
 - **Is Feathers production ready? Is it scable?** Yes, and yes.
 These's detailed information below.
 - **Javascript Promises.**

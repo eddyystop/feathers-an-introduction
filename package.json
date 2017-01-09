@@ -38,8 +38,7 @@
       "mocha"
     ]
   },
-  "directories": {
-  },
+  "directories": {},
   "dependencies": {
     "ajv": "4.10.1",
     "body-parser": "1.15.2",
@@ -58,6 +57,7 @@
     "feathers-socketio": "1.4.2",
     "gitbook-plugin-feathers-collapsible-menu": "^1.0.2",
     "gitbook-plugin-heading-anchors": "^1.0.3",
+    "gitbook-plugin-include-codeblock": "2.2.0",
     "nedb": "1.8.0",
     "passport": "0.3.2",
     "serve-favicon": "2.3.2",
@@ -65,7 +65,6 @@
   },
   "devDependencies": {
     "gitbook-cli": "^2.3.0",
-    "rimraf": "2.5.4",
     "semistandard": "9.2.1"
   }
 }

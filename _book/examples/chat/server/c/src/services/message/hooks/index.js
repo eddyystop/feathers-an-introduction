@@ -9,6 +9,8 @@ const hooks = require('feathers-hooks');
 const auth = require('feathers-authentication').hooks;
 const { setCreatedAt, populate, dePopulate, serialize } = require('feathers-hooks-common');
 
+const restrictToSenderOrServer = when(isProvider('external'), restrictToSender());
+
 const populateSchema = {
   include: [{
     service: 'users',
@@ -36,7 +38,7 @@ exports.before = {
   create: [ process(), setCreatedAt() ],
   update: [ dePopulate(), restrictToSender() ],
   patch: [ dePopulate(), restrictToSender() ],
-  remove: [ restrictToSender() ]
+  remove: [ restrictToSenderOrServer ]
 };
 
 exports.after = {
