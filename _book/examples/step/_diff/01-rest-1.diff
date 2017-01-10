@@ -9,24 +9,20 @@
  const NeDB = require('nedb');
  const path = require('path');
 -const feathers = require('feathers');
-+
- const service = require('feathers-nedb');
+-const service = require('feathers-nedb');
 -//! [dependencies]
-+const rest = require('feathers-rest');
  
 -/// [feathers]
 -const app = feathers()
 -  .configure(services);
 -//! [feathers]
-+const expressServerConfig = require('../common/expressServerConfig');
-+const expressMiddleware = require('../common/expressMiddleware');
++const service = require('feathers-nedb');
++const rest = require('feathers-rest');
  
 -/// [create]
 -const users = app.service('users');
-+const app = expressServerConfig()
-+  .configure(rest())
-+  .configure(services)
-+  .configure(expressMiddleware);
++const expressServerConfig = require('../common/expressServerConfig');
++const expressMiddleware = require('../common/expressMiddleware');
  
 -Promise.all([
 -  users.create({ email: 'jane.doe@gmail.com', password: 'X2y6', role: 'admin' }),
@@ -39,7 +35,11 @@
 -    console.log('created Jane Doe item\n', results[0]);
 -    console.log('created John Doe item\n', results[1]);
 -    console.log('created Judy Doe item\n', results[2]);
--    
++const app = expressServerConfig()
++  .configure(rest())
++  .configure(services)
++  .configure(expressMiddleware);
+     
 -    users.find()
 -      .then(results => console.log('find all items\n', results))
 -  })

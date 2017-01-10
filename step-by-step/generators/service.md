@@ -21,6 +21,7 @@ and
 
 We copied examples/step/02/app/ to examples/step/02/service/.
 We then ran `feathers generate service`:
+
 ![generate service teams](../assets/generate-service-teams.jpg)
 ```text
 feathers-an-introduction$ cd ./examples/step/02/service
@@ -35,7 +36,7 @@ Does your service require users to be authenticated? Y (enter)
 Once again we remove the dependencies loaded by the generator
 as they are already installed at the root of `feathers-an-introduction`.
 
-View changes made this made:
+View the changes the service generator made:
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app1-line.html)
 |
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app1-side.html)
@@ -69,8 +70,8 @@ The team items contains the `user._id` of the team members.
 
 ## Populating items
 
+Let's add some hooks to for teams in
 [service/src/services/teams/hooks/index.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/service/src/services/teams/hooks/index.js)
-contains
 
 ```javascript
 const { populate, serialize } = require('feathers-hooks-common');
@@ -187,12 +188,10 @@ the dePopulate() hook will remove all joined and calculated properties for you.
 
 ## Recap
 
-Let's identify all the changes resulting from running `feathers generate service`,
-and making the changes above:
-[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-service-line.html)
+Let's recap the changes we made to the generated service:
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-service-teams-hooks)
 |
-[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-service-side.html)
-
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-service-teams-hooks)
 ## The results
 
 The browser console displays the following:

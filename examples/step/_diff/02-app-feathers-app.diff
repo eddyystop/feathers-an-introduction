@@ -11,12 +11,8 @@
  let jackId;
  const users = feathersClient.service('/users');
  
-@@ -13,17 +19,21 @@
-     console.log('created John Doe item\n', results[1]);
-     console.log('created Judy Doe item\n', results[2]);
-     console.log('created Jack Doe item\n', results[3]);
--  
-+    
+@@ -16,14 +22,18 @@
+   
      jackId = results[3]._id;
      
 -    return users.remove(jackId)
@@ -27,12 +23,11 @@
 -      .then(results => {
 -        console.log('find all items\n', results);
 -        console.log((results || []).length, 'items returned.');
--      })
 +    return feathersClient.authenticate({
 +      type: 'local',
 +      'email': 'jane.doe@gmail.com',
 +      'password': '11111'
-+    })
+       })
 +      .then(() => console.log('\nAuthenticated successfully.\n '))
 +      .catch(err => console.error('\nError authenticating:', err));
    })

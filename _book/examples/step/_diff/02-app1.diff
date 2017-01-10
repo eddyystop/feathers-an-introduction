@@ -1,11 +1,11 @@
-diff -dur --new-file 02/app/index.js.diff 02/app1/index.js.diff
+diff -bdur --new-file 02/app/index.js.diff 02/app1/index.js.diff
 --- 02/app/index.js.diff	2017-01-10 15:39:45.855469000 -0500
 +++ 02/app1/index.js.diff	1969-12-31 19:00:00.000000000 -0500
 @@ -1,3 +0,0 @@
 -Only in 02/app/config: default.json
 -Only in 02/app/config: production.json
 -Only in 02/app/data: users.db
-diff -dur --new-file 02/app/index.js-line.html 02/app1/index.js-line.html
+diff -bdur --new-file 02/app/index.js-line.html 02/app1/index.js-line.html
 --- 02/app/index.js-line.html	2017-01-10 15:39:46.935469000 -0500
 +++ 02/app1/index.js-line.html	1969-12-31 19:00:00.000000000 -0500
 @@ -1,44 +0,0 @@
@@ -53,7 +53,7 @@ diff -dur --new-file 02/app/index.js-line.html 02/app1/index.js-line.html
 -</div>
 -</body>
 -</html>
-diff -dur --new-file 02/app/index.js-side.html 02/app1/index.js-side.html
+diff -bdur --new-file 02/app/index.js-side.html 02/app1/index.js-side.html
 --- 02/app/index.js-side.html	2017-01-10 15:39:48.111469000 -0500
 +++ 02/app1/index.js-side.html	1969-12-31 19:00:00.000000000 -0500
 @@ -1,44 +0,0 @@
@@ -101,26 +101,22 @@ diff -dur --new-file 02/app/index.js-side.html 02/app1/index.js-side.html
 -</div>
 -</body>
 -</html>
-diff -dur --new-file 02/app/src/services/index.js 02/app1/src/services/index.js
+diff -bdur --new-file 02/app/src/services/index.js 02/app1/src/services/index.js
 --- 02/app/src/services/index.js	2016-12-23 17:38:02.716000000 -0500
 +++ 02/app1/src/services/index.js	2017-01-10 15:55:18.811469000 -0500
-@@ -1,11 +1,13 @@
+@@ -1,4 +1,5 @@
  'use strict';
 +const teams = require('./teams');
  const authentication = require('./authentication');
  const user = require('./user');
  
- module.exports = function() {
-   const app = this;
--  
--  
-+
-+
+@@ -8,4 +9,5 @@
+   
    app.configure(authentication);
    app.configure(user);
 +  app.configure(teams);
  };
-diff -dur --new-file 02/app/src/services/teams/hooks/index.js 02/app1/src/services/teams/hooks/index.js
+diff -bdur --new-file 02/app/src/services/teams/hooks/index.js 02/app1/src/services/teams/hooks/index.js
 --- 02/app/src/services/teams/hooks/index.js	1969-12-31 19:00:00.000000000 -0500
 +++ 02/app1/src/services/teams/hooks/index.js	2017-01-10 15:55:18.871469000 -0500
 @@ -0,0 +1,29 @@
@@ -153,7 +149,7 @@ diff -dur --new-file 02/app/src/services/teams/hooks/index.js 02/app1/src/servic
 +  patch: [],
 +  remove: []
 +};
-diff -dur --new-file 02/app/src/services/teams/index.js 02/app1/src/services/teams/index.js
+diff -bdur --new-file 02/app/src/services/teams/index.js 02/app1/src/services/teams/index.js
 --- 02/app/src/services/teams/index.js	1969-12-31 19:00:00.000000000 -0500
 +++ 02/app1/src/services/teams/index.js	2017-01-10 15:55:18.867469000 -0500
 @@ -0,0 +1,35 @@
@@ -192,7 +188,7 @@ diff -dur --new-file 02/app/src/services/teams/index.js 02/app1/src/services/tea
 +  // Set up our after hooks
 +  teamsService.after(hooks.after);
 +};
-diff -dur --new-file 02/app/test/services/teams/index.test.js 02/app1/test/services/teams/index.test.js
+diff -bdur --new-file 02/app/test/services/teams/index.test.js 02/app1/test/services/teams/index.test.js
 --- 02/app/test/services/teams/index.test.js	1969-12-31 19:00:00.000000000 -0500
 +++ 02/app1/test/services/teams/index.test.js	2017-01-10 15:55:18.875469000 -0500
 @@ -0,0 +1,10 @@
