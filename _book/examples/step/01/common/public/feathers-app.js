@@ -14,6 +14,8 @@ Promise.all([
     console.log('created Jack Doe item\n', results[3]);
   
     const jackId = results[3]._id;
+  
+    // remove user
     return users.remove(jackId)
       .then(results => console.log('deleted Jack Doe item\n', results));
   })

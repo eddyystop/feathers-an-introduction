@@ -20,8 +20,9 @@ Promise.all([
     console.log('created Judy Doe item\n', results[2]);
     console.log('created Jack Doe item\n', results[3]);
     
-    jackId = results[3]._id; // This way is not elegant but easy to understand.
+    jackId = results[3]._id;
     
+    // authenticate
     return feathersClient.authenticate({
       type: 'local',
       'email': 'jane.doe@gmail.com',
@@ -30,6 +31,8 @@ Promise.all([
       .then(() => console.log('\nAuthenticated successfully.\n '))
       .catch(err => console.error('\nError authenticating:', err));
   })
+  
+  // remove user
   .then(() => users.remove(jackId)
     .then(results => console.log('deleted Jack Doe item\n', results))
   )

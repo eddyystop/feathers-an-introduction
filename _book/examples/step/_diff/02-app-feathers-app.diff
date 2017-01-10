@@ -1,5 +1,5 @@
---- 01/common/public/feathers-app.js	2017-01-10 12:33:46.860253713 -0500
-+++ 02/app/public/feathers-app.js	2017-01-10 14:53:22.411805661 -0500
+--- 01/common/public/feathers-app.js	2017-01-10 15:01:48.650126825 -0500
++++ 02/app/public/feathers-app.js	2017-01-10 15:01:48.757769352 -0500
 @@ -1,4 +1,11 @@
  
 +feathersClient
@@ -12,12 +12,14 @@
  const users = feathersClient.service('/users');
  
  Promise.all([
-@@ -12,16 +19,21 @@
+@@ -12,18 +19,24 @@
      console.log('created John Doe item\n', results[1]);
      console.log('created Judy Doe item\n', results[2]);
      console.log('created Jack Doe item\n', results[3]);
 -  
 -    const jackId = results[3]._id;
+-  
+-    // remove user
 -    return users.remove(jackId)
 -      .then(results => console.log('deleted Jack Doe item\n', results));
 -  })
@@ -28,8 +30,9 @@
 -        console.log((results || []).length, 'items returned.');
 -      })
 +    
-+    jackId = results[3]._id; // This way is not elegant but easy to understand.
++    jackId = results[3]._id;
 +    
++    // authenticate
 +    return feathersClient.authenticate({
 +      type: 'local',
 +      'email': 'jane.doe@gmail.com',
@@ -38,6 +41,8 @@
 +      .then(() => console.log('\nAuthenticated successfully.\n '))
 +      .catch(err => console.error('\nError authenticating:', err));
    })
++  
++  // remove user
 +  .then(() => users.remove(jackId)
 +    .then(results => console.log('deleted Jack Doe item\n', results))
 +  )
