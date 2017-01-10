@@ -1,22 +1,27 @@
---- 01/db-connector/1.js	2017-01-01 10:39:28.194841475 -0500
+--- 01/db-connector/1.js	2017-01-10 09:13:09.715324613 -0500
 +++ 01/rest/1.js	2017-01-01 10:39:28.514064345 -0500
-@@ -1,31 +1,22 @@
+@@ -1,40 +1,23 @@
  
 -// Example - Create service on server with NeDB database
 +// Example - Create REST API
  
+-/// [dependencies]
  const NeDB = require('nedb');
  const path = require('path');
- 
 -const feathers = require('feathers');
++
  const service = require('feathers-nedb');
+-//! [dependencies]
 +const rest = require('feathers-rest');
  
+-/// [feathers]
 -const app = feathers()
 -  .configure(services);
+-//! [feathers]
 +const httpServerConfig = require('../common/httpServerConfig');
 +const middleware = require('../common/middleware');
  
+-/// [create]
 -const users = app.service('users');
 +const app = httpServerConfig()
 +  .configure(rest())
@@ -28,6 +33,8 @@
 -  users.create({ email: 'john.doe@gmail.com', password: 'i6He', role: 'user' }),
 -  users.create({ email: 'judy.doe@gmail.com', password: '7jHw', role: 'user' })
 -])
+-//! [create]
+-/// [results]
 -  .then(results => {
 -    console.log('created Jane Doe item\n', results[0]);
 -    console.log('created John Doe item\n', results[1]);
@@ -37,8 +44,16 @@
 -      .then(results => console.log('find all items\n', results))
 -  })
 -  .catch(err => console.log('Error occurred:', err));
+-//! [results]
 +const server = app.listen(3030);
 +server.on('listening', () => console.log(`Feathers application started on port 3030`));
  
+-/// [services]
  function services() {
    this.use('/users', service({ Model: userModel() }));
+ }
+@@ -45,4 +28,3 @@
+     autoload: true
+   });
+ }
+-//! [services]

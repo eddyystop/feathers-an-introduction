@@ -15,7 +15,7 @@ Everything we mention in this guide is applicable to all of them.
 
 ## Working example
 
-| Source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/db-connector/1.js
+| Source code: [db-connector/1.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/db-connector/1.js)
 
 | Run it: `node ./examples/step/01/db-connector/1`
 
@@ -37,7 +37,7 @@ Now you can see where Feathers got its name.
 #### We start an instance of Feathers and define its services.
 [import:'feathers'](../../examples/step/01/db-connector/1.js)
 
-users is the only service we need  and its a database table located at `xamples/step/data/users.db.
+users is the only service we need  and its a database table located at examples/step/data/users.db.
 [import:'services'](../../examples/step/01/db-connector/1.js)
 
 #### Create 3 users using Promises.

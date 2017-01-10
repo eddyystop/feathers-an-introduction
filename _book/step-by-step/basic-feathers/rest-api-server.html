@@ -630,27 +630,32 @@ Future versions will support multiple frameworks, starting with
 <a href="https://github.com/koajs/koa" target="_blank">koa</a>.</p>
 </blockquote>
 <h2 id="working-example">Working example</h2>
-<p>| Source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/b/1.js" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/b/1.js</a></p>
-<p>| Run it: <code>node ./examples/step/01/b/1</code></p>
+<p>| Source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/1.js" target="_blank">rest/1.js.</a></p>
+<p>| Run it: <code>node ./examples/step/01/rest/1</code></p>
 <h2 id="implementing-a-rest-api-server">Implementing a REST API server</h2>
 <p>This is our previous example with the database method calls removed,
 and with an Express server added.</p>
-<p>| View complete file <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/b/1.js" target="_blank">b/1.js.</a>
-View changes from file a/1.js:
-<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-b-1-line.html" target="_blank">Unified</a>
+<p>| View complete file <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/1.js" target="_blank">rest/1.js.</a>
+View changes from file db-connector/1.js:
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-1-line.html" target="_blank">Unified</a>
 |
-<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-b-1-side.html" target="_blank">Split</a></p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> NeDB = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;nedb&apos;</span>);
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-1-side.html" target="_blank">Split</a></p>
+<pre><code class="lang-javascript">
+<span class="hljs-comment">// Example - Create REST API</span>
+
+<span class="hljs-keyword">const</span> NeDB = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;nedb&apos;</span>);
 <span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>);
+
 <span class="hljs-keyword">const</span> service = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;feathers-nedb&apos;</span>);
 <span class="hljs-keyword">const</span> rest = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;feathers-rest&apos;</span>);
-<span class="hljs-keyword">const</span> httpServerConfig = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;../common/httpServerConfig&apos;</span>);
-<span class="hljs-keyword">const</span> middleware = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;../common/middleware&apos;</span>);
 
-<span class="hljs-keyword">const</span> app = httpServerConfig()
+<span class="hljs-keyword">const</span> expressServerConfig = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;../common/expressServerConfig&apos;</span>);
+<span class="hljs-keyword">const</span> expressMiddleware = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;../common/expressMiddleware&apos;</span>);
+
+<span class="hljs-keyword">const</span> app = expressServerConfig()
   .configure(rest())
   .configure(services)
-  .configure(middleware);
+  .configure(expressMiddleware);
 
 <span class="hljs-keyword">const</span> server = app.listen(<span class="hljs-number">3030</span>);
 server.on(<span class="hljs-string">&apos;listening&apos;</span>, () =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Feathers application started on port 3030`</span>));
@@ -661,13 +666,14 @@ server.on(<span class="hljs-string">&apos;listening&apos;</span>, () =&gt; <span
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">userModel</span>(<span class="hljs-params"></span>) </span>{
   <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> NeDB({
-    filename: path.join(<span class="hljs-string">&apos;examples&apos;</span>, <span class="hljs-string">&apos;data&apos;</span>, <span class="hljs-string">&apos;users.db&apos;</span>),
+    filename: path.join(<span class="hljs-string">&apos;examples&apos;</span>, <span class="hljs-string">&apos;step&apos;</span>, <span class="hljs-string">&apos;data&apos;</span>, <span class="hljs-string">&apos;users.db&apos;</span>),
     autoload: <span class="hljs-literal">true</span>
   });
 }
 </code></pre>
-<p>The Express server is configured as follows.</p>
-<pre><code class="lang-javascript"><span class="hljs-comment">// ../common/httpServerConfig</span>
+<p>The <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/expressServerConfig.js" target="_blank">Express server</a>
+is configured as follows.</p>
+<pre><code class="lang-javascript">
 <span class="hljs-keyword">const</span> bodyParser = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;body-parser&apos;</span>);
 <span class="hljs-keyword">const</span> compress = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;compression&apos;</span>);
 <span class="hljs-keyword">const</span> cors = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;cors&apos;</span>);
@@ -675,7 +681,6 @@ server.on(<span class="hljs-string">&apos;listening&apos;</span>, () =&gt; <span
 <span class="hljs-keyword">const</span> feathers = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;feathers&apos;</span>);
 
 <span class="hljs-built_in">module</span>.exports = () =&gt; {
-  <span class="hljs-comment">// do the HTTP server part of the config</span>
   <span class="hljs-keyword">const</span> app = feathers()
     .use(compress())
     .options(<span class="hljs-string">&apos;*&apos;</span>, cors())
@@ -687,8 +692,10 @@ server.on(<span class="hljs-string">&apos;listening&apos;</span>, () =&gt; <span
   <span class="hljs-keyword">return</span> app;
 };
 </code></pre>
-<p>The Express middleware handles logging, pages not found, and general errors.</p>
-<pre><code class="lang-javascript"><span class="hljs-comment">// ../common/middleware</span>
+<p>The <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/expressMiddleware/index.js" target="_blank">Express middleware</a>
+handles logging, pages not found, and general errors.</p>
+<pre><code class="lang-javascript"><span class="hljs-meta">&apos;use strict&apos;</span>;
+
 <span class="hljs-keyword">const</span> handler = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;feathers-errors/handler&apos;</span>);
 <span class="hljs-keyword">const</span> notFound = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./not-found-handler&apos;</span>);
 <span class="hljs-keyword">const</span> logger = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./logger&apos;</span>);
@@ -708,16 +715,19 @@ They have little to do with Feathers other than to feed REST requests to it.</p>
 <h2 id="running-the-server">Running the server</h2>
 <p>We can now made REST API calls to the server.</p>
 <p>In the previous example we created 3 user items and then printed the user file.
-We can now do the same thing, but using REST, with the following
-<a href="http://www.slashroot.in/curl-command-tutorial-linux-example-usage" target="_blank">curl</a>
-commands:</p>
-<pre><code class="lang-text">curl -H &quot;Content-Type: application/json&quot; -X POST -d &apos;{&quot;email&quot;:&quot;jane.doe@gmail.com&quot;,&quot;password&quot;:&quot;X2y6&quot;,&quot;role&quot;:&quot;admin&quot;}&apos; http://localhost:3030/users
-curl -H &quot;Content-Type: application/json&quot; -X POST -d &apos;{&quot;email&quot;:&quot;john.doe@gmail.com&quot;,&quot;password&quot;:&quot;i6He&quot;,&quot;role&quot;:&quot;user&quot;}&apos; http://localhost:3030/users
-curl -H &quot;Content-Type: application/json&quot; -X POST -d &apos;{&quot;email&quot;:&quot;judy.doe@gmail.com&quot;,&quot;password&quot;:&quot;7jHw&quot;,&quot;role&quot;:&quot;user&quot;}&apos; http://localhost:3030/users
+We can now do the same thing, but using REST, with
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/curl-requests.sh" target="_blank">curl commands:</a></p>
+<pre><code class="lang-sh"><span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;\nPOST Jane Doe\n&quot;</span>
+curl -H <span class="hljs-string">&quot;Content-Type: application/json&quot;</span> -X POST <span class="hljs-_">-d</span> <span class="hljs-string">&apos;{&quot;email&quot;:&quot;jane.doe@gmail.com&quot;,&quot;password&quot;:&quot;X2y6&quot;,&quot;role&quot;:&quot;admin&quot;}&apos;</span> http://localhost:3030/users
+<span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;\nPOST John Doe\n&quot;</span>
+curl -H <span class="hljs-string">&quot;Content-Type: application/json&quot;</span> -X POST <span class="hljs-_">-d</span> <span class="hljs-string">&apos;{&quot;email&quot;:&quot;john.doe@gmail.com&quot;,&quot;password&quot;:&quot;i6He&quot;,&quot;role&quot;:&quot;user&quot;}&apos;</span> http://localhost:3030/users
+<span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;\nPOST Judy Doe\n&quot;</span>
+curl -H <span class="hljs-string">&quot;Content-Type: application/json&quot;</span> -X POST <span class="hljs-_">-d</span> <span class="hljs-string">&apos;{&quot;email&quot;:&quot;judy.doe@gmail.com&quot;,&quot;password&quot;:&quot;7jHw&quot;,&quot;role&quot;:&quot;user&quot;}&apos;</span> http://localhost:3030/users
+<span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;\nGET all users\n&quot;</span>
 curl -X GET http://localhost:3030/users
 </code></pre>
-<p>Run them with <code>./examples/step/01/b/curl-requests.sh</code> and the following is displayed:</p>
-<pre><code class="lang-text">feathers-an-introduction$ ./examples/step/01/b/curl-requests.sh
+<p>Run them with <code>./examples/step/01/rest/curl-requests.sh</code> and the following is displayed:</p>
+<pre><code class="lang-text">feathers-an-introduction$ ./examples/step/01/rest/curl-requests.sh
 POST Jane Doe
 {&quot;email&quot;:&quot;jane.doe@gmail.com&quot;,&quot;password&quot;:&quot;X2y6&quot;,&quot;role&quot;:&quot;admin&quot;,&quot;_id&quot;:&quot;sbkXV7LVkMhx1NyY&quot;}
 POST John Doe
@@ -779,7 +789,7 @@ How&apos;s that for convenience?</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"A REST API server","level":"1.2.2.2","depth":3,"next":{"title":"A Feathers REST client","level":"1.2.2.3","depth":3,"path":"step-by-step/basic-feathers/rest-client.md","ref":"step-by-step/basic-feathers/rest-client.md","articles":[]},"previous":{"title":"A database connector","level":"1.2.2.1","depth":3,"path":"step-by-step/basic-feathers/database-connector.md","ref":"step-by-step/basic-feathers/database-connector.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/rest-api-server.md","mtime":"2017-01-10T02:58:06.910Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-10T14:13:14.491Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"A REST API server","level":"1.2.2.2","depth":3,"next":{"title":"A Feathers REST client","level":"1.2.2.3","depth":3,"path":"step-by-step/basic-feathers/rest-client.md","ref":"step-by-step/basic-feathers/rest-client.md","articles":[]},"previous":{"title":"A database connector","level":"1.2.2.1","depth":3,"path":"step-by-step/basic-feathers/database-connector.md","ref":"step-by-step/basic-feathers/database-connector.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/rest-api-server.md","mtime":"2017-01-10T14:59:25.349Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-10T14:59:31.352Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

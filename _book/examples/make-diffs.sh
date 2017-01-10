@@ -19,7 +19,7 @@ function buildDiff {
 }
 
 # diff files
-buildDiff 01/db-connector/1.js 01/rest/1.js _diff/01-db-connector-1
+buildDiff 01/db-connector/1.js 01/rest/1.js _diff/01-rest-1
 
 # restore original pwd
 cd ${startPwd}
