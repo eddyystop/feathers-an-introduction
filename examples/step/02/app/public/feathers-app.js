@@ -22,7 +22,6 @@ Promise.all([
     
     jackId = results[3]._id;
     
-    // authenticate
     return feathersClient.authenticate({
       type: 'local',
       'email': 'jane.doe@gmail.com',
@@ -31,8 +30,6 @@ Promise.all([
       .then(() => console.log('\nAuthenticated successfully.\n '))
       .catch(err => console.error('\nError authenticating:', err));
   })
-  
-  // remove user
   .then(() => users.remove(jackId)
     .then(results => console.log('deleted Jack Doe item\n', results))
   )
