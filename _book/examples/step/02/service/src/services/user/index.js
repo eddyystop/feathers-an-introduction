@@ -32,7 +32,4 @@ module.exports = function(){
 
   // Set up our after hooks
   userService.after(hooks.after);
-  
-  // Increase max time before an operation times out
-  userService.timeout = 20000; // added
 };

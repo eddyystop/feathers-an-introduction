@@ -1,13 +1,13 @@
 
-app
+feathersClients
   .configure(feathers.hooks())
   .configure(feathers.authentication({
     storage: window.localStorage
   }));
 
-const teams = app.service('/teams');
+const teams = feathersClients.service('/teams');
 
-app.authenticate({
+feathersClients.authenticate({
   type: 'local',
   'email': 'jane.doe@gmail.com',
   'password': '11111'

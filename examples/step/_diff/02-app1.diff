@@ -1,0 +1,24 @@
+Only in 02/app/: index.js.diff
+Only in 02/app/: index.js-line.html
+Only in 02/app/: index.js-side.html
+diff -dur 02/app/src/services/index.js 02/app1/src/services/index.js
+--- 02/app/src/services/index.js	2016-12-23 17:38:02.716000000 -0500
++++ 02/app1/src/services/index.js	2017-01-10 15:55:18.811469000 -0500
+@@ -1,11 +1,13 @@
+ 'use strict';
++const teams = require('./teams');
+ const authentication = require('./authentication');
+ const user = require('./user');
+ 
+ module.exports = function() {
+   const app = this;
+-  
+-  
++
++
+   app.configure(authentication);
+   app.configure(user);
++  app.configure(teams);
+ };
+Only in 02/app1/src/services: teams
+Only in 02/app1/test/services: teams

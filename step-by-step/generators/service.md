@@ -20,7 +20,7 @@ and
 ## Generating a service
 
 We copied examples/step/02/app/ to examples/step/02/service/, then
-
+![generate service teams](../assets/generate-service-teams.jpg)
 ```text
 feathers-an-introduction$ cd ./examples/step/02/service
 service$ feathers generate service
@@ -33,6 +33,12 @@ Does your service require users to be authenticated? Y (enter)
 
 Once again we remove the dependencies loaded by the generator
 as they are already installed at the root of `feathers-an-introduction`.
+
+View changes made this made:
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app1-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app1-side.html)
+
 
 ## App structure
 
