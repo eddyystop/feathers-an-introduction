@@ -19,7 +19,8 @@ and
 
 ## Generating a service
 
-We copied examples/step/02/app/ to examples/step/02/service/, then
+We copied examples/step/02/app/ to examples/step/02/service/.
+We then ran `feathers generate service`:
 ![generate service teams](../assets/generate-service-teams.jpg)
 ```text
 feathers-an-introduction$ cd ./examples/step/02/service

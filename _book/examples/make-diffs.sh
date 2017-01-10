@@ -10,10 +10,18 @@ mkdir ${PWD}${folder}_diff
 startPwd=${PWD}
 cd ${PWD}${folder}
 
-# make 1 diff
+# diff a file
 function buildDiff {
     echo $3
-    diff -dur $1 $2 > $3.diff
+    diff -du $1 $2 > $3.diff
+    diff2html -i file -s line --su hidden -F $3-line.html -- $3.diff
+    diff2html -i file -s side --su hidden -F $3-side.html -- $3.diff
+}
+
+# diff a directory
+function buildDiffDir {
+    echo $3
+    diff -dur --new-file $1 $2 > $3.diff
     diff2html -i file -s line --su hidden -F $3-line.html -- $3.diff
     diff2html -i file -s side --su hidden -F $3-side.html -- $3.diff
 }
@@ -27,7 +35,7 @@ buildDiff 01/websocket/1.js 01/hooks/1.js _diff/01-hooks-1
 buildDiff 01/hooks/1.js 01/hooks/2.js _diff/01-hooks-2
 buildDiff 01/common/public/feathers-app.js 02/app/public/feathers-app.js _diff/02-app-feathers-app
 buildDiff 02/app/src/app.js 02/service/src/app.js _diff/02-service-src-app
-buildDiff 02/app/ 02/app1/ _diff/02-app1
+buildDiffDir 02/app/ 02/app1/ _diff/02-app1
 buildDiff 02/app/ 02/service/ _diff/02-service
 
 # restore original pwd
