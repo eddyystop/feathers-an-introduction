@@ -15,9 +15,9 @@ Everything we mention in this guide is applicable to all of them.
 
 ## Working example
 
-| Source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/a/1.js
+| Source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/db-connector/1.js
 
-| Run it: `node ./examples/step/01/a/1`
+| Run it: `node ./examples/step/01/db-connector/1`
 
 ## Feathers is modular
 
@@ -29,47 +29,19 @@ Now you can see where Feathers got its name.
 
 ## Implementing a database connector
 
-We `require` Feathers, the NeDB database and its Feathers adapter.
+| View complete file [db-connector/1.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/db-connector/1.js)
 
-```javascript
-const NeDB = require('nedb');
-const path = require('path');
-const feathers = require('feathers');
-const service = require('feathers-nedb');
-```
+#### We `require` our dependencies.
+[import:'dependencies'](../../examples/step/01/db-connector/1.js)
 
-We start an instance of Feathers and define its services.
+#### We start an instance of Feathers and define its services.
+[import:'feathers'](../../examples/step/01/db-connector/1.js)
 
-```javascript`
-const app = feathers()
-  .configure(services);
-```
+users is the only service we need  and its a database table located at `xamples/step/data/users.db.
+[import:'services'](../../examples/step/01/db-connector/1.js)
 
-`users` is the only service we need  and its a database table located at `examples/step/data/users.db`.
-
-```javascript
-function services() {
-  this.use('/users', service({ Model: userModel() }));
-}
-
-function userModel() {
-  return new NeDB({
-    filename: path.join('examples', 'step', data', 'users.db'),
-    autoload: true
-  });
-}
-```
-
-Create 3 users using Promises.
-
-```javascript
-Promise.all([
-  users.create({ email: 'jane.doe@gmail.com', password: 'X2y6', role: 'admin' }),
-  users.create({ email: 'john.doe@gmail.com', password: 'i6He', role: 'user' }),
-  users.create({ email: 'judy.doe@gmail.com', password: '7jHw', role: 'user' })
-])
-```
-
+#### Create 3 users using Promises.
+[import:'create'](../../examples/step/01/db-connector/1.js)
 Each create returns a promise which resolves into the item added into the database.
 NeDB will always adds a unique `_id` property to the user item and the returned item will contain it.
 
@@ -91,17 +63,7 @@ The n-th element of the array is the resolved value of the n-th element in Promi
 
 The 3 user items are now are in the database, their values are returned in `results`.
 We issue a find for the entire table and print the results.
-                
-```javascript
-.then(results => {
-  console.log('created Jane Doe item\n', results[0]);
-  console.log('created John Doe item\n', results[1]);
-  console.log('created Judy Doe item\n', results[2]);
-    
-  users.find()
-    .then(results => console.log('find all items\n', results))
-})
-```
+[import:'results'](../../examples/step/01/db-connector/1.js)
 
 > ** Promise Refresher.** `user.find().then(results => ...);`
 `user.find()` returns a Promise. `.then(results => ...)` waits for the Promise to resolve,

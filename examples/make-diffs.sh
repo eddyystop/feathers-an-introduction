@@ -1,7 +1,16 @@
 #!/bin/bash
+# parent folder for files to compare
 folder=/examples/step/
+
+# create dir for diffs
+rm -rf ${PWD}${folder}_diff
+mkdir ${PWD}${folder}_diff
+
+# set working pwd
+startPwd=${PWD}
 cd ${PWD}${folder}
 
+# make 1 diff
 function buildDiff {
     echo $3
     diff -du $1 $2 > $3.diff
@@ -9,4 +18,8 @@ function buildDiff {
     diff2html -i file -s side --su hidden -F $3-side.html -- $3.diff
 }
 
-buildDiff 01/a/1.js 01/b/1.js _diff/01-b-1
+# diff files
+buildDiff 01/db-connector/1.js 01/rest/1.js _diff/01-db-connector-1
+
+# restore original pwd
+cd ${startPwd}

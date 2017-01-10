@@ -633,8 +633,8 @@ but requires neither installation nor configuration.</p>
 Everything we mention in this guide is applicable to all of them.</p>
 </blockquote>
 <h2 id="working-example">Working example</h2>
-<p>| Source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/a/1.js" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/a/1.js</a></p>
-<p>| Run it: <code>node ./examples/step/01/a/1</code></p>
+<p>| Source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/db-connector/1.js" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/db-connector/1.js</a></p>
+<p>| Run it: <code>node ./examples/step/01/db-connector/1</code></p>
 <h2 id="feathers-is-modular">Feathers is modular</h2>
 <p>Feathers embodies the same spirit as the popular HTTP server framework <a href="http://expressjs.com/" target="_blank">Express</a> .
 It is comprised of small modules that are all completely optional,
@@ -642,30 +642,37 @@ and the core weighs in at just a few hundred lines of code.
 How&apos;s that for light weight!
 Now you can see where Feathers got its name.</p>
 <h2 id="implementing-a-database-connector">Implementing a database connector</h2>
-<p>We <code>require</code> Feathers, the NeDB database and its Feathers adapter.</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> NeDB = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;nedb&apos;</span>);
+<p>| View complete file <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/db-connector/1.js" target="_blank">db-connector/1.js.</a></p>
+<h4 id="we-require-our-dependencies">We <code>require</code> our dependencies.</h4>
+<pre><code class="lang-javascript">
+<span class="hljs-keyword">const</span> NeDB = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;nedb&apos;</span>);
 <span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>);
 <span class="hljs-keyword">const</span> feathers = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;feathers&apos;</span>);
 <span class="hljs-keyword">const</span> service = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;feathers-nedb&apos;</span>);
 </code></pre>
-<p>We start an instance of Feathers and define its services.</p>
-<pre><code class="lang-javascript`">const app = feathers()
+<h4 id="we-start-an-instance-of-feathers-and-define-its-services">We start an instance of Feathers and define its services.</h4>
+<pre><code class="lang-javascript">
+<span class="hljs-keyword">const</span> app = feathers()
   .configure(services);
 </code></pre>
 <p><code>users</code> is the only service we need  and its a database table located at <code>examples/step/data/users.db</code>.</p>
-<pre><code class="lang-javascript">function services() {
-  this.use(&apos;/users&apos;, service({ Model: userModel() }));
+<pre><code class="lang-javascript">
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">services</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">this</span>.use(<span class="hljs-string">&apos;/users&apos;</span>, service({ Model: userModel() }));
 }
 
-function userModel() {
-  return new NeDB({
-    filename: path.join(&apos;examples&apos;, &apos;step&apos;, data&apos;, &apos;users.db&apos;),
-    autoload: true
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">userModel</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> NeDB({
+    filename: path.join(<span class="hljs-string">&apos;examples&apos;</span>, <span class="hljs-string">&apos;step&apos;</span>, <span class="hljs-string">&apos;data&apos;</span>, <span class="hljs-string">&apos;users.db&apos;</span>),
+    autoload: <span class="hljs-literal">true</span>
   });
 }
 </code></pre>
-<p>Create 3 users using Promises.</p>
-<pre><code class="lang-javascript"><span class="hljs-built_in">Promise</span>.all([
+<h4 id="create-3-users-using-promises">Create 3 users using Promises.</h4>
+<pre><code class="lang-javascript">
+<span class="hljs-keyword">const</span> users = app.service(<span class="hljs-string">&apos;users&apos;</span>);
+
+<span class="hljs-built_in">Promise</span>.all([
   users.create({ email: <span class="hljs-string">&apos;jane.doe@gmail.com&apos;</span>, password: <span class="hljs-string">&apos;X2y6&apos;</span>, role: <span class="hljs-string">&apos;admin&apos;</span> }),
   users.create({ email: <span class="hljs-string">&apos;john.doe@gmail.com&apos;</span>, password: <span class="hljs-string">&apos;i6He&apos;</span>, role: <span class="hljs-string">&apos;user&apos;</span> }),
   users.create({ email: <span class="hljs-string">&apos;judy.doe@gmail.com&apos;</span>, password: <span class="hljs-string">&apos;7jHw&apos;</span>, role: <span class="hljs-string">&apos;user&apos;</span> })
@@ -690,14 +697,16 @@ The n-th element of the array is the resolved value of the n-th element in Promi
 </blockquote>
 <p>The 3 user items are now are in the database, their values are returned in <code>results</code>.
 We issue a find for the entire table and print the results.</p>
-<pre><code class="lang-javascript">.then(results =&gt; {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;created Jane Doe item\n&apos;</span>, results[<span class="hljs-number">0</span>]);
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;created John Doe item\n&apos;</span>, results[<span class="hljs-number">1</span>]);
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;created Judy Doe item\n&apos;</span>, results[<span class="hljs-number">2</span>]);
+<pre><code class="lang-javascript">
+  .then(results =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;created Jane Doe item\n&apos;</span>, results[<span class="hljs-number">0</span>]);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;created John Doe item\n&apos;</span>, results[<span class="hljs-number">1</span>]);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;created Judy Doe item\n&apos;</span>, results[<span class="hljs-number">2</span>]);
 
-  users.find()
-    .then(results =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;find all items\n&apos;</span>, results))
-})
+    users.find()
+      .then(results =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;find all items\n&apos;</span>, results))
+  })
+  .catch(err =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Error occurred:&apos;</span>, err));
 </code></pre>
 <blockquote>
 <p><strong> Promise Refresher.</strong> <code>user.find().then(results =&gt; ...);</code>
@@ -796,7 +805,7 @@ It took only 15 lines of code to connect to a database.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"A database connector","level":"1.2.2.1","depth":3,"next":{"title":"A REST API server","level":"1.2.2.2","depth":3,"path":"step-by-step/basic-feathers/rest-api-server.md","ref":"step-by-step/basic-feathers/rest-api-server.md","articles":[]},"previous":{"title":"Basic Feathers >>>","level":"1.2.2","depth":2,"path":"step-by-step/basic-feathers/readme.md","ref":"step-by-step/basic-feathers/readme.md","articles":[{"title":"A database connector","level":"1.2.2.1","depth":3,"path":"step-by-step/basic-feathers/database-connector.md","ref":"step-by-step/basic-feathers/database-connector.md","articles":[]},{"title":"A REST API server","level":"1.2.2.2","depth":3,"path":"step-by-step/basic-feathers/rest-api-server.md","ref":"step-by-step/basic-feathers/rest-api-server.md","articles":[]},{"title":"A Feathers REST client","level":"1.2.2.3","depth":3,"path":"step-by-step/basic-feathers/rest-client.md","ref":"step-by-step/basic-feathers/rest-client.md","articles":[]},{"title":"A Feathers websocket client","level":"1.2.2.4","depth":3,"path":"step-by-step/basic-feathers/socket-client.md","ref":"step-by-step/basic-feathers/socket-client.md","articles":[]},{"title":"The \"ah-ha\" moment","level":"1.2.2.5","depth":3,"path":"step-by-step/basic-feathers/ah-ha.md","ref":"step-by-step/basic-feathers/ah-ha.md","articles":[]},{"title":"Hooks, part 1","level":"1.2.2.6","depth":3,"path":"step-by-step/basic-feathers/hooks-1.md","ref":"step-by-step/basic-feathers/hooks-1.md","articles":[]},{"title":"Hooks, part 2","level":"1.2.2.7","depth":3,"path":"step-by-step/basic-feathers/hooks-2.md","ref":"step-by-step/basic-feathers/hooks-2.md","articles":[]},{"title":"Real-time","level":"1.2.2.8","depth":3,"path":"step-by-step/basic-feathers/real-time.md","ref":"step-by-step/basic-feathers/real-time.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/database-connector.md","mtime":"2017-01-09T01:15:44.338Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-10T03:00:43.880Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"A database connector","level":"1.2.2.1","depth":3,"next":{"title":"A REST API server","level":"1.2.2.2","depth":3,"path":"step-by-step/basic-feathers/rest-api-server.md","ref":"step-by-step/basic-feathers/rest-api-server.md","articles":[]},"previous":{"title":"Basic Feathers >>>","level":"1.2.2","depth":2,"path":"step-by-step/basic-feathers/readme.md","ref":"step-by-step/basic-feathers/readme.md","articles":[{"title":"A database connector","level":"1.2.2.1","depth":3,"path":"step-by-step/basic-feathers/database-connector.md","ref":"step-by-step/basic-feathers/database-connector.md","articles":[]},{"title":"A REST API server","level":"1.2.2.2","depth":3,"path":"step-by-step/basic-feathers/rest-api-server.md","ref":"step-by-step/basic-feathers/rest-api-server.md","articles":[]},{"title":"A Feathers REST client","level":"1.2.2.3","depth":3,"path":"step-by-step/basic-feathers/rest-client.md","ref":"step-by-step/basic-feathers/rest-client.md","articles":[]},{"title":"A Feathers websocket client","level":"1.2.2.4","depth":3,"path":"step-by-step/basic-feathers/socket-client.md","ref":"step-by-step/basic-feathers/socket-client.md","articles":[]},{"title":"The \"ah-ha\" moment","level":"1.2.2.5","depth":3,"path":"step-by-step/basic-feathers/ah-ha.md","ref":"step-by-step/basic-feathers/ah-ha.md","articles":[]},{"title":"Hooks, part 1","level":"1.2.2.6","depth":3,"path":"step-by-step/basic-feathers/hooks-1.md","ref":"step-by-step/basic-feathers/hooks-1.md","articles":[]},{"title":"Hooks, part 2","level":"1.2.2.7","depth":3,"path":"step-by-step/basic-feathers/hooks-2.md","ref":"step-by-step/basic-feathers/hooks-2.md","articles":[]},{"title":"Real-time","level":"1.2.2.8","depth":3,"path":"step-by-step/basic-feathers/real-time.md","ref":"step-by-step/basic-feathers/real-time.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/database-connector.md","mtime":"2017-01-10T14:13:09.650Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-10T14:13:14.491Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
