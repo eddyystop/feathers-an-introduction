@@ -12,25 +12,30 @@ We can implement such a **soft delete** with the `softDelete` hook.
 
 ## Working example
 
-| Server source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/d/2.js
+| Server code: [hooks/2.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/hooks/2.js)
 
-| Client HTML code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/rest.html
+| Client code: [common/public/rest.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/rest.html)
+and
+[common/public/feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js)
 
-| Client source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js
+| Start the server: `node ./examples/step/01/hooks/2`
 
-| Start the server: `node ./examples/step/01/d/2`
-
-| Point the browser at: `//localhost:3030/socketio.html`
+| Point the browser at: `//localhost:3030/rest.html`
 
 ## Using softDelete
 
 We need to make just one change to our previous server example.
 We use the `when` hook to run the `softDelete` hook if the service method is not find.
 
+| View complete file [hooks/2.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/hooks/2.js)
+View changes from file hooks/1.js:
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-hooks-2-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-hooks-2-side.html)
+
 ```javascript
 const { softDelete, setCreatedAt, setUpdatedAt, when, unless, remove } = commonHooks;
 // ...
-
 userService.before({
     all: when(hook => hook.method !== 'find', softDelete()),
     create: [ /* ... */ ]

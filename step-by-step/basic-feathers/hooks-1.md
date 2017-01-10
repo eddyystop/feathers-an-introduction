@@ -32,15 +32,12 @@ const authHooks = require('feathers-authentication-local').hooks;
 const hooks = require('feathers-hooks');
 const commonHooks = require('feathers-hooks-common');
 // ...
-
 const app = httpServerConfig()
   .configure(hooks())
 // ...
-
 function services() {
   this.configure(user);
 }
-
 function user() {
   const app = this;
   
@@ -57,7 +54,6 @@ function user() {
     all: unless(hook => hook.method === 'find', remove('password')),
   });
 }
-
 function userSchema() {
   return {
     title: 'User Schema',
