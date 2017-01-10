@@ -9,11 +9,11 @@ We will use the popular Socket.io in this guide.
 
 ## Working example
 
-| Server source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/c/1.js
+| Server source code: [websocket/1.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/websocket/1.js)
 
-| Client HTML code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/socketio.html
-
-| Client source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js
+| Client code: [common/public/socketio.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/socketio.html)
+and
+[common/public/feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js)
 
 | Start the server: `node ./examples/step/01/c/1`
 
@@ -24,7 +24,12 @@ We will use the popular Socket.io in this guide.
 Add 2 lines to the server code so it supports
 either REST **or** websocket calls from the Feathers client.
 
-```html
+| View complete file [websocket/1.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/websocket/1.js)
+View changes from file rest/1.js:
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-1-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-1-side.html)
+```javascript
 const rest = require('feathers-rest');
 const socketio = require('feathers-socketio'); // new
 
@@ -37,6 +42,11 @@ const app = httpServerConfig()
 
 ## Changing the HTML for Feathers client websocket calls
 
+| View complete file [common/public/socketio.html.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/socketio.html)
+View changes from file common/public/rest.html:
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-socketio-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-socketio-side.html)
 ```html
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/core-js/2.1.4/core.min.js"></script>
 <script src="//unpkg.com/feathers-client@^1.8.0/dist/feathers.js"></script>

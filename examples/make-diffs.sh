@@ -21,6 +21,8 @@ function buildDiff {
 # diff files
 buildDiff 01/db-connector/1.js 01/rest/1.js _diff/01-rest-1
 buildDiff 01/rest/1.js 01/rest/2.js _diff/01-rest-2
+buildDiff 01/rest/2.js 01/websocket/1.js _diff/01-websocket-1
+buildDiff 01/common/public/rest.html 01/common/public/socketio.html _diff/01-websocket-socketio
 
 # restore original pwd
 cd ${startPwd}
