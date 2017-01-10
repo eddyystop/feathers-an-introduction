@@ -1,0 +1,246 @@
+Only in 02/service/data: teams.db
+diff -dur 02/app/data/users.db 02/service/data/users.db
+--- 02/app/data/users.db	2016-12-28 13:36:58.942910640 -0500
++++ 02/service/data/users.db	2016-12-28 14:28:44.938910640 -0500
+@@ -1,5 +1,30 @@
+-{"email":"jane.doe@gmail.com","password":"$2a$10$zmASfcNPU7YRv4j5xRSca.cLdGjLRVdDumKjNetFMw2lZ1Xombfuu","role":"admin","_id":"UmH30nDOBjnn7QBB"}
+-{"email":"john.doe@gmail.com","password":"$2a$10$lERDr7aSrNV82QUl8NvbtuSI5dhPDPMPee543eWMijMU26ums2RdW","role":"user","_id":"edz7y7QF6ipR00z7"}
+-{"email":"judy.doe@gmail.com","password":"$2a$10$eoZFpwZ6TnfcamRZAunGje8y8RJ9t8EH7SsT4VgnUN6B98bM5fggK","role":"user","_id":"QGqa4DxOtOFT4XPY"}
+-{"email":"jack.doe@gmail.com","password":"$2a$10$n8DqDvvhX0Avrmsq2FNFX.mbsB4YkOp6/uscB2ErS8BR1fwEoiH/.","role":"user","_id":"HTel2m2xgDvHOFc7"}
+-{"$$deleted":true,"_id":"HTel2m2xgDvHOFc7"}
++{"email":"bob.smith@gmail.com","password":"$2a$10$bvngk0HsVQKDSJoaP7SqY.YhtQt9KtWxFp/n5woS1SAn3WUOdiwMm","role":"user","_id":"8fy4YHxXjDwGEA44"}
++{"email":"tod.lee@gmail.com","password":"$2a$10$iHxmW0hInswW6PVK1Manm.tmc3Czx0l5Xm0oGo1sy/L0n/9O7kROi","role":"user","_id":"BzWvDZVEtPRrysXh"}
++{"email":"judy.doe@gmail.com","password":"$2a$10$xQeb3e4AUTZokRIDRMFbu.R114r4mDZ2NfbFoK4/A8CaTbA8mPQKq","role":"user","_id":"EXTO1fBTyeL76Cam"}
++{"email":"joe.smith@gmail.com","password":"$2a$10$7h93WrO1f5YDh6Ee.U05MeE9hhAmrGLPBwj9vApPi68tIUgAnEM5K","role":"user","_id":"FABXo1u8zC2JgYxY"}
++{"email":"sam.lee@gmail.com","password":"$2a$10$Zfh/ZadiFQ5XT7cCQlG04.CGKy4Dv4GgsVUpkGVxtf/pM1WPY86p2","role":"user","_id":"HdRen9rYVJw7Iz1i"}
++{"email":"john.doe@gmail.com","password":"$2a$10$KNvDcyzU1xBdSn9elrwT4uisIfsZVqT75oPCpMFXjsln6MT/Tua6u","role":"user, heals","_id":"LhdyVZplDkWpZPp4"}
++{"email":"jane.doe@gmail.com","password":"$2a$10$jg0HVpJZJ18.UT6.E6wp8.cAQeUA/ymrdMGgecqCwrbLamalbzdR2","role":"admin, tank","_id":"ZAabfJFSpOwwNiNh"}
++{"email":"tim.lee@gmail.com","password":"$2a$10$2rTNVtAec9oh43d.EX1eXeIeP3P6fqEB4wNfTV5gEDWa0ciOB3SR6","role":"user, damage","_id":"b7lbPOGO4EuBaBxB"}
++{"email":"jack.doe@gmail.com","password":"$2a$10$7eMeH/ysr3RhXZn2qn5U9.Oaqsag7ydUOjj3eUeJbG.qOProaC1NG","role":"user","_id":"jVsDBqX2r27PPMiG"}
++{"email":"tom.smith@gmail.com","password":"$2a$10$HEU3GTKOiT9rp9Q4Lnuya.ezblb2YcoLwA8RqSs8fXEL/dpIzFyrC","role":"user","_id":"mKNZTZcph4i2JGpR"}
++{"$$deleted":true,"_id":"8fy4YHxXjDwGEA44"}
++{"$$deleted":true,"_id":"BzWvDZVEtPRrysXh"}
++{"$$deleted":true,"_id":"EXTO1fBTyeL76Cam"}
++{"$$deleted":true,"_id":"FABXo1u8zC2JgYxY"}
++{"$$deleted":true,"_id":"HdRen9rYVJw7Iz1i"}
++{"$$deleted":true,"_id":"LhdyVZplDkWpZPp4"}
++{"$$deleted":true,"_id":"ZAabfJFSpOwwNiNh"}
++{"$$deleted":true,"_id":"b7lbPOGO4EuBaBxB"}
++{"$$deleted":true,"_id":"jVsDBqX2r27PPMiG"}
++{"$$deleted":true,"_id":"mKNZTZcph4i2JGpR"}
++{"email":"john.doe@gmail.com","password":"$2a$10$sr5ZYGGoIH/bFAVhIJDJfedtb3lfST5A2p3wCWSY1LQEkuJQ7GDFy","role":"user, heals","_id":"88GKWScilz1FzBNA"}
++{"email":"joe.smith@gmail.com","password":"$2a$10$mvDYwAVLfpnbeqkoHfF6DutTf3P4MbtBXE691G/9mU2rJUROj0zne","role":"user","_id":"d9fSFPAPYTTJLw64"}
++{"email":"tim.lee@gmail.com","password":"$2a$10$9fsguSfpvAuObtNyDBACTejtbQ3mmkJYvKsvAK9NnCxM8zCohzLk6","role":"user, damage","_id":"AOSipXQEP5CyhQJd"}
++{"email":"judy.doe@gmail.com","password":"$2a$10$3gmAf/RTsM2T6AzehILmhOn0feYzkycxCHOeHijbFZQVx/NC4eLaK","role":"user","_id":"tVR7QR1haBeutdFA"}
++{"email":"bob.smith@gmail.com","password":"$2a$10$0peqWNKsTveEsT/hMHlF3Oj2Yfcn7l/CAJNiNupAt3p280PLQs/VC","role":"user","_id":"9vmUtCc8euLEy9bk"}
++{"email":"tod.lee@gmail.com","password":"$2a$10$IJb6hEsYFBacX6rEh.j/BeS1dCGvR.28Pi9fj.Hpml/hk1GoeZXP6","role":"user","_id":"srcN0cN4Jsosfbs6"}
++{"email":"jane.doe@gmail.com","password":"$2a$10$80EeecOguEsmbgQ5tALnxuExxWChgQEAJBJc0.uUd76752Gw8KVQy","role":"admin, tank","_id":"7DA2znpaee8Cb4yP"}
++{"email":"tom.smith@gmail.com","password":"$2a$10$KquznTUO1pMlKFCdjAWFFu/ggaDJaSMBOarurGcuV4okg.s3v.ET.","role":"user","_id":"lwMdPnVs4cUN90rG"}
++{"email":"sam.lee@gmail.com","password":"$2a$10$yJesPKKEPkbTb8rSGJYKYOg0rgRIBXekkqDOdsOhhPGxt6G12usZ6","role":"user","_id":"4vvIA2hZqbYQuqCq"}
++{"email":"jack.doe@gmail.com","password":"$2a$10$H8DiBVtQxkxp0wRrL0hcjOJ1xNCvmGh84bcAv6ANhjigGwaXlWs66","role":"user","_id":"ySynKJIIUXqFQTmR"}
+Only in 02/app/: .editorconfig
+Only in 02/app/: index.js.diff
+Only in 02/app/: index.js-line.html
+Only in 02/app/: index.js-side.html
+Only in 02/app/: package.json
+diff -dur 02/app/public/feathers-app.js 02/service/public/feathers-app.js
+--- 02/app/public/feathers-app.js	2017-01-10 15:06:04.736345442 -0500
++++ 02/service/public/feathers-app.js	2016-12-25 10:36:45.778548482 -0500
+@@ -1,39 +1,27 @@
+ 
+-feathersClient
++app
+   .configure(feathers.hooks())
+   .configure(feathers.authentication({
+     storage: window.localStorage
+   }));
+ 
+-let jackId;
+-const users = feathersClient.service('/users');
++const teams = app.service('/teams');
+ 
+-Promise.all([
+-  users.create({ email: 'jane.doe@gmail.com', password: '11111', role: 'admin' }),
+-  users.create({ email: 'john.doe@gmail.com', password: '22222', role: 'user' }),
+-  users.create({ email: 'judy.doe@gmail.com', password: '33333', role: 'user' }),
+-  users.create({ email: 'jack.doe@gmail.com', password: '44444', role: 'user' }),
+-])
+-  .then(results => {
+-    console.log('created Jane Doe item\n', results[0]);
+-    console.log('created John Doe item\n', results[1]);
+-    console.log('created Judy Doe item\n', results[2]);
+-    console.log('created Jack Doe item\n', results[3]);
+-    
+-    jackId = results[3]._id;
++app.authenticate({
++  type: 'local',
++  'email': 'jane.doe@gmail.com',
++  'password': '11111'
++})
++  .then(() => {
++    // Find team items, and join the user items of their members
++    teams.find({ query: { type: 'dungeon' }})
++      .then(results => {
++        console.log('\nAll dungeon teams\n', JSON.stringify(results.data, null, 2));
++      });
+     
+-    return feathersClient.authenticate({
+-      type: 'local',
+-      'email': 'jane.doe@gmail.com',
+-      'password': '11111'
+-    })
+-      .then(() => console.log('\nAuthenticated successfully.\n '))
+-      .catch(err => console.error('\nError authenticating:', err));
++    teams.find({ query: { name: 'Lee family' }})
++      .then(results => {
++        console.log('\nLee family\n', JSON.stringify(results.data, null, 2));
++      });
+   })
+-  .then(() => users.remove(jackId)
+-    .then(results => console.log('deleted Jack Doe item\n', results))
+-  )
+-  .then(() => users.find()
+-    .then(results => console.log('find all items\n', results))
+-  )
+-  .catch(err => console.log(err));
++  .catch(err => console.log('\nError occurred:', err));
+diff -dur 02/app/public/rest.html 02/service/public/rest.html
+--- 02/app/public/rest.html	2017-01-10 14:53:22.318075701 -0500
++++ 02/service/public/rest.html	2017-01-01 07:57:43.367428904 -0500
+@@ -1,6 +1,6 @@
+ <html>
+ <head>
+-  <title>Feathers REST client, with authentication</title>
++  <title>Feathers REST client, multiple services</title>
+   <style>
+     body {
+       font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+@@ -12,14 +12,14 @@
+ </head>
+ <body>
+ <h1>Feathers guide</h1>
+-<h2>Feathers REST client, with authentication</h2>
++<h2>Feathers REST client, multiple services</h2>
+ <br />
+ Open console to see results of <strong>feathers-rest</strong> calls.
+ <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/core-js/2.1.4/core.min.js"></script>
+ <script src="//unpkg.com/feathers-client@^1.8.0/dist/feathers.js"></script>
+ <script src="/serverUrl.js"></script>
+ <script>
+-  const feathersClient = feathers()
++  const app = feathers()
+       .configure(feathers.rest(serverUrl).fetch(fetch))
+ </script>
+ <script src="/feathers-app.js"></script>
+diff -dur 02/app/public/socketio.html 02/service/public/socketio.html
+--- 02/app/public/socketio.html	2017-01-10 14:53:22.496100989 -0500
++++ 02/service/public/socketio.html	2017-01-01 07:57:43.195472918 -0500
+@@ -1,6 +1,6 @@
+ <html>
+ <head>
+-  <title>Feathers Socketio client, with authentication</title>
++  <title>Feathers Socketio client, multiple services</title>
+   <style>
+     body {
+       font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+@@ -12,7 +12,7 @@
+ </head>
+ <body>
+ <h1>Feathers guide</h1>
+-<h2>Feathers Socketio client, with authentication</h2>
++<h2>Feathers Socketio client, multiple services</h2>
+ <br />
+ Open console to see results of <strong>feathers-socketio</strong> calls.
+ <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/core-js/2.1.4/core.min.js"></script>
+@@ -21,7 +21,7 @@
+ <script src="/serverUrl.js"></script>
+ <script>
+   const socket = io(serverUrl);
+-  const feathersClient = feathers()
++  const app = feathers()
+       .configure(feathers.socketio(socket))
+ </script>
+ <script src="/feathers-app.js"></script>
+diff -dur 02/app/src/app.js 02/service/src/app.js
+--- 02/app/src/app.js	2016-12-23 17:38:02.788000000 -0500
++++ 02/service/src/app.js	2016-12-25 10:41:50.656161151 -0500
+@@ -28,4 +28,47 @@
+   .configure(services)
+   .configure(middleware);
+ 
++loadDatabases(app);
++
+ module.exports = app;
++
++function loadDatabases(app) {
++  let userIds = [];
++  const teams = app.service('/teams');
++  const users = app.service('/users');
++  
++  console.log('\nClear databases.');
++  Promise.all([
++    teams.remove(null),
++    users.remove(null)
++  ])
++    .then (() => {
++      console.log('\nLoad users.');
++      return  Promise.all([
++        users.create({ email: 'jane.doe@gmail.com', password: '11111', role: 'admin, tank' }),
++        users.create({ email: 'john.doe@gmail.com', password: '22222', role: 'user, heals' }),
++        users.create({ email: 'judy.doe@gmail.com', password: '33333', role: 'user' }),
++        users.create({ email: 'jack.doe@gmail.com', password: '44444', role: 'user' }),
++        users.create({ email: 'tom.smith@gmail.com', password: '55555', role: 'user' }),
++        users.create({ email: 'bob.smith@gmail.com', password: '66666', role: 'user' }),
++        users.create({ email: 'joe.smith@gmail.com', password: '77777', role: 'user' }),
++        users.create({ email: 'tim.lee@gmail.com', password: '88888', role: 'user, damage' }),
++        users.create({ email: 'tod.lee@gmail.com', password: '99999', role: 'user' }),
++        users.create({ email: 'sam.lee@gmail.com', password: '00000', role: 'user' }),
++      ])
++    })
++    .then(results => {
++      userIds = results.map(user => user._id); // This way is not elegant but easy to understand.
++  
++      console.log('\nLoad teams.');
++      return Promise.all([
++        teams.create({ name: 'Doe family', type: 'family', memberIds: [userIds[0], userIds[1], userIds[2], userIds[3]]}),
++        teams.create({ name: 'Smith family', type: 'family', memberIds: [userIds[4], userIds[5], userIds[6]]}),
++        teams.create({ name: 'Lee family', type: 'family', memberIds: [userIds[7], userIds[8], userIds[9]]}),
++        teams.create({ name: 'Fires of Heaven', type: 'dungeon', memberIds: [userIds[0], userIds[1], userIds[7]]}),
++      ]);
++    })
++    .then(() => {
++      console.log('\nDatabases loaded.');
++    })
++}
+diff -dur 02/app/src/services/index.js 02/service/src/services/index.js
+--- 02/app/src/services/index.js	2016-12-23 17:38:02.716000000 -0500
++++ 02/service/src/services/index.js	2016-12-24 10:50:25.710000000 -0500
+@@ -1,11 +1,13 @@
+ 'use strict';
++const teams = require('./teams');
+ const authentication = require('./authentication');
+ const user = require('./user');
+ 
+ module.exports = function() {
+   const app = this;
+-  
+-  
++
++
+   app.configure(authentication);
+   app.configure(user);
++  app.configure(teams);
+ };
+Only in 02/service/src/services: teams
+diff -dur 02/app/src/services/user/index.js 02/service/src/services/user/index.js
+--- 02/app/src/services/user/index.js	2016-12-23 17:38:02.848000000 -0500
++++ 02/service/src/services/user/index.js	2016-12-24 11:17:10.350000000 -0500
+@@ -32,4 +32,7 @@
+ 
+   // Set up our after hooks
+   userService.after(hooks.after);
++  
++  // Increase max time before an operation times out
++  userService.timeout = 20000; // added
+ };
+Only in 02/service/test/services: teams

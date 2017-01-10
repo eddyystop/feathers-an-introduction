@@ -88,7 +88,6 @@ View changes from file common/public/feathers-app.js:
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app-feathers-app-line.html)
 |
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app-feathers-app-side.html)
-
 ```javascript
 app.authenticate({
   type: 'local',

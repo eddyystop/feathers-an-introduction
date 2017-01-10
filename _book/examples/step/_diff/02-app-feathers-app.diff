@@ -1,6 +1,6 @@
---- 01/common/public/feathers-app.js	2017-01-10 15:01:48.650126825 -0500
-+++ 02/app/public/feathers-app.js	2017-01-10 15:01:48.757769352 -0500
-@@ -1,4 +1,11 @@
+--- 01/common/public/feathers-app.js	2017-01-10 15:12:54.984255496 -0500
++++ 02/app/public/feathers-app.js	2017-01-10 15:06:04.736345442 -0500
+@@ -1,4 +1,10 @@
  
 +feathersClient
 +  .configure(feathers.hooks())
@@ -8,18 +8,17 @@
 +    storage: window.localStorage
 +  }));
 +
-+let jackId;
+ let jackId;
  const users = feathersClient.service('/users');
  
- Promise.all([
-@@ -12,18 +19,24 @@
+@@ -13,17 +19,21 @@
      console.log('created John Doe item\n', results[1]);
      console.log('created Judy Doe item\n', results[2]);
      console.log('created Jack Doe item\n', results[3]);
 -  
--    const jackId = results[3]._id;
--  
--    // remove user
++    
+     jackId = results[3]._id;
+     
 -    return users.remove(jackId)
 -      .then(results => console.log('deleted Jack Doe item\n', results));
 -  })
@@ -29,10 +28,6 @@
 -        console.log('find all items\n', results);
 -        console.log((results || []).length, 'items returned.');
 -      })
-+    
-+    jackId = results[3]._id;
-+    
-+    // authenticate
 +    return feathersClient.authenticate({
 +      type: 'local',
 +      'email': 'jane.doe@gmail.com',
@@ -41,8 +36,6 @@
 +      .then(() => console.log('\nAuthenticated successfully.\n '))
 +      .catch(err => console.error('\nError authenticating:', err));
    })
-+  
-+  // remove user
 +  .then(() => users.remove(jackId)
 +    .then(results => console.log('deleted Jack Doe item\n', results))
 +  )

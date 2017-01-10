@@ -7,23 +7,23 @@ Let's add another service.
 
 ## Working example
 
-| Server source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/b/
+| Server code: [service/](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/service/)
 
-| Client HTML code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/b/public/socketio.html
+| Client code: [service/public/socketio.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/service/public/socketio.html)
+and
+[service/public/feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/service/public/feathers-app.js)
 
-| Client source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/b/public/feathers-app.js
-
-| Start the server: `node ./examples/step/02/b/src`
+| Start the server: `node ./examples/step/02/service/src`
 
 | Point the browser at: `//localhost:3030/socketio.html`
 
 ## Generating a service
 
-We copied `examples/step/02/a/` to `examples/step/02/b/`, then
+We copied examples/step/02/app/ to examples/step/02/service/, then
 
 ```text
-feathers-an-introduction$ cd ./examples/step/02/b
-d$ feathers generate service
+feathers-an-introduction$ cd ./examples/step/02/service
+service$ feathers generate service
 
 What do you want to call your service?: teams
 What type of service do you need?: database
@@ -41,8 +41,16 @@ Its organized similarly to users.
 
 ## Loading the tables
 
-We added function `loadDatabases` to `app.js`. It loads data into the users and teams tables.
+We added function `loadDatabases` to `service/src/app.js`.
 
+| View complete file
+[service/src/app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/service/src/app.js)
+View changes from file app/src/app.js:
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-service-src-app-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-service-src-app-side.html)
+
+It loads data into the users and teams tables.
 The team items contains the `user._id` of the team members.
 ```javascript
 {
@@ -54,7 +62,8 @@ The team items contains the `user._id` of the team members.
 
 ## Populating items
 
-`teams.hooks/index.js` contains
+[service/src/services/teams/hooks/index.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/service/src/services/teams/hooks/index.js)
+contains
 
 ```javascript
 const { populate, serialize } = require('feathers-hooks-common');
@@ -168,6 +177,14 @@ and only keep 2 from the newly joined members property.
 
 > **Depopulate.** Should you modify your base items and want to `patch` the new values back to the table,
 the dePopulate() hook will remove all joined and calculated properties for you.
+
+## Recap
+
+Let's identify all the changes resulting from running `feathers generate service`,
+and making the changes above:
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-service-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-service-side.html)
 
 ## The results
 
