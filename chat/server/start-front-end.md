@@ -6,22 +6,23 @@ and to rerun the tests of the last section using the client.
 
 ## Working example
 
-| Server source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/b/src/index.js.js
+| Server code: [chat/server/client/src/index.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/src/index.js)
 
-| Client HTML code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/b/public/socketio.html
+| Client code: [chat/server/client/public/socketio.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/public/socketio.html)
+and
+[chat/server/client/public/socketio-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/public/socketio-app.js)
 
-| Client source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/b/public/socketio-app.js
-
-| Start the server: `node ./examples/chat/server/b/src`
+| Start the server: `node ./examples/chat/server/client/src`
 
 | Point the browser at: `//localhost:3030/socketio.html`
 
 ## Client HTML
 
-The client HTML is similar to that used in
+The [client HTML](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/public/socketio.html)
+is similar to that used in
 [Writing a Feathers Websocket Client](../../step-by-step/basic-feathers/socket-client.md).
 
-The page is divided into 3 sections identified by ids `sign-up`, `sign-in` and `chat`.
+The page is divided into 3 sections identified by ids sign-up, sign-in and chat.
 They contain what you would expect of them.
 
 ```HTML
@@ -54,27 +55,11 @@ The sign-up section is displayed initially.
 
 ## Router
 
+The
+[client](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/public/socketio-app.js)
+has a basic router to handle the 3 sections of the HTML.
+[import:'router'](../../examples/chat/server/client/public/socketio-app.js)
 ```javascript
-// DOM
-handleClick('signup-user', signUpUser);
-handleClick('signin-user', signInUser);
-handleClick('signout-user', signOutUser);
-handleClick('send-message', sendMessage);
-handleClick('to-signin-user', () => router('sign-in'));
-handleClick('to-signup-user', () => router('sign-up'));
-
-const els = {};
-['sign-up', 'email-signup', 'password-signup', 'sign-in', 'email-signin', 'password-signin', 'chat', 'message']
-  .forEach(id => els[id] = document.getElementById(id));
-
-// Routing
-const router = (newRoute) => {
-  els['sign-up'].style.display = newRoute === 'sign-up' ? 'block' : 'none';
-  els['sign-in'].style.display = newRoute === 'sign-in' ? 'block' : 'none';
-  els['chat'].style.display = newRoute === 'chat' ? 'block' : 'none';
-};
-router('sign-up');
-
 function handleClick(id, func) {
   document.getElementById(id).addEventListener('click', func);
 }
@@ -225,10 +210,10 @@ by the messages real-time event.
 
 That's really all we need for the client at this time.
 
-Start the server in one terminal with `node ./examples/chat/server/b/src`.
+Start the server in one terminal with `node ./examples/chat/server/client/src`.
 It will display:
 ```text
-feathers-an-introduction$ node ./examples/chat/server/b/src
+feathers-an-introduction$ node ./examples/chat/server/client/src
 Feathers application started on localhost:3030
 messages table cleared.
 users table cleared.

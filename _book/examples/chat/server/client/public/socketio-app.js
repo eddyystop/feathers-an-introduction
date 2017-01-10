@@ -1,6 +1,7 @@
 
 /* globals app: 0, feathers: 0 */
 
+/// [router]
 // DOM
 handleClick('signup-user', signUpUser);
 handleClick('signin-user', signInUser);
@@ -20,11 +21,12 @@ const router = (newRoute) => {
   els['chat'].style.display = newRoute === 'chat' ? 'block' : 'none';
 };
 router('sign-up');
+//! [router]
 
 // Feathers
 let userList = [];
 
-app
+feathersClient
   .configure(feathers.hooks())
   .configure(feathers.authentication({
     storage: window.localStorage
