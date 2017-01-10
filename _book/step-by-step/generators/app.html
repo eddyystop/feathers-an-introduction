@@ -97,7 +97,7 @@
                 <a href="../readme.html">
             
                     
-                    Step by step intro to basic Feathers >>>
+                    Step by step intro to basic Feathers >>
             
                 </a>
             
@@ -111,7 +111,7 @@
                 <a href="../intro/readme.html">
             
                     
-                    Introduction >>>
+                    Introduction >>
             
                 </a>
             
@@ -143,7 +143,7 @@
                 <a href="../basic-feathers/readme.html">
             
                     
-                    Basic Feathers >>>
+                    Basic Feathers >>
             
                 </a>
             
@@ -266,7 +266,7 @@
                 <a href="readme.html">
             
                     
-                    Generators >>>
+                    Generators >>
             
                 </a>
             
@@ -337,7 +337,7 @@
                 <a href="../appendix/readme.html">
             
                     
-                    Appendix >>>
+                    Appendix >>
             
                 </a>
             
@@ -374,7 +374,7 @@
                 <a href="../../chat/readme.html">
             
                     
-                    Writing a chat room app >>>
+                    Writing a chat room app >>
             
                 </a>
             
@@ -388,7 +388,7 @@
                 <a href="../../chat/server/readme.html">
             
                     
-                    Server >>>
+                    Server >>
             
                 </a>
             
@@ -459,7 +459,7 @@
                 <a href="../../chat/client/readme.html">
             
                     
-                    Client >>>
+                    Client >>
             
                 </a>
             
@@ -535,7 +535,7 @@
                 <a href="../../adapters/readme.html">
             
                     
-                    Adapters >>>
+                    Adapters >>
             
                 </a>
             
@@ -549,7 +549,7 @@
                 <a href="../../adapters/redux-services/readme.html">
             
                     
-                    Redux for Feathers services >>>
+                    Redux for Feathers services >>
             
                 </a>
             
@@ -562,7 +562,7 @@
                 <a href="../../adapters/redux-auth/readme.html">
             
                     
-                    Redux for Feathers authentication >>>
+                    Redux for Feathers authentication >>
             
                 </a>
             
@@ -623,19 +623,22 @@
                                 <h1 id="generating-an-app">Generating an app</h1>
 <p>Let&apos;s generate a new project.</p>
 <h2 id="working-example">Working example</h2>
-<p>| Server source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/a/" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/a/</a></p>
-<p>| Client HTML code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/a/public/socketio.html" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/a/public/socketio.html</a></p>
-<p>| Client source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/a/public/feathers-app.js" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/a/public/feathers-app.js</a></p>
-<p>| Start the server: <code>node ./examples/step/02/a/src</code></p>
+<p>| Server code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/" target="_blank">app/</a></p>
+<p>| Client code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/public/socketio.html" target="_blank">app/public/socketio.html</a>
+and
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/public/feathers-app.js" target="_blank">app/public/feathers-app.js</a></p>
+<p>| Start the server: <code>node ./examples/step/02/app/src</code></p>
 <p>| Point the browser at: <code>//localhost:3030/socketio.html</code></p>
 <h2 id="creating-an-app">Creating an app</h2>
 <p>The <a href="https://docs.feathersjs.com/getting-started/scaffolding.html#generate-the-app" target="_blank">app generator</a>
-wrote most of <code>examples/step/02/a/</code> using</p>
-<pre><code class="lang-text">feathers-an-introduction$ mkdir ./examples/step/02/a
-feathers-an-introduction$ cd ./examples/step/02/a
-b$ feathers generate
+wrote most of
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/" target="_blank">app/</a>
+after the following prompts:</p>
+<pre><code class="lang-text">feathers-an-introduction$ mkdir ./examples/step/02/app/src
+feathers-an-introduction$ cd ./examples/step/02/app/src
+app$ feathers generate
 
-Project name: Feathers-guide-03-b
+Project name: Feathers-guide-02-app
 Description: (enter)
 What type of API are you making: REST &amp; Realtime via Socket.io
 CORS configuration: Disabled
@@ -643,7 +646,7 @@ What database do you primarily want to use?: NeDB
 What authentication providers would you like to support?: local
 Do you want to update this generator?: No
 
-b$ rm -rf node_modules
+app$ rm -rf node_modules
 </code></pre>
 <p>After generating the code, the generator ran <code>npm install</code> in order to load the app&apos;s dependencies.
 We remove those dependencies as they already installed at the root of <code>feathers-an-introduction</code>.</p>
@@ -652,7 +655,7 @@ We remove those dependencies as they already installed at the root of <code>feat
 <ul>
 <li><p><strong>config/</strong> The configuration files.
 <code>production.json</code> values override <code>default.json</code> ones when in production mode,
-i.e. when you run <code>NODE_ENV=production node ./example/03/b/src</code>.</p>
+i.e. when you run <code>NODE_ENV=production node ./examples/step/02/app/src</code>.</p>
 </li>
 <li><p><strong>data/</strong> Where the NeDB tables reside.</p>
 </li>
@@ -693,6 +696,12 @@ and that by default it will return 5 items.</p>
 </ul>
 <h2 id="authentication">Authentication</h2>
 <p>The frontend code includes</p>
+<p>| View complete file
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/public/feathers-app.js" target="_blank">app/public/feathers-app.js</a>
+View changes from file common/public/feathers-app.js:
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app-feathers-app-line.html" target="_blank">Unified</a>
+|
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app-feathers-app-side.html" target="_blank">Split</a></p>
 <pre><code class="lang-javascript">app.authenticate({
   type: <span class="hljs-string">&apos;local&apos;</span>,
   <span class="hljs-string">&apos;email&apos;</span>: <span class="hljs-string">&apos;jane.doe@gmail.com&apos;</span>,
@@ -773,7 +782,7 @@ find all items
 
             
                 
-                <a href="readme.html" class="navigation navigation-prev " aria-label="Previous page: Generators >>>">
+                <a href="readme.html" class="navigation navigation-prev " aria-label="Previous page: Generators >>">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -789,7 +798,7 @@ find all items
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Generating an app","level":"1.2.3.1","depth":3,"next":{"title":"Adding a service","level":"1.2.3.2","depth":3,"path":"step-by-step/generators/service.md","ref":"step-by-step/generators/service.md","articles":[]},"previous":{"title":"Generators >>>","level":"1.2.3","depth":2,"path":"step-by-step/generators/readme.md","ref":"step-by-step/generators/readme.md","articles":[{"title":"Generating an app","level":"1.2.3.1","depth":3,"path":"step-by-step/generators/app.md","ref":"step-by-step/generators/app.md","articles":[]},{"title":"Adding a service","level":"1.2.3.2","depth":3,"path":"step-by-step/generators/service.md","ref":"step-by-step/generators/service.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/generators/app.md","mtime":"2017-01-01T13:01:27.112Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-10T19:15:24.271Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Generating an app","level":"1.2.3.1","depth":3,"next":{"title":"Adding a service","level":"1.2.3.2","depth":3,"path":"step-by-step/generators/service.md","ref":"step-by-step/generators/service.md","articles":[]},"previous":{"title":"Generators >>","level":"1.2.3","depth":2,"path":"step-by-step/generators/readme.md","ref":"step-by-step/generators/readme.md","articles":[{"title":"Generating an app","level":"1.2.3.1","depth":3,"path":"step-by-step/generators/app.md","ref":"step-by-step/generators/app.md","articles":[]},{"title":"Adding a service","level":"1.2.3.2","depth":3,"path":"step-by-step/generators/service.md","ref":"step-by-step/generators/service.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/generators/app.md","mtime":"2017-01-10T19:55:48.495Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-10T19:56:13.009Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

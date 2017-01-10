@@ -27,34 +27,28 @@ we already have.
 
 ## Working example
 
-| Server source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/c/1.js
+| Server code: [websocket/1.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/websocket/1.js)
 
-| Listener HTML code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener.html
+| Listener code: [common/public/listener.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener.html)
+and
+[common/public/listener-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener-app.js)
 
-| Listener source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener-app.js
+| Client code: [common/public/socketio.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/socketio.html)
+and
+[common/public/feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js)
 
-| Client HTML code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/socketio.html
-
-| Client source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js
-
-| Start the server: `node ./examples/step/01/c/1`
+| Start the server: `node ./examples/step/01/websocket/1.js`
 
 | Start the listener by pointing a browser tab at `//localhost:3030/listener.html`
 
-| Start the source of changes by pointing a browser tab at: `//localhost:3030/socketio.html`
+| Start making changes by pointing a browser tab at: `//localhost:3030/socketio.html`
 
 ## Implementing a listener
 
-Implementing a listener is straight forward.
-
-```javascript
-const users = app.service('/users');
-
-users.on('created', user => console.log('created', user));
-users.on('removed', user => console.log('removed', user));
-
-console.log('Listening for user events.');
-```
+Implementing the listener
+[common/public/listener-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener-app.js)
+is straight forward.
+[import](../../examples/step/01/common/public/listener-app.js)
 
 ## Filtering
 

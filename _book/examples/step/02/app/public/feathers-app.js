@@ -1,12 +1,12 @@
 
-app
+feathersClient
   .configure(feathers.hooks())
   .configure(feathers.authentication({
     storage: window.localStorage
   }));
 
 let jackId;
-const users = app.service('/users');
+const users = feathersClient.service('/users');
 
 Promise.all([
   users.create({ email: 'jane.doe@gmail.com', password: '11111', role: 'admin' }),
@@ -22,7 +22,7 @@ Promise.all([
     
     jackId = results[3]._id; // This way is not elegant but easy to understand.
     
-    return app.authenticate({
+    return feathersClient.authenticate({
       type: 'local',
       'email': 'jane.doe@gmail.com',
       'password': '11111'

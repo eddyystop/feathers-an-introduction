@@ -97,7 +97,7 @@
                 <a href="../readme.html">
             
                     
-                    Step by step intro to basic Feathers >>>
+                    Step by step intro to basic Feathers >>
             
                 </a>
             
@@ -111,7 +111,7 @@
                 <a href="../intro/readme.html">
             
                     
-                    Introduction >>>
+                    Introduction >>
             
                 </a>
             
@@ -143,7 +143,7 @@
                 <a href="readme.html">
             
                     
-                    Basic Feathers >>>
+                    Basic Feathers >>
             
                 </a>
             
@@ -266,7 +266,7 @@
                 <a href="../generators/readme.html">
             
                     
-                    Generators >>>
+                    Generators >>
             
                 </a>
             
@@ -337,7 +337,7 @@
                 <a href="../appendix/readme.html">
             
                     
-                    Appendix >>>
+                    Appendix >>
             
                 </a>
             
@@ -374,7 +374,7 @@
                 <a href="../../chat/readme.html">
             
                     
-                    Writing a chat room app >>>
+                    Writing a chat room app >>
             
                 </a>
             
@@ -388,7 +388,7 @@
                 <a href="../../chat/server/readme.html">
             
                     
-                    Server >>>
+                    Server >>
             
                 </a>
             
@@ -459,7 +459,7 @@
                 <a href="../../chat/client/readme.html">
             
                     
-                    Client >>>
+                    Client >>
             
                 </a>
             
@@ -535,7 +535,7 @@
                 <a href="../../adapters/readme.html">
             
                     
-                    Adapters >>>
+                    Adapters >>
             
                 </a>
             
@@ -549,7 +549,7 @@
                 <a href="../../adapters/redux-services/readme.html">
             
                     
-                    Redux for Feathers services >>>
+                    Redux for Feathers services >>
             
                 </a>
             
@@ -562,7 +562,7 @@
                 <a href="../../adapters/redux-auth/readme.html">
             
                     
-                    Redux for Feathers authentication >>>
+                    Redux for Feathers authentication >>
             
                 </a>
             
@@ -643,17 +643,22 @@ These would have implement a traditional long-polling design.
 <p>Let&apos;s create an event listener for the <a href="socket-client.html">Feathers Websocket Client</a>
 we already have.</p>
 <h2 id="working-example">Working example</h2>
-<p>| Server source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/c/1.js" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/c/1.js</a></p>
-<p>| Listener HTML code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener.html" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener.html</a></p>
-<p>| Listener source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener-app.js" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener-app.js</a></p>
-<p>| Client HTML code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/socketio.html" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/socketio.html</a></p>
-<p>| Client source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js</a></p>
-<p>| Start the server: <code>node ./examples/step/01/c/1</code></p>
+<p>| Server code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/websocket/1.js" target="_blank">websocket/1.js</a></p>
+<p>| Listener code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener.html" target="_blank">common/public/listener.html</a>
+and
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener-app.js" target="_blank">common/public/listener-app.js</a></p>
+<p>| Client code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/socketio.html" target="_blank">common/public/socketio.html</a>
+and
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js" target="_blank">common/public/feathers-app.js</a></p>
+<p>| Start the server: <code>node ./examples/step/01/websocket/1.js</code></p>
 <p>| Start the listener by pointing a browser tab at <code>//localhost:3030/listener.html</code></p>
-<p>| Start the source of changes by pointing a browser tab at: <code>//localhost:3030/socketio.html</code></p>
+<p>| Start making changes by pointing a browser tab at: <code>//localhost:3030/socketio.html</code></p>
 <h2 id="implementing-a-listener">Implementing a listener</h2>
-<p>Implementing a listener is straight forward.</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> users = app.service(<span class="hljs-string">&apos;/users&apos;</span>);
+<p>Implementing the listener
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener-app.js" target="_blank">common/public/listener-app.js</a>
+is straight forward.</p>
+<pre><code class="lang-javascript">
+<span class="hljs-keyword">const</span> users = feathersClient.service(<span class="hljs-string">&apos;/users&apos;</span>);
 
 users.on(<span class="hljs-string">&apos;created&apos;</span>, user =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;created&apos;</span>, user));
 users.on(<span class="hljs-string">&apos;removed&apos;</span>, user =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;removed&apos;</span>, user));
@@ -719,7 +724,7 @@ and remove <code>password</code> from the payload with:</p>
                 </a>
                 
                 
-                <a href="../generators/readme.html" class="navigation navigation-next " aria-label="Next page: Generators >>>">
+                <a href="../generators/readme.html" class="navigation navigation-next " aria-label="Next page: Generators >>">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -730,7 +735,7 @@ and remove <code>password</code> from the payload with:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Real-time","level":"1.2.2.8","depth":3,"next":{"title":"Generators >>>","level":"1.2.3","depth":2,"path":"step-by-step/generators/readme.md","ref":"step-by-step/generators/readme.md","articles":[{"title":"Generating an app","level":"1.2.3.1","depth":3,"path":"step-by-step/generators/app.md","ref":"step-by-step/generators/app.md","articles":[]},{"title":"Adding a service","level":"1.2.3.2","depth":3,"path":"step-by-step/generators/service.md","ref":"step-by-step/generators/service.md","articles":[]}]},"previous":{"title":"Hooks, part 2","level":"1.2.2.7","depth":3,"path":"step-by-step/basic-feathers/hooks-2.md","ref":"step-by-step/basic-feathers/hooks-2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/real-time.md","mtime":"2017-01-03T13:12:49.762Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-10T19:15:24.271Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Real-time","level":"1.2.2.8","depth":3,"next":{"title":"Generators >>","level":"1.2.3","depth":2,"path":"step-by-step/generators/readme.md","ref":"step-by-step/generators/readme.md","articles":[{"title":"Generating an app","level":"1.2.3.1","depth":3,"path":"step-by-step/generators/app.md","ref":"step-by-step/generators/app.md","articles":[]},{"title":"Adding a service","level":"1.2.3.2","depth":3,"path":"step-by-step/generators/service.md","ref":"step-by-step/generators/service.md","articles":[]}]},"previous":{"title":"Hooks, part 2","level":"1.2.2.7","depth":3,"path":"step-by-step/basic-feathers/hooks-2.md","ref":"step-by-step/basic-feathers/hooks-2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/real-time.md","mtime":"2017-01-10T19:34:19.683Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-10T19:56:13.009Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

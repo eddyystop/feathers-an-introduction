@@ -20,7 +20,7 @@
 <script src="/serverUrl.js"></script>
 <script>
   const socket = io(serverUrl);
-  const app = feathers()
+  const feathersClient = feathers()
       .configure(feathers.socketio(socket))
 </script>
 <script src="/listener-app.js"></script>

@@ -4,27 +4,29 @@ Let's generate a new project.
 
 ## Working example
 
-| Server source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/a/
+| Server code: [app/](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/)
 
-| Client HTML code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/a/public/socketio.html
+| Client code: [app/public/socketio.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/public/socketio.html)
+and
+[app/public/feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/public/feathers-app.js)
 
-| Client source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/a/public/feathers-app.js
-
-| Start the server: `node ./examples/step/02/a/src`
+| Start the server: `node ./examples/step/02/app/src`
 
 | Point the browser at: `//localhost:3030/socketio.html`
 
 ## Creating an app
 
 The [app generator](https://docs.feathersjs.com/getting-started/scaffolding.html#generate-the-app)
-wrote most of `examples/step/02/a/` using
+wrote most of
+[app/](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/)
+after the following prompts:
 
 ```text
-feathers-an-introduction$ mkdir ./examples/step/02/a
-feathers-an-introduction$ cd ./examples/step/02/a
-b$ feathers generate
+feathers-an-introduction$ mkdir ./examples/step/02/app/src
+feathers-an-introduction$ cd ./examples/step/02/app/src
+app$ feathers generate
 
-Project name: Feathers-guide-03-b
+Project name: Feathers-guide-02-app
 Description: (enter)
 What type of API are you making: REST & Realtime via Socket.io
 CORS configuration: Disabled
@@ -32,7 +34,7 @@ What database do you primarily want to use?: NeDB
 What authentication providers would you like to support?: local
 Do you want to update this generator?: No
 
-b$ rm -rf node_modules
+app$ rm -rf node_modules
 ```
 
 After generating the code, the generator ran `npm install` in order to load the app's dependencies.
@@ -44,7 +46,7 @@ The app organization is
 
 - **config/** The configuration files.
 `production.json` values override `default.json` ones when in production mode,
-i.e. when you run `NODE_ENV=production node ./example/03/b/src`.
+i.e. when you run `NODE_ENV=production node ./examples/step/02/app/src`.
 
 - **data/** Where the NeDB tables reside.
 
@@ -79,6 +81,14 @@ i.e. when you run `NODE_ENV=production node ./example/03/b/src`.
 ## Authentication
 
 The frontend code includes
+
+| View complete file
+[app/public/feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/public/feathers-app.js)
+View changes from file common/public/feathers-app.js:
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app-feathers-app-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app-feathers-app-side.html)
+
 ```javascript
 app.authenticate({
   type: 'local',

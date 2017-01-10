@@ -52,12 +52,12 @@ The frontend
 is just a copy of what we used in
 [Writing a Database Connector](./database-connector.md)!
 
-| View complete file [rest/2.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/2.js)
+| View complete file
+[rest/2.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/2.js)
 View changes from file rest/1.js:
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-line.html)
 |
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-side.html)
-
 [import](../../examples/step/01/rest/2.js)
 
 > **Feathers "ah-ha" moment.**
