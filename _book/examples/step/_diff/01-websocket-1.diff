@@ -1,5 +1,5 @@
 --- 01/rest/2.js	2017-01-10 11:33:57.090334579 -0500
-+++ 01/websocket/1.js	2017-01-10 12:09:13.504495257 -0500
++++ 01/websocket/1.js	2017-01-10 12:19:15.626966692 -0500
 @@ -1,18 +1,22 @@
  
 -// Example - Create REST API, and serve static files
@@ -13,15 +13,13 @@
 +const socketio = require('feathers-socketio'); // new
  
  const expressServerConfig = require('../common/expressServerConfig');
--const expressMiddleware = require('../common/expressMiddleware');
-+const expressMessage = require('../common/expressMessage');
+ const expressMiddleware = require('../common/expressMiddleware');
  
  const app = expressServerConfig()
    .configure(rest())
 +  .configure(socketio()) // new
    .configure(services)
--  .configure(expressMiddleware);
-+  .configure(expressMessage);
+   .configure(expressMiddleware);
 +//! [websocket]
  
  const server = app.listen(3030);

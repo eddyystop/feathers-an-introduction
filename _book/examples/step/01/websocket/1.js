@@ -9,13 +9,13 @@ const rest = require('feathers-rest');
 const socketio = require('feathers-socketio'); // new
 
 const expressServerConfig = require('../common/expressServerConfig');
-const expressMessage = require('../common/expressMessage');
+const expressMiddleware = require('../common/expressMiddleware');
 
 const app = expressServerConfig()
   .configure(rest())
   .configure(socketio()) // new
   .configure(services)
-  .configure(expressMessage);
+  .configure(expressMiddleware);
 //! [websocket]
 
 const server = app.listen(3030);

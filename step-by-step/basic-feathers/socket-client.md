@@ -65,4 +65,4 @@ View changes from file common/public/rest.html:
 - `.configure(feathers.socketio(socket))` configure Feathers client to use the websocket.
 
 And that's all there is to it.
-The results are identical to that for [Writing a Feathers REST Client]('./rest-client.md)
+The results are identical to that for [Writing a Feathers REST Client](./rest-client.md)
