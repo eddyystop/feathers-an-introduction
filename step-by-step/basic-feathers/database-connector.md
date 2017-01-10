@@ -17,7 +17,7 @@ Everything we mention in this guide is applicable to all of them.
 
 | Source code: [db-connector/1.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/db-connector/1.js)
 
-| Run it: `node ./examples/step/01/db-connector/1`
+| Run it: `node ./examples/step/01/db-connector/1.js`
 
 ## Feathers is modular
 
@@ -85,11 +85,10 @@ remove(id, params)
 `params` may be `{ query: { ... }, ... }` for `find`,
 and for `remove` if `id` is `null`.
 
-
-#### 
 ## Results
 
-The server console displays:
+Run the program using `node ./examples/step/01/db-connector/1.js`.
+The console displays:
 
 ```text
 feathers-an-introduction$ node ./examples/step/01/a/1

@@ -630,8 +630,10 @@ Future versions will support multiple frameworks, starting with
 <a href="https://github.com/koajs/koa" target="_blank">koa</a>.</p>
 </blockquote>
 <h2 id="working-example">Working example</h2>
-<p>| Source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/1.js" target="_blank">rest/1.js.</a></p>
-<p>| Run it: <code>node ./examples/step/01/rest/1</code></p>
+<p>| Source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/1.js" target="_blank">rest/1.js.</a>
+and
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common" target="_blank">common/</a></p>
+<p>| Run it: <code>node ./examples/step/01/rest/1.js</code></p>
 <h2 id="implementing-a-rest-api-server">Implementing a REST API server</h2>
 <p>This is our previous example with the database method calls removed,
 and with an Express server added.</p>
@@ -671,7 +673,7 @@ server.on(<span class="hljs-string">&apos;listening&apos;</span>, () =&gt; <span
   });
 }
 </code></pre>
-<p>The <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/expressServerConfig.js" target="_blank">Express server</a>
+<p>The Express server <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/expressServerConfig.js" target="_blank">common/expressServerConfig.js</a>
 is configured as follows.</p>
 <pre><code class="lang-javascript">
 <span class="hljs-keyword">const</span> bodyParser = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;body-parser&apos;</span>);
@@ -692,7 +694,7 @@ is configured as follows.</p>
   <span class="hljs-keyword">return</span> app;
 };
 </code></pre>
-<p>The <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/expressMiddleware/index.js" target="_blank">Express middleware</a>
+<p>The Express middleware <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/expressMiddleware/index.js" target="_blank">common/expressMiddleware/index.js</a>
 handles logging, pages not found, and general errors.</p>
 <pre><code class="lang-javascript"><span class="hljs-meta">&apos;use strict&apos;</span>;
 
@@ -726,7 +728,10 @@ curl -H <span class="hljs-string">&quot;Content-Type: application/json&quot;</sp
 <span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;\nGET all users\n&quot;</span>
 curl -X GET http://localhost:3030/users
 </code></pre>
-<p>Run them with <code>./examples/step/01/rest/curl-requests.sh</code> and the following is displayed:</p>
+<p>First, start the server by running <code>node ./examples/step/01/rest/1.js</code> on one terminal.</p>
+<p>Then run the curl commands with <code>./examples/step/01/rest/curl-requests.sh</code>
+on another terminal.
+That console displays:</p>
 <pre><code class="lang-text">feathers-an-introduction$ ./examples/step/01/rest/curl-requests.sh
 POST Jane Doe
 {&quot;email&quot;:&quot;jane.doe@gmail.com&quot;,&quot;password&quot;:&quot;X2y6&quot;,&quot;role&quot;:&quot;admin&quot;,&quot;_id&quot;:&quot;sbkXV7LVkMhx1NyY&quot;}
@@ -789,7 +794,7 @@ How&apos;s that for convenience?</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"A REST API server","level":"1.2.2.2","depth":3,"next":{"title":"A Feathers REST client","level":"1.2.2.3","depth":3,"path":"step-by-step/basic-feathers/rest-client.md","ref":"step-by-step/basic-feathers/rest-client.md","articles":[]},"previous":{"title":"A database connector","level":"1.2.2.1","depth":3,"path":"step-by-step/basic-feathers/database-connector.md","ref":"step-by-step/basic-feathers/database-connector.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/rest-api-server.md","mtime":"2017-01-10T14:59:25.349Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-10T14:59:31.352Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"A REST API server","level":"1.2.2.2","depth":3,"next":{"title":"A Feathers REST client","level":"1.2.2.3","depth":3,"path":"step-by-step/basic-feathers/rest-client.md","ref":"step-by-step/basic-feathers/rest-client.md","articles":[]},"previous":{"title":"A database connector","level":"1.2.2.1","depth":3,"path":"step-by-step/basic-feathers/database-connector.md","ref":"step-by-step/basic-feathers/database-connector.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/rest-api-server.md","mtime":"2017-01-10T15:21:34.388Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-10T15:21:58.419Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

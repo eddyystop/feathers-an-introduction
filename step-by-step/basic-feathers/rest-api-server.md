@@ -12,8 +12,10 @@ Future versions will support multiple frameworks, starting with
 ## Working example
 
 | Source code: [rest/1.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/1.js)
+and
+[common/](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common)
 
-| Run it: `node ./examples/step/01/rest/1`
+| Run it: `node ./examples/step/01/rest/1.js`
 
 ## Implementing a REST API server
 
@@ -27,11 +29,11 @@ View changes from file db-connector/1.js:
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-1-side.html)
 [import](../../examples/step/01/rest/1.js)
 
-The [Express server](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/expressServerConfig.js)
+The Express server [common/expressServerConfig.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/expressServerConfig.js)
 is configured as follows.
 [import](../../examples/step/01/common/expressServerConfig.js)
 
-The [Express middleware](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/expressMiddleware/index.js)
+The Express middleware [common/expressMiddleware/index.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/expressMiddleware/index.js)
 handles logging, pages not found, and general errors.
 [import](../../examples/step/01/common/expressMiddleware/index.js)
 
@@ -47,7 +49,11 @@ We can now do the same thing, but using REST, with
 [curl commands:](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/curl-requests.sh)
 [import](../../examples/step/01/rest/curl-requests.sh)
 
-Run them with `./examples/step/01/rest/curl-requests.sh` and the following is displayed:
+First, start the server by running `node ./examples/step/01/rest/1.js` on one terminal.
+
+Then run the curl commands with `./examples/step/01/rest/curl-requests.sh`
+on another terminal.
+That console displays:
 
 ```text
 feathers-an-introduction$ ./examples/step/01/rest/curl-requests.sh
