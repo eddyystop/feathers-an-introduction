@@ -5,11 +5,12 @@ Let's write a Javascript frontend for it.
 
 ## Working example
 
-| Server source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/b/2.js
+| Server code: [rest/2.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/2.js)
 
-| Client HTML code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/rest.html
-
-| Client source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js
+| Client code:
+[common/public/rest.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/rest.html)
+and
+[common/public/feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js)
 
 | Start the server: `node ./examples/step/01/b/2`
 
@@ -17,44 +18,18 @@ Let's write a Javascript frontend for it.
 
 ## Writing a server for Feathers client REST calls
 
-Our frontend will communicate with the current server using its REST API.
+Our frontend will communicate with the
+[current server](./rest-api-server.md) using its REST API.
 **No changes are required!**
 
 ## Writing the frontend HTML
 
 We'll soon see most of the frontend doesn't care if we're communicating with the server
 using REST or websockets.
-To keep things DRY, we are isolating in this HTML the code which is unique to REST.
-
-```HTML
-<html>
-<head>
-  <title>Feathers REST client</title>
-  <style>
-    body {
-      font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
-      font-weight: 400;
-      font-size: 16px;
-      color: #333;
-    }
-  </style>
-</head>
-<body>
-<h1>Feathers guide</h1>
-<h2>Example 02.b.2 - Feathers REST client</h2>
-<br />
-Open console to see results of <strong>feathers-rest</strong> calls.
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/core-js/2.1.4/core.min.js"></script>
-<script src="//unpkg.com/feathers-client@^1.8.0/dist/feathers.js"></script>
-<script src="/serverUrl.js"></script>
-<script>
-  const app = feathers()
-      .configure(feathers.rest(serverUrl).fetch(fetch))
-</script>
-<script src="/feathers-app.js"></script>
-</body>
-</html>
-```
+To keep things DRY, we are isolating in
+[common/public/rest.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/rest.html)
+the code which is unique to REST.
+[import](../../examples/step/01/common/public/rest.html)
 
 - `//cdnjs.cloudflare.com/ajax/libs/core-js/2.1.4/core.min.js`
 loads a pollyfill for [fetch](https://davidwalsh.name/fetch) if required.
@@ -72,38 +47,18 @@ and passes the `fetch` instruction as the interface for fetching resources.
 ## Writing the Feathers frontend
 
 Writing the HTML was actually the hard part.
-The rest of the application is just a copy of what we used in
+The frontend
+[rest/2.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/2.js)
+is just a copy of what we used in
 [Writing a Database Connector](./database-connector.md)!
 
-```javascript
+| View complete file [rest/2.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/2.js)
+View changes from file rest/1.js:
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-side.html)
 
-const users = app.service('/users');
-
-Promise.all([
-  users.create({ email: 'jane.doe@gmail.com', password: '11111', role: 'admin' }),
-  users.create({ email: 'john.doe@gmail.com', password: '22222', role: 'user' }),
-  users.create({ email: 'judy.doe@gmail.com', password: '33333', role: 'user' }),
-  users.create({ email: 'jack.doe@gmail.com', password: '44444', role: 'user' }),
-])
-  .then(results => {
-    console.log('created Jane Doe item\n', results[0]);
-    console.log('created John Doe item\n', results[1]);
-    console.log('created Judy Doe item\n', results[2]);
-    console.log('created Jack Doe item\n', results[3]);
-  
-    const jackId = results[3]._id;
-    return users.remove(jackId)
-      .then(results => console.log('deleted Jack Doe item\n', results));
-  })
-  .then(() => {
-    return users.find()
-      .then(results => {
-        console.log('find all items\n', results);
-        console.log((results || []).length, 'items returned.');
-      })
-  })
-  .catch(err => console.log(err));
-```
+[import](../../examples/step/01/rest/2.js)
 
 > **Feathers "ah-ha" moment.**
 We can run **exactly** the same code on the frontend as on the server.
