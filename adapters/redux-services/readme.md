@@ -17,10 +17,10 @@ xxxxxxxxxxxxxxxxxxxxxxx
 [import:'marker1'](js3.js)
 
 aaa
-[-u diff](../../examples/step/01/diff.html)
+[-u diff](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/diff.html)
+
 bbb
-[-y diff](../../examples/step/01/diff-side.html)
-ccc
+[-y diff](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/diff-side.html)
 
 
 Is anything unclear? Is something missing?
