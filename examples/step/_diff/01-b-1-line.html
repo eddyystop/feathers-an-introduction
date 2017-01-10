@@ -27,7 +27,7 @@
   <script>
     $(document).ready(function() {
       var diff2htmlUi = new Diff2HtmlUI();
-      diff2htmlUi.fileListCloseable("#diff", false);
+      diff2htmlUi.fileListCloseable("#diff", undefined);
       diff2htmlUi.highlightCode('#diff');
     });
   </script>
@@ -36,28 +36,7 @@
 <h1>Diff to HTML by <a href="https://github.com/rtfpessoa">rtfpessoa</a></h1>
 
 <div id="diff">
-  <div class="d2h-file-list-wrapper">
-    <div class="d2h-file-list-header">
-        <span class="d2h-file-list-title">Files changed (1)</span>
-        <a class="d2h-file-switch d2h-hide">hide</a>
-        <a class="d2h-file-switch d2h-show">show</a>
-    </div>
-    <ol class="d2h-file-list">
-    <li class="d2h-file-list-line">
-    <span class="d2h-file-name-wrapper">
-      <span><svg aria-hidden="true" class="d2h-icon d2h-moved" height="16" title="renamed" version="1.1"
-     viewBox="0 0 14 16" width="14">
-    <path d="M6 9H3V7h3V4l5 4-5 4V9z m8-7v12c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h12c0.55 0 1 0.45 1 1z m-1 0H1v12h12V2z"></path>
-</svg></span>
-      <a href="#d2h-349016" class="d2h-file-name">01/{a/1.js	2017-01-01 10:39:28.194841475 -0500 → b/1.js	2017-01-01 10:39:28.514064345 -0500}</a>
-      <span class="d2h-file-stats">
-          <span class="d2h-lines-added">+10</span>
-          <span class="d2h-lines-deleted">-19</span>
-      </span>
-    </span>
-</li>
-    </ol>
-</div><div class="d2h-wrapper">
+  <div class="d2h-wrapper">
     <div id="d2h-349016" class="d2h-file-wrapper" data-lang="514064345 -0500">
     <div class="d2h-file-header">
     <span class="d2h-file-name-wrapper">

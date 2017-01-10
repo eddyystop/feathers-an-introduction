@@ -20,6 +20,12 @@ Future versions will support multiple frameworks, starting with
 This is our previous example with the database method calls removed,
 and with an Express server added.
 
+| View complete file [b/1.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/b/1.js)
+View changes from file a/1.js:
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-b-1-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-b-1-side.html)
+
 ```javascript
 const NeDB = require('nedb');
 const path = require('path');
