@@ -37,13 +37,13 @@
 
 <div id="diff">
   <div class="d2h-wrapper">
-    <div id="d2h-227434" class="d2h-file-wrapper" data-lang="970259415 -0500">
+    <div id="d2h-620640" class="d2h-file-wrapper" data-lang="916880135 -0500">
     <div class="d2h-file-header">
     <span class="d2h-file-name-wrapper">
     <span class="d2h-icon-wrapper"><svg aria-hidden="true" class="d2h-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12">
     <path d="M6 5H2v-1h4v1zM2 8h7v-1H2v1z m0 2h7v-1H2v1z m0 2h7v-1H2v1z m10-7.5v9.5c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h7.5l3.5 3.5z m-1 0.5L8 2H1v12h10V5z"></path>
 </svg></span>
-    <span class="d2h-file-name">01/{websocket/1.js	2017-01-10 12:22:04.767400008 -0500 → hooks/1.js	2017-01-10 12:48:32.970259415 -0500}</span>
+    <span class="d2h-file-name">01/{websocket/1.js	2017-01-10 12:22:04.767400008 -0500 → hooks/1.js	2017-01-10 14:05:07.916880135 -0500}</span>
     <span class="d2h-tag d2h-moved d2h-moved-tag">RENAMED</span></span>
     </div>
     <div class="d2h-file-diff">
@@ -350,7 +350,7 @@
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line d2h-info">@@ -20,7 +26,27 @@</div>
+        <div class="d2h-code-line d2h-info">@@ -20,7 +26,29 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
@@ -501,7 +501,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">  const { /* validateSchema, */ setCreatedAt, setUpdatedAt, unless, remove } = commonHooks;</span>
+            <span class="d2h-code-line-ctn">  const {</span>
         </div>
     </td>
 </tr><tr>
@@ -512,7 +512,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">  </span>
+            <span class="d2h-code-line-ctn">    setCreatedAt, setUpdatedAt, unless, remove /* , validateSchema */</span>
         </div>
     </td>
 </tr><tr>
@@ -523,7 +523,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">  userService.before({</span>
+            <span class="d2h-code-line-ctn">  } = commonHooks;</span>
         </div>
     </td>
 </tr><tr>
@@ -534,7 +534,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    create: [</span>
+            <span class="d2h-code-line-ctn">  </span>
         </div>
     </td>
 </tr><tr>
@@ -545,7 +545,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">      validateSchema(userSchema(), Ajv),</span>
+            <span class="d2h-code-line-ctn">  userService.before({</span>
         </div>
     </td>
 </tr><tr>
@@ -556,7 +556,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">      authHooks.hashPassword(),</span>
+            <span class="d2h-code-line-ctn">    create: [</span>
         </div>
     </td>
 </tr><tr>
@@ -567,7 +567,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">      setCreatedAt(),</span>
+            <span class="d2h-code-line-ctn">      validateSchema(userSchema(), Ajv),</span>
         </div>
     </td>
 </tr><tr>
@@ -578,7 +578,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">      setUpdatedAt()</span>
+            <span class="d2h-code-line-ctn">      authHooks.hashPassword(),</span>
         </div>
     </td>
 </tr><tr>
@@ -589,7 +589,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    ]});</span>
+            <span class="d2h-code-line-ctn">      setCreatedAt(),</span>
         </div>
     </td>
 </tr><tr>
@@ -600,7 +600,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">  userService.after({</span>
+            <span class="d2h-code-line-ctn">      setUpdatedAt()</span>
         </div>
     </td>
 </tr><tr>
@@ -611,7 +611,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    all: unless(hook =&gt; hook.method === 'find', remove('password')),</span>
+            <span class="d2h-code-line-ctn">    ]});</span>
         </div>
     </td>
 </tr><tr>
@@ -622,13 +622,35 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">  userService.after({</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">50</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line d2h-ins">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">    all: unless(hook =&gt; hook.method === 'find', remove('password')),</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">51</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line d2h-ins">
+            <span class="d2h-code-line-prefix">+</span>
             <span class="d2h-code-line-ctn">  });</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">24</div>
-<div class="line-num2">50</div>
+<div class="line-num2">52</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line d2h-cntx">
@@ -639,7 +661,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">25</div>
-<div class="line-num2">51</div>
+<div class="line-num2">53</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line d2h-cntx">
@@ -649,7 +671,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">26</div>
-<div class="line-num2">52</div>
+<div class="line-num2">54</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line d2h-cntx">
@@ -661,12 +683,12 @@
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line d2h-info">@@ -29,3 +55,21 @@</div>
+        <div class="d2h-code-line d2h-info">@@ -29,3 +57,21 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">29</div>
-<div class="line-num2">55</div>
+<div class="line-num2">57</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line d2h-cntx">
@@ -677,7 +699,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">30</div>
-<div class="line-num2">56</div>
+<div class="line-num2">58</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line d2h-cntx">
@@ -688,7 +710,7 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">31</div>
-<div class="line-num2">57</div>
+<div class="line-num2">59</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line d2h-cntx">
@@ -699,33 +721,11 @@
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins">
       <div class="line-num1"></div>
-<div class="line-num2">58</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">59</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">function userSchema() { // new</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
 <div class="line-num2">60</div>
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">  return {</span>
         </div>
     </td>
 </tr><tr>
@@ -736,7 +736,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    title: 'User Schema',</span>
+            <span class="d2h-code-line-ctn">function userSchema() { // new</span>
         </div>
     </td>
 </tr><tr>
@@ -747,7 +747,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    $schema: 'http://json-schema.org/draft-04/schema#',</span>
+            <span class="d2h-code-line-ctn">  return {</span>
         </div>
     </td>
 </tr><tr>
@@ -758,7 +758,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    type: 'object',</span>
+            <span class="d2h-code-line-ctn">    title: 'User Schema',</span>
         </div>
     </td>
 </tr><tr>
@@ -769,7 +769,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    required: [ 'email', 'password' ],</span>
+            <span class="d2h-code-line-ctn">    $schema: 'http://json-schema.org/draft-04/schema#',</span>
         </div>
     </td>
 </tr><tr>
@@ -780,7 +780,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    additionalProperties: false,</span>
+            <span class="d2h-code-line-ctn">    type: 'object',</span>
         </div>
     </td>
 </tr><tr>
@@ -791,7 +791,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    properties: {</span>
+            <span class="d2h-code-line-ctn">    required: [ 'email', 'password' ],</span>
         </div>
     </td>
 </tr><tr>
@@ -802,7 +802,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">      email: { type: 'string', maxLength: 100, minLength: 6 },</span>
+            <span class="d2h-code-line-ctn">    additionalProperties: false,</span>
         </div>
     </td>
 </tr><tr>
@@ -813,7 +813,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">      password: { type: 'string', maxLength: 30, minLength: 8 }</span>
+            <span class="d2h-code-line-ctn">    properties: {</span>
         </div>
     </td>
 </tr><tr>
@@ -824,7 +824,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    }</span>
+            <span class="d2h-code-line-ctn">      email: { type: 'string', maxLength: 100, minLength: 6 },</span>
         </div>
     </td>
 </tr><tr>
@@ -835,7 +835,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">  };</span>
+            <span class="d2h-code-line-ctn">      password: { type: 'string', maxLength: 30, minLength: 8 }</span>
         </div>
     </td>
 </tr><tr>
@@ -846,7 +846,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">}</span>
+            <span class="d2h-code-line-ctn">    }</span>
         </div>
     </td>
 </tr><tr>
@@ -857,6 +857,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">  };</span>
         </div>
     </td>
 </tr><tr>
@@ -867,7 +868,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">function validateSchema() { // todo replace</span>
+            <span class="d2h-code-line-ctn">}</span>
         </div>
     </td>
 </tr><tr>
@@ -878,13 +879,34 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">  return hook =&gt; hook;</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins">
       <div class="line-num1"></div>
 <div class="line-num2">75</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line d2h-ins">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">function validateSchema() { // todo replace</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">76</div>
+    </td>
+    <td class="d2h-ins">
+        <div class="d2h-code-line d2h-ins">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">  return hook =&gt; hook;</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">77</div>
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">

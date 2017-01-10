@@ -35,7 +35,10 @@ function user() {
   app.use('/users', service({ Model: userModel() }));
   const userService = app.service('users');
   
-  const { softDelete, setCreatedAt, setUpdatedAt, when, unless, remove } = commonHooks;
+  const {
+    softDelete, when,
+    setCreatedAt, setUpdatedAt, unless, remove /* , validateSchema */
+  } = commonHooks;
   
   userService.before({
     all: when(hook => hook.method !== 'find', softDelete()), // new
@@ -46,7 +49,7 @@ function user() {
       setUpdatedAt()
     ]});
   userService.after({
-    all: unless(hook => hook.method == 'find', remove('password')),
+    all: unless(hook => hook.method === 'find', remove('password')),
   });
 }
 

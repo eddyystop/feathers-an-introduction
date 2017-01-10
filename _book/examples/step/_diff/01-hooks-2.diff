@@ -1,5 +1,5 @@
---- 01/hooks/1.js	2017-01-10 12:48:32.970259415 -0500
-+++ 01/hooks/2.js	2017-01-10 12:49:53.746519139 -0500
+--- 01/hooks/1.js	2017-01-10 14:05:07.916880135 -0500
++++ 01/hooks/2.js	2017-01-10 14:05:08.004516460 -0500
 @@ -1,13 +1,13 @@
  
 -// Example - Use hooks with service
@@ -28,7 +28,7 @@
    .configure(rest())
    .configure(socketio())
    .configure(services)
-@@ -26,18 +26,19 @@
+@@ -26,20 +26,22 @@
  server.on('listening', () => console.log(`Feathers application started on port 3030`));
  
  function services() {
@@ -43,24 +43,17 @@
    app.use('/users', service({ Model: userModel() }));
    const userService = app.service('users');
    
--  const { /* validateSchema, */ setCreatedAt, setUpdatedAt, unless, remove } = commonHooks;
-+  const { softDelete, setCreatedAt, setUpdatedAt, when, unless, remove } = commonHooks;
+   const {
++    softDelete, when,
+     setCreatedAt, setUpdatedAt, unless, remove /* , validateSchema */
+   } = commonHooks;
    
    userService.before({
 +    all: when(hook => hook.method !== 'find', softDelete()), // new
      create: [
        validateSchema(userSchema(), Ajv),
        authHooks.hashPassword(),
-@@ -45,7 +46,7 @@
-       setUpdatedAt()
-     ]});
-   userService.after({
--    all: unless(hook => hook.method === 'find', remove('password')),
-+    all: unless(hook => hook.method == 'find', remove('password')),
-   });
- }
- 
-@@ -56,7 +57,7 @@
+@@ -58,7 +60,7 @@
    });
  }
  

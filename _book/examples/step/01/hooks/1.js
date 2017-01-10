@@ -35,7 +35,9 @@ function user() { // new
   app.use('/users', service({ Model: userModel() }));
   const userService = app.service('users');
   
-  const { /* validateSchema, */ setCreatedAt, setUpdatedAt, unless, remove } = commonHooks;
+  const {
+    setCreatedAt, setUpdatedAt, unless, remove /* , validateSchema */
+  } = commonHooks;
   
   userService.before({
     create: [

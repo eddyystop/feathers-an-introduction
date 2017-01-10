@@ -1,5 +1,5 @@
 --- 01/websocket/1.js	2017-01-10 12:22:04.767400008 -0500
-+++ 01/hooks/1.js	2017-01-10 12:48:32.970259415 -0500
++++ 01/hooks/1.js	2017-01-10 14:05:07.916880135 -0500
 @@ -1,18 +1,24 @@
  
 -// Example - Create REST & socketio API, and serve static files
@@ -28,7 +28,7 @@
    .configure(services)
    .configure(expressMiddleware);
  
-@@ -20,7 +26,27 @@
+@@ -20,7 +26,29 @@
  server.on('listening', () => console.log(`Feathers application started on port 3030`));
  
  function services() {
@@ -42,7 +42,9 @@
 +  app.use('/users', service({ Model: userModel() }));
 +  const userService = app.service('users');
 +  
-+  const { /* validateSchema, */ setCreatedAt, setUpdatedAt, unless, remove } = commonHooks;
++  const {
++    setCreatedAt, setUpdatedAt, unless, remove /* , validateSchema */
++  } = commonHooks;
 +  
 +  userService.before({
 +    create: [
@@ -57,7 +59,7 @@
  }
  
  function userModel() {
-@@ -29,3 +55,21 @@
+@@ -29,3 +57,21 @@
      autoload: true
    });
  }
