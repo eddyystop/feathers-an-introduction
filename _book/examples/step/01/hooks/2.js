@@ -12,15 +12,15 @@ const service = require('feathers-nedb');
 const rest = require('feathers-rest');
 const socketio = require('feathers-socketio');
 
-const httpServerConfig = require('../common/httpServerConfig');
-const middleware = require('../common/middleware');
+const expressServerConfig = require('../common/expressServerConfig');
+const expressMiddleware = require('../common/expressMiddleware');
 
-const app = httpServerConfig()
+const app = expressServerConfig()
   .configure(hooks())
   .configure(rest())
   .configure(socketio())
   .configure(services)
-  .configure(middleware);
+  .configure(expressMiddleware);
 
 const server = app.listen(3030);
 server.on('listening', () => console.log(`Feathers application started on port 3030`));
@@ -40,7 +40,10 @@ function user() {
   userService.before({
     all: when(hook => hook.method !== 'find', softDelete()), // new
     create: [
-      validateSchema(userSchema(), Ajv), authHooks.hashPassword(), setCreatedAt(), setUpdatedAt()
+      validateSchema(userSchema(), Ajv),
+      authHooks.hashPassword(),
+      setCreatedAt(),
+      setUpdatedAt()
     ]});
   userService.after({
     all: unless(hook => hook.method == 'find', remove('password')),

@@ -1,0 +1,71 @@
+--- 01/hooks/1.js	2017-01-10 12:48:32.970259415 -0500
++++ 01/hooks/2.js	2017-01-10 12:49:53.746519139 -0500
+@@ -1,13 +1,13 @@
+ 
+-// Example - Use hooks with service
++// Example - Use soft deletes with a service
+ 
+-const Ajv = require('ajv'); // new
++const Ajv = require('ajv');
+ const NeDB = require('nedb');
+ const path = require('path');
+ 
+-const authHooks = require('feathers-authentication-local').hooks; // new
+-const hooks = require('feathers-hooks'); // new
+-const commonHooks = require('feathers-hooks-common'); // new
++const authHooks = require('feathers-authentication-local').hooks;
++const hooks = require('feathers-hooks');
++const commonHooks = require('feathers-hooks-common');
+ const service = require('feathers-nedb');
+ const rest = require('feathers-rest');
+ const socketio = require('feathers-socketio');
+@@ -16,7 +16,7 @@
+ const expressMiddleware = require('../common/expressMiddleware');
+ 
+ const app = expressServerConfig()
+-  .configure(hooks()) // new
++  .configure(hooks())
+   .configure(rest())
+   .configure(socketio())
+   .configure(services)
+@@ -26,18 +26,19 @@
+ server.on('listening', () => console.log(`Feathers application started on port 3030`));
+ 
+ function services() {
+-  this.configure(user); // new
++  this.configure(user);
+ }
+ 
+-function user() { // new
++function user() {
+   const app = this;
+   
+   app.use('/users', service({ Model: userModel() }));
+   const userService = app.service('users');
+   
+-  const { /* validateSchema, */ setCreatedAt, setUpdatedAt, unless, remove } = commonHooks;
++  const { softDelete, setCreatedAt, setUpdatedAt, when, unless, remove } = commonHooks;
+   
+   userService.before({
++    all: when(hook => hook.method !== 'find', softDelete()), // new
+     create: [
+       validateSchema(userSchema(), Ajv),
+       authHooks.hashPassword(),
+@@ -45,7 +46,7 @@
+       setUpdatedAt()
+     ]});
+   userService.after({
+-    all: unless(hook => hook.method === 'find', remove('password')),
++    all: unless(hook => hook.method == 'find', remove('password')),
+   });
+ }
+ 
+@@ -56,7 +57,7 @@
+   });
+ }
+ 
+-function userSchema() { // new
++function userSchema() {
+   return {
+     title: 'User Schema',
+     $schema: 'http://json-schema.org/draft-04/schema#',

@@ -37,13 +37,13 @@
 
 <div id="diff">
   <div class="d2h-wrapper">
-    <div id="d2h-227434" class="d2h-file-wrapper" data-lang="970259415 -0500">
+    <div id="d2h-873855" class="d2h-file-wrapper" data-lang="746519139 -0500">
     <div class="d2h-file-header">
     <span class="d2h-file-name-wrapper">
     <span class="d2h-icon-wrapper"><svg aria-hidden="true" class="d2h-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12">
     <path d="M6 5H2v-1h4v1zM2 8h7v-1H2v1z m0 2h7v-1H2v1z m0 2h7v-1H2v1z m10-7.5v9.5c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h7.5l3.5 3.5z m-1 0.5L8 2H1v12h10V5z"></path>
 </svg></span>
-    <span class="d2h-file-name">01/{websocket/1.js	2017-01-10 12:22:04.767400008 -0500 → hooks/1.js	2017-01-10 12:48:32.970259415 -0500}</span>
+    <span class="d2h-file-name">01/hooks/{1.js	2017-01-10 12:48:32.970259415 -0500 → 2.js	2017-01-10 12:49:53.746519139 -0500}</span>
     <span class="d2h-tag d2h-moved d2h-moved-tag">RENAMED</span></span>
     </div>
     <div class="d2h-file-diff">
@@ -53,7 +53,7 @@
                 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line d2h-info">@@ -1,18 +1,24 @@</div>
+        <div class="d2h-code-line d2h-info">@@ -1,13 +1,13 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
@@ -73,7 +73,7 @@
     <td class="d2h-del">
         <div class="d2h-code-line d2h-del">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">// Example - <del>Create</del> <del>REST</del> <del>&amp;</del> <del>socketio API, and serve static files</del></span>
+            <span class="d2h-code-line-ctn">// Example - Use <del>hooks</del> with service</span>
         </div>
     </td>
 </tr><tr>
@@ -84,7 +84,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">// Example - <ins>Use</ins> <ins>hooks</ins> <ins>with</ins> <ins>service</ins></span>
+            <span class="d2h-code-line-ctn">// Example - Use <ins>soft</ins> <ins>deletes </ins>with <ins>a </ins>service</span>
         </div>
     </td>
 </tr><tr>
@@ -98,6 +98,17 @@
         </div>
     </td>
 </tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">4</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">const Ajv = require('ajv');<del> // new</del></span>
+        </div>
+    </td>
+</tr><tr>
     <td class="d2h-code-linenumber d2h-ins">
       <div class="line-num1"></div>
 <div class="line-num2">4</div>
@@ -105,12 +116,12 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">const Ajv = require('ajv'); // new</span>
+            <span class="d2h-code-line-ctn">const Ajv = require('ajv');</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">4</div>
+      <div class="line-num1">5</div>
 <div class="line-num2">5</div>
     </td>
     <td class="d2h-cntx">
@@ -121,7 +132,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">5</div>
+      <div class="line-num1">6</div>
 <div class="line-num2">6</div>
     </td>
     <td class="d2h-cntx">
@@ -131,68 +142,13 @@
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">7</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">8</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">const authHooks = require('feathers-authentication-local').hooks; // new</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">9</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">const hooks = require('feathers-hooks'); // new</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">10</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">const commonHooks = require('feathers-hooks-common'); // new</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">6</div>
-<div class="line-num2">11</div>
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line d2h-cntx">
-            <span class="d2h-code-line-prefix"> </span>
-            <span class="d2h-code-line-ctn">const service = require('feathers-nedb');</span>
-        </div>
-    </td>
-</tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">7</div>
-<div class="line-num2">12</div>
+<div class="line-num2">7</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line d2h-cntx">
             <span class="d2h-code-line-prefix"> </span>
-            <span class="d2h-code-line-ctn">const rest = require('feathers-rest');</span>
         </div>
     </td>
 </tr><tr>
@@ -203,44 +159,106 @@
     <td class="d2h-del">
         <div class="d2h-code-line d2h-del">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">const socketio = require('feathers-socketio');<del> // new</del></span>
+            <span class="d2h-code-line-ctn">const authHooks = require('feathers-authentication-local').hooks;<del> // new</del></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">9</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">const hooks = require('feathers-hooks');<del> // new</del></span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">10</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">const commonHooks = require('feathers-hooks-common');<del> // new</del></span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-ins">
       <div class="line-num1"></div>
-<div class="line-num2">13</div>
+<div class="line-num2">8</div>
     </td>
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">const socketio = require('feathers-socketio');</span>
+            <span class="d2h-code-line-ctn">const authHooks = require('feathers-authentication-local').hooks;</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">9</div>
-<div class="line-num2">14</div>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">9</div>
     </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line d2h-cntx">
-            <span class="d2h-code-line-prefix"> </span>
+    <td class="d2h-ins">
+        <div class="d2h-code-line d2h-ins">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">const hooks = require('feathers-hooks');</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">10</div>
-<div class="line-num2">15</div>
+    <td class="d2h-code-linenumber d2h-ins">
+      <div class="line-num1"></div>
+<div class="line-num2">10</div>
     </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line d2h-cntx">
-            <span class="d2h-code-line-prefix"> </span>
-            <span class="d2h-code-line-ctn">const expressServerConfig = require('../common/expressServerConfig');</span>
+    <td class="d2h-ins">
+        <div class="d2h-code-line d2h-ins">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">const commonHooks = require('feathers-hooks-common');</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
       <div class="line-num1">11</div>
+<div class="line-num2">11</div>
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix"> </span>
+            <span class="d2h-code-line-ctn">const service = require('feathers-nedb');</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">12</div>
+<div class="line-num2">12</div>
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix"> </span>
+            <span class="d2h-code-line-ctn">const rest = require('feathers-rest');</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">13</div>
+<div class="line-num2">13</div>
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix"> </span>
+            <span class="d2h-code-line-ctn">const socketio = require('feathers-socketio');</span>
+        </div>
+    </td>
+</tr>
+<tr>
+    <td class="d2h-code-linenumber d2h-info"></td>
+    <td class="d2h-info">
+        <div class="d2h-code-line d2h-info">@@ -16,7 +16,7 @@</div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">16</div>
 <div class="line-num2">16</div>
     </td>
     <td class="d2h-cntx">
@@ -251,7 +269,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">12</div>
+      <div class="line-num1">17</div>
 <div class="line-num2">17</div>
     </td>
     <td class="d2h-cntx">
@@ -261,13 +279,24 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">13</div>
+      <div class="line-num1">18</div>
 <div class="line-num2">18</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line d2h-cntx">
             <span class="d2h-code-line-prefix"> </span>
             <span class="d2h-code-line-ctn">const app = expressServerConfig()</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">19</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">  .configure(hooks())<del> // new</del></span>
         </div>
     </td>
 </tr><tr>
@@ -278,12 +307,12 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">  .configure(hooks()) // new</span>
+            <span class="d2h-code-line-ctn">  .configure(hooks())</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">14</div>
+      <div class="line-num1">20</div>
 <div class="line-num2">20</div>
     </td>
     <td class="d2h-cntx">
@@ -293,30 +322,19 @@
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">15</div>
-<div class="line-num2"></div>
-    </td>
-    <td class="d2h-del">
-        <div class="d2h-code-line d2h-del">
-            <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">  .configure(socketio())<del> // new</del></span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">21</div>
 <div class="line-num2">21</div>
     </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix"> </span>
             <span class="d2h-code-line-ctn">  .configure(socketio())</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">16</div>
+      <div class="line-num1">22</div>
 <div class="line-num2">22</div>
     </td>
     <td class="d2h-cntx">
@@ -325,36 +343,15 @@
             <span class="d2h-code-line-ctn">  .configure(services)</span>
         </div>
     </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">17</div>
-<div class="line-num2">23</div>
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line d2h-cntx">
-            <span class="d2h-code-line-prefix"> </span>
-            <span class="d2h-code-line-ctn">  .configure(expressMiddleware);</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">18</div>
-<div class="line-num2">24</div>
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line d2h-cntx">
-            <span class="d2h-code-line-prefix"> </span>
-        </div>
-    </td>
 </tr>
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line d2h-info">@@ -20,7 +26,27 @@</div>
+        <div class="d2h-code-line d2h-info">@@ -26,18 +26,19 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">20</div>
+      <div class="line-num1">26</div>
 <div class="line-num2">26</div>
     </td>
     <td class="d2h-cntx">
@@ -365,7 +362,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">21</div>
+      <div class="line-num1">27</div>
 <div class="line-num2">27</div>
     </td>
     <td class="d2h-cntx">
@@ -375,7 +372,7 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">22</div>
+      <div class="line-num1">28</div>
 <div class="line-num2">28</div>
     </td>
     <td class="d2h-cntx">
@@ -386,13 +383,13 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-del">
-      <div class="line-num1">23</div>
+      <div class="line-num1">29</div>
 <div class="line-num2"></div>
     </td>
     <td class="d2h-del">
         <div class="d2h-code-line d2h-del">
             <span class="d2h-code-line-prefix">-</span>
-            <span class="d2h-code-line-ctn">  this.<del>use('/users',</del> <del>service({</del> <del>Model: userModel() }));</del></span>
+            <span class="d2h-code-line-ctn">  this.configure(user);<del> // new</del></span>
         </div>
     </td>
 </tr><tr>
@@ -403,28 +400,39 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">  this.<ins>configure(user);</ins> <ins>//</ins> <ins>new</ins></span>
+            <span class="d2h-code-line-ctn">  this.configure(user);</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">30</div>
 <div class="line-num2">30</div>
     </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix"> </span>
             <span class="d2h-code-line-ctn">}</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">31</div>
 <div class="line-num2">31</div>
     </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix"> </span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">32</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">function user() {<del> // new</del></span>
         </div>
     </td>
 </tr><tr>
@@ -435,62 +443,73 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">function user() { // new</span>
+            <span class="d2h-code-line-ctn">function user() {</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">33</div>
 <div class="line-num2">33</div>
     </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix"> </span>
             <span class="d2h-code-line-ctn">  const app = this;</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">34</div>
 <div class="line-num2">34</div>
     </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix"> </span>
             <span class="d2h-code-line-ctn">  </span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">35</div>
 <div class="line-num2">35</div>
     </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix"> </span>
             <span class="d2h-code-line-ctn">  app.use('/users', service({ Model: userModel() }));</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">36</div>
 <div class="line-num2">36</div>
     </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix"> </span>
             <span class="d2h-code-line-ctn">  const userService = app.service('users');</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">37</div>
 <div class="line-num2">37</div>
     </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix"> </span>
             <span class="d2h-code-line-ctn">  </span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">38</div>
+<div class="line-num2"></div>
+    </td>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">  const { <del>/* validateSchema</del>, <del>*/ </del>setCreatedAt, setUpdatedAt, unless, remove } = commonHooks;</span>
         </div>
     </td>
 </tr><tr>
@@ -501,28 +520,28 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">  const { /* validateSchema, */ setCreatedAt, setUpdatedAt, unless, remove } = commonHooks;</span>
+            <span class="d2h-code-line-ctn">  const { <ins>softDelete</ins>, setCreatedAt, setUpdatedAt, <ins>when, </ins>unless, remove } = commonHooks;</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">39</div>
 <div class="line-num2">39</div>
     </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix"> </span>
             <span class="d2h-code-line-ctn">  </span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">40</div>
 <div class="line-num2">40</div>
     </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix"> </span>
             <span class="d2h-code-line-ctn">  userService.before({</span>
         </div>
     </td>
@@ -534,84 +553,90 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">    all: when(hook =&gt; hook.method !== 'find', softDelete()), // new</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">41</div>
+<div class="line-num2">42</div>
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix"> </span>
             <span class="d2h-code-line-ctn">    create: [</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">42</div>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">42</div>
+<div class="line-num2">43</div>
     </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix"> </span>
             <span class="d2h-code-line-ctn">      validateSchema(userSchema(), Ajv),</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">43</div>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">43</div>
+<div class="line-num2">44</div>
     </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix"> </span>
             <span class="d2h-code-line-ctn">      authHooks.hashPassword(),</span>
         </div>
     </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">44</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">      setCreatedAt(),</span>
-        </div>
+</tr>
+<tr>
+    <td class="d2h-code-linenumber d2h-info"></td>
+    <td class="d2h-info">
+        <div class="d2h-code-line d2h-info">@@ -45,7 +46,7 @@</div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">45</div>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">45</div>
+<div class="line-num2">46</div>
     </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix"> </span>
             <span class="d2h-code-line-ctn">      setUpdatedAt()</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">46</div>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">46</div>
+<div class="line-num2">47</div>
     </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix"> </span>
             <span class="d2h-code-line-ctn">    ]});</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">47</div>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">47</div>
+<div class="line-num2">48</div>
     </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix"> </span>
             <span class="d2h-code-line-ctn">  userService.after({</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">48</div>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">48</div>
+<div class="line-num2"></div>
     </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    all: unless(hook =&gt; hook.method === 'find', remove('password')),</span>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">    all: unless(hook =&gt; hook.method <del>===</del> 'find', remove('password')),</span>
         </div>
     </td>
 </tr><tr>
@@ -622,13 +647,24 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">    all: unless(hook =&gt; hook.method <ins>==</ins> 'find', remove('password')),</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">49</div>
+<div class="line-num2">50</div>
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix"> </span>
             <span class="d2h-code-line-ctn">  });</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">24</div>
-<div class="line-num2">50</div>
+      <div class="line-num1">50</div>
+<div class="line-num2">51</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line d2h-cntx">
@@ -638,46 +674,24 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">25</div>
-<div class="line-num2">51</div>
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line d2h-cntx">
-            <span class="d2h-code-line-prefix"> </span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">26</div>
+      <div class="line-num1">51</div>
 <div class="line-num2">52</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line d2h-cntx">
             <span class="d2h-code-line-prefix"> </span>
-            <span class="d2h-code-line-ctn">function userModel() {</span>
         </div>
     </td>
 </tr>
 <tr>
     <td class="d2h-code-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-line d2h-info">@@ -29,3 +55,21 @@</div>
+        <div class="d2h-code-line d2h-info">@@ -56,7 +57,7 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">29</div>
-<div class="line-num2">55</div>
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-line d2h-cntx">
-            <span class="d2h-code-line-prefix"> </span>
-            <span class="d2h-code-line-ctn">    autoload: true</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">30</div>
-<div class="line-num2">56</div>
+      <div class="line-num1">56</div>
+<div class="line-num2">57</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line d2h-cntx">
@@ -687,8 +701,8 @@
     </td>
 </tr><tr>
     <td class="d2h-code-linenumber d2h-cntx">
-      <div class="line-num1">31</div>
-<div class="line-num2">57</div>
+      <div class="line-num1">57</div>
+<div class="line-num2">58</div>
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-line d2h-cntx">
@@ -697,24 +711,24 @@
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">58</div>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">58</div>
+<div class="line-num2">59</div>
     </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix"> </span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">59</div>
+    <td class="d2h-code-linenumber d2h-del">
+      <div class="line-num1">59</div>
+<div class="line-num2"></div>
     </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">function userSchema() { // new</span>
+    <td class="d2h-del">
+        <div class="d2h-code-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn">function userSchema() {<del> // new</del></span>
         </div>
     </td>
 </tr><tr>
@@ -725,171 +739,40 @@
     <td class="d2h-ins">
         <div class="d2h-code-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">function userSchema() {</span>
+        </div>
+    </td>
+</tr><tr>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">60</div>
+<div class="line-num2">61</div>
+    </td>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix"> </span>
             <span class="d2h-code-line-ctn">  return {</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">61</div>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">61</div>
+<div class="line-num2">62</div>
     </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix"> </span>
             <span class="d2h-code-line-ctn">    title: 'User Schema',</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">62</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    $schema: 'http://json-schema.org/draft-04/schema#',</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
+    <td class="d2h-code-linenumber d2h-cntx">
+      <div class="line-num1">62</div>
 <div class="line-num2">63</div>
     </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    type: 'object',</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">64</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    required: [ 'email', 'password' ],</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">65</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    additionalProperties: false,</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">66</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    properties: {</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">67</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">      email: { type: 'string', maxLength: 100, minLength: 6 },</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">68</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">      password: { type: 'string', maxLength: 30, minLength: 8 }</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">69</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">    }</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">70</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">  };</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">71</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">}</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">72</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">73</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">function validateSchema() { // todo replace</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">74</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">  return hook =&gt; hook;</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-linenumber d2h-ins">
-      <div class="line-num1"></div>
-<div class="line-num2">75</div>
-    </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">}</span>
+    <td class="d2h-cntx">
+        <div class="d2h-code-line d2h-cntx">
+            <span class="d2h-code-line-prefix"> </span>
+            <span class="d2h-code-line-ctn">    $schema: 'http://json-schema.org/draft-04/schema#',</span>
         </div>
     </td>
 </tr>
