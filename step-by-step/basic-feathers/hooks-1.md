@@ -8,20 +8,25 @@ We'll be introducing specific hooks as we need them.
 
 ## Working example
 
-| Server source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/d/1.js
+| Server code: [hooks/1.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/hooks/1.js)
 
-| Client HTML code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/rest.html
+| Client code: [common/public/rest.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/rest.html)
+and
+[common/public/feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js)
 
-| Client source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js
+| Start the server: `node ./examples/step/01/hooks/1`
 
-| Start the server: `node ./examples/step/01/d/1`
-
-| Point the browser at: `//localhost:3030/socketio.html`
+| Point the browser at: `//localhost:3030/rest.html`
 
 ## Writing hooks
 
 Let's add some hooks to the server we've been using.
 
+| View complete file [hooks/1.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/hooks/1.js)
+View changes from file websocket/1.js:
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-hooks-1-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-hooks-1-side.html)
 ```javascript
 const authHooks = require('feathers-authentication-local').hooks;
 const hooks = require('feathers-hooks');

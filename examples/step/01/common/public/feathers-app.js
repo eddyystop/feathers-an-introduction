@@ -1,5 +1,5 @@
 
-const users = app.service('/users');
+const users = feathersClient.service('/users');
 
 Promise.all([
   users.create({ email: 'jane.doe@gmail.com', password: '11111', role: 'admin' }),

@@ -4,7 +4,6 @@
 const NeDB = require('nedb');
 const path = require('path');
 const service = require('feathers-nedb');
-/// [websocket]
 const rest = require('feathers-rest');
 const socketio = require('feathers-socketio'); // new
 
@@ -16,7 +15,6 @@ const app = expressServerConfig()
   .configure(socketio()) // new
   .configure(services)
   .configure(expressMiddleware);
-//! [websocket]
 
 const server = app.listen(3030);
 server.on('listening', () => console.log(`Feathers application started on port 3030`));
