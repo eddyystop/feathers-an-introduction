@@ -1,5 +1,6 @@
 
-const users = app.service('/users');
+let jackId;
+const users = feathersClient.service('/users');
 
 Promise.all([
   users.create({ email: 'jane.doe@gmail.com', password: '11111', role: 'admin' }),
@@ -13,7 +14,7 @@ Promise.all([
     console.log('created Judy Doe item\n', results[2]);
     console.log('created Jack Doe item\n', results[3]);
   
-    const jackId = results[3]._id;
+    jackId = results[3]._id;
     
     return users.remove(jackId)
       .then(results => console.log('deleted Jack Doe item\n', results));
