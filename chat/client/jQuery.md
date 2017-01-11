@@ -52,4 +52,4 @@ These email addresses are:
 - Each tab should be displaying everyone's text messages.
 
 ## Is anything wrong, unclear, missing?
-[Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment%20on:%20Chat,%20Client,%20jQuery&body=Comment%20on:%20Chat,%20Client,%20jQuery)
+[Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Chat-Client-jQuery&body=Comment:Chat-Client-jQuery)
