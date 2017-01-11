@@ -21,30 +21,6 @@ diff -bdur --new-file server/client/curl-requests.sh server/finish/curl-requests
 +printf "\nPOST Anyone there?\n"
 +curl -H 'Content-Type: application/json' --data-binary '{ "text": "Anyone there?" }' http://localhost:3030/messages/
 \ No newline at end of file
-diff -bdur --new-file server/client/data/messages.db server/finish/data/messages.db
---- server/client/data/messages.db	2017-01-03 10:56:20.635889935 -0500
-+++ server/finish/data/messages.db	2017-01-03 16:57:43.755889935 -0500
-@@ -1,2 +1,9 @@
--{"text":"dd","_id":"w3u8gKFjyMoCMfkb"}
--{"$$deleted":true,"_id":"w3u8gKFjyMoCMfkb"}
-+{"text":"Hello!","userId":"pv2cwN0pncBaf7Ol","createdAt":1483303166271,"_id":"3IuvzOfO03bpOOlW"}
-+{"text":"tt","userId":"u2dCq0douN9Cd2yf","createdAt":{"$$date":1483459362714},"_id":"EvikUZGEofSmHMFU"}
-+{"text":"eeee","userId":"wV8fxumg1e1jl84W","createdAt":1483345672482,"_id":"W6XFQb7WbnNqXGDy"}
-+{"text":"Xīnnián kuàilè","userId":"hQqkIjupqGKEyKO0","createdAt":1483306202115,"_id":"Wvm38PB310eykSSB"}
-+{"text":"rr","userId":{"email":"a","password":"$2a$10$e.dIRD9ShoZQuFsQ8GyCFO.PfQxNie78TvyizO7mrbYdpuLqCPK4O","avatar":"https://s.gravatar.com/avatar/0cc175b9c0f1b6a831c399e269772661?s=60","_id":"IpUnSDlZSphW8QkC"},"_id":"XH3TEiC8C4DMqKk9"}
-+{"text":"Hello again!","userId":"zQZpEKyyboZnWo1V","createdAt":1483304980756,"_id":"donhg25KF2dmsnTP"}
-+{"text":"新年快樂","userId":"ZU3g8AV6EcaBmQYf","createdAt":1483458332949,"_id":"jJ3Te0IqLe7HpFdK"}
-+{"text":"dfdfdfdf","userId":"c0DqoDZGE5k5G8xY","createdAt":1483316881075,"_id":"mqjYXYFXi2zNnFEc"}
-+{"text":"ww","_id":"mwdUDRypGYQtRbQA"}
-diff -bdur --new-file server/client/data/users.db server/finish/data/users.db
---- server/client/data/users.db	2017-01-03 10:56:20.631889935 -0500
-+++ server/finish/data/users.db	2017-01-03 16:57:54.339889935 -0500
-@@ -1,2 +1,3 @@
--{"email":"a","password":"$2a$10$kLab3jY6zF.47Mib5SxKBOvpDjWNdXKHcrXs3xyVloGbH/eP.KTZu","avatar":"https://s.gravatar.com/avatar/0cc175b9c0f1b6a831c399e269772661?s=60","_id":"scWGh1Fn91sVGHhW"}
--{"$$deleted":true,"_id":"scWGh1Fn91sVGHhW"}
-+{"email":"a","password":"$2a$10$gFUo5XG6C0VJJpWFgfD8v.JYnQvz4iHSwcPqN6feUDvecP6IbxII6","avatar":"https://s.gravatar.com/avatar/0cc175b9c0f1b6a831c399e269772661?s=60","_id":"hif5qxOgkDUb2a5U"}
-+{"$$deleted":true,"_id":"hif5qxOgkDUb2a5U"}
-+{"email":"a","password":"$2a$10$S02PpDcXWTZ6yebdN7.pzuDXz7KmJqcMPTmniGyBAV0FlbcsO7iNu","avatar":"https://s.gravatar.com/avatar/0cc175b9c0f1b6a831c399e269772661?s=60","_id":"dhfHDuifCbpISSiT"}
 diff -bdur --new-file server/client/public/socketio-app.js server/finish/public/socketio-app.js
 --- server/client/public/socketio-app.js	2017-01-10 17:59:17.563607859 -0500
 +++ server/finish/public/socketio-app.js	2017-01-10 18:07:46.584746995 -0500

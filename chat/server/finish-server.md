@@ -220,6 +220,8 @@ View changes from chat/server/client:
 |
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/server-finish-side.html)
 
+        http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/server-finish-side.html
+
 ## The results
 
 This completes the server.
