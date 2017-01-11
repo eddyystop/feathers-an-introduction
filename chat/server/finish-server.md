@@ -209,7 +209,7 @@ and they can be manipulated with code.
 
 Let's recap all the changes we have made.
 
-View changes from chat/server/client:
+View changes from examples/chat/server/client:
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/server-finish-line.html)
 |
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/server-finish-side.html)

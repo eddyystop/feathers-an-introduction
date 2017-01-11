@@ -28,6 +28,7 @@ function buildDiffDir {
 
 # diff files
 buildDiffDir server/client/ server/finish/ _diff/server-finish
+buildDiffDir server/finish/ client/ _diff/client
 
 # restore original pwd
 cd ${startPwd}
