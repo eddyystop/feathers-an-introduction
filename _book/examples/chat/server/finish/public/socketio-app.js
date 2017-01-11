@@ -1,6 +1,7 @@
 
 /* globals app: 0, feathers: 0 */
 
+/// [router]
 // DOM
 handleClick('signup-user', signUpUser);
 handleClick('signin-user', signInUser);
@@ -20,7 +21,9 @@ const router = (newRoute) => {
   els['chat'].style.display = newRoute === 'chat' ? 'block' : 'none';
 };
 router('sign-up');
+//! [router]
 
+/// [events]
 // Feathers
 let userList = [];
 
@@ -42,6 +45,7 @@ messages.on('created', message => console.log('message created', message));
 messages.on('updated', message => console.log('message updated', message));
 messages.on('patched', message => console.log('message patched', message));
 messages.on('removed', message => console.log('message removed', message));
+//! [events]
 
 // Helpers
 
@@ -49,6 +53,7 @@ function handleClick(id, func) {
   document.getElementById(id).addEventListener('click', func);
 }
 
+/// [user-helpers]
 function signUpUser() {
   const user = { email: els['email-signup'].value.trim(), password: els['password-signup'].value.trim() };
   
@@ -56,9 +61,9 @@ function signUpUser() {
     console.log('ERROR: enter name, email and password');
     return;
   }
-  
+
   users.create(user)
-    .then(() => router('sign-in'))
+    .then(() =>  router('sign-in'))
     .catch(err => console.log('ERROR creating user:', err));
 }
 
@@ -92,7 +97,9 @@ function getUserList() {
       console.log('Users in chat\n', results.data.map(user => user.email));
     });
 }
+//! [user-helpers]
 
+/// [message-helpers]
 function sendMessage() {
   const message = { text: els['message'].value.trim() };
   
@@ -105,3 +112,4 @@ function sendMessage() {
     .then(() => els['message'].value = '')
     .catch(err => console.log('ERROR creating message:', err));
 }
+//! [message-helpers]

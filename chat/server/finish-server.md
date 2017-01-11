@@ -25,36 +25,6 @@ We'll now complete the remaining server requirements we
     - Identify which user created a message and at what time.
     - Allow users to only modify and delete their own messages.
 
-## Add authentication
-
-We could have added authentication to messages back when we
-[created the service](./start-server.md#basic-scaffolding).
-However this now gives us a chance to manually add the authentication hooks for all methods into
-[src/services/message/hooks/index.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/finish/src/services/message/hooks/index.js).
-
-| View complete file 
-[chat/server/finish/src/services/message/hooks/index.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/finish/src/services/message/hooks/index.js).
-View changes from file hooks/1.js:
-[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/server-finish-message-line.html)
-|
-[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/server-finish-message-side.html)
-
-```javascript
-// src/services/message/hooks/index.js
-exports.before = {
-  all: [
-    auth.verifyToken(),
-    auth.populateUser(),
-    auth.restrictToAuthenticated()
-  ],
-  /// ...
-};
-```
-
-- `auth.verifyToken` throws if the JSON Token is badly formed.
-- `auth.populateUser` copies the client's user item to `hook.params.user`.
-- `restrictToAuthenticated` throws if the user is not already authenticated.
-
 ## Add authorization
 
 We need a hook which ensures users can only remove, update and patch their own messages. 
@@ -109,10 +79,32 @@ Then copy the following into this
 - The message text in `hook.data.text` is sanitized.
 - The `hook`, now with modified data, is returned.
 
-## Adding createdAt
+## Add authentication
+
+We could have added authentication to messages back when we
+[created the service](./start-server.md#basic-scaffolding).
+However this now gives us a chance to manually add the authentication hooks for all methods into
+[src/services/message/hooks/index.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/finish/src/services/message/hooks/index.js).
 
 ```javascript
-// src/services/message/hooks/index
+exports.before = {
+  all: [
+    auth.verifyToken(),
+    auth.populateUser(),
+    auth.restrictToAuthenticated()
+  ],
+  /// ...
+};
+```
+
+- `auth.verifyToken` throws if the JSON Token is badly formed.
+- `auth.populateUser` copies the client's user item to `hook.params.user`.
+- `restrictToAuthenticated` throws if the user is not already authenticated.
+
+## Adding createdAt
+
+Let's continue by adding when the message was creadted:
+```javascript
 exports.before = {
   create: [ process(), setCreatedAt() ],
 }
@@ -192,7 +184,9 @@ This habit will save you having to track down unexpected behaviors.
 
 We want a client to be able to only remove its own user's messages,
 but we must allow the server to remove them all
-as we erase the databases in `src/app.js` before we start the server.
+as we erase the databases in
+[`src/app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/finish/src/app.js)
+before we start the server.
  
 ```javascript
 const restrictToSenderOrServer = when(isProvider('external'), restrictToSender());
@@ -213,14 +207,12 @@ and they can be manipulated with code.
 
 ## Recap
 
-Let's recap tall the changes we have made.
+Let's recap all the changes we have made.
 
 View changes from chat/server/client:
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/server-finish-line.html)
 |
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/server-finish-side.html)
-
-        http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/server-finish-side.html
 
 ## The results
 
@@ -231,6 +223,7 @@ It will display:
 feathers-an-introduction$ node ./examples/chat/server/finish/src
 Feathers application started on localhost:3030
 users table cleared.
+messages table cleared.
 ```
 
 Point the browser at: `//localhost:3030/socketio.html`.

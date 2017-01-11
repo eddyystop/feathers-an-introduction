@@ -27,7 +27,7 @@ function buildDiffDir {
 }
 
 # diff files
-buildDiff server/client/src/services/message/hooks/index.js server/finish/src/services/message/hooks/index.js _diff/server-finish-message
+# not used buildDiff server/client/src/services/message/hooks/index.js server/finish/src/services/message/hooks/index.js _diff/server-finish-message
 buildDiffDir server/client/ server/finish/ _diff/server-finish
 
 # restore original pwd
