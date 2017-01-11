@@ -51,14 +51,5 @@ These email addresses are:
 - On another browser tab, repeat the same process.
 - Each tab should be displaying everyone's text messages.
 
-## Recap
-
-Let's recap all the changes we have made.
-
-View changes from examples/chat/server/finish:
-[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-line.html)
-|
-[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-side.html)
-
 ## Is anything wrong, unclear, missing?
 [Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment%20on:%20Chat,%20Client,%20jQuery&body=Comment%20on:%20Chat,%20Client,%20jQuery)
