@@ -28,3 +28,6 @@ function myHook (...params) {
 ```
 
 > **Bonus.** `hook.path` is the route the service is defined on.
+
+## Is anything wrong, unclear, missing?
+[Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Step-Appendix-What-is-this&body=Comment:Step-Appendix-What-is-this)

@@ -170,3 +170,6 @@ message created
 { _id: "Wvm38PB310eykSSB",
   text: "新年快樂" }
 ```
+
+## Is anything wrong, unclear, missing?
+[Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Chat-Server-Start-frontend&body=Comment:Chat-Server-Start-frontend)

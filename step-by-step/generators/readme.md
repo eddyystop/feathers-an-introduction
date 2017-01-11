@@ -31,3 +31,6 @@ So you don't have to investigate how to do so.
 You can install the Feathers generators with
 
 `npm install -g feathers-cli`
+
+## Is anything wrong, unclear, missing?
+[Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Step-Generators-Readme&body=Comment:Step-Generators-Readme)

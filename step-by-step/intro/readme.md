@@ -38,3 +38,7 @@ to skim the text, paying more attention to the code extracts.
 
 They should however make sure to absorb fully the **Generators** section.
 That should save them some time compared to putting together their own understanding of how projects are organized.
+
+## Is anything wrong, unclear, missing?
+[Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Step-Intro-Readme&body=Comment:Step-Intro-Readme)
+

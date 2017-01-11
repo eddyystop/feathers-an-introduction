@@ -18,3 +18,6 @@ you plan to use.
 These [adapters](../adapters/readme.md) abstract the integration between Feathers
 and other frameworks.
 They implement best practices, and will likely save you work.
+
+## Is anything wrong, unclear, missing?
+[Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Chat-What-next&body=Comment:Chat-What-next)

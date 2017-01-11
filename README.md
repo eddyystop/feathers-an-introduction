@@ -79,3 +79,6 @@ and (hopefully!) get the same results.
 Copyright (c) 2016-2017
 
 Licensed under the [MIT license](LICENSE).
+
+## Is anything wrong, unclear, missing?
+[Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Readme&body=Comment:Readme)

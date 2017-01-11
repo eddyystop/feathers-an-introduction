@@ -8,3 +8,6 @@ as well as handle forgotten passwords.
 
 You can add these features to your own servers by including
 [`features-authentication-management`](https://docs.feathersjs.com/v/auk/authentication/management.html).
+
+## Is anything wrong, unclear, missing?
+[Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Chat-Server-User-mgnt&body=Comment:Chat-Server-User-mgnt)

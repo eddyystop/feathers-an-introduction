@@ -27,3 +27,6 @@ We assume most readers are interested in developing modern
 with Feathers.
 So it would be helpful if this chat app was itself an SPA,
 allowing it to act as somewhat of a design pattern for the readers' own development efforts.
+
+## Is anything wrong, unclear, missing?
+[Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Chat-Server-Readme&body=Comment:Chat-Server-Readme)

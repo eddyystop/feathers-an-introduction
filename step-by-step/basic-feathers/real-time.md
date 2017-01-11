@@ -86,3 +86,6 @@ users.filter((data, connection) => {
   return connection.user ? data : false;
 });
 ```
+ 
+## Is anything wrong, unclear, missing?
+[Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Step-Basic-Real-time&body=Comment:Step-Basic-Real-time)

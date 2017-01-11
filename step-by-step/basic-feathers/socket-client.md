@@ -66,3 +66,6 @@ View changes from file common/public/rest.html:
 
 And that's all there is to it.
 The results are identical to that for [Writing a Feathers REST Client](./rest-client.md)
+ 
+## Is anything wrong, unclear, missing?
+[Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Step-Basic-Socket-client&body=Comment:Step-Basic-Socket-client)

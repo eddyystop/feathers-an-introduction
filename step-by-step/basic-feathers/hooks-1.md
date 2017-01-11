@@ -217,3 +217,6 @@ find all items
 - `password` is not included in the data returned for the create and delete operations.
 - An encoded `password` is included for the find operation,
 because of the special coding we included in the example.
+
+## Is anything wrong, unclear, missing?
+[Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Step-Basic-Hooks-1&body=Comment:Step-Basic-Hooks-1)

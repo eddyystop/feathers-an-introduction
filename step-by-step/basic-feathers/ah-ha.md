@@ -20,3 +20,6 @@ The "ah-ha" moment comes when you start to realize the significance of these fea
 Enormous amounts of boilerplate simply disappear.
 
 | You might now start to appreciate why people are enthusiastic about Feathers.
+
+## Is anything wrong, unclear, missing?
+[Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Step-Basic-Ahha&body=Comment:Step-Basic-Ahha)

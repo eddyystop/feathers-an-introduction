@@ -18,3 +18,6 @@ You will understand that the Feathers generators will structure your application
 and you will understand the boilerplate produced by the.
 
 By the time you finish this guide, you will be ready to write a first, small app.
+
+## Is anything wrong, unclear, missing?
+[Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Step-Readme&body=Comment:Step-Readme)

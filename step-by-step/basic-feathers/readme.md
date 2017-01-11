@@ -9,3 +9,6 @@ That is not their only use in Feathers however.
 The companion guide [Feathers Patterns](/patterns/readme.md) goes over some of the interesting things
 they can used to implement:
 dashboards, proxy server, remote procedure calls, and resource management on the client.
+ 
+## Is anything wrong, unclear, missing?
+[Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Step-Basic-Readme&body=Comment:Step-Basic-Readme)

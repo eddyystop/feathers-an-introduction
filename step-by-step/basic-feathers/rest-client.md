@@ -99,3 +99,6 @@ find all items
   length: 3
 3 "items returned."
 ```
+ 
+## Is anything wrong, unclear, missing?
+[Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Step-Basic-Rest-client&body=Comment:Step-Basic-Rest-client)

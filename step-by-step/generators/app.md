@@ -148,3 +148,6 @@ find all items
    skip: 0
    total: 3
 ```
+
+## Is anything wrong, unclear, missing?
+[Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Step-Generators-App&body=Comment:Step-Generators-App)

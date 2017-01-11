@@ -124,3 +124,6 @@ find all items
 
 > **Boilerplate.** Feathers requires little boilerplate.
 It took only 15 lines of code to connect to a database.
+
+## Is anything wrong, unclear, missing?
+[Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Step-Basic-Db-connector&body=Comment:Step-Basic-Db-connector)

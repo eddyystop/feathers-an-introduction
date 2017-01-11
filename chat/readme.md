@@ -15,3 +15,5 @@ This is what we want it to look like:
 
 ![Chat app screenshot](./assets/chat-screenshot.gif)
 
+## Is anything wrong, unclear, missing?
+[Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Chat-Readme&body=Comment:Chat-Readme)

@@ -101,3 +101,5 @@ find all items
 - The results returned for find also contain `deleted: true` for Jack Doe
 because of how we conditioned the softDelete hook.
  
+## Is anything wrong, unclear, missing?
+[Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Step-Basic-Hooks-2&body=Comment:Step-Basic-Hooks-2)

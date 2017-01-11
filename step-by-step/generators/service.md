@@ -225,3 +225,6 @@ Lee family
 
 - The user items have onviously been joined to the team items.
 - Only the properties selected have been returned.
+
+## Is anything wrong, unclear, missing?
+[Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Step-Generators-Service&body=Comment:Step-Generators-Service)

@@ -259,3 +259,6 @@ and contains the property names of all joined items.
 dePopulate uses it to remove the joined items.
 - `createdAt` was added by the setCreatedAt hook.
 - `sentBy` was added by populate and contains the joined user item.
+
+## Is anything wrong, unclear, missing?
+[Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Chat-Server-Finish-server&body=Comment:Chat-Server-Finish-server)

@@ -28,3 +28,6 @@ converting our jQuery client to use oAuth.
 > **Feathers authentication.** Feathers has very powerful authentication capabilities
 which we cover in later chapters.
 This oAuth example is a teaser in the meantime.
+
+## Is anything wrong, unclear, missing?
+[Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Chat-Client-Readme&body=Comment:Chat-Client-Readme)

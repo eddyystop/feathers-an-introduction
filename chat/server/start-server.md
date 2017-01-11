@@ -88,3 +88,6 @@ POST message Anyone there?
 ```
 
 The password is not displayed due to the users' after remove hook
+
+## Is anything wrong, unclear, missing?
+[Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Chat-Server-Start-server&body=Comment:Chat-Server-Start-server)
