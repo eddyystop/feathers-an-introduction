@@ -5,13 +5,13 @@ Here's an SPA written using jQuery.
 
 ## Working example
 
-| Source code: https://github.com/eddyystop/feathers-an-introduction/tree/master/examples/chat/client/a
+| Source code: [examples/chat/client](https://github.com/eddyystop/feathers-an-introduction/tree/master/examples/chat/client)
 
-| Client HTML code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/client/a/public/client.html
+| Client code: [examples/chat/client/public/client.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/client/public/client.html)
+and
+[examples/chat/client/public/client-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/client/public/client-app.js)
 
-| Client source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/client/a/public/client-app.js
-
-| Start the server: `node ./examples/chat/client/a/src`
+| Start the server: `node ./examples/chat/client/src`
 
 | Point the browser at: `//localhost:3030/client.html`
 
@@ -42,7 +42,7 @@ These email addresses are:
 
 #### To run this client:
 
-- Start the server with `node ./examples/chat/client/a/src`.
+- Start the server with `node ./examples/chat/client/src`.
 - Point a browser tab at `//localhost:3030/client.html`.
     - Switch to Sign Up route.
     - Enter an email and password. Then press `Add user`.
