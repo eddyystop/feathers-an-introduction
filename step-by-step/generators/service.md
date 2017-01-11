@@ -192,6 +192,7 @@ Let's recap the hooks we added to the generated service:
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-service-teams-hooks-line.html)
 |
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-service-teams-hooks-side.html)
+
 ## The results
 
 The browser console displays the following:

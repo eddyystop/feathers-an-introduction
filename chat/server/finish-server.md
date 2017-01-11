@@ -29,7 +29,8 @@ We'll now complete the remaining server requirements we
 
 We could have added authentication to messages back when we
 [created the service](./start-server.md#basic-scaffolding).
-However this now gives us a chance to manually add the authentication hooks for all methods.
+However this now gives us a chance to manually add the authentication hooks for all methods into
+[src/services/message/hooks/index.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/finish/src/services/message/hooks/index.js).
 
 | View complete file 
 [chat/server/finish/src/services/message/hooks/index.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/finish/src/services/message/hooks/index.js).
@@ -63,29 +64,9 @@ cd examples/chat/server/finish
 ```
 ![generate message hook restrict](./assets/generate-hook-restrict.jpg)
 
-Then copy the following hook:
-
-```javascript
-// src/services/message/hooks/restrict-to-sender.js
-const errors = require('feathers-errors');
-
-module.exports = function(options) {
-  return function(hook) {
-    const messageService = hook.app.service('messages');
-    
-    // First get the message that the user wants to access
-    return messageService.get(hook.id, hook.params).then(message => {
-      // Throw a not authenticated error if the message and user id don't match
-      if (message.sentBy._id !== hook.params.user._id && hook.provider) {
-        throw new errors.NotAuthenticated('Access not allowed');
-      }
-      
-      // Otherwise just return the hook
-      return hook;
-    });
-  };
-};
-```
+Then copy the following into the
+[new hook file.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/finish/src/services/message/hooks/restrict-to-sender.js).
+[import](../../examples/chat/server/finish/src/services/message/hooks/restrict-to-sender.js)
 
 - `hook.app` - Hooks conveniently get the `app` object.
 - `hook.app.service()` - With `app`, hooks can get a handle to any service.
@@ -112,21 +93,15 @@ In this case, `className` will be `notAuthenticated`.
 ## Processing messages
 
 Let's create a hook with which to complete message processing.
+```text
+mkdir examples/chat/server/finish
+cd examples/chat/server/finish
+```
 ![generate message hook process](./assets/generate-hook-message-process.jpg)
 
-Then copy the hook:
-
-```javascript
-// src/services/message/hooks/process.js
-module.exports = () => hook => {
-  hook.data.text = hook.data.text
-    .substring(0, 400) // Messages can't be longer than 400 characters
-    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); // Do basic HTML escaping
-  hook.data.userId = hook.params.user._id; // Add the authenticated user _id
-    
-  return hook;
-};
-```
+Then copy the following into this
+[new hook file.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/finish/src/services/message/hooks/process.js).
+[import](../../examples/chat/server/finish/src/services/message/hooks/process.js)
 
 - `hook.params.user` contains the authenticated user item from `auth.populateUser()`.
 - `hook.data` contains the message item.
@@ -235,6 +210,15 @@ It throws if the user did not create the message.
 - `when` runs `restrictToSender()` if the service call was not made by the server.
 - `restrictToSenderOrServer` - As you can see, hooks are just functions
 and they can be manipulated with code.
+
+## Recap
+
+Let's recap tall the changes we have made.
+
+View changes from chat/server/client:
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/server-finish-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/server-finish-side.html)
 
 ## The results
 

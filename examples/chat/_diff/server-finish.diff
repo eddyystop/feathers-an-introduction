@@ -1,0 +1,286 @@
+diff -bdur --new-file server/client/config/default.json server/finish/config/default.json
+--- server/client/config/default.json	2017-01-01 14:24:18.298000000 -0500
++++ server/finish/config/default.json	2017-01-01 10:47:06.818846111 -0500
+@@ -5,7 +5,7 @@
+   "public": "../public/",
+   "auth": {
+     "token": {
+-      "secret": "S7zze1pglUkslStl/svi79vKZC+N4YTN4lm7ygziYm4whKaqL8pIRUiWzv+xLUWfGCneuFwc8wX6es4MyvDjtg=="
++      "secret": "nK+lKctk9YXFR5BjeKwlrJ5jwLY92nckOYifvgaMQGfWGpfWu/4dhz1WxLirKobeDyx2vazy6hfDaJd7fxcPQg=="
+     },
+     "local": {}
+   }
+diff -bdur --new-file server/client/curl-requests.sh server/finish/curl-requests.sh
+--- server/client/curl-requests.sh	1969-12-31 19:00:00.000000000 -0500
++++ server/finish/curl-requests.sh	2017-01-01 11:34:53.972115607 -0500
+@@ -0,0 +1,6 @@
++printf "\nPOST Hello.\n"
++curl -H 'Content-Type: application/json' --data-binary '{ "text": "Hello." }' http://localhost:3030/messages/
++printf "\nPOST Hello again!\n"
++curl -H 'Content-Type: application/json' --data-binary '{ "text": "Hello again!" }' http://localhost:3030/messages/
++printf "\nPOST Anyone there?\n"
++curl -H 'Content-Type: application/json' --data-binary '{ "text": "Anyone there?" }' http://localhost:3030/messages/
+\ No newline at end of file
+diff -bdur --new-file server/client/data/messages.db server/finish/data/messages.db
+--- server/client/data/messages.db	2017-01-03 10:56:20.635889935 -0500
++++ server/finish/data/messages.db	2017-01-03 16:57:43.755889935 -0500
+@@ -1,2 +1,9 @@
+-{"text":"dd","_id":"w3u8gKFjyMoCMfkb"}
+-{"$$deleted":true,"_id":"w3u8gKFjyMoCMfkb"}
++{"text":"Hello!","userId":"pv2cwN0pncBaf7Ol","createdAt":1483303166271,"_id":"3IuvzOfO03bpOOlW"}
++{"text":"tt","userId":"u2dCq0douN9Cd2yf","createdAt":{"$$date":1483459362714},"_id":"EvikUZGEofSmHMFU"}
++{"text":"eeee","userId":"wV8fxumg1e1jl84W","createdAt":1483345672482,"_id":"W6XFQb7WbnNqXGDy"}
++{"text":"Xīnnián kuàilè","userId":"hQqkIjupqGKEyKO0","createdAt":1483306202115,"_id":"Wvm38PB310eykSSB"}
++{"text":"rr","userId":{"email":"a","password":"$2a$10$e.dIRD9ShoZQuFsQ8GyCFO.PfQxNie78TvyizO7mrbYdpuLqCPK4O","avatar":"https://s.gravatar.com/avatar/0cc175b9c0f1b6a831c399e269772661?s=60","_id":"IpUnSDlZSphW8QkC"},"_id":"XH3TEiC8C4DMqKk9"}
++{"text":"Hello again!","userId":"zQZpEKyyboZnWo1V","createdAt":1483304980756,"_id":"donhg25KF2dmsnTP"}
++{"text":"新年快樂","userId":"ZU3g8AV6EcaBmQYf","createdAt":1483458332949,"_id":"jJ3Te0IqLe7HpFdK"}
++{"text":"dfdfdfdf","userId":"c0DqoDZGE5k5G8xY","createdAt":1483316881075,"_id":"mqjYXYFXi2zNnFEc"}
++{"text":"ww","_id":"mwdUDRypGYQtRbQA"}
+diff -bdur --new-file server/client/data/users.db server/finish/data/users.db
+--- server/client/data/users.db	2017-01-03 10:56:20.631889935 -0500
++++ server/finish/data/users.db	2017-01-03 16:57:54.339889935 -0500
+@@ -1,2 +1,3 @@
+-{"email":"a","password":"$2a$10$kLab3jY6zF.47Mib5SxKBOvpDjWNdXKHcrXs3xyVloGbH/eP.KTZu","avatar":"https://s.gravatar.com/avatar/0cc175b9c0f1b6a831c399e269772661?s=60","_id":"scWGh1Fn91sVGHhW"}
+-{"$$deleted":true,"_id":"scWGh1Fn91sVGHhW"}
++{"email":"a","password":"$2a$10$gFUo5XG6C0VJJpWFgfD8v.JYnQvz4iHSwcPqN6feUDvecP6IbxII6","avatar":"https://s.gravatar.com/avatar/0cc175b9c0f1b6a831c399e269772661?s=60","_id":"hif5qxOgkDUb2a5U"}
++{"$$deleted":true,"_id":"hif5qxOgkDUb2a5U"}
++{"email":"a","password":"$2a$10$S02PpDcXWTZ6yebdN7.pzuDXz7KmJqcMPTmniGyBAV0FlbcsO7iNu","avatar":"https://s.gravatar.com/avatar/0cc175b9c0f1b6a831c399e269772661?s=60","_id":"dhfHDuifCbpISSiT"}
+diff -bdur --new-file server/client/public/socketio-app.js server/finish/public/socketio-app.js
+--- server/client/public/socketio-app.js	2017-01-10 17:59:17.563607859 -0500
++++ server/finish/public/socketio-app.js	2017-01-10 18:07:46.584746995 -0500
+@@ -1,7 +1,6 @@
+ 
+ /* globals app: 0, feathers: 0 */
+ 
+-/// [router]
+ // DOM
+ handleClick('signup-user', signUpUser);
+ handleClick('signin-user', signInUser);
+@@ -21,9 +20,7 @@
+   els['chat'].style.display = newRoute === 'chat' ? 'block' : 'none';
+ };
+ router('sign-up');
+-//! [router]
+ 
+-/// [events]
+ // Feathers
+ let userList = [];
+ 
+@@ -45,7 +42,6 @@
+ messages.on('updated', message => console.log('message updated', message));
+ messages.on('patched', message => console.log('message patched', message));
+ messages.on('removed', message => console.log('message removed', message));
+-//! [events]
+ 
+ // Helpers
+ 
+@@ -53,7 +49,6 @@
+   document.getElementById(id).addEventListener('click', func);
+ }
+ 
+-/// [user-helpers]
+ function signUpUser() {
+   const user = { email: els['email-signup'].value.trim(), password: els['password-signup'].value.trim() };
+   
+@@ -97,9 +92,7 @@
+       console.log('Users in chat\n', results.data.map(user => user.email));
+     });
+ }
+-//! [user-helpers]
+ 
+-/// [message-helpers]
+ function sendMessage() {
+   const message = { text: els['message'].value.trim() };
+   
+@@ -112,4 +105,3 @@
+     .then(() => els['message'].value = '')
+     .catch(err => console.log('ERROR creating message:', err));
+ }
+-//! [message-helpers]
+diff -bdur --new-file server/client/src/services/message/hooks/index.js server/finish/src/services/message/hooks/index.js
+--- server/client/src/services/message/hooks/index.js	2017-01-01 15:22:15.104069420 -0500
++++ server/finish/src/services/message/hooks/index.js	2017-01-06 20:40:43.619801264 -0500
+@@ -1,8 +1,31 @@
+ 'use strict';
+ 
++const restrictToSender = require('./restrict-to-sender');
++
++const process = require('./process');
++
+ const globalHooks = require('../../../hooks');
+ const hooks = require('feathers-hooks');
+ const auth = require('feathers-authentication').hooks;
++const { setCreatedAt, populate, dePopulate, serialize } = require('feathers-hooks-common');
++
++const restrictToSenderOrServer = when(isProvider('external'), restrictToSender());
++
++const populateSchema = {
++  include: [{
++    service: 'users',
++    nameAs: 'sentBy',
++    parentField: 'userId',
++    childField: '_id'
++  }]
++};
++
++const serializeSchema = {
++  only: [ '_id', 'text', 'createdAt' ],
++  sentBy: {
++    only: [ 'email', 'avatar' ]
++  }
++};
+ 
+ exports.before = {
+   all: [
+@@ -12,17 +35,17 @@
+   ],
+   find: [],
+   get: [],
+-  create: [],
+-  update: [],
+-  patch: [],
+-  remove: []
++  create: [ process(), setCreatedAt() ],
++  update: [ dePopulate(), restrictToSender() ],
++  patch: [ dePopulate(), restrictToSender() ],
++  remove: [ restrictToSenderOrServer ]
+ };
+ 
+ exports.after = {
+   all: [],
+-  find: [],
+-  get: [],
+-  create: [],
++  find: [ populate({ schema: populateSchema }), serialize(serializeSchema) ],
++  get: [ populate({ schema: populateSchema }), serialize(serializeSchema) ],
++  create: [ populate({ schema: populateSchema }), serialize(serializeSchema) ],
+   update: [],
+   patch: [],
+   remove: []
+diff -bdur --new-file server/client/src/services/message/hooks/process.js server/finish/src/services/message/hooks/process.js
+--- server/client/src/services/message/hooks/process.js	1969-12-31 19:00:00.000000000 -0500
++++ server/finish/src/services/message/hooks/process.js	2017-01-03 11:12:35.930314063 -0500
+@@ -0,0 +1,15 @@
++'use strict';
++
++// src/services/message/hooks/process.js
++//
++// Use this hook to manipulate incoming or outgoing data.
++// For more information on hooks see: http://docs.feathersjs.com/hooks/readme.html
++
++module.exports = () => hook => {
++  hook.data.text = hook.data.text
++    .substring(0, 400) // Messages can't be longer than 400 characters
++    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); // Do basic HTML escaping
++  hook.data.userId = hook.params.user._id; // Add the authenticated user _id
++  
++  return hook;
++};
+diff -bdur --new-file server/client/src/services/message/hooks/restrict-to-sender.js server/finish/src/services/message/hooks/restrict-to-sender.js
+--- server/client/src/services/message/hooks/restrict-to-sender.js	1969-12-31 19:00:00.000000000 -0500
++++ server/finish/src/services/message/hooks/restrict-to-sender.js	2017-01-01 16:00:47.918421487 -0500
+@@ -0,0 +1,25 @@
++'use strict';
++
++// src/services/message/hooks/restrict-to-sender.js
++//
++// Use this hook to manipulate incoming or outgoing data.
++// For more information on hooks see: http://docs.feathersjs.com/hooks/readme.html
++
++const errors = require('feathers-errors');
++
++module.exports = function(options) {
++  return function(hook) {
++    const messageService = hook.app.service('messages');
++    
++    // First get the message that the user wants to access
++    return messageService.get(hook.id, hook.params).then(message => {
++      // Throw a not authenticated error if the message and user id don't match
++      if (message.sentBy._id !== hook.params.user._id && hook.provider) {
++        throw new errors.NotAuthenticated('Access not allowed');
++      }
++      
++      // Otherwise just return the hook
++      return hook;
++    });
++  };
++};
+diff -bdur --new-file server/client/src/services/user/hooks/index.js server/finish/src/services/user/hooks/index.js
+--- server/client/src/services/user/hooks/index.js	2017-01-02 18:10:26.423704869 -0500
++++ server/finish/src/services/user/hooks/index.js	2017-01-01 13:32:57.166846111 -0500
+@@ -5,7 +5,6 @@
+ const globalHooks = require('../../../hooks');
+ const hooks = require('feathers-hooks');
+ const auth = require('feathers-authentication').hooks;
+-const { remove } = require('feathers-hooks-common');
+ 
+ exports.before = {
+   all: [],
+@@ -20,9 +19,7 @@
+     auth.restrictToAuthenticated(),
+     auth.restrictToOwner({ ownerField: '_id' })
+   ],
+-  create: [() => {
+-    console.log('create hook'); },
+-    auth.hashPassword(), gravatar()],
++  create: [auth.hashPassword(), gravatar()],
+   update: [
+     auth.verifyToken(),
+     auth.populateUser(),
+@@ -44,7 +41,7 @@
+ };
+ 
+ exports.after = {
+-  all: [ remove('password') ],
++  all: [hooks.remove('password')],
+   find: [],
+   get: [],
+   create: [],
+diff -bdur --new-file server/client/test/services/message/hooks/process.test.js server/finish/test/services/message/hooks/process.test.js
+--- server/client/test/services/message/hooks/process.test.js	1969-12-31 19:00:00.000000000 -0500
++++ server/finish/test/services/message/hooks/process.test.js	2017-01-01 13:38:18.086846111 -0500
+@@ -0,0 +1,20 @@
++'use strict';
++
++const assert = require('assert');
++const process = require('../../../../src/services/message/hooks/process.js');
++
++describe('message process hook', function() {
++  it('hook can be used', function() {
++    const mockHook = {
++      type: 'before',
++      app: {},
++      params: {},
++      result: {},
++      data: {}
++    };
++
++    process()(mockHook);
++
++    assert.ok(mockHook.process);
++  });
++});
+diff -bdur --new-file server/client/test/services/message/hooks/restrict-to-sender.test.js server/finish/test/services/message/hooks/restrict-to-sender.test.js
+--- server/client/test/services/message/hooks/restrict-to-sender.test.js	1969-12-31 19:00:00.000000000 -0500
++++ server/finish/test/services/message/hooks/restrict-to-sender.test.js	2017-01-01 15:56:40.014846111 -0500
+@@ -0,0 +1,20 @@
++'use strict';
++
++const assert = require('assert');
++const restrictToSender = require('../../../../src/services/message/hooks/restrict-to-sender.js');
++
++describe('message restrictToSender hook', function() {
++  it('hook can be used', function() {
++    const mockHook = {
++      type: 'before',
++      app: {},
++      params: {},
++      result: {},
++      data: {}
++    };
++
++    restrictToSender()(mockHook);
++
++    assert.ok(mockHook.restrictToSender);
++  });
++});

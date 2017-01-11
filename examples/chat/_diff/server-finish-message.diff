@@ -1,59 +1,59 @@
---- server/finish/src/services/message/hooks/index.js	2017-01-06 20:40:43.619801264 -0500
-+++ server/client/src/services/message/hooks/index.js	2017-01-01 15:22:15.104069420 -0500
-@@ -1,31 +1,8 @@
+--- server/client/src/services/message/hooks/index.js	2017-01-01 15:22:15.104069420 -0500
++++ server/finish/src/services/message/hooks/index.js	2017-01-06 20:40:43.619801264 -0500
+@@ -1,8 +1,31 @@
  'use strict';
  
--const restrictToSender = require('./restrict-to-sender');
--
--const process = require('./process');
--
++const restrictToSender = require('./restrict-to-sender');
++
++const process = require('./process');
++
  const globalHooks = require('../../../hooks');
  const hooks = require('feathers-hooks');
  const auth = require('feathers-authentication').hooks;
--const { setCreatedAt, populate, dePopulate, serialize } = require('feathers-hooks-common');
--
--const restrictToSenderOrServer = when(isProvider('external'), restrictToSender());
--
--const populateSchema = {
--  include: [{
--    service: 'users',
--    nameAs: 'sentBy',
--    parentField: 'userId',
--    childField: '_id'
--  }]
--};
--
--const serializeSchema = {
--  only: [ '_id', 'text', 'createdAt' ],
--  sentBy: {
--    only: [ 'email', 'avatar' ]
--  }
--};
++const { setCreatedAt, populate, dePopulate, serialize } = require('feathers-hooks-common');
++
++const restrictToSenderOrServer = when(isProvider('external'), restrictToSender());
++
++const populateSchema = {
++  include: [{
++    service: 'users',
++    nameAs: 'sentBy',
++    parentField: 'userId',
++    childField: '_id'
++  }]
++};
++
++const serializeSchema = {
++  only: [ '_id', 'text', 'createdAt' ],
++  sentBy: {
++    only: [ 'email', 'avatar' ]
++  }
++};
  
  exports.before = {
    all: [
-@@ -35,17 +12,17 @@
+@@ -12,17 +35,17 @@
    ],
    find: [],
    get: [],
--  create: [ process(), setCreatedAt() ],
--  update: [ dePopulate(), restrictToSender() ],
--  patch: [ dePopulate(), restrictToSender() ],
--  remove: [ restrictToSenderOrServer ]
-+  create: [],
-+  update: [],
-+  patch: [],
-+  remove: []
+-  create: [],
+-  update: [],
+-  patch: [],
+-  remove: []
++  create: [ process(), setCreatedAt() ],
++  update: [ dePopulate(), restrictToSender() ],
++  patch: [ dePopulate(), restrictToSender() ],
++  remove: [ restrictToSenderOrServer ]
  };
  
  exports.after = {
    all: [],
--  find: [ populate({ schema: populateSchema }), serialize(serializeSchema) ],
--  get: [ populate({ schema: populateSchema }), serialize(serializeSchema) ],
--  create: [ populate({ schema: populateSchema }), serialize(serializeSchema) ],
-+  find: [],
-+  get: [],
-+  create: [],
+-  find: [],
+-  get: [],
+-  create: [],
++  find: [ populate({ schema: populateSchema }), serialize(serializeSchema) ],
++  get: [ populate({ schema: populateSchema }), serialize(serializeSchema) ],
++  create: [ populate({ schema: populateSchema }), serialize(serializeSchema) ],
    update: [],
    patch: [],
    remove: []
