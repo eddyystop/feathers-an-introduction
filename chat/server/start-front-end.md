@@ -6,7 +6,7 @@ and to rerun the tests of the last section using the client.
 
 ## Working example
 
-| Server code: [chat/server/client/src/index.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/src/index.js)
+| Server code: [chat/server/client/](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/)
 
 | Client code: [chat/server/client/public/socketio.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/public/socketio.html)
 and
@@ -74,29 +74,8 @@ So when the button `to-signin-user`, the router is called to display the `sign-i
 
 ## Feathers events on the client
 
-```javascript
-// Feathers
-let userList = [];
-
-app
-  .configure(feathers.hooks())
-  .configure(feathers.authentication({
-    storage: window.localStorage
-  }));
-
-const users = app.service('/users');
-const messages = app.service('/messages');
-
-users.on('created', () => getUserList());
-users.on('updated', () => getUserList());
-users.on('patched', () => getUserList());
-users.on('removed', () => getUserList());
-
-messages.on('created', message => console.log('message created', message));
-messages.on('updated', message => console.log('message updated', message));
-messages.on('patched', message => console.log('message patched', message));
-messages.on('removed', message => console.log('message removed', message));
-```
+The client responds to Feathers events:
+[import:'events'](../../examples/chat/server/client/public/socketio-app.js)
 
 - `userList` will contain the users, once we ourselves are authenticated.
 
@@ -111,66 +90,26 @@ Information is logged every time there is a change in the messages table.
 
 We don't want to send users or messages events to clients
 until they have authenticated their users.
-So we have to set up event filters on the server.
+So we have to set up event filters on the
+[chat/server/client/src/services/user/index.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/src/services/user/index.js)
 
 ```javascript
-// src/services/user/index.js
 // Send user events only to authenticated users. The remove hook already removed the password.
 userService.filter((data, connection) => connection.user ? data : false);
 ````
+and
+[chat/server/client/src/services/message/index.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/src/services/message/index.js)
 ```javascript
-// src/services/message/index.js
 // Send message events only to authenticated users.
 messageService.filter((data, connection) => connection.user ? data : false);
 ````
 
 ## Helpers for users
 
-```javascript
-function signUpUser() {
-  const user = { email: els['email-signup'].value.trim(), password: els['password-signup'].value.trim() };
-  
-  if (!user.email || !user.password) {
-    console.log('ERROR: enter name, email and password');
-    return;
-  }
-  
-  users.create(user)
-    .then(() => router('sign-in'))
-    .catch(err => console.log('ERROR creating user:', err));
-}
-
-function signInUser() {
-  const email = els['email-signin'].value.trim();
-  const password = els['password-signin'].value.trim();
-  
-  if (!email || !password) {
-    console.log('ERROR: enter email and password');
-    return;
-  }
-  
-  app.authenticate({ type: 'local', email, password })
-    .then(() => {
-      getUserList();
-      router('chat');
-    })
-    .catch(err => console.error('ERROR authenticating:', err));
-}
-
-function signOutUser() {
-  app.logout()
-    .then(() => router('sign-in'))
-    .catch(err => console.log('ERROR logging out:', err));
-}
-
-function getUserList() {
-  users.find()
-    .then(results => {
-      userList = results.data;
-      console.log('Users in chat\n', results.data.map(user => user.email));
-    });
-}
-```
+Now let's add helpers to the
+[client](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/public/socketio-app.js)
+to handle events related to users.
+[import:'user-helpers'](../../examples/chat/server/client/public/socketio-app.js)
 
 - `signUpUser` is called when `signup-user` is clicked.
 It adds a user item, and then displays the `sign-in` section.
@@ -187,20 +126,10 @@ It logs the user off and then displays the `sign-in` section.
 
 ## Helpers for messages
 
-```javascript`
-function sendMessage() {
-  const message = { text: els['message'].value.trim() };
-  
-  if (!message.text) {
-    console.log('ERROR: enter message');
-    return;
-  }
-  
-  messages.create(message)
-    .then(() => els['message'].value = '')
-    .catch(err => console.log('ERROR creating message:', err));
-}
-```
+Finally add helpers to the
+[client](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/public/socketio-app.js)
+to handle events related to messages.
+[import:'message-helpers'](../../examples/chat/server/client/public/socketio-app.js)
 
 - `sendMessage` add the new message to the messages table.
 This will cause that message to be sent to all connected clients

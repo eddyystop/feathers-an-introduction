@@ -24,7 +24,7 @@ router('sign-up');
 // Feathers
 let userList = [];
 
-app
+feathersClient
   .configure(feathers.hooks())
   .configure(feathers.authentication({
     storage: window.localStorage

@@ -5,13 +5,13 @@ Let's complete that server now.
 
 ## Working example
 
-| Source code: https://github.com/eddyystop/feathers-an-introduction/tree/master/examples/chat/server/c
+| Source code: [chat/server/finish](https://github.com/eddyystop/feathers-an-introduction/tree/master/examples/chat/server/finish)
 
-| Client HTML code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/c/public/socketio.html
+| Client code: [chat/server/finish/public/socketio.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/finish/public/socketio.html)
+and
+[chat/server/finish/public/socketio-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/finish/public/socketio-app.js)
 
-| Client source code: https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/c/public/socketio-app.js
-
-| Start the server: `node ./examples/chat/server/c/src`
+| Start the server: `node ./examples/chat/server/finish/src`
 
 | Point the browser at: `//localhost:3030/socketio.html`
 
@@ -29,7 +29,15 @@ We'll now complete the remaining server requirements we
 
 We could have added authentication to messages back when we
 [created the service](./start-server.md#basic-scaffolding).
-However this now gives us a chance to manually add the authentication hooks to all methods.
+However this now gives us a chance to manually add the authentication hooks for all methods.
+
+| View complete file 
+[chat/server/finish/src/services/message/hooks/index.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/finish/src/services/message/hooks/index.js).
+View changes from file hooks/1.js:
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/server-finish-message-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/server-finish-message-side.html)
+
 ```javascript
 // src/services/message/hooks/index.js
 exports.before = {
@@ -50,8 +58,8 @@ exports.before = {
 
 We need a hook which ensures users can only remove, update and patch their own messages. 
 ```text
-mkdir examples/chat/server/c
-cd examples/chat/server/c
+mkdir examples/chat/server/finish
+cd examples/chat/server/finish
 ```
 ![generate message hook restrict](./assets/generate-hook-restrict.jpg)
 
@@ -231,10 +239,10 @@ and they can be manipulated with code.
 ## The results
 
 This completes the server.
-Start it with `node ./examples/chat/server/c/src`.
+Start it with `node ./examples/chat/server/finish/src`.
 It will display:
 ```text
-feathers-an-introduction$ node ./examples/chat/server/c/src
+feathers-an-introduction$ node ./examples/chat/server/finish/src
 Feathers application started on localhost:3030
 users table cleared.
 ```

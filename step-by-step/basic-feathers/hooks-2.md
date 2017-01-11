@@ -32,7 +32,6 @@ View changes from file hooks/1.js:
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-hooks-2-line.html)
 |
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-hooks-2-side.html)
-
 ```javascript
 const { softDelete, setCreatedAt, setUpdatedAt, when, unless, remove } = commonHooks;
 // ...

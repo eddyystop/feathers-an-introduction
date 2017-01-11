@@ -625,7 +625,7 @@
 Our goal is to get authentication working
 and to rerun the tests of the last section using the client.</p>
 <h2 id="working-example">Working example</h2>
-<p>| Server code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/src/index.js" target="_blank">chat/server/client/src/index.js</a></p>
+<p>| Server code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/" target="_blank">chat/server/client/</a></p>
 <p>| Client code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/public/socketio.html" target="_blank">chat/server/client/public/socketio.html</a>
 and
 <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/public/socketio-app.js" target="_blank">chat/server/client/public/socketio-app.js</a></p>
@@ -701,10 +701,12 @@ So when the button <code>to-signin-user</code>, the router is called to display 
 </li>
 </ul>
 <h2 id="feathers-events-on-the-client">Feathers events on the client</h2>
-<pre><code class="lang-javascript"><span class="hljs-comment">// Feathers</span>
+<p>The client responds to Feathers events:</p>
+<pre><code class="lang-javascript">
+<span class="hljs-comment">// Feathers</span>
 <span class="hljs-keyword">let</span> userList = [];
 
-app
+feathersClient
   .configure(feathers.hooks())
   .configure(feathers.authentication({
     storage: <span class="hljs-built_in">window</span>.localStorage
@@ -737,19 +739,24 @@ Information is logged every time there is a change in the messages table.</p>
 <h2 id="feathers-events-on-the-server">Feathers events on the server</h2>
 <p>We don&apos;t want to send users or messages events to clients
 until they have authenticated their users.
-So we have to set up event filters on the server.</p>
-<pre><code class="lang-javascript"><span class="hljs-comment">// src/services/user/index.js</span>
-<span class="hljs-comment">// Send user events only to authenticated users. The remove hook already removed the password.</span>
+So we have to set up event filters on the
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/src/services/user/index.js" target="_blank">chat/server/client/src/services/user/index.js</a></p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// Send user events only to authenticated users. The remove hook already removed the password.</span>
 userService.filter((data, connection) =&gt; connection.user ? data : <span class="hljs-literal">false</span>);
 <span class="hljs-string">`
 </span></code></pre>
-<pre><code class="lang-javascript"><span class="hljs-comment">// src/services/message/index.js</span>
-<span class="hljs-comment">// Send message events only to authenticated users.</span>
+<p>and
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/src/services/message/index.js" target="_blank">chat/server/client/src/services/message/index.js</a></p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// Send message events only to authenticated users.</span>
 messageService.filter((data, connection) =&gt; connection.user ? data : <span class="hljs-literal">false</span>);
 <span class="hljs-string">`
 </span></code></pre>
 <h2 id="helpers-for-users">Helpers for users</h2>
-<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">signUpUser</span>(<span class="hljs-params"></span>) </span>{
+<p>Now let&apos;s add helpers to the
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/public/socketio-app.js" target="_blank">client</a>
+to handle events related to users.</p>
+<pre><code class="lang-javascript">
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">signUpUser</span>(<span class="hljs-params"></span>) </span>{
   <span class="hljs-keyword">const</span> user = { email: els[<span class="hljs-string">&apos;email-signup&apos;</span>].value.trim(), password: els[<span class="hljs-string">&apos;password-signup&apos;</span>].value.trim() };
 
   <span class="hljs-keyword">if</span> (!user.email || !user.password) {
@@ -758,7 +765,7 @@ messageService.filter((data, connection) =&gt; connection.user ? data : <span cl
   }
 
   users.create(user)
-    .then(() =&gt; router(<span class="hljs-string">&apos;sign-in&apos;</span>))
+    .then(() =&gt;  router(<span class="hljs-string">&apos;sign-in&apos;</span>))
     .catch(err =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;ERROR creating user:&apos;</span>, err));
 }
 
@@ -809,17 +816,21 @@ It logs the user off and then displays the <code>sign-in</code> section.</p>
 </li>
 </ul>
 <h2 id="helpers-for-messages">Helpers for messages</h2>
-<pre><code class="lang-javascript`">function sendMessage() {
-  const message = { text: els[&apos;message&apos;].value.trim() };
+<p>Finally add helpers to the
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/public/socketio-app.js" target="_blank">client</a>
+to handle events related to messages.</p>
+<pre><code class="lang-javascript">
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sendMessage</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> message = { text: els[<span class="hljs-string">&apos;message&apos;</span>].value.trim() };
 
-  if (!message.text) {
-    console.log(&apos;ERROR: enter message&apos;);
-    return;
+  <span class="hljs-keyword">if</span> (!message.text) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;ERROR: enter message&apos;</span>);
+    <span class="hljs-keyword">return</span>;
   }
 
   messages.create(message)
-    .then(() =&gt; els[&apos;message&apos;].value = &apos;&apos;)
-    .catch(err =&gt; console.log(&apos;ERROR creating message:&apos;, err));
+    .then(() =&gt; els[<span class="hljs-string">&apos;message&apos;</span>].value = <span class="hljs-string">&apos;&apos;</span>)
+    .catch(err =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;ERROR creating message:&apos;</span>, err));
 }
 </code></pre>
 <ul>
@@ -906,7 +917,7 @@ message created
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Starting the front-end","level":"1.3.1.2","depth":3,"next":{"title":"Finishing the server","level":"1.3.1.3","depth":3,"path":"chat/server/finish-server.md","ref":"chat/server/finish-server.md","articles":[]},"previous":{"title":"Starting the server","level":"1.3.1.1","depth":3,"path":"chat/server/start-server.md","ref":"chat/server/start-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"chat/server/start-front-end.md","mtime":"2017-01-10T22:43:12.478Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-10T22:43:21.442Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Starting the front-end","level":"1.3.1.2","depth":3,"next":{"title":"Finishing the server","level":"1.3.1.3","depth":3,"path":"chat/server/finish-server.md","ref":"chat/server/finish-server.md","articles":[]},"previous":{"title":"Starting the server","level":"1.3.1.1","depth":3,"path":"chat/server/start-server.md","ref":"chat/server/start-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"chat/server/start-front-end.md","mtime":"2017-01-10T23:00:29.572Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-11T02:16:04.981Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
