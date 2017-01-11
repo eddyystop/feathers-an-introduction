@@ -19,9 +19,8 @@ and in the process making it almost impossible to implement anything not support
 by their generators.
 Not so Feathers.
 
-- **Organize your app.**
+- **Structure your app.**
 The generated modules are structured as recommended by the Feathers team.
-So you don't have to worry about how to organize your files.
 
 - **Handle database specifics.**
 The generators will generate code for different databases.
