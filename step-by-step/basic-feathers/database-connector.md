@@ -15,9 +15,8 @@ Everything we mention in this guide is applicable to all of them.
 
 ## Working example
 
-| Source code: [db-connector/1.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/db-connector/1.js)
-
-| Run it: `node ./examples/step/01/db-connector/1.js`
+- Source code: [examples/step/01/db-connector/1.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/db-connector/1.js)
+- Run it: `node ./examples/step/01/db-connector/1.js`
 
 ## Feathers is modular
 
@@ -29,9 +28,8 @@ Now you can see where Feathers got its name.
 
 ## Implementing a database connector
 
-| View complete file [db-connector/1.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/db-connector/1.js)
 
-#### We `require` our dependencies.
+#### We require our dependencies.
 [import:'dependencies'](../../examples/step/01/db-connector/1.js)
 
 #### We start an instance of Feathers and define its services.
@@ -69,6 +67,8 @@ We issue a find for the entire table and print the results.
 `user.find()` returns a Promise. `.then(results => ...)` waits for the Promise to resolve,
 i.e. for the find to finish.
 The zero, one or more items found in the table are returned in the `results` param.
+
+| View complete file [db-connector/1.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/db-connector/1.js)
 
 ## Service methods
 

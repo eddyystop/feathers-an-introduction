@@ -15,7 +15,7 @@ function buildDiff {
     echo $3
     diff -bdu $1 $2 > $3.diff
     diff2html -i file -s line --su hidden -F $3-line.html -- $3.diff
-    diff2html -i file -s side --su hidden -F $3-side.html -- $3.diff
+    diff2html -i file -s side --lm lines --su hidden -F $3-side.html -- $3.diff
 }
 
 # diff a directory

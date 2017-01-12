@@ -11,22 +11,25 @@ Future versions will support multiple frameworks, starting with
 
 ## Working example
 
-| Source code: [rest/1.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/1.js)
+- Source code: [examples/step/01/rest/1.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/1.js)
 and
 [common/](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common)
-
-| Run it: `node ./examples/step/01/rest/1.js`
+- Run it: `node ./examples/step/01/rest/1.js`
+- Compare with last page's [examples/step/01/db-connector/1.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/db-connector/1.js):
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-1-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-1-side.html)
 
 ## Implementing a REST API server
 
 This is our previous example with the database method calls removed,
 and with an Express server added.
 
-| View complete file [rest/1.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/1.js)
-View changes from file db-connector/1.js:
+| View changes made:
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-1-line.html)
 |
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-1-side.html)
+
 [import](../../examples/step/01/rest/1.js)
 
 The Express server [common/expressServerConfig.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/expressServerConfig.js)

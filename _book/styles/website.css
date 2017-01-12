@@ -1,0 +1,15 @@
+/*
+ ```js always usually starts with a text node before the first <span>.
+ This causes the section to start with a blank line.
+ There is no css text selector so we cannot do anything with that text node.
+ http://stackoverflow.com/questions/22179642/css-first-child-selector-including-text-nodes
+ https://css-tricks.com/forums/topic/how-to-target-only-the-stray-text-inside-a-div/
+ We try to adjust by manipulating the wrapping <pre> element
+ */
+pre > code.lang-javascript {}
+
+.markdown-section pre {
+    padding-top: 0;
+    margin-bottom: 0;
+    line-height: 1.25; /* Less spacing between lines makes the sections stand out as different */
+}
