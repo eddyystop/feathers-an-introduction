@@ -8,25 +8,17 @@ We'll be introducing specific hooks as we need them.
 
 ## Working example
 
-| Server code: [hooks/1.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/hooks/1.js)
-
-| Client code: [common/public/rest.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/rest.html)
+- Server code: [examples/step/01/hooks/1.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/hooks/1.js)
+- Client code: [common/public/rest.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/rest.html)
 and
-[common/public/feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js)
-
-| Start the server: `node ./examples/step/01/hooks/1`
-
-| Point the browser at: `//localhost:3030/rest.html`
+[feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js)
+- Start the server: `node ./examples/step/01/hooks/1`
+- Point the browser at: `//localhost:3030/rest.html`
 
 ## Writing hooks
 
-Let's add some hooks to the server we've been using.
+Let's add some hooks to the server we've used with the Feathers REST and Websocket clients.
 
-| View complete file [hooks/1.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/hooks/1.js)
-View changes from file websocket/1.js:
-[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-hooks-1-line.html)
-|
-[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-hooks-1-side.html)
 ```javascript
 const authHooks = require('feathers-authentication-local').hooks;
 const hooks = require('feathers-hooks');
@@ -68,6 +60,11 @@ function userSchema() {
   };
 }
 ```
+- See what changed
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-hooks-1-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-hooks-1-side.html)
+
 
 #### - .configure(hooks())
 
