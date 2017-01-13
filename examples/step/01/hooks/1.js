@@ -1,19 +1,18 @@
 
 // Example - Use hooks with service
 
-const Ajv = require('ajv'); // new
+const expressServerConfig = require('../common/expressServerConfig');
+const expressMiddleware = require('../common/expressMiddleware');
+const rest = require('feathers-rest');
+const socketio = require('feathers-socketio');
 const NeDB = require('nedb');
 const path = require('path');
+const service = require('feathers-nedb');
 
+const Ajv = require('ajv'); // new
 const authHooks = require('feathers-authentication-local').hooks; // new
 const hooks = require('feathers-hooks'); // new
 const commonHooks = require('feathers-hooks-common'); // new
-const service = require('feathers-nedb');
-const rest = require('feathers-rest');
-const socketio = require('feathers-socketio');
-
-const expressServerConfig = require('../common/expressServerConfig');
-const expressMiddleware = require('../common/expressMiddleware');
 
 const app = expressServerConfig()
   .configure(hooks()) // new
