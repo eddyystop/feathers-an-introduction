@@ -1,4 +1,5 @@
 
+let jackId;
 const users = feathersClient.service('/users');
 
 Promise.all([
@@ -12,8 +13,10 @@ Promise.all([
     console.log('created John Doe item\n', results[1]);
     console.log('created Judy Doe item\n', results[2]);
     console.log('created Jack Doe item\n', results[3]);
+  
+    jackId = results[3]._id;
     
-    return users.remove(results[3]._id)
+    return users.remove(jackId)
       .then(result => console.log('deleted Jack Doe item\n', result));
   })
   .then(() => {

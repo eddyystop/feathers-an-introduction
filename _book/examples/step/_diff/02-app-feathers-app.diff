@@ -1,6 +1,6 @@
---- 01/common/public/feathers-app-del.js	2017-01-13 13:58:43.013702241 -0500
-+++ 02/app/public/feathers-app.js	2017-01-10 15:06:04.736345442 -0500
-@@ -1,11 +1,18 @@
+--- 01/common/public/feathers-app-del.js	2017-01-13 14:49:01.187351657 -0500
++++ 02/app/public/feathers-app.js	2017-01-13 14:48:12.844247120 -0500
+@@ -1,4 +1,10 @@
  
 +feathersClient
 +  .configure(feathers.hooks())
@@ -8,26 +8,15 @@
 +    storage: window.localStorage
 +  }));
 +
-+let jackId;
+ let jackId;
  const users = feathersClient.service('/users');
  
- Promise.all([
-   users.create({ email: 'jane.doe@gmail.com', password: '11111', role: 'admin' }),
-   users.create({ email: 'john.doe@gmail.com', password: '22222', role: 'user' }),
-   users.create({ email: 'judy.doe@gmail.com', password: '33333', role: 'user' }),
--  users.create({ email: 'jack.doe@gmail.com', password: '44444', role: 'user' })
-+  users.create({ email: 'jack.doe@gmail.com', password: '44444', role: 'user' }),
- ])
-   .then(results => {
-     console.log('created Jane Doe item\n', results[0]);
-@@ -13,11 +20,20 @@
-     console.log('created Judy Doe item\n', results[2]);
-     console.log('created Jack Doe item\n', results[3]);
+@@ -16,11 +22,18 @@
+   
+     jackId = results[3]._id;
      
--    return users.remove(results[3]._id)
+-    return users.remove(jackId)
 -      .then(result => console.log('deleted Jack Doe item\n', result));
-+    jackId = results[3]._id;
-+    
 +    return feathersClient.authenticate({
 +      type: 'local',
 +      'email': 'jane.doe@gmail.com',
