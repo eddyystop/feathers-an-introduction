@@ -28,13 +28,14 @@ Let's add some hooks to the server we've used with the Feathers REST and Websock
 const authHooks = require('feathers-authentication-local').hooks;
 const hooks = require('feathers-hooks');
 const commonHooks = require('feathers-hooks-common');
-// ...
+
 const app = httpServerConfig()
   .configure(hooks())
-// ...
+
 function services() {
   this.configure(user);
 }
+
 function user() {
   const app = this;
   
@@ -51,6 +52,7 @@ function user() {
     all: unless(hook => hook.method === 'find', remove('password')),
   });
 }
+
 function userSchema() {
   return {
     title: 'User Schema',
@@ -102,7 +104,7 @@ The service's [JSON schema](https://github.com/json-schema-org/json-schema-spec)
 is provided by `function userSchema`.
 
 > **JSON schema.** There are
-[good tutorials](& https://code.tutsplus.com/tutorials/validating-data-with-json-schema-part-1--cms-25343)
+[good tutorials](https://code.tutsplus.com/tutorials/validating-data-with-json-schema-part-1--cms-25343)
 on validating data with JSON schema.
 
 #### - authHooks.hashPassword()
@@ -115,7 +117,7 @@ so the password may be stored safely.
 Bcrypt has the best kind of repute that can be achieved for a cryptographic algorithm:
 it has been around for quite some time, used quite widely, "attracted attention",
 and yet remains unbroken to date.
-[Reference.](http://security.stackexchange.com/questions/4781/do-any-security-experts-recommend-bcrypt-for-password-storage)
+[(Reference.)](http://security.stackexchange.com/questions/4781/do-any-security-experts-recommend-bcrypt-for-password-storage)
 
 > **JSON webtoken.** Feathers Authentication uses JSON webtoken (JWT) for secure authentication
 between a client and server as opposed to cookies and sessions.

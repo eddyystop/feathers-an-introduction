@@ -1,5 +1,5 @@
 --- 01/websocket/1.js	2017-01-13 13:31:34.853927265 -0500
-+++ 01/hooks/1.js	2017-01-13 13:28:38.182679119 -0500
++++ 01/hooks/1.js	2017-01-13 13:34:43.856067917 -0500
 @@ -1,5 +1,5 @@
  
 -// Example - Create REST & socketio API, and serve static files
@@ -11,13 +11,13 @@
  const path = require('path');
  const service = require('feathers-nedb');
  
-+const Ajv = require('ajv'); // new
-+const authHooks = require('feathers-authentication-local').hooks; // new
-+const hooks = require('feathers-hooks'); // new
-+const commonHooks = require('feathers-hooks-common'); // new
++const Ajv = require('ajv');
++const authHooks = require('feathers-authentication-local').hooks;
++const hooks = require('feathers-hooks');
++const commonHooks = require('feathers-hooks-common');
 +
  const app = expressServerConfig()
-+  .configure(hooks()) // new
++  .configure(hooks())
    .configure(rest())
    .configure(socketio())
    .configure(services)
@@ -29,7 +29,7 @@
 +  this.configure(user); // new
 +}
 +
-+function user() { // new
++function user() {
 +  const app = this;
 +  
 +  app.use('/users', service({ Model: userModel() }));

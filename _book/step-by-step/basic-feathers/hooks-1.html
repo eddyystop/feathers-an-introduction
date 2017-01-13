@@ -646,13 +646,14 @@ and
 <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> authHooks = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;feathers-authentication-local&apos;</span>).hooks;
 <span class="hljs-keyword">const</span> hooks = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;feathers-hooks&apos;</span>);
 <span class="hljs-keyword">const</span> commonHooks = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;feathers-hooks-common&apos;</span>);
-<span class="hljs-comment">// ...</span>
+
 <span class="hljs-keyword">const</span> app = httpServerConfig()
   .configure(hooks())
-<span class="hljs-comment">// ...</span>
+
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">services</span>(<span class="hljs-params"></span>) </span>{
   <span class="hljs-keyword">this</span>.configure(user);
 }
+
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">user</span>(<span class="hljs-params"></span>) </span>{
   <span class="hljs-keyword">const</span> app = <span class="hljs-keyword">this</span>;
 
@@ -669,6 +670,7 @@ and
     all: unless(hook =&gt; hook.method === <span class="hljs-string">&apos;find&apos;</span>, remove(<span class="hljs-string">&apos;password&apos;</span>)),
   });
 }
+
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">userSchema</span>(<span class="hljs-params"></span>) </span>{
   <span class="hljs-keyword">return</span> {
     title: <span class="hljs-string">&apos;User Schema&apos;</span>,
@@ -709,7 +711,7 @@ The service&apos;s <a href="https://github.com/json-schema-org/json-schema-spec"
 is provided by <code>function userSchema</code>.</p>
 <blockquote>
 <p><strong>JSON schema.</strong> There are
-<a href="&amp;%20https:/code.tutsplus.com/tutorials/validating-data-with-json-schema-part-1--cms-25343">good tutorials</a>
+<a href="https://code.tutsplus.com/tutorials/validating-data-with-json-schema-part-1--cms-25343" target="_blank">good tutorials</a>
 on validating data with JSON schema.</p>
 </blockquote>
 <h4 id="-authhookshashpassword">- authHooks.hashPassword()</h4>
@@ -721,7 +723,7 @@ so the password may be stored safely.</p>
 Bcrypt has the best kind of repute that can be achieved for a cryptographic algorithm:
 it has been around for quite some time, used quite widely, &quot;attracted attention&quot;,
 and yet remains unbroken to date.
-<a href="http://security.stackexchange.com/questions/4781/do-any-security-experts-recommend-bcrypt-for-password-storage" target="_blank">Reference.</a></p>
+<a href="http://security.stackexchange.com/questions/4781/do-any-security-experts-recommend-bcrypt-for-password-storage" target="_blank">(Reference.)</a></p>
 <p><strong>JSON webtoken.</strong> Feathers Authentication uses JSON webtoken (JWT) for secure authentication
 between a client and server as opposed to cookies and sessions.
 The cookies vs token debate
@@ -858,7 +860,7 @@ because of the special coding we included in the example.</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Hooks, part 1","level":"1.2.2.6","depth":3,"next":{"title":"Hooks, part 2","level":"1.2.2.7","depth":3,"path":"step-by-step/basic-feathers/hooks-2.md","ref":"step-by-step/basic-feathers/hooks-2.md","articles":[]},"previous":{"title":"The \"ah-ha\" moment","level":"1.2.2.5","depth":3,"path":"step-by-step/basic-feathers/ah-ha.md","ref":"step-by-step/basic-feathers/ah-ha.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/hooks-1.md","mtime":"2017-01-13T18:24:31.358Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-13T18:32:00.448Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Hooks, part 1","level":"1.2.2.6","depth":3,"next":{"title":"Hooks, part 2","level":"1.2.2.7","depth":3,"path":"step-by-step/basic-feathers/hooks-2.md","ref":"step-by-step/basic-feathers/hooks-2.md","articles":[]},"previous":{"title":"The \"ah-ha\" moment","level":"1.2.2.5","depth":3,"path":"step-by-step/basic-feathers/ah-ha.md","ref":"step-by-step/basic-feathers/ah-ha.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/hooks-1.md","mtime":"2017-01-13T18:37:39.559Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-13T18:41:10.801Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

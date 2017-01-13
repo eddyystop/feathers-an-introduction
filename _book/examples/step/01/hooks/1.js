@@ -9,13 +9,13 @@ const NeDB = require('nedb');
 const path = require('path');
 const service = require('feathers-nedb');
 
-const Ajv = require('ajv'); // new
-const authHooks = require('feathers-authentication-local').hooks; // new
-const hooks = require('feathers-hooks'); // new
-const commonHooks = require('feathers-hooks-common'); // new
+const Ajv = require('ajv');
+const authHooks = require('feathers-authentication-local').hooks;
+const hooks = require('feathers-hooks');
+const commonHooks = require('feathers-hooks-common');
 
 const app = expressServerConfig()
-  .configure(hooks()) // new
+  .configure(hooks())
   .configure(rest())
   .configure(socketio())
   .configure(services)
@@ -28,7 +28,7 @@ function services() {
   this.configure(user); // new
 }
 
-function user() { // new
+function user() {
   const app = this;
   
   app.use('/users', service({ Model: userModel() }));
