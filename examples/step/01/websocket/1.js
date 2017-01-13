@@ -4,15 +4,14 @@
 const expressServerConfig = require('../common/expressServerConfig');
 const expressMiddleware = require('../common/expressMiddleware');
 const rest = require('feathers-rest');
+const socketio = require('feathers-socketio');
 const NeDB = require('nedb');
 const path = require('path');
 const service = require('feathers-nedb');
 
-const socketio = require('feathers-socketio'); // new
-
 const app = expressServerConfig()
   .configure(rest())
-  .configure(socketio()) // new
+  .configure(socketio())
   .configure(services)
   .configure(expressMiddleware);
 
