@@ -1,4 +1,4 @@
---- 01/common/public/feathers-app.js	2017-01-13 10:24:55.100520797 -0500
+--- 01/common/public/feathers-app.js	2017-01-13 10:27:44.473745564 -0500
 +++ 02/app/public/feathers-app.js	2017-01-10 15:06:04.736345442 -0500
 @@ -1,17 +1,39 @@
  
@@ -14,7 +14,8 @@
  Promise.all([
    users.create({ email: 'jane.doe@gmail.com', password: '11111', role: 'admin' }),
    users.create({ email: 'john.doe@gmail.com', password: '22222', role: 'user' }),
-   users.create({ email: 'judy.doe@gmail.com', password: '33333', role: 'user' }),
+-  users.create({ email: 'judy.doe@gmail.com', password: '33333', role: 'user' })
++  users.create({ email: 'judy.doe@gmail.com', password: '33333', role: 'user' }),
 +  users.create({ email: 'jack.doe@gmail.com', password: '44444', role: 'user' }),
  ])
    .then(results => {

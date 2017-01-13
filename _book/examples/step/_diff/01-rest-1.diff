@@ -1,4 +1,4 @@
---- 01/db-connector/1.js	2017-01-13 10:24:45.988259250 -0500
+--- 01/db-connector/1.js	2017-01-13 10:32:26.281818262 -0500
 +++ 01/rest/1.js	2017-01-13 09:46:27.384208386 -0500
 @@ -1,40 +1,22 @@
  
@@ -19,7 +19,7 @@
 +const rest = require('feathers-rest');
  
 -/// [create]
--const users = app.service('users');
+-const users = app.service('/users');
 +const expressServerConfig = require('../common/expressServerConfig');
 +const expressMiddleware = require('../common/expressMiddleware');
  
@@ -39,7 +39,7 @@
 +  .configure(services)
 +  .configure(expressMiddleware);
      
--    users.find()
+-    return users.find()
 -      .then(results => console.log('find all items\n', results));
 -  })
 -  .catch(err => console.log('Error occurred:', err));

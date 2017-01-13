@@ -14,7 +14,7 @@ const app = feathers()
 //! [feathers]
 
 /// [create]
-const users = app.service('users');
+const users = app.service('/users');
 
 Promise.all([
   users.create({ email: 'jane.doe@gmail.com', password: '11111', role: 'admin' }),
@@ -28,7 +28,7 @@ Promise.all([
     console.log('created John Doe item\n', results[1]);
     console.log('created Judy Doe item\n', results[2]);
     
-    users.find()
+    return users.find()
       .then(results => console.log('find all items\n', results));
   })
   .catch(err => console.log('Error occurred:', err));
