@@ -647,10 +647,13 @@ and
 <h2 id="using-softdelete">Using softDelete</h2>
 <p>We need to make just one change to our previous server example.
 We use the when hook to run the softDelete hook if the service method is not find.</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> { softDelete, setCreatedAt, setUpdatedAt, when, unless, remove } = commonHooks;
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> {
+  softDelete, when, <span class="hljs-comment">// new</span>
+  setCreatedAt, setUpdatedAt, unless, remove
+} = commonHooks;
 <span class="hljs-comment">// ...</span>
 userService.before({
-    all: when(hook =&gt; hook.method !== <span class="hljs-string">&apos;find&apos;</span>, softDelete()),
+    all: when(hook =&gt; hook.method !== <span class="hljs-string">&apos;find&apos;</span>, softDelete()), <span class="hljs-comment">// new</span>
     create: [ <span class="hljs-comment">/* ... */</span> ]
 });
 </code></pre>
@@ -761,7 +764,7 @@ because of how we conditioned the softDelete hook.</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Hooks, part 2","level":"1.2.2.7","depth":3,"next":{"title":"Real-time","level":"1.2.2.8","depth":3,"path":"step-by-step/basic-feathers/real-time.md","ref":"step-by-step/basic-feathers/real-time.md","articles":[]},"previous":{"title":"Hooks, part 1","level":"1.2.2.6","depth":3,"path":"step-by-step/basic-feathers/hooks-1.md","ref":"step-by-step/basic-feathers/hooks-1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/hooks-2.md","mtime":"2017-01-13T18:59:29.659Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-13T19:03:53.993Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Hooks, part 2","level":"1.2.2.7","depth":3,"next":{"title":"Real-time","level":"1.2.2.8","depth":3,"path":"step-by-step/basic-feathers/real-time.md","ref":"step-by-step/basic-feathers/real-time.md","articles":[]},"previous":{"title":"Hooks, part 1","level":"1.2.2.6","depth":3,"path":"step-by-step/basic-feathers/hooks-1.md","ref":"step-by-step/basic-feathers/hooks-1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/hooks-2.md","mtime":"2017-01-13T19:08:29.833Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-13T19:09:23.679Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

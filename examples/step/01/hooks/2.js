@@ -14,10 +14,6 @@ const authHooks = require('feathers-authentication-local').hooks;
 const hooks = require('feathers-hooks');
 const commonHooks = require('feathers-hooks-common');
 
-
-
-
-
 const app = expressServerConfig()
   .configure(hooks())
   .configure(rest())
@@ -44,7 +40,7 @@ function user() {
   } = commonHooks;
   
   userService.before({
-    all: when(hook => hook.method !== 'find', softDelete()), // new
+    all: when(hook => hook.method !== 'find', softDelete()),
     create: [
       validateSchema(userSchema(), Ajv),
       authHooks.hashPassword(),

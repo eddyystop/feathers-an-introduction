@@ -30,10 +30,13 @@ We need to make just one change to our previous server example.
 We use the when hook to run the softDelete hook if the service method is not find.
 
 ```javascript
-const { softDelete, setCreatedAt, setUpdatedAt, when, unless, remove } = commonHooks;
+const {
+  softDelete, when, // new
+  setCreatedAt, setUpdatedAt, unless, remove
+} = commonHooks;
 // ...
 userService.before({
-    all: when(hook => hook.method !== 'find', softDelete()),
+    all: when(hook => hook.method !== 'find', softDelete()), // new
     create: [ /* ... */ ]
 });
 ```
