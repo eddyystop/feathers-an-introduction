@@ -4,8 +4,8 @@
 /// [dependencies]
 const NeDB = require('nedb');
 const path = require('path');
-const feathers = require('feathers');
 const service = require('feathers-nedb');
+const feathers = require('feathers');
 //! [dependencies]
 
 /// [feathers]

@@ -1,18 +1,17 @@
---- 01/rest/2.js	2017-01-10 11:33:57.090334579 -0500
-+++ 01/websocket/1.js	2017-01-10 12:22:04.767400008 -0500
-@@ -1,16 +1,18 @@
+--- 01/rest/2.js	2017-01-13 12:30:30.634482135 -0500
++++ 01/websocket/1.js	2017-01-13 12:30:30.725028652 -0500
+@@ -1,5 +1,5 @@
  
 -// Example - Create REST API, and serve static files
 +// Example - Create REST & socketio API, and serve static files
  
- const NeDB = require('nedb');
+ const expressServerConfig = require('../common/expressServerConfig');
+ const expressMiddleware = require('../common/expressMiddleware');
+@@ -7,9 +7,11 @@
  const path = require('path');
  const service = require('feathers-nedb');
  const rest = require('feathers-rest');
 +const socketio = require('feathers-socketio'); // new
- 
- const expressServerConfig = require('../common/expressServerConfig');
- const expressMiddleware = require('../common/expressMiddleware');
  
  const app = expressServerConfig()
    .configure(rest())

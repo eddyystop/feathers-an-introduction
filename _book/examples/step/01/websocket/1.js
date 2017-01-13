@@ -1,14 +1,13 @@
 
 // Example - Create REST & socketio API, and serve static files
 
+const expressServerConfig = require('../common/expressServerConfig');
+const expressMiddleware = require('../common/expressMiddleware');
 const NeDB = require('nedb');
 const path = require('path');
 const service = require('feathers-nedb');
 const rest = require('feathers-rest');
 const socketio = require('feathers-socketio'); // new
-
-const expressServerConfig = require('../common/expressServerConfig');
-const expressMiddleware = require('../common/expressMiddleware');
 
 const app = expressServerConfig()
   .configure(rest())

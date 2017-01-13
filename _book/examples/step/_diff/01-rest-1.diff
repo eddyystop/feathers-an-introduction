@@ -1,4 +1,4 @@
---- 01/db-connector/1.js	2017-01-13 10:32:26.281818262 -0500
+--- 01/db-connector/1.js	2017-01-13 12:29:23.556735275 -0500
 +++ 01/rest/1.js	2017-01-13 12:24:46.417687064 -0500
 @@ -1,40 +1,21 @@
  
@@ -10,8 +10,8 @@
 +const expressMiddleware = require('../common/expressMiddleware');
  const NeDB = require('nedb');
  const path = require('path');
--const feathers = require('feathers');
  const service = require('feathers-nedb');
+-const feathers = require('feathers');
 -//! [dependencies]
 -
 -/// [feathers]
