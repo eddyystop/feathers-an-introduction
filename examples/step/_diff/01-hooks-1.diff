@@ -1,16 +1,13 @@
---- 01/websocket/1.js	2017-01-13 12:58:55.046981891 -0500
+--- 01/websocket/1.js	2017-01-13 13:31:34.853927265 -0500
 +++ 01/hooks/1.js	2017-01-13 13:28:38.182679119 -0500
-@@ -1,17 +1,23 @@
+@@ -1,5 +1,5 @@
  
 -// Example - Create REST & socketio API, and serve static files
 +// Example - Use hooks with service
  
  const expressServerConfig = require('../common/expressServerConfig');
  const expressMiddleware = require('../common/expressMiddleware');
- const rest = require('feathers-rest');
--const socketio = require('feathers-socketio'); // new
-+const socketio = require('feathers-socketio');
- const NeDB = require('nedb');
+@@ -9,7 +9,13 @@
  const path = require('path');
  const service = require('feathers-nedb');
  
@@ -22,11 +19,8 @@
  const app = expressServerConfig()
 +  .configure(hooks()) // new
    .configure(rest())
--  .configure(socketio()) // new
-+  .configure(socketio())
+   .configure(socketio())
    .configure(services)
-   .configure(expressMiddleware);
- 
 @@ -19,7 +25,29 @@
  server.on('listening', () => console.log(`Feathers application started on port 3030`));
  
