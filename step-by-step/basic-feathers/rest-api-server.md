@@ -26,6 +26,11 @@ This is our previous example with the database method calls removed,
 and with an Express server added.
 [import](../../examples/step/01/rest/1.js)
 
+- See what changed:
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-1-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-1-side.html)
+
 The Express server [common/expressServerConfig.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/expressServerConfig.js)
 is configured as follows.
 [import](../../examples/step/01/common/expressServerConfig.js)
