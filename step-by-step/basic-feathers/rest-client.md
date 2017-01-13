@@ -63,7 +63,7 @@ is essentially the same code we used in
 [Writing a Database Connector](./database-connector.md)!
 [import](../../examples/step/01/common/public/feathers-app.js)
 
-| Compare feathers-app.js to our database connector file
+- Compare feathers-app.js to our database connector file
 [db-connector/1.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/db-connector/1.js):
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-client-line.html)
 |

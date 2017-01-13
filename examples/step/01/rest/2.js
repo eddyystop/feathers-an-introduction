@@ -8,7 +8,6 @@ const NeDB = require('nedb');
 const path = require('path');
 const service = require('feathers-nedb');
 
-
 const app = expressServerConfig()
   .configure(rest())
   .configure(services)
