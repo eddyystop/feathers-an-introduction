@@ -23,16 +23,10 @@ and
 We copied examples/step/02/app/ to examples/step/02/service/.
 We then ran `feathers generate service`:
 
-![generate service teams](../assets/generate-service-teams.jpg)
 ```text
 feathers-an-introduction$ cd ./examples/step/02/service
-service$ feathers generate service
-
-What do you want to call your service?: teams
-What type of service do you need?: database
-For which datbase? NeDB
-Does your service require users to be authenticated? Y (enter)
 ```
+![generate service teams](../assets/generate-service-teams.jpg)
 
 Once again we remove the dependencies loaded by the generator
 as they are already installed at the root of `feathers-an-introduction`.

@@ -1,5 +1,5 @@
 
-feathersClients
+feathersClient
   .configure(feathers.hooks())
   .configure(feathers.authentication({
     storage: window.localStorage
