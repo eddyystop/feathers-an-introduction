@@ -4,15 +4,17 @@ Let's generate a new project.
 
 ## Working example
 
-| Server code: [app/](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/)
-
-| Client code: [app/public/socketio.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/public/socketio.html)
+- Server code: [examples/step/02/app/](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/)
+- Client code: [app/public/socketio.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/public/socketio.html)
 and
-[app/public/feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/public/feathers-app.js)
-
-| Start the server: `node ./examples/step/02/app/src`
-
-| Point the browser at: `//localhost:3030/socketio.html`
+[feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/public/feathers-app.js)
+- Start the server: `node ./examples/step/02/app/src`
+- Point the browser at: `//localhost:3030/socketio.html`
+- Compare with our last frontend
+[common/public/feathers-app-del.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app-del.js):
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app-feathers-app-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app-feathers-app-side.html)
 
 ## Creating an app
 
@@ -80,7 +82,8 @@ i.e. when you run `NODE_ENV=production node ./examples/step/02/app/src`.
 
 ## Authentication
 
-The frontend code includes
+Let's add the following to then generated frontend
+[app/public/feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/public/feathers-app.js)
 
 | View complete file
 [app/public/feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/public/feathers-app.js)
@@ -97,6 +100,11 @@ app.authenticate({
   .then(() => console.log('\nAuthenticated successfully.\n '))
   .catch(err => console.error('\nError authenticating:', err));
 ```
+- See what changed:
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app-feathers-app-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app-feathers-app-side.html)
+
 
 This attempts to authenticate the user.
 

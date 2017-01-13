@@ -625,12 +625,19 @@
                                 <h1 id="generating-an-app">Generating an app</h1>
 <p>Let&apos;s generate a new project.</p>
 <h2 id="working-example">Working example</h2>
-<p>| Server code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/" target="_blank">app/</a></p>
-<p>| Client code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/public/socketio.html" target="_blank">app/public/socketio.html</a>
+<ul>
+<li>Server code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/" target="_blank">examples/step/02/app/</a></li>
+<li>Client code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/public/socketio.html" target="_blank">app/public/socketio.html</a>
 and
-<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/public/feathers-app.js" target="_blank">app/public/feathers-app.js</a></p>
-<p>| Start the server: <code>node ./examples/step/02/app/src</code></p>
-<p>| Point the browser at: <code>//localhost:3030/socketio.html</code></p>
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/public/feathers-app.js" target="_blank">feathers-app.js</a></li>
+<li>Start the server: <code>node ./examples/step/02/app/src</code></li>
+<li>Point the browser at: <code>//localhost:3030/socketio.html</code></li>
+<li>Compare with our last frontend
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app-del.js" target="_blank">common/public/feathers-app-del.js</a>:
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app-feathers-app-line.html" target="_blank">Unified</a>
+|
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app-feathers-app-side.html" target="_blank">Split</a></li>
+</ul>
 <h2 id="creating-an-app">Creating an app</h2>
 <p>The <a href="https://docs.feathersjs.com/getting-started/scaffolding.html#generate-the-app" target="_blank">app generator</a>
 wrote most of
@@ -697,7 +704,8 @@ and that by default it will return 5 items.</p>
 </li>
 </ul>
 <h2 id="authentication">Authentication</h2>
-<p>The frontend code includes</p>
+<p>Let&apos;s add the following to then generated frontend
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/public/feathers-app.js" target="_blank">app/public/feathers-app.js</a></p>
 <p>| View complete file
 <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/public/feathers-app.js" target="_blank">app/public/feathers-app.js</a>
 View changes from file common/public/feathers-app.js:
@@ -712,6 +720,12 @@ View changes from file common/public/feathers-app.js:
   .then(() =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;\nAuthenticated successfully.\n &apos;</span>))
   .catch(err =&gt; <span class="hljs-built_in">console</span>.error(<span class="hljs-string">&apos;\nError authenticating:&apos;</span>, err));
 </code></pre>
+<ul>
+<li>See what changed:
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app-feathers-app-line.html" target="_blank">Unified</a>
+|
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app-feathers-app-side.html" target="_blank">Split</a></li>
+</ul>
 <p>This attempts to authenticate the user.</p>
 <blockquote>
 <p><strong> Promise Refresher.</strong> Should an error occur during execution of a Promise
@@ -802,7 +816,7 @@ find all items
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Generating an app","level":"1.2.3.1","depth":3,"next":{"title":"Adding a service","level":"1.2.3.2","depth":3,"path":"step-by-step/generators/service.md","ref":"step-by-step/generators/service.md","articles":[]},"previous":{"title":"Generators >>","level":"1.2.3","depth":2,"path":"step-by-step/generators/readme.md","ref":"step-by-step/generators/readme.md","articles":[{"title":"Generating an app","level":"1.2.3.1","depth":3,"path":"step-by-step/generators/app.md","ref":"step-by-step/generators/app.md","articles":[]},{"title":"Adding a service","level":"1.2.3.2","depth":3,"path":"step-by-step/generators/service.md","ref":"step-by-step/generators/service.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/generators/app.md","mtime":"2017-01-13T14:07:50.394Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-13T19:24:08.833Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Generating an app","level":"1.2.3.1","depth":3,"next":{"title":"Adding a service","level":"1.2.3.2","depth":3,"path":"step-by-step/generators/service.md","ref":"step-by-step/generators/service.md","articles":[]},"previous":{"title":"Generators >>","level":"1.2.3","depth":2,"path":"step-by-step/generators/readme.md","ref":"step-by-step/generators/readme.md","articles":[{"title":"Generating an app","level":"1.2.3.1","depth":3,"path":"step-by-step/generators/app.md","ref":"step-by-step/generators/app.md","articles":[]},{"title":"Adding a service","level":"1.2.3.2","depth":3,"path":"step-by-step/generators/service.md","ref":"step-by-step/generators/service.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/generators/app.md","mtime":"2017-01-13T19:41:29.371Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-13T19:42:04.429Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
