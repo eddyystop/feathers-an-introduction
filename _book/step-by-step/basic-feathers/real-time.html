@@ -645,16 +645,18 @@ These would have implement a traditional long-polling design.
 <p>Let&apos;s create an event listener for the <a href="socket-client.html">Feathers Websocket Client</a>
 we already have.</p>
 <h2 id="working-example">Working example</h2>
-<p>| Server code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/websocket/1.js" target="_blank">websocket/1.js</a></p>
-<p>| Listener code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener.html" target="_blank">common/public/listener.html</a>
+<ul>
+<li>Server code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/websocket/1.js" target="_blank">examples/step/01/websocket/1.js</a></li>
+<li>Listener code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener.html" target="_blank">common/public/listener.html</a>
 and
-<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener-app.js" target="_blank">common/public/listener-app.js</a></p>
-<p>| Client code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/socketio.html" target="_blank">common/public/socketio.html</a>
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener-app.js" target="_blank">listener-app.js</a></li>
+<li>Client code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/socketio.html" target="_blank">common/public/socketio.html</a>
 and
-<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js" target="_blank">common/public/feathers-app.js</a></p>
-<p>| Start the server: <code>node ./examples/step/01/websocket/1.js</code></p>
-<p>| Start the listener by pointing a browser tab at <code>//localhost:3030/listener.html</code></p>
-<p>| Start making changes by pointing a browser tab at: <code>//localhost:3030/socketio.html</code></p>
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js" target="_blank">feathers-app.js</a></li>
+<li>Start the server: <code>node ./examples/step/01/websocket/1.js</code></li>
+<li>Start the listener by pointing a browser tab at <code>//localhost:3030/listener.html</code></li>
+<li>Start making changes by pointing a browser tab at: <code>//localhost:3030/socketio.html</code></li>
+</ul>
 <h2 id="implementing-a-listener">Implementing a listener</h2>
 <p>Implementing the listener
 <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener-app.js" target="_blank">common/public/listener-app.js</a>
@@ -676,10 +678,6 @@ created
 {email: &quot;john.doe@gmail.com&quot;, password: &quot;22222&quot;, role: &quot;user&quot;, _id: &quot;XI6e3bZcoupb6Hyr&quot;}
 created
 {email: &quot;judy.doe@gmail.com&quot;, password: &quot;33333&quot;, role: &quot;user&quot;, _id: &quot;qeYSi2KrkwIUMoaE&quot;}
-created
-{email: &quot;jack.doe@gmail.com&quot;, password: &quot;44444&quot;, role: &quot;user&quot;, _id: &quot;BmMwIbBciRGsWv2h&quot;}
-removed
-{email: &quot;jack.doe@gmail.com&quot;, password: &quot;44444&quot;, role: &quot;user&quot;, _id: &quot;BmMwIbBciRGsWv2h&quot;}
 </code></pre>
 <p>You usually wouldn&apos;t want to send passwords to clients.</p>
 <p>In many cases you probably want to be able to send certain events to certain clients,
@@ -739,7 +737,7 @@ and remove <code>password</code> from the payload with:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Real-time","level":"1.2.2.8","depth":3,"next":{"title":"Generators >>","level":"1.2.3","depth":2,"path":"step-by-step/generators/readme.md","ref":"step-by-step/generators/readme.md","articles":[{"title":"Generating an app","level":"1.2.3.1","depth":3,"path":"step-by-step/generators/app.md","ref":"step-by-step/generators/app.md","articles":[]},{"title":"Adding a service","level":"1.2.3.2","depth":3,"path":"step-by-step/generators/service.md","ref":"step-by-step/generators/service.md","articles":[]}]},"previous":{"title":"Hooks, part 2","level":"1.2.2.7","depth":3,"path":"step-by-step/basic-feathers/hooks-2.md","ref":"step-by-step/basic-feathers/hooks-2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/real-time.md","mtime":"2017-01-11T15:32:47.879Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-13T19:09:23.679Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Real-time","level":"1.2.2.8","depth":3,"next":{"title":"Generators >>","level":"1.2.3","depth":2,"path":"step-by-step/generators/readme.md","ref":"step-by-step/generators/readme.md","articles":[{"title":"Generating an app","level":"1.2.3.1","depth":3,"path":"step-by-step/generators/app.md","ref":"step-by-step/generators/app.md","articles":[]},{"title":"Adding a service","level":"1.2.3.2","depth":3,"path":"step-by-step/generators/service.md","ref":"step-by-step/generators/service.md","articles":[]}]},"previous":{"title":"Hooks, part 2","level":"1.2.2.7","depth":3,"path":"step-by-step/basic-feathers/hooks-2.md","ref":"step-by-step/basic-feathers/hooks-2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/real-time.md","mtime":"2017-01-13T19:23:40.916Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-13T19:24:08.833Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

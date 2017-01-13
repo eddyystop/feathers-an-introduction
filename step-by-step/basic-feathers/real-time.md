@@ -27,21 +27,16 @@ we already have.
 
 ## Working example
 
-| Server code: [websocket/1.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/websocket/1.js)
-
-| Listener code: [common/public/listener.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener.html)
+- Server code: [examples/step/01/websocket/1.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/websocket/1.js)
+- Listener code: [common/public/listener.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener.html)
 and
-[common/public/listener-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener-app.js)
-
-| Client code: [common/public/socketio.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/socketio.html)
+[listener-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/listener-app.js)
+- Client code: [common/public/socketio.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/socketio.html)
 and
-[common/public/feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js)
-
-| Start the server: `node ./examples/step/01/websocket/1.js`
-
-| Start the listener by pointing a browser tab at `//localhost:3030/listener.html`
-
-| Start making changes by pointing a browser tab at: `//localhost:3030/socketio.html`
+[feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js)
+- Start the server: `node ./examples/step/01/websocket/1.js`
+- Start the listener by pointing a browser tab at `//localhost:3030/listener.html`
+- Start making changes by pointing a browser tab at: `//localhost:3030/socketio.html`
 
 ## Implementing a listener
 
@@ -62,10 +57,6 @@ created
 {email: "john.doe@gmail.com", password: "22222", role: "user", _id: "XI6e3bZcoupb6Hyr"}
 created
 {email: "judy.doe@gmail.com", password: "33333", role: "user", _id: "qeYSi2KrkwIUMoaE"}
-created
-{email: "jack.doe@gmail.com", password: "44444", role: "user", _id: "BmMwIbBciRGsWv2h"}
-removed
-{email: "jack.doe@gmail.com", password: "44444", role: "user", _id: "BmMwIbBciRGsWv2h"}
 ```
 
 You usually wouldn't want to send passwords to clients.
