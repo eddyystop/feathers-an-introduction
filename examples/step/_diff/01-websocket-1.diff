@@ -1,5 +1,5 @@
 --- 01/rest/2.js	2017-01-13 12:42:56.178821793 -0500
-+++ 01/websocket/1.js	2017-01-13 12:53:26.824572428 -0500
++++ 01/websocket/1.js	2017-01-13 12:58:55.046981891 -0500
 @@ -1,15 +1,17 @@
  
 -// Example - Create REST API, and serve static files
@@ -8,14 +8,14 @@
  const expressServerConfig = require('../common/expressServerConfig');
  const expressMiddleware = require('../common/expressMiddleware');
  const rest = require('feathers-rest');
-+const socketio = require('feathers-socketio');
++const socketio = require('feathers-socketio'); // new
  const NeDB = require('nedb');
  const path = require('path');
  const service = require('feathers-nedb');
  
  const app = expressServerConfig()
    .configure(rest())
-+  .configure(socketio())
++  .configure(socketio()) // new
    .configure(services)
    .configure(expressMiddleware);
  

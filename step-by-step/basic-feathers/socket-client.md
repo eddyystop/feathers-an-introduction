@@ -27,11 +27,6 @@ and
 Add 2 lines to the server code so it supports
 either REST **or** websocket calls from the Feathers client.
 
-| View complete file [websocket/1.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/websocket/1.js)
-View changes from file rest/1.js:
-[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-1-line.html)
-|
-[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-1-side.html)
 ```javascript
 const rest = require('feathers-rest');
 const socketio = require('feathers-socketio'); // new
@@ -42,14 +37,15 @@ const app = httpServerConfig()
   .configure(services)
   .configure(middleware);
 ```
+- Seewhat changed:
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-1-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-1-side.html)
 
 ## Changing the HTML for Feathers client websocket calls
 
-| View complete file [common/public/socketio.html.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/socketio.html)
-View changes from file common/public/rest.html:
-[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-socketio-line.html)
-|
-[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-socketio-side.html)
+We replace the REST code we had in the HTML with the equivalent Websocket code.
+
 ```html
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/core-js/2.1.4/core.min.js"></script>
 <script src="//unpkg.com/feathers-client@^1.8.0/dist/feathers.js"></script>
@@ -57,15 +53,31 @@ View changes from file common/public/rest.html:
 <script src="/serverUrl.js"></script>
 <script>
   const socket = io(serverUrl);
-  const app = feathers()
+  const feathersClient = feathers()
       .configure(feathers.socketio(socket))
 </script>
 <script src="/feathers-app.js"></script>
 ```
+- See what changed:
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-socketio-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-socketio-side.html)
 
 - `src="/socket.io.min.js"` load the Socket.io client code.
 - `const socket = io(serverUrl);` create a websocket.
 - `.configure(feathers.socketio(socket))` configure Feathers client to use the websocket.
+
+## Changing the frontend code
+
+We've already said that most of the Feathers frontend doesn't care
+if it's communicating with the server using REST or websockets.
+
+> **REST vs Websockets.**
+There is a huge technical difference involved in communicating via REST or Websockets.
+Feathers hides this from you so you can get on with what's important
+rather than handling such details.
+
+## Results
 
 And that's all there is to it.
 The results are identical to that for [Writing a Feathers REST Client](./rest-client.md)
