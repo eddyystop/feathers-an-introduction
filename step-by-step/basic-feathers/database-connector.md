@@ -20,8 +20,9 @@ Everything we mention in this guide is applicable to all of them.
 
 ## Feathers is modular
 
-Feathers embodies the same spirit as the popular HTTP server framework [Express](http://expressjs.com/) .
-It is comprised of small modules that are all completely optional,
+Feathers embodies the same spirit as the popular HTTP server framework
+[Express](http://expressjs.com/).
+Feathers is comprised of small modules that are all completely optional,
 and the core weighs in at just a few hundred lines of code.
 How's that for light weight!
 Now you can see where Feathers got its name.
@@ -68,7 +69,7 @@ We issue a find for the entire table and print the results.
 i.e. for the find to finish.
 The zero, one or more items found in the table are returned in the `results` param.
 
-| View complete file [db-connector/1.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/db-connector/1.js)
+| View the completed file [db-connector/1.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/db-connector/1.js)
 
 ## Service methods
 
@@ -82,12 +83,12 @@ patch(id, data, params)
 remove(id, params)
 ```
 
-`params` may be `{ query: { ... }, ... }` for `find`,
-and for `remove` if `id` is `null`.
+params may be `{ query: { ... }, ... }` for find;
+also for patch and remove if id is `null`.
 
 ## Results
 
-Run the program using `node ./examples/step/01/db-connector/1.js`.
+Run the program from feathers-an-introduction with `node ./examples/step/01/db-connector/1.js`.
 The console displays:
 
 ```text

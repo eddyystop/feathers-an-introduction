@@ -42,7 +42,7 @@ We remove those dependencies as they already installed at the root of `feathers-
 
 ## App structure
 
-The app organization is
+The app structure is
 
 - **config/** The configuration files.
 `production.json` values override `default.json` ones when in production mode,

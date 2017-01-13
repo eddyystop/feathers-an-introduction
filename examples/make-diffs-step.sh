@@ -29,6 +29,7 @@ function buildDiffDir {
 # diff files
 buildDiff 01/db-connector/1.js 01/rest/1.js _diff/01-rest-1
 buildDiff 01/rest/1.js 01/rest/2.js _diff/01-rest-2
+buildDiff 01/db-connector/1.js 01/common/public/feathers-app.js _diff/01-rest-2-client
 buildDiff 01/rest/2.js 01/websocket/1.js _diff/01-websocket-1
 buildDiff 01/common/public/rest.html 01/common/public/socketio.html _diff/01-websocket-socketio
 buildDiff 01/websocket/1.js 01/hooks/1.js _diff/01-hooks-1

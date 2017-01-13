@@ -3,7 +3,6 @@
 
 const NeDB = require('nedb');
 const path = require('path');
-
 const service = require('feathers-nedb');
 const rest = require('feathers-rest');
 

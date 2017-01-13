@@ -45,7 +45,7 @@ View the changes the service generator made:
 ## App structure
 
 The teams service has been added to the app at `src/services/teams/`.
-Its organized similarly to users.
+Its structured similarly to users.
 
 ## Loading the tables
 

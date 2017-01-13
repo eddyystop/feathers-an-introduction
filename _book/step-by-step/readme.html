@@ -624,7 +624,7 @@
                                 
                                 <h1 id="step-by-step-intro-to-basic-feathers">Step by Step Intro to Basic Feathers</h1>
 <p>Feathers is a REST and realtime API layer for modern applications.</p>
-<p>&quot;[FeathersJS] signature feature [is] that it&#x2019;s super lightweight.
+<p>&quot;[FeathersJS&apos;] signature feature [is] that it&#x2019;s super lightweight.
 It contains a simple and logical workflow that streamlines building apis
 and can make an api that would have taken hours and builds it in minutes.
 It hits the perfect balance of magic and control
@@ -637,20 +637,27 @@ but the tools provided make your life so much easier.&quot; --
 <p>Feathers has several core features.</p>
 <h4 id="services">Services</h4>
 <p>Services are the heart of Feathers, as this is what all clients will interact with.
-They are middlemen and can be used to perform operations of any kind.
-    &#x2022; interact with a database
-    &#x2022; interact with a microservice/API
-    &#x2022; interact with the filesystem
-    &#x2022; interact with other resources</p>
-<pre><code>    - send an email,
-    - process a payment,
-    - return the current weather for a location, etc.
-</code></pre><h4 id="hooks">Hooks</h4>
+They are middlemen and can be used to perform operations of any kind.</p>
+<ul>
+<li>interact with a database</li>
+<li>interact with a microservice/API</li>
+<li>interact with the filesystem</li>
+<li>interact with other resources<ul>
+<li>send an email,</li>
+<li>process a payment,</li>
+<li>return the current weather for a location, etc.</li>
+</ul>
+</li>
+</ul>
+<h4 id="hooks">Hooks</h4>
 <p>Hooks ran automatically before or after a service is called upon.
-They are gatekeepers and make sure that all operations and calls to services are warranted and allowed.
-They also make sure that only data that should be returned to a client is returned.
-    &#x2022; before hooks: validate/cleanse/check permissions
-    &#x2022; after hooks: remove data before it&apos;s sent to the client</p>
+They are gatekeepers and make sure that all operations and calls to services are
+allowed and have the required information.
+They also make sure that only data that should be returned to a client is returned.</p>
+<ul>
+<li>before hooks: validate/cleanse/check permissions</li>
+<li>after hooks: remove data before it&apos;s sent to the client</li>
+</ul>
 <h4 id="events">Events</h4>
 <p>Events are sent to clients (or other servers if the feathers-sync package is used)
 when a service method completes.
@@ -662,15 +669,19 @@ and it&apos;s an extremely intelligent approach that enables reactive applicatio
 <p>Feathers provides local, token, and OAuth authentication with PassportJS
 over REST and Websockets using JSON Web Tokens (JWT).</p>
 <h4 id="providers">Providers</h4>
-<p>Choose which providers to use in your application.
-    &#x2022; REST
-    &#x2022; Socket.io
-    &#x2022; Primus (Engine.IO, Faye, SockJS, uws, Websockets)</p>
+<p>Choose which providers to use in your application.</p>
+<ul>
+<li>REST</li>
+<li>Socket.io</li>
+<li>Primus ( using Engine.IO, Faye, SockJS, uws, or Websockets)</li>
+</ul>
 <h4 id="middleware">Middleware</h4>
 <p>Middleware handles the extra fluff that isn&apos;t exactly necessary,
-but can be nice for optimization/logging.
-    &#x2022; before service methods: compression, CORS, etc.
-    &#x2022; after service methods: logs, error handlers, etc.</p>
+but can be nice for optimization/logging.</p>
+<ul>
+<li>before service methods: compression, CORS, etc.</li>
+<li>after service methods: logs, error handlers, etc.</li>
+</ul>
 <h2 id="this-guides-purpose">This guide&apos;s purpose</h2>
 <p>This guide covers</p>
 <ul>
@@ -687,7 +698,7 @@ Feathers REST clients, and Feathers websocket clients.</p>
 <p>You will understand you can access your database from the client
 as if that client code was running on the server.</p>
 <p>You will understand that the Feathers generators will structure your application for you,
-and you will understand the boilerplate produced by the.</p>
+and you will understand what boilerplate they produce.</p>
 <p>By the time you finish this guide, you will be ready to write a first, small app.</p>
 <h2 id="is-anything-wrong-unclear-missing">Is anything wrong, unclear, missing?</h2>
 <p><a href="https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Step-Readme&amp;body=Comment:Step-Readme" target="_blank">Leave a comment.</a></p>
@@ -734,7 +745,7 @@ and you will understand the boilerplate produced by the.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Step by step intro to basic Feathers >>","level":"1.2","depth":1,"next":{"title":"Introduction >>","level":"1.2.1","depth":2,"path":"step-by-step/intro/readme.md","ref":"step-by-step/intro/readme.md","articles":[{"title":"What not to worry about","level":"1.2.1.1","depth":3,"path":"step-by-step/intro/not-worry.md","ref":"step-by-step/intro/not-worry.md","articles":[]}]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/readme.md","mtime":"2017-01-12T17:48:10.488Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-12T20:10:25.035Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Step by step intro to basic Feathers >>","level":"1.2","depth":1,"next":{"title":"Introduction >>","level":"1.2.1","depth":2,"path":"step-by-step/intro/readme.md","ref":"step-by-step/intro/readme.md","articles":[{"title":"What not to worry about","level":"1.2.1.1","depth":3,"path":"step-by-step/intro/not-worry.md","ref":"step-by-step/intro/not-worry.md","articles":[]}]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/readme.md","mtime":"2017-01-13T14:00:59.826Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-13T15:06:49.436Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

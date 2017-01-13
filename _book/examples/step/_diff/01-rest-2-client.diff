@@ -1,0 +1,70 @@
+--- 01/db-connector/1.js	2017-01-10 09:13:09.715324613 -0500
++++ 01/common/public/feathers-app.js	2017-01-10 15:12:54.984255496 -0500
+@@ -1,48 +1,29 @@
+ 
+-// Example - Create service on server with NeDB database
+-
+-/// [dependencies]
+-const NeDB = require('nedb');
+-const path = require('path');
+-const feathers = require('feathers');
+-const service = require('feathers-nedb');
+-//! [dependencies]
+-
+-/// [feathers]
+-const app = feathers()
+-  .configure(services);
+-//! [feathers]
+-
+-/// [create]
+-const users = app.service('users');
++let jackId;
++const users = feathersClient.service('/users');
+ 
+ Promise.all([
+-  users.create({ email: 'jane.doe@gmail.com', password: 'X2y6', role: 'admin' }),
+-  users.create({ email: 'john.doe@gmail.com', password: 'i6He', role: 'user' }),
+-  users.create({ email: 'judy.doe@gmail.com', password: '7jHw', role: 'user' })
++  users.create({ email: 'jane.doe@gmail.com', password: '11111', role: 'admin' }),
++  users.create({ email: 'john.doe@gmail.com', password: '22222', role: 'user' }),
++  users.create({ email: 'judy.doe@gmail.com', password: '33333', role: 'user' }),
++  users.create({ email: 'jack.doe@gmail.com', password: '44444', role: 'user' }),
+ ])
+-//! [create]
+-/// [results]
+   .then(results => {
+     console.log('created Jane Doe item\n', results[0]);
+     console.log('created John Doe item\n', results[1]);
+     console.log('created Judy Doe item\n', results[2]);
++    console.log('created Jack Doe item\n', results[3]);
+     
+-    users.find()
+-      .then(results => console.log('find all items\n', results))
+-  })
+-  .catch(err => console.log('Error occurred:', err));
+-//! [results]
+-
+-/// [services]
+-function services() {
+-  this.use('/users', service({ Model: userModel() }));
+-}
++    jackId = results[3]._id;
+ 
+-function userModel() {
+-  return new NeDB({
+-    filename: path.join('examples', 'step', 'data', 'users.db'),
+-    autoload: true
+-  });
+-}
+-//! [services]
++    return users.remove(jackId)
++      .then(results => console.log('deleted Jack Doe item\n', results));
++  })
++  .then(() => {
++    return users.find()
++      .then(results => {
++        console.log('find all items\n', results);
++        console.log((results || []).length, 'items returned.');
++      })
++  })
++  .catch(err => console.log(err));

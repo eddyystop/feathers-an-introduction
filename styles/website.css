@@ -10,6 +10,5 @@ pre > code.lang-javascript {}
 
 .markdown-section pre {
     padding-top: 0;
-    margin-bottom: 0;
     line-height: 1.25; /* Less spacing between lines makes the sections stand out as different */
 }

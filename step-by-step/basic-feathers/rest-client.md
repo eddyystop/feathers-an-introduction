@@ -5,22 +5,31 @@ Let's write a Javascript frontend for it.
 
 ## Working example
 
-| Server code: [rest/2.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/2.js)
-
-| Client code:
+- Server code: [examples/step/01/rest/2.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/2.js)
+- Client code:
 [common/public/rest.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/rest.html)
 and
-[common/public/feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js)
-
-| Start the server: `node ./examples/step/01/b/2`
-
-| Point the browser at: `//localhost:3030/rest.html`
+[feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js)
+- Start the server: `node ./examples/step/01/rest/2`
+- Point the browser at: `//localhost:3030/rest.html`
+- Compare with last page's [examples/step/01/rest/1.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/1.js):
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-side.html)
 
 ## Writing a server for Feathers client REST calls
 
-Our frontend will communicate with the
-[current server](./rest-api-server.md) using its REST API.
-**No changes are required!**
+[rest/2.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/2.js)
+, our server for Feathers REST clients, is exactly the same as
+[rest/1.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/1.js)
+, our previous server for HTTP REST API calls. 
+**No new code is required!**
+
+Compare the two:
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-side.html).
+
 
 ## Writing the frontend HTML
 
@@ -52,18 +61,21 @@ The frontend
 is just a copy of what we used in
 [Writing a Database Connector](./database-connector.md)!
 
-| View complete file
-[rest/2.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/2.js)
-View changes from file rest/1.js:
-[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-line.html)
+| View our client file
+[common/public/feathers-app.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js)
+and compare it to our datbase connector file
+[db-connector/1.js]{(https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/db-connector/1.js):
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-client-line.html)
 |
-[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-side.html)
-[import](../../examples/step/01/rest/2.js)
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-client-side.html).
+
+[import](../../examples/step/01/common/public/feathers-app.js)
 
 > **Feathers "ah-ha" moment.**
 We can run **exactly** the same code on the frontend as on the server.
 We can code the frontend as if the database was sitting on it.
-This makes frontend development significantly simpler.
+That's part of the magic of Feathers,
+and it makes frontend development significantly simpler.
 
 The results in the console window of the browser are the same as they were
 running [Writing a Database Connector](./database-connector.md).

@@ -62,11 +62,15 @@ Then point your browser at `http://localhost:8080/_book`.
 
 #### Recreating the examples used in the guides
 
-Each guide is divided into sections, each section backed by a working example in `examples/`.
+Each guide is divided into sections, each section backed by working examples in `examples/`.
 The code samples in the guides are extracts from those examples.
 Code snippets may be ambiguous, misleading or confusing.
 Working examples reduce these problems,
 as well as letting you learn more by modifying them yourself.
+
+One example may continue with changes from a previous example.
+In such cases, a recap of the differences between the 2 examples may be shown
+to help in understanding the changes.
 
 The guides go into details about how each example was created.
 You can recreate the process yourself if that helps your learning process.
@@ -78,7 +82,7 @@ and (hopefully!) get the same results.
 
 Copyright (c) 2016-2017
 
-Licensed under the [MIT license](LICENSE).
+Licensed under the [MIT license](./LICENSE).
 
 ## Is anything wrong, unclear, missing?
 [Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Readme&body=Comment:Readme)

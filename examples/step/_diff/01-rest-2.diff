@@ -1,13 +1,9 @@
---- 01/rest/1.js	2017-01-10 09:56:52.328280120 -0500
+--- 01/rest/1.js	2017-01-13 09:46:27.384208386 -0500
 +++ 01/rest/2.js	2017-01-10 11:33:57.090334579 -0500
-@@ -1,9 +1,8 @@
+@@ -1,5 +1,5 @@
  
 -// Example - Create REST API
 +// Example - Create REST API, and serve static files
  
  const NeDB = require('nedb');
  const path = require('path');
--
- const service = require('feathers-nedb');
- const rest = require('feathers-rest');
- 

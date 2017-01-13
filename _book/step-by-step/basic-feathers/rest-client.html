@@ -626,17 +626,29 @@
 <p>We already have a Feathers REST API server from the previous example.
 Let&apos;s write a Javascript frontend for it.</p>
 <h2 id="working-example">Working example</h2>
-<p>| Server code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/2.js" target="_blank">rest/2.js</a></p>
-<p>| Client code:
+<ul>
+<li>Server code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/2.js" target="_blank">examples/step/01/rest/2.js</a></li>
+<li>Client code:
 <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/rest.html" target="_blank">common/public/rest.html</a>
 and
-<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js" target="_blank">common/public/feathers-app.js</a></p>
-<p>| Start the server: <code>node ./examples/step/01/b/2</code></p>
-<p>| Point the browser at: <code>//localhost:3030/rest.html</code></p>
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js" target="_blank">feathers-app.js</a></li>
+<li>Start the server: <code>node ./examples/step/01/rest/2</code></li>
+<li>Point the browser at: <code>//localhost:3030/rest.html</code></li>
+<li>Compare with last page&apos;s <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/1.js" target="_blank">examples/step/01/rest/1.js</a>:
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-line.html" target="_blank">Unified</a>
+|
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-side.html" target="_blank">Split</a></li>
+</ul>
 <h2 id="writing-a-server-for-feathers-client-rest-calls">Writing a server for Feathers client REST calls</h2>
-<p>Our frontend will communicate with the
-<a href="rest-api-server.html">current server</a> using its REST API.
-<strong>No changes are required!</strong></p>
+<p><a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/2.js" target="_blank">rest/2.js.</a>
+, our server for Feathers REST clients, is exactly the same as
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/1.js" target="_blank">rest/1.js.</a>
+, our previous server for HTTP REST API calls. 
+<strong>No new code is required!</strong></p>
+<p>Compare the two:
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-line.html" target="_blank">Unified</a>
+|
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-side.html" target="_blank">Split</a>.</p>
 <h2 id="writing-the-frontend-html">Writing the frontend HTML</h2>
 <p>We&apos;ll soon see most of the frontend doesn&apos;t care if we&apos;re communicating with the server
 using REST or websockets.
@@ -691,47 +703,49 @@ The frontend
 <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/2.js" target="_blank">rest/2.js</a>
 is just a copy of what we used in
 <a href="database-connector.html">Writing a Database Connector</a>!</p>
-<p>| View complete file
-<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/2.js" target="_blank">rest/2.js.</a>
-View changes from file rest/1.js:
-<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-line.html" target="_blank">Unified</a>
+<p>| View our client file
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js" target="_blank">common/public/feathers-app.js.</a>
+and compare it to our datbase connector file
+[db-connector/1.js]{(<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/db-connector/1.js" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/db-connector/1.js</a>):
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-client-line.html" target="_blank">Unified</a>
 |
-<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-side.html" target="_blank">Split</a></p>
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-client-side.html" target="_blank">Split</a>.</p>
 <pre><code class="lang-javascript">
-<span class="hljs-comment">// Example - Create REST API, and serve static files</span>
+<span class="hljs-keyword">let</span> jackId;
+<span class="hljs-keyword">const</span> users = feathersClient.service(<span class="hljs-string">&apos;/users&apos;</span>);
 
-<span class="hljs-keyword">const</span> NeDB = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;nedb&apos;</span>);
-<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>);
-<span class="hljs-keyword">const</span> service = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;feathers-nedb&apos;</span>);
-<span class="hljs-keyword">const</span> rest = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;feathers-rest&apos;</span>);
+<span class="hljs-built_in">Promise</span>.all([
+  users.create({ email: <span class="hljs-string">&apos;jane.doe@gmail.com&apos;</span>, password: <span class="hljs-string">&apos;11111&apos;</span>, role: <span class="hljs-string">&apos;admin&apos;</span> }),
+  users.create({ email: <span class="hljs-string">&apos;john.doe@gmail.com&apos;</span>, password: <span class="hljs-string">&apos;22222&apos;</span>, role: <span class="hljs-string">&apos;user&apos;</span> }),
+  users.create({ email: <span class="hljs-string">&apos;judy.doe@gmail.com&apos;</span>, password: <span class="hljs-string">&apos;33333&apos;</span>, role: <span class="hljs-string">&apos;user&apos;</span> }),
+  users.create({ email: <span class="hljs-string">&apos;jack.doe@gmail.com&apos;</span>, password: <span class="hljs-string">&apos;44444&apos;</span>, role: <span class="hljs-string">&apos;user&apos;</span> }),
+])
+  .then(results =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;created Jane Doe item\n&apos;</span>, results[<span class="hljs-number">0</span>]);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;created John Doe item\n&apos;</span>, results[<span class="hljs-number">1</span>]);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;created Judy Doe item\n&apos;</span>, results[<span class="hljs-number">2</span>]);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;created Jack Doe item\n&apos;</span>, results[<span class="hljs-number">3</span>]);
 
-<span class="hljs-keyword">const</span> expressServerConfig = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;../common/expressServerConfig&apos;</span>);
-<span class="hljs-keyword">const</span> expressMiddleware = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;../common/expressMiddleware&apos;</span>);
+    jackId = results[<span class="hljs-number">3</span>]._id;
 
-<span class="hljs-keyword">const</span> app = expressServerConfig()
-  .configure(rest())
-  .configure(services)
-  .configure(expressMiddleware);
-
-<span class="hljs-keyword">const</span> server = app.listen(<span class="hljs-number">3030</span>);
-server.on(<span class="hljs-string">&apos;listening&apos;</span>, () =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Feathers application started on port 3030`</span>));
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">services</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">this</span>.use(<span class="hljs-string">&apos;/users&apos;</span>, service({ Model: userModel() }));
-}
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">userModel</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> NeDB({
-    filename: path.join(<span class="hljs-string">&apos;examples&apos;</span>, <span class="hljs-string">&apos;step&apos;</span>, <span class="hljs-string">&apos;data&apos;</span>, <span class="hljs-string">&apos;users.db&apos;</span>),
-    autoload: <span class="hljs-literal">true</span>
-  });
-}
+    <span class="hljs-keyword">return</span> users.remove(jackId)
+      .then(results =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;deleted Jack Doe item\n&apos;</span>, results));
+  })
+  .then(() =&gt; {
+    <span class="hljs-keyword">return</span> users.find()
+      .then(results =&gt; {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;find all items\n&apos;</span>, results);
+        <span class="hljs-built_in">console</span>.log((results || []).length, <span class="hljs-string">&apos;items returned.&apos;</span>);
+      })
+  })
+  .catch(err =&gt; <span class="hljs-built_in">console</span>.log(err));
 </code></pre>
 <blockquote>
 <p><strong>Feathers &quot;ah-ha&quot; moment.</strong>
 We can run <strong>exactly</strong> the same code on the frontend as on the server.
 We can code the frontend as if the database was sitting on it.
-This makes frontend development significantly simpler.</p>
+That&apos;s part of the magic of Feathers,
+and it makes frontend development significantly simpler.</p>
 </blockquote>
 <p>The results in the console window of the browser are the same as they were
 running <a href="database-connector.html">Writing a Database Connector</a>.</p>
@@ -810,7 +824,7 @@ find all items
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"A Feathers REST client","level":"1.2.2.3","depth":3,"next":{"title":"A Feathers websocket client","level":"1.2.2.4","depth":3,"path":"step-by-step/basic-feathers/socket-client.md","ref":"step-by-step/basic-feathers/socket-client.md","articles":[]},"previous":{"title":"A REST API server","level":"1.2.2.2","depth":3,"path":"step-by-step/basic-feathers/rest-api-server.md","ref":"step-by-step/basic-feathers/rest-api-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/rest-client.md","mtime":"2017-01-11T15:35:22.448Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-12T20:10:25.035Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"A Feathers REST client","level":"1.2.2.3","depth":3,"next":{"title":"A Feathers websocket client","level":"1.2.2.4","depth":3,"path":"step-by-step/basic-feathers/socket-client.md","ref":"step-by-step/basic-feathers/socket-client.md","articles":[]},"previous":{"title":"A REST API server","level":"1.2.2.2","depth":3,"path":"step-by-step/basic-feathers/rest-api-server.md","ref":"step-by-step/basic-feathers/rest-api-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/rest-client.md","mtime":"2017-01-13T15:05:43.858Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-13T15:06:49.436Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
