@@ -642,6 +642,11 @@ and
 <a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-1-line.html" target="_blank">Unified</a>
 |
 <a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-1-side.html" target="_blank">Split</a></li>
+<li>Compare with last page&apos;s HTML
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/socketio.html" target="_blank">common/public/socketio.html</a>
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-socketio-line.html" target="_blank">Unified</a>
+|
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-socketio-side.html" target="_blank">Split</a></li>
 </ul>
 <h2 id="change-the-server-to-support-clients-using-either-feathers-rest-or-websocket-calls">Change the server to support clients using either Feathers REST <strong>or</strong> websocket calls</h2>
 <p>Add 2 lines to the server code so it supports
@@ -656,7 +661,7 @@ either REST <strong>or</strong> websocket calls from the Feathers client.</p>
   .configure(middleware);
 </code></pre>
 <ul>
-<li>Seewhat changed:
+<li>See what changed:
 <a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-1-line.html" target="_blank">Unified</a>
 |
 <a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-1-side.html" target="_blank">Split</a></li>
@@ -675,23 +680,22 @@ either REST <strong>or</strong> websocket calls from the Feathers client.</p>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/feathers-app.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre>
 <ul>
-<li><p>See what changed:
+<li>See what changed:
 <a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-socketio-line.html" target="_blank">Unified</a>
 |
-<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-socketio-side.html" target="_blank">Split</a></p>
-</li>
-<li><p><code>src=&quot;/socket.io.min.js&quot;</code> load the Socket.io client code.</p>
-</li>
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-socketio-side.html" target="_blank">Split</a></li>
+<li><code>src=&quot;/socket.io.min.js&quot;</code> load the Socket.io client code.</li>
 <li><code>const socket = io(serverUrl);</code> create a websocket.</li>
 <li><code>.configure(feathers.socketio(socket))</code> configure Feathers client to use the websocket.</li>
 </ul>
 <h2 id="changing-the-frontend-code">Changing the frontend code</h2>
 <p>We&apos;ve already said that most of the Feathers frontend doesn&apos;t care
-if it&apos;s communicating with the server using REST or websockets.</p>
+if it&apos;s communicating with the server using REST or Websockets.
+<strong>No more changes are necessary.</strong></p>
 <blockquote>
 <p><strong>REST vs Websockets.</strong>
 There is a huge technical difference involved in communicating via REST or Websockets.
-Feathers hides this from you so you can get on with what&apos;s important
+Feathers hides this so you can get on with what&apos;s important
 rather than handling such details.</p>
 </blockquote>
 <h2 id="results">Results</h2>
@@ -742,7 +746,7 @@ The results are identical to that for <a href="rest-client.html">Writing a Feath
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"A Feathers websocket client","level":"1.2.2.4","depth":3,"next":{"title":"The \"ah-ha\" moment","level":"1.2.2.5","depth":3,"path":"step-by-step/basic-feathers/ah-ha.md","ref":"step-by-step/basic-feathers/ah-ha.md","articles":[]},"previous":{"title":"A Feathers REST client","level":"1.2.2.3","depth":3,"path":"step-by-step/basic-feathers/rest-client.md","ref":"step-by-step/basic-feathers/rest-client.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/socket-client.md","mtime":"2017-01-13T18:08:46.883Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-13T18:09:06.919Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"A Feathers websocket client","level":"1.2.2.4","depth":3,"next":{"title":"The \"ah-ha\" moment","level":"1.2.2.5","depth":3,"path":"step-by-step/basic-feathers/ah-ha.md","ref":"step-by-step/basic-feathers/ah-ha.md","articles":[]},"previous":{"title":"A Feathers REST client","level":"1.2.2.3","depth":3,"path":"step-by-step/basic-feathers/rest-client.md","ref":"step-by-step/basic-feathers/rest-client.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/socket-client.md","mtime":"2017-01-13T18:15:18.355Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-13T18:15:51.713Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

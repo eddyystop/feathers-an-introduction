@@ -20,6 +20,11 @@ and
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-1-line.html)
 |
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-1-side.html)
+- Compare with last page's HTML
+[common/public/socketio.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/socketio.html)
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-socketio-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-socketio-side.html)
 
 
 ## Change the server to support clients using either Feathers REST **or** websocket calls
@@ -37,7 +42,7 @@ const app = httpServerConfig()
   .configure(services)
   .configure(middleware);
 ```
-- Seewhat changed:
+- See what changed:
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-1-line.html)
 |
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-1-side.html)
@@ -62,7 +67,6 @@ We replace the REST code we had in the HTML with the equivalent Websocket code.
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-socketio-line.html)
 |
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-socketio-side.html)
-
 - `src="/socket.io.min.js"` load the Socket.io client code.
 - `const socket = io(serverUrl);` create a websocket.
 - `.configure(feathers.socketio(socket))` configure Feathers client to use the websocket.
@@ -70,11 +74,12 @@ We replace the REST code we had in the HTML with the equivalent Websocket code.
 ## Changing the frontend code
 
 We've already said that most of the Feathers frontend doesn't care
-if it's communicating with the server using REST or websockets.
+if it's communicating with the server using REST or Websockets.
+**No more changes are necessary.**
 
 > **REST vs Websockets.**
 There is a huge technical difference involved in communicating via REST or Websockets.
-Feathers hides this from you so you can get on with what's important
+Feathers hides this so you can get on with what's important
 rather than handling such details.
 
 ## Results
