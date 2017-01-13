@@ -17,9 +17,9 @@ const app = feathers()
 const users = app.service('users');
 
 Promise.all([
-  users.create({ email: 'jane.doe@gmail.com', password: 'X2y6', role: 'admin' }),
-  users.create({ email: 'john.doe@gmail.com', password: 'i6He', role: 'user' }),
-  users.create({ email: 'judy.doe@gmail.com', password: '7jHw', role: 'user' })
+  users.create({ email: 'jane.doe@gmail.com', password: '11111', role: 'admin' }),
+  users.create({ email: 'john.doe@gmail.com', password: '22222', role: 'user' }),
+  users.create({ email: 'judy.doe@gmail.com', password: '33333', role: 'user' })
 ])
 //! [create]
 /// [results]
@@ -29,7 +29,7 @@ Promise.all([
     console.log('created Judy Doe item\n', results[2]);
     
     users.find()
-      .then(results => console.log('find all items\n', results))
+      .then(results => console.log('find all items\n', results));
   })
   .catch(err => console.log('Error occurred:', err));
 //! [results]

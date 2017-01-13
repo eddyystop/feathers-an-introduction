@@ -1,4 +1,4 @@
---- 01/db-connector/1.js	2017-01-10 09:13:09.715324613 -0500
+--- 01/db-connector/1.js	2017-01-13 10:24:45.988259250 -0500
 +++ 01/rest/1.js	2017-01-13 09:46:27.384208386 -0500
 @@ -1,40 +1,22 @@
  
@@ -24,9 +24,9 @@
 +const expressMiddleware = require('../common/expressMiddleware');
  
 -Promise.all([
--  users.create({ email: 'jane.doe@gmail.com', password: 'X2y6', role: 'admin' }),
--  users.create({ email: 'john.doe@gmail.com', password: 'i6He', role: 'user' }),
--  users.create({ email: 'judy.doe@gmail.com', password: '7jHw', role: 'user' })
+-  users.create({ email: 'jane.doe@gmail.com', password: '11111', role: 'admin' }),
+-  users.create({ email: 'john.doe@gmail.com', password: '22222', role: 'user' }),
+-  users.create({ email: 'judy.doe@gmail.com', password: '33333', role: 'user' })
 -])
 -//! [create]
 -/// [results]
@@ -40,7 +40,7 @@
 +  .configure(expressMiddleware);
      
 -    users.find()
--      .then(results => console.log('find all items\n', results))
+-      .then(results => console.log('find all items\n', results));
 -  })
 -  .catch(err => console.log('Error occurred:', err));
 -//! [results]
