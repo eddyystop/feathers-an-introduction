@@ -25,7 +25,7 @@ const server = app.listen(3030);
 server.on('listening', () => console.log(`Feathers application started on port 3030`));
 
 function services() {
-  this.configure(user); // new
+  this.configure(user);
 }
 
 function user() {
@@ -57,7 +57,7 @@ function userModel() {
   });
 }
 
-function userSchema() { // new
+function userSchema() {
   return {
     title: 'User Schema',
     $schema: 'http://json-schema.org/draft-04/schema#',

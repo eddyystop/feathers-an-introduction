@@ -1,42 +1,24 @@
---- 01/hooks/1.js	2017-01-13 13:34:43.856067917 -0500
-+++ 01/hooks/2.js	2017-01-10 14:05:08.004516460 -0500
-@@ -1,18 +1,19 @@
+--- 01/hooks/1.js	2017-01-13 14:03:07.126341013 -0500
++++ 01/hooks/2.js	2017-01-13 14:02:23.933026428 -0500
+@@ -1,5 +1,5 @@
  
 -// Example - Use hooks with service
 +// Example - Use soft deletes with a service
  
--const expressServerConfig = require('../common/expressServerConfig');
--const expressMiddleware = require('../common/expressMiddleware');
--const rest = require('feathers-rest');
--const socketio = require('feathers-socketio');
-+const Ajv = require('ajv');
- const NeDB = require('nedb');
- const path = require('path');
--const service = require('feathers-nedb');
- 
--const Ajv = require('ajv');
- const authHooks = require('feathers-authentication-local').hooks;
+ const expressServerConfig = require('../common/expressServerConfig');
+ const expressMiddleware = require('../common/expressMiddleware');
+@@ -14,6 +14,10 @@
  const hooks = require('feathers-hooks');
  const commonHooks = require('feathers-hooks-common');
-+const service = require('feathers-nedb');
-+const rest = require('feathers-rest');
-+const socketio = require('feathers-socketio');
-+
-+const expressServerConfig = require('../common/expressServerConfig');
-+const expressMiddleware = require('../common/expressMiddleware');
  
++
++
++
++
  const app = expressServerConfig()
    .configure(hooks())
-@@ -25,7 +26,7 @@
- server.on('listening', () => console.log(`Feathers application started on port 3030`));
- 
- function services() {
--  this.configure(user); // new
-+  this.configure(user);
- }
- 
- function user() {
-@@ -35,10 +36,12 @@
+   .configure(rest())
+@@ -35,10 +39,12 @@
    const userService = app.service('users');
    
    const {
@@ -49,12 +31,3 @@
      create: [
        validateSchema(userSchema(), Ajv),
        authHooks.hashPassword(),
-@@ -57,7 +60,7 @@
-   });
- }
- 
--function userSchema() { // new
-+function userSchema() {
-   return {
-     title: 'User Schema',
-     $schema: 'http://json-schema.org/draft-04/schema#',

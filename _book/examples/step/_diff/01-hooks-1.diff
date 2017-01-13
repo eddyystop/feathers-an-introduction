@@ -1,5 +1,5 @@
 --- 01/websocket/1.js	2017-01-13 13:31:34.853927265 -0500
-+++ 01/hooks/1.js	2017-01-13 13:34:43.856067917 -0500
++++ 01/hooks/1.js	2017-01-13 14:03:07.126341013 -0500
 @@ -1,5 +1,5 @@
  
 -// Example - Create REST & socketio API, and serve static files
@@ -26,7 +26,7 @@
  
  function services() {
 -  this.use('/users', service({ Model: userModel() }));
-+  this.configure(user); // new
++  this.configure(user);
 +}
 +
 +function user() {
@@ -57,7 +57,7 @@
    });
  }
 +
-+function userSchema() { // new
++function userSchema() {
 +  return {
 +    title: 'User Schema',
 +    $schema: 'http://json-schema.org/draft-04/schema#',

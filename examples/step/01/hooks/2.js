@@ -1,19 +1,22 @@
 
 // Example - Use soft deletes with a service
 
-const Ajv = require('ajv');
+const expressServerConfig = require('../common/expressServerConfig');
+const expressMiddleware = require('../common/expressMiddleware');
+const rest = require('feathers-rest');
+const socketio = require('feathers-socketio');
 const NeDB = require('nedb');
 const path = require('path');
+const service = require('feathers-nedb');
 
+const Ajv = require('ajv');
 const authHooks = require('feathers-authentication-local').hooks;
 const hooks = require('feathers-hooks');
 const commonHooks = require('feathers-hooks-common');
-const service = require('feathers-nedb');
-const rest = require('feathers-rest');
-const socketio = require('feathers-socketio');
 
-const expressServerConfig = require('../common/expressServerConfig');
-const expressMiddleware = require('../common/expressMiddleware');
+
+
+
 
 const app = expressServerConfig()
   .configure(hooks())
