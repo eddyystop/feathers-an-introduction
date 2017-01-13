@@ -634,7 +634,7 @@ and
 <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js" target="_blank">feathers-app.js</a></li>
 <li>Start the server: <code>node ./examples/step/01/rest/2</code></li>
 <li>Point the browser at: <code>//localhost:3030/rest.html</code></li>
-<li>Compare with last page&apos;s <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/1.js" target="_blank">examples/step/01/rest/1.js</a>:
+<li>Compare with last page&apos;s server <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/1.js" target="_blank">examples/step/01/rest/1.js</a>:
 <a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-line.html" target="_blank">Unified</a>
 |
 <a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-side.html" target="_blank">Split</a></li>
@@ -700,18 +700,15 @@ and passes the <code>fetch</code> instruction as the interface for fetching reso
 <h2 id="writing-the-feathers-frontend">Writing the Feathers frontend</h2>
 <p>Writing the HTML was actually the hard part.
 The frontend
-<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/2.js" target="_blank">rest/2.js</a>
-is just a copy of what we used in
-<a href="database-connector.html">Writing a Database Connector</a>!</p>
-<p>| View our client file
 <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js" target="_blank">common/public/feathers-app.js.</a>
-and compare it to our datbase connector file
+is essentially the same code we used in
+<a href="database-connector.html">Writing a Database Connector</a>!</p>
+<p>| Compare feathers-app.js to our database connector file
 [db-connector/1.js]{(<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/db-connector/1.js" target="_blank">https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/db-connector/1.js</a>):
 <a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-client-line.html" target="_blank">Unified</a>
 |
 <a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-client-side.html" target="_blank">Split</a>.</p>
 <pre><code class="lang-javascript">
-<span class="hljs-keyword">let</span> jackId;
 <span class="hljs-keyword">const</span> users = feathersClient.service(<span class="hljs-string">&apos;/users&apos;</span>);
 
 <span class="hljs-built_in">Promise</span>.all([
@@ -726,17 +723,8 @@ and compare it to our datbase connector file
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;created Judy Doe item\n&apos;</span>, results[<span class="hljs-number">2</span>]);
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;created Jack Doe item\n&apos;</span>, results[<span class="hljs-number">3</span>]);
 
-    jackId = results[<span class="hljs-number">3</span>]._id;
-
-    <span class="hljs-keyword">return</span> users.remove(jackId)
-      .then(results =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;deleted Jack Doe item\n&apos;</span>, results));
-  })
-  .then(() =&gt; {
     <span class="hljs-keyword">return</span> users.find()
-      .then(results =&gt; {
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;find all items\n&apos;</span>, results);
-        <span class="hljs-built_in">console</span>.log((results || []).length, <span class="hljs-string">&apos;items returned.&apos;</span>);
-      })
+      .then(results =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;find all items\n&apos;</span>, results));
   })
   .catch(err =&gt; <span class="hljs-built_in">console</span>.log(err));
 </code></pre>
@@ -755,10 +743,6 @@ created John Doe item
  Object {email: &quot;john.doe@gmail.com&quot;, password: &quot;22222&quot;, role: &quot;user&quot;, _id: &quot;l9dOTxh0xk1h94gh&quot;}
 created Judy Doe item
  Object {email: &quot;judy.doe@gmail.com&quot;, password: &quot;33333&quot;, role: &quot;user&quot;, _id: &quot;3BeFPGkduhM6mlwM&quot;}
-created Jack Doe item
- Object {email: &quot;jack.doe@gmail.com&quot;, password: &quot;44444&quot;, role: &quot;user&quot;, _id: &quot;7b0N4w9jmA328yhq&quot;}
-deleted Jack Doe item
- Object {email: &quot;jack.doe@gmail.com&quot;, password: &quot;44444&quot;, role: &quot;user&quot;, _id: &quot;7b0N4w9jmA328yhq&quot;}
 find all items
  [Object, Object, Object]
    0: Object
@@ -777,7 +761,6 @@ find all items
      password: &quot;22222&quot;
      role: &quot;user&quot;
   length: 3
-3 &quot;items returned.&quot;
 </code></pre>
 <h2 id="is-anything-wrong-unclear-missing">Is anything wrong, unclear, missing?</h2>
 <p><a href="https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Step-Basic-Rest-client&amp;body=Comment:Step-Basic-Rest-client" target="_blank">Leave a comment.</a></p>
@@ -824,7 +807,7 @@ find all items
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"A Feathers REST client","level":"1.2.2.3","depth":3,"next":{"title":"A Feathers websocket client","level":"1.2.2.4","depth":3,"path":"step-by-step/basic-feathers/socket-client.md","ref":"step-by-step/basic-feathers/socket-client.md","articles":[]},"previous":{"title":"A REST API server","level":"1.2.2.2","depth":3,"path":"step-by-step/basic-feathers/rest-api-server.md","ref":"step-by-step/basic-feathers/rest-api-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/rest-client.md","mtime":"2017-01-13T15:05:43.858Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-13T15:06:49.436Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"A Feathers REST client","level":"1.2.2.3","depth":3,"next":{"title":"A Feathers websocket client","level":"1.2.2.4","depth":3,"path":"step-by-step/basic-feathers/socket-client.md","ref":"step-by-step/basic-feathers/socket-client.md","articles":[]},"previous":{"title":"A REST API server","level":"1.2.2.2","depth":3,"path":"step-by-step/basic-feathers/rest-api-server.md","ref":"step-by-step/basic-feathers/rest-api-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/rest-client.md","mtime":"2017-01-13T15:18:00.919Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-13T15:21:26.206Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

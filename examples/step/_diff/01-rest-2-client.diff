@@ -1,6 +1,6 @@
 --- 01/db-connector/1.js	2017-01-10 09:13:09.715324613 -0500
-+++ 01/common/public/feathers-app.js	2017-01-10 15:12:54.984255496 -0500
-@@ -1,48 +1,29 @@
++++ 01/common/public/feathers-app.js	2017-01-13 10:16:46.208646185 -0500
+@@ -1,48 +1,19 @@
  
 -// Example - Create service on server with NeDB database
 -
@@ -18,7 +18,6 @@
 -
 -/// [create]
 -const users = app.service('users');
-+let jackId;
 +const users = feathersClient.service('/users');
  
  Promise.all([
@@ -40,7 +39,9 @@
      
 -    users.find()
 -      .then(results => console.log('find all items\n', results))
--  })
++    return users.find()
++      .then(results => console.log('find all items\n', results));
+   })
 -  .catch(err => console.log('Error occurred:', err));
 -//! [results]
 -
@@ -48,8 +49,7 @@
 -function services() {
 -  this.use('/users', service({ Model: userModel() }));
 -}
-+    jackId = results[3]._id;
- 
+-
 -function userModel() {
 -  return new NeDB({
 -    filename: path.join('examples', 'step', 'data', 'users.db'),
@@ -57,14 +57,4 @@
 -  });
 -}
 -//! [services]
-+    return users.remove(jackId)
-+      .then(results => console.log('deleted Jack Doe item\n', results));
-+  })
-+  .then(() => {
-+    return users.find()
-+      .then(results => {
-+        console.log('find all items\n', results);
-+        console.log((results || []).length, 'items returned.');
-+      })
-+  })
 +  .catch(err => console.log(err));

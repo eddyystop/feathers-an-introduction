@@ -1,5 +1,4 @@
 
-let jackId;
 const users = feathersClient.service('/users');
 
 Promise.all([
@@ -13,17 +12,8 @@ Promise.all([
     console.log('created John Doe item\n', results[1]);
     console.log('created Judy Doe item\n', results[2]);
     console.log('created Jack Doe item\n', results[3]);
-  
-    jackId = results[3]._id;
     
-    return users.remove(jackId)
-      .then(results => console.log('deleted Jack Doe item\n', results));
-  })
-  .then(() => {
     return users.find()
-      .then(results => {
-        console.log('find all items\n', results);
-        console.log((results || []).length, 'items returned.');
-      })
+      .then(results => console.log('find all items\n', results));
   })
   .catch(err => console.log(err));

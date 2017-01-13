@@ -30,7 +30,8 @@
     "release:patch": "npm version patch",
     "release:minor": "npm version minor",
     "release:major": "npm version major",
-    "lint": "semistandard src/**/*.js test/**/*.js --fix"
+    "lint": "semistandard src/**/*.js test/**/*.js --fix",
+    "build": "./examples/make-diffs.sh && gitbook build && git add . && git commit -m 'New standards' && git push origin master"
   },
   "semistandard": {
     "sourceType": "module",

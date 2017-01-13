@@ -12,7 +12,7 @@ and
 [feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js)
 - Start the server: `node ./examples/step/01/rest/2`
 - Point the browser at: `//localhost:3030/rest.html`
-- Compare with last page's [examples/step/01/rest/1.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/1.js):
+- Compare with last page's server [examples/step/01/rest/1.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/1.js):
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-line.html)
 |
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-side.html)
@@ -57,13 +57,11 @@ and passes the `fetch` instruction as the interface for fetching resources.
 
 Writing the HTML was actually the hard part.
 The frontend
-[rest/2.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/2.js)
-is just a copy of what we used in
+[common/public/feathers-app.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js)
+is essentially the same code we used in
 [Writing a Database Connector](./database-connector.md)!
 
-| View our client file
-[common/public/feathers-app.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js)
-and compare it to our datbase connector file
+| Compare feathers-app.js to our database connector file
 [db-connector/1.js]{(https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/db-connector/1.js):
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-client-line.html)
 |
@@ -87,10 +85,6 @@ created John Doe item
  Object {email: "john.doe@gmail.com", password: "22222", role: "user", _id: "l9dOTxh0xk1h94gh"}
 created Judy Doe item
  Object {email: "judy.doe@gmail.com", password: "33333", role: "user", _id: "3BeFPGkduhM6mlwM"}
-created Jack Doe item
- Object {email: "jack.doe@gmail.com", password: "44444", role: "user", _id: "7b0N4w9jmA328yhq"}
-deleted Jack Doe item
- Object {email: "jack.doe@gmail.com", password: "44444", role: "user", _id: "7b0N4w9jmA328yhq"}
 find all items
  [Object, Object, Object]
    0: Object
@@ -109,7 +103,6 @@ find all items
      password: "22222"
      role: "user"
   length: 3
-3 "items returned."
 ```
  
 ## Is anything wrong, unclear, missing?
