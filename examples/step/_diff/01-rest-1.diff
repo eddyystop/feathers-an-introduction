@@ -1,11 +1,13 @@
 --- 01/db-connector/1.js	2017-01-13 10:32:26.281818262 -0500
-+++ 01/rest/1.js	2017-01-13 12:18:58.699196007 -0500
-@@ -1,40 +1,22 @@
++++ 01/rest/1.js	2017-01-13 12:24:46.417687064 -0500
+@@ -1,40 +1,21 @@
  
 -// Example - Create service on server with NeDB database
 +// Example - Create REST API
  
 -/// [dependencies]
++const expressServerConfig = require('../common/expressServerConfig');
++const expressMiddleware = require('../common/expressMiddleware');
  const NeDB = require('nedb');
  const path = require('path');
 -const feathers = require('feathers');
@@ -16,12 +18,10 @@
 -const app = feathers()
 -  .configure(services);
 -//! [feathers]
-+const rest = require('feathers-rest');
- 
+-
 -/// [create]
 -const users = app.service('/users');
-+const expressServerConfig = require('../common/expressServerConfig');
-+const expressMiddleware = require('../common/expressMiddleware');
++const rest = require('feathers-rest');
  
 -Promise.all([
 -  users.create({ email: 'jane.doe@gmail.com', password: '11111', role: 'admin' }),
@@ -51,7 +51,7 @@
  function services() {
    this.use('/users', service({ Model: userModel() }));
  }
-@@ -45,4 +27,3 @@
+@@ -45,4 +26,3 @@
      autoload: true
    });
  }
