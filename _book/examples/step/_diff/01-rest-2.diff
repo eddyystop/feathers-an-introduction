@@ -1,5 +1,5 @@
---- 01/rest/1.js	2017-01-13 12:24:46.417687064 -0500
-+++ 01/rest/2.js	2017-01-13 12:30:30.634482135 -0500
+--- 01/rest/1.js	2017-01-13 12:32:29.363199872 -0500
++++ 01/rest/2.js	2017-01-13 12:32:29.281319869 -0500
 @@ -1,5 +1,5 @@
  
 -// Example - Create REST API
@@ -7,3 +7,11 @@
  
  const expressServerConfig = require('../common/expressServerConfig');
  const expressMiddleware = require('../common/expressMiddleware');
+@@ -8,6 +8,7 @@
+ const path = require('path');
+ const service = require('feathers-nedb');
+ 
++
+ const app = expressServerConfig()
+   .configure(rest())
+   .configure(services)

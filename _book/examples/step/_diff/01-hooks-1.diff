@@ -1,12 +1,13 @@
---- 01/websocket/1.js	2017-01-13 12:30:30.725028652 -0500
+--- 01/websocket/1.js	2017-01-13 12:32:41.874799050 -0500
 +++ 01/hooks/1.js	2017-01-10 14:05:07.916880135 -0500
-@@ -1,17 +1,24 @@
+@@ -1,18 +1,24 @@
  
 -// Example - Create REST & socketio API, and serve static files
 +// Example - Use hooks with service
  
 -const expressServerConfig = require('../common/expressServerConfig');
 -const expressMiddleware = require('../common/expressMiddleware');
+-const rest = require('feathers-rest');
 +const Ajv = require('ajv'); // new
  const NeDB = require('nedb');
  const path = require('path');
@@ -15,10 +16,10 @@
 +const hooks = require('feathers-hooks'); // new
 +const commonHooks = require('feathers-hooks-common'); // new
  const service = require('feathers-nedb');
- const rest = require('feathers-rest');
--const socketio = require('feathers-socketio'); // new
++const rest = require('feathers-rest');
 +const socketio = require('feathers-socketio');
-+
+ 
+-const socketio = require('feathers-socketio'); // new
 +const expressServerConfig = require('../common/expressServerConfig');
 +const expressMiddleware = require('../common/expressMiddleware');
  
@@ -30,7 +31,7 @@
    .configure(services)
    .configure(expressMiddleware);
  
-@@ -19,7 +26,29 @@
+@@ -20,7 +26,29 @@
  server.on('listening', () => console.log(`Feathers application started on port 3030`));
  
  function services() {
@@ -61,7 +62,7 @@
  }
  
  function userModel() {
-@@ -28,3 +57,21 @@
+@@ -29,3 +57,21 @@
      autoload: true
    });
  }

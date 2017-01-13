@@ -1,14 +1,14 @@
---- 01/db-connector/1.js	2017-01-13 12:29:23.556735275 -0500
+--- 01/db-connector/1.js	2017-01-13 12:32:29.198339144 -0500
 +++ 01/common/public/feathers-app.js	2017-01-13 10:27:44.473745564 -0500
 @@ -1,28 +1,11 @@
  
 -// Example - Create service on server with NeDB database
 -
 -/// [dependencies]
+-const feathers = require('feathers');
 -const NeDB = require('nedb');
 -const path = require('path');
 -const service = require('feathers-nedb');
--const feathers = require('feathers');
 -//! [dependencies]
 -
 -/// [feathers]
