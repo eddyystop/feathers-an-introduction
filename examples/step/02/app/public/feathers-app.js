@@ -36,4 +36,4 @@ Promise.all([
   .then(() => users.find()
     .then(results => console.log('find all items\n', results))
   )
-  .catch(err => console.log(err));
+  .catch(err => console.log('Error occurred:', err));

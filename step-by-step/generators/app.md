@@ -40,7 +40,7 @@ app$ rm -rf node_modules
 ```
 
 After generating the code, the generator ran `npm install` in order to load the app's dependencies.
-We remove those dependencies as they already installed at the root of `feathers-an-introduction`.
+We remove those dependencies as they already installed at the root of feathers-an-introduction.
 
 ## App structure
 
@@ -82,15 +82,9 @@ i.e. when you run `NODE_ENV=production node ./examples/step/02/app/src`.
 
 ## Authentication
 
-Let's add the following to then generated frontend
+Let's add authentication to the frontend we last used.
 [app/public/feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/public/feathers-app.js)
 
-| View complete file
-[app/public/feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/public/feathers-app.js)
-View changes from file common/public/feathers-app.js:
-[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app-feathers-app-line.html)
-|
-[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app-feathers-app-side.html)
 ```javascript
 app.authenticate({
   type: 'local',
@@ -109,12 +103,18 @@ app.authenticate({
 This attempts to authenticate the user.
 
 > ** Promise Refresher.** Should an error occur during execution of a Promise
-or its `then` chain, the next `.catch(err => ...)` is executed.
+or anywhere in its then chain, the next `.catch(err => ...)` is executed.
 
 ## The app
 
 The app is very similar to [Writing a Feathers websocket Client](../basic-feathers/socket-client.md)
 and you should have little trouble understanding the generated code.
+
+What's important is that you pay attention to how the app is structured.
+This structure is recommended by the Feathers team and is considered best practice.
+
+> **App structure.** Feathers, unlike some other frameworks,
+does not have seemingly endless discussions about the best way to structure an app.
 
 ## The results
 

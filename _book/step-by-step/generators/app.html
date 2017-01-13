@@ -658,7 +658,7 @@ Do you want to update this generator?: No
 app$ rm -rf node_modules
 </code></pre>
 <p>After generating the code, the generator ran <code>npm install</code> in order to load the app&apos;s dependencies.
-We remove those dependencies as they already installed at the root of <code>feathers-an-introduction</code>.</p>
+We remove those dependencies as they already installed at the root of feathers-an-introduction.</p>
 <h2 id="app-structure">App structure</h2>
 <p>The app structure is</p>
 <ul>
@@ -704,14 +704,8 @@ and that by default it will return 5 items.</p>
 </li>
 </ul>
 <h2 id="authentication">Authentication</h2>
-<p>Let&apos;s add the following to then generated frontend
+<p>Let&apos;s add authentication to the frontend we last used.
 <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/public/feathers-app.js" target="_blank">app/public/feathers-app.js</a></p>
-<p>| View complete file
-<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/app/public/feathers-app.js" target="_blank">app/public/feathers-app.js</a>
-View changes from file common/public/feathers-app.js:
-<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app-feathers-app-line.html" target="_blank">Unified</a>
-|
-<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app-feathers-app-side.html" target="_blank">Split</a></p>
 <pre><code class="lang-javascript">app.authenticate({
   type: <span class="hljs-string">&apos;local&apos;</span>,
   <span class="hljs-string">&apos;email&apos;</span>: <span class="hljs-string">&apos;jane.doe@gmail.com&apos;</span>,
@@ -729,11 +723,17 @@ View changes from file common/public/feathers-app.js:
 <p>This attempts to authenticate the user.</p>
 <blockquote>
 <p><strong> Promise Refresher.</strong> Should an error occur during execution of a Promise
-or its <code>then</code> chain, the next <code>.catch(err =&gt; ...)</code> is executed.</p>
+or anywhere in its then chain, the next <code>.catch(err =&gt; ...)</code> is executed.</p>
 </blockquote>
 <h2 id="the-app">The app</h2>
 <p>The app is very similar to <a href="../basic-feathers/socket-client.html">Writing a Feathers websocket Client</a>
 and you should have little trouble understanding the generated code.</p>
+<p>What&apos;s important is that you pay attention to how the app is structured.
+This structure is recommended by the Feathers team and is considered best practice.</p>
+<blockquote>
+<p><strong>App structure.</strong> Feathers, unlike some other frameworks,
+does not have seemingly endless discussions about the best way to structure an app.</p>
+</blockquote>
 <h2 id="the-results">The results</h2>
 <p>The results are similar to
 <a href="../basic-feathers/socket-client.html">Writing a Feathers websocket Client</a>.
@@ -816,7 +816,7 @@ find all items
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Generating an app","level":"1.2.3.1","depth":3,"next":{"title":"Adding a service","level":"1.2.3.2","depth":3,"path":"step-by-step/generators/service.md","ref":"step-by-step/generators/service.md","articles":[]},"previous":{"title":"Generators >>","level":"1.2.3","depth":2,"path":"step-by-step/generators/readme.md","ref":"step-by-step/generators/readme.md","articles":[{"title":"Generating an app","level":"1.2.3.1","depth":3,"path":"step-by-step/generators/app.md","ref":"step-by-step/generators/app.md","articles":[]},{"title":"Adding a service","level":"1.2.3.2","depth":3,"path":"step-by-step/generators/service.md","ref":"step-by-step/generators/service.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/generators/app.md","mtime":"2017-01-13T19:41:29.371Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-13T19:49:38.750Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Generating an app","level":"1.2.3.1","depth":3,"next":{"title":"Adding a service","level":"1.2.3.2","depth":3,"path":"step-by-step/generators/service.md","ref":"step-by-step/generators/service.md","articles":[]},"previous":{"title":"Generators >>","level":"1.2.3","depth":2,"path":"step-by-step/generators/readme.md","ref":"step-by-step/generators/readme.md","articles":[{"title":"Generating an app","level":"1.2.3.1","depth":3,"path":"step-by-step/generators/app.md","ref":"step-by-step/generators/app.md","articles":[]},{"title":"Adding a service","level":"1.2.3.2","depth":3,"path":"step-by-step/generators/service.md","ref":"step-by-step/generators/service.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/generators/app.md","mtime":"2017-01-13T20:02:51.329Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-13T20:03:43.835Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

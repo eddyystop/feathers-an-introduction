@@ -102,7 +102,7 @@ diff -bdur --new-file 02/app/index.js-side.html 02/app1/index.js-side.html
 -</body>
 -</html>
 diff -bdur --new-file 02/app/public/feathers-app.js 02/app1/public/feathers-app.js
---- 02/app/public/feathers-app.js	2017-01-13 14:48:12.844247120 -0500
+--- 02/app/public/feathers-app.js	2017-01-13 14:50:14.748020231 -0500
 +++ 02/app1/public/feathers-app.js	2017-01-10 15:06:04.736000000 -0500
 @@ -12,7 +12,7 @@
    users.create({ email: 'jane.doe@gmail.com', password: '11111', role: 'admin' }),
@@ -113,6 +113,12 @@ diff -bdur --new-file 02/app/public/feathers-app.js 02/app1/public/feathers-app.
  ])
    .then(results => {
      console.log('created Jane Doe item\n', results[0]);
+@@ -36,4 +36,4 @@
+   .then(() => users.find()
+     .then(results => console.log('find all items\n', results))
+   )
+-  .catch(err => console.log('Error occurred:', err));
++  .catch(err => console.log(err));
 diff -bdur --new-file 02/app/src/services/index.js 02/app1/src/services/index.js
 --- 02/app/src/services/index.js	2016-12-23 17:38:02.716000000 -0500
 +++ 02/app1/src/services/index.js	2017-01-10 15:55:18.811469000 -0500
