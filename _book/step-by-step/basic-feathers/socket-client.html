@@ -630,12 +630,19 @@ Its simple to convert that to one using websockets.</p>
 We will use the popular Socket.io in this guide.</p>
 </blockquote>
 <h2 id="working-example">Working example</h2>
-<p>| Server source code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/websocket/1.js" target="_blank">websocket/1.js</a></p>
-<p>| Client code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/socketio.html" target="_blank">common/public/socketio.html</a>
+<ul>
+<li>Server code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/websocket/1.js" target="_blank"> examples/step/01/websocket/1.js</a></li>
+<li>Client code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/socketio.html" target="_blank">common/public/socketio.html</a>
 and
-<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js" target="_blank">common/public/feathers-app.js</a></p>
-<p>| Start the server: <code>node ./examples/step/01/c/1</code></p>
-<p>| Point the browser at: <code>//localhost:3030/socketio.html</code></p>
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js" target="_blank">feathers-app.js</a></li>
+<li>Start the server: <code>node ./examples/step/01/websocket/1</code></li>
+<li>Point the browser at: <code>//localhost:3030/socketio.html</code></li>
+<li>Compare with last page&apos;s server
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/2.js" target="_blank">examples/step/01/rest/2.js</a>:
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-1-line.html" target="_blank">Unified</a>
+|
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-1-side.html" target="_blank">Split</a></li>
+</ul>
 <h2 id="change-the-server-to-support-clients-using-either-feathers-rest-or-websocket-calls">Change the server to support clients using either Feathers REST <strong>or</strong> websocket calls</h2>
 <p>Add 2 lines to the server code so it supports
 either REST <strong>or</strong> websocket calls from the Feathers client.</p>
@@ -722,7 +729,7 @@ The results are identical to that for <a href="rest-client.html">Writing a Feath
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"A Feathers websocket client","level":"1.2.2.4","depth":3,"next":{"title":"The \"ah-ha\" moment","level":"1.2.2.5","depth":3,"path":"step-by-step/basic-feathers/ah-ha.md","ref":"step-by-step/basic-feathers/ah-ha.md","articles":[]},"previous":{"title":"A Feathers REST client","level":"1.2.2.3","depth":3,"path":"step-by-step/basic-feathers/rest-client.md","ref":"step-by-step/basic-feathers/rest-client.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/socket-client.md","mtime":"2017-01-11T15:44:51.803Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-13T15:34:43.588Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"A Feathers websocket client","level":"1.2.2.4","depth":3,"next":{"title":"The \"ah-ha\" moment","level":"1.2.2.5","depth":3,"path":"step-by-step/basic-feathers/ah-ha.md","ref":"step-by-step/basic-feathers/ah-ha.md","articles":[]},"previous":{"title":"A Feathers REST client","level":"1.2.2.3","depth":3,"path":"step-by-step/basic-feathers/rest-client.md","ref":"step-by-step/basic-feathers/rest-client.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/socket-client.md","mtime":"2017-01-13T16:02:00.597Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-13T16:30:19.986Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

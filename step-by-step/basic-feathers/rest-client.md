@@ -12,18 +12,19 @@ and
 [feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js)
 - Start the server: `node ./examples/step/01/rest/2`
 - Point the browser at: `//localhost:3030/rest.html`
-- Compare with last page's server [examples/step/01/rest/1.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/1.js):
+- Compare with last page's server
+[examples/step/01/rest/1.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/1.js):
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-line.html)
 |
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-side.html)
 
 ## Writing a server for Feathers client REST calls
 
-[rest/2.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/2.js)
+[rest/2.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/2.js)
 , our server for Feathers REST clients, is exactly the same as
 [rest/1.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/1.js)
 , our previous server for HTTP REST API calls. 
-**No new code is required!**
+**No new server code is required to handle Feathers REST clients.**
 
 Compare the two:
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-line.html)
@@ -60,14 +61,13 @@ The frontend
 [common/public/feathers-app.js.](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js)
 is essentially the same code we used in
 [Writing a Database Connector](./database-connector.md)!
+[import](../../examples/step/01/common/public/feathers-app.js)
 
 | Compare feathers-app.js to our database connector file
 [db-connector/1.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/db-connector/1.js):
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-client-line.html)
 |
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-rest-2-client-side.html).
-
-[import](../../examples/step/01/common/public/feathers-app.js)
 
 > **Feathers "ah-ha" moment.**
 We can run **exactly** the same code on the frontend as on the server.

@@ -9,15 +9,18 @@ We will use the popular Socket.io in this guide.
 
 ## Working example
 
-| Server source code: [websocket/1.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/websocket/1.js)
-
-| Client code: [common/public/socketio.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/socketio.html)
+- Server code: [ examples/step/01/websocket/1.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/websocket/1.js)
+- Client code: [common/public/socketio.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/socketio.html)
 and
-[common/public/feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js)
+[feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js)
+- Start the server: `node ./examples/step/01/websocket/1`
+- Point the browser at: `//localhost:3030/socketio.html`
+- Compare with last page's server
+[examples/step/01/rest/2.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/rest/2.js):
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-1-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-websocket-1-side.html)
 
-| Start the server: `node ./examples/step/01/c/1`
-
-| Point the browser at: `//localhost:3030/socketio.html`
 
 ## Change the server to support clients using either Feathers REST **or** websocket calls
 
