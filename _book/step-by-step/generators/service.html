@@ -627,12 +627,18 @@
 local authentication.</p>
 <p>Let&apos;s add another service.</p>
 <h2 id="working-example">Working example</h2>
-<p>| Server code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/service/" target="_blank">service/</a></p>
-<p>| Client code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/service/public/socketio.html" target="_blank">service/public/socketio.html</a>
+<ul>
+<li>Server code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/service/" target="_blank">examples/step/02/service/</a></li>
+<li>Client code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/service/public/socketio.html" target="_blank">service/public/socketio.html</a>
 and
-<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/service/public/feathers-app.js" target="_blank">service/public/feathers-app.js</a></p>
-<p>| Start the server: <code>node ./examples/step/02/service/src</code></p>
-<p>| Point the browser at: <code>//localhost:3030/socketio.html</code></p>
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/service/public/feathers-app.js" target="_blank">feathers-app.js</a></li>
+<li>Start the server: <code>node ./examples/step/02/service/src</code></li>
+<li>Point the browser at: <code>//localhost:3030/socketio.html</code></li>
+<li>Compare with the app on the last page
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-service-line.html" target="_blank">Unified</a>
+|
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-service-side.html" target="_blank">Split</a></li>
+</ul>
 <h2 id="generating-a-service">Generating a service</h2>
 <p>We copied examples/step/02/app/ to examples/step/02/service/.
 We then ran <code>feathers generate service</code>:</p>
@@ -647,22 +653,24 @@ Does your service require users to be authenticated? Y (enter)
 </code></pre>
 <p>Once again we remove the dependencies loaded by the generator
 as they are already installed at the root of <code>feathers-an-introduction</code>.</p>
-<p>View the changes the service generator made:
+<ul>
+<li>See the changes the service generator made:
 <a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app1-line.html" target="_blank">Unified</a>
 |
-<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app1-side.html" target="_blank">Split</a></p>
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app1-side.html" target="_blank">Split</a></li>
+</ul>
 <h2 id="app-structure">App structure</h2>
 <p>The teams service has been added to the app at <code>src/services/teams/</code>.
 Its structured similarly to users.</p>
 <h2 id="loading-the-tables">Loading the tables</h2>
-<p>We added function <code>loadDatabases</code> to <code>service/src/app.js</code>.</p>
-<p>| View complete file
-<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/service/src/app.js" target="_blank">service/src/app.js</a>
-View changes from file app/src/app.js:
+<p>We added function loadDatabases to <code>service/src/app.js</code>.</p>
+<ul>
+<li>See what changed:
 <a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-service-src-app-line.html" target="_blank">Unified</a>
 |
-<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-service-src-app-side.html" target="_blank">Split</a></p>
-<p>It loads data into the users and teams tables.
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-service-src-app-side.html" target="_blank">Split</a></li>
+</ul>
+<p>loadDatabases loads data into the users and teams tables.
 The team items contains the <code>user._id</code> of the team members.</p>
 <pre><code class="lang-javascript">{
   name: <span class="hljs-string">&apos;Doe family&apos;</span>,
@@ -846,7 +854,7 @@ Lee family
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Adding a service","level":"1.2.3.2","depth":3,"next":{"title":"What's next?","level":"1.2.4","depth":2,"path":"step-by-step/what-next.md","ref":"step-by-step/what-next.md","articles":[]},"previous":{"title":"Generating an app","level":"1.2.3.1","depth":3,"path":"step-by-step/generators/app.md","ref":"step-by-step/generators/app.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/generators/service.md","mtime":"2017-01-13T14:07:50.332Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-13T20:03:43.835Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Adding a service","level":"1.2.3.2","depth":3,"next":{"title":"What's next?","level":"1.2.4","depth":2,"path":"step-by-step/what-next.md","ref":"step-by-step/what-next.md","articles":[]},"previous":{"title":"Generating an app","level":"1.2.3.1","depth":3,"path":"step-by-step/generators/app.md","ref":"step-by-step/generators/app.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/generators/service.md","mtime":"2017-01-13T20:15:02.847Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-13T20:15:40.456Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -1,0 +1,437 @@
+diff -bdur --new-file 02/app/.editorconfig 02/service/.editorconfig
+--- 02/app/.editorconfig	2016-12-23 17:38:02.764000000 -0500
++++ 02/service/.editorconfig	1969-12-31 19:00:00.000000000 -0500
+@@ -1,13 +0,0 @@
+-# http://editorconfig.org
+-root = true
+-
+-[*]
+-indent_style = space
+-indent_size = 2
+-end_of_line = lf
+-charset = utf-8
+-trim_trailing_whitespace = true
+-insert_final_newline = true
+-
+-[*.md]
+-trim_trailing_whitespace = false
+diff -bdur --new-file 02/app/index.js.diff 02/service/index.js.diff
+--- 02/app/index.js.diff	2017-01-10 15:39:45.855469000 -0500
++++ 02/service/index.js.diff	1969-12-31 19:00:00.000000000 -0500
+@@ -1,3 +0,0 @@
+-Only in 02/app/config: default.json
+-Only in 02/app/config: production.json
+-Only in 02/app/data: users.db
+diff -bdur --new-file 02/app/index.js-line.html 02/service/index.js-line.html
+--- 02/app/index.js-line.html	2017-01-10 15:39:46.935469000 -0500
++++ 02/service/index.js-line.html	1969-12-31 19:00:00.000000000 -0500
+@@ -1,44 +0,0 @@
+-<!doctype html>
+-<html lang="en">
+-<head>
+-  <meta charset="utf-8">
+-  <title>Diff to HTML by rtfpessoa</title>
+-
+-  <!--
+-      Diff to HTML (template.html)
+-      Author: rtfpessoa
+-  -->
+-
+-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/github.min.css">
+-
+-  <style>
+-.d2h-wrapper{text-align:left}.d2h-file-header{padding:5px 10px;border-bottom:1px solid #d8d8d8;background-color:#f7f7f7}.d2h-file-stats{display:-webkit-box;display:-ms-flexbox;display:flex;margin-left:auto;font-size:14px}.d2h-lines-added{text-align:right;border:1px solid #b4e2b4;border-radius:5px 0 0 5px;color:#399839;padding:2px;vertical-align:middle}.d2h-lines-deleted{text-align:left;border:1px solid #e9aeae;border-radius:0 5px 5px 0;color:#c33;padding:2px;vertical-align:middle;margin-left:1px}.d2h-file-name-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;font-family:"Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;font-size:15px}.d2h-file-name{white-space:nowrap;text-overflow:ellipsis;overflow-x:hidden;line-height:21px}.d2h-file-diff,.d2h-file-side-diff{overflow-x:scroll;overflow-y:hidden}.d2h-file-wrapper{border:1px solid #ddd;border-radius:3px;margin-bottom:1em}.d2h-diff-table{width:100%;border-collapse:collapse;font-family:Menlo,Consolas,monospace;font-size:13px}.d2h-diff-tbody>tr>td{height:20px;line-height:20px}.d2h-files-diff{display:block;width:100%;height:100%}.d2h-file-side-diff{display:inline-block;width:50%;margin-right:-4px;margin-bottom:-8px}.d2h-code-line{display:inline-block;white-space:nowrap;padding:0 10px;margin-left:80px}.d2h-code-side-line{display:inline-block;white-space:nowrap;padding:0 10px;margin-left:50px}.d2h-code-line del,.d2h-code-side-line del{display:inline-block;margin-top:-1px;text-decoration:none;background-color:#ffb6ba;border-radius:.2em}.d2h-code-line ins,.d2h-code-side-line ins{display:inline-block;margin-top:-1px;text-decoration:none;background-color:#97f295;border-radius:.2em;text-align:left}.d2h-code-line-ctn,.d2h-code-line-prefix{display:inline;background:0 0;padding:0;word-wrap:normal;white-space:pre}.d2h-code-linenumber,.d2h-code-side-linenumber{position:absolute;background-color:#fff;text-align:right;color:rgba(0,0,0,.3);cursor:pointer}.line-num1,.line-num2{width:40px;padding-left:3px;box-sizing:border-box;overflow:hidden;text-overflow:ellipsis}.line-num1{float:left}.line-num2{float:right}.d2h-code-linenumber{box-sizing:border-box;width:86px;padding-left:2px;padding-right:2px;border:solid #eee;border-width:0 1px}.d2h-code-side-linenumber{box-sizing:border-box;width:56px;padding-left:5px;padding-right:5px;border:solid #eee;border-width:0 1px;overflow:hidden;text-overflow:ellipsis}.d2h-del{background-color:#fee8e9;border-color:#e9aeae}.d2h-ins{background-color:#dfd;border-color:#b4e2b4}.d2h-info{background-color:#f8fafd;color:rgba(0,0,0,.3);border-color:#d5e4f2}.d2h-file-diff .d2h-del.d2h-change{background-color:#fdf2d0}.d2h-file-diff .d2h-ins.d2h-change{background-color:#ded}.d2h-file-list-wrapper{margin-bottom:10px}.d2h-file-list-wrapper a{text-decoration:none;color:#3572b0}.d2h-file-list-wrapper a:visited{color:#3572b0}.d2h-file-list-header{text-align:left}.d2h-file-list-title{font-weight:700}.d2h-file-list-line{display:-webkit-box;display:-ms-flexbox;display:flex;text-align:left}.d2h-file-list{display:block;list-style:none;padding:0;margin:0}.d2h-file-list>li{border-bottom:#ddd solid 1px;padding:5px 10px;margin:0}.d2h-file-list>li:last-child{border-bottom:none}.d2h-file-switch{display:none;font-size:10px;cursor:pointer}.d2h-icon-wrapper{line-height:31px}.d2h-icon{vertical-align:middle;margin-right:10px;fill:currentColor}.d2h-deleted{color:#c33}.d2h-added{color:#399839}.d2h-changed{color:#d0b44c}.d2h-moved{color:#3572b0}.d2h-tag{display:-webkit-box;display:-ms-flexbox;display:flex;font-size:10px;margin-left:5px;padding:0 2px;background-color:#fff}.d2h-deleted-tag{border:1px solid #c33}.d2h-added-tag{border:1px solid #399839}.d2h-changed-tag{border:1px solid #d0b44c}.d2h-moved-tag{border:1px solid #3572b0}.selecting-left .d2h-code-line,.selecting-left .d2h-code-line *,.selecting-left .d2h-code-side-line,.selecting-left .d2h-code-side-line *,.selecting-right td.d2h-code-linenumber,.selecting-right td.d2h-code-linenumber *,.selecting-right td.d2h-code-side-linenumber,.selecting-right td.d2h-code-side-linenumber *{-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.selecting-left .d2h-code-line ::-moz-selection,.selecting-left .d2h-code-line::-moz-selection,.selecting-left .d2h-code-side-line ::-moz-selection,.selecting-left .d2h-code-side-line::-moz-selection,.selecting-right td.d2h-code-linenumber::-moz-selection,.selecting-right td.d2h-code-side-linenumber ::-moz-selection,.selecting-right td.d2h-code-side-linenumber::-moz-selection{background:0 0}.selecting-left .d2h-code-line ::selection,.selecting-left .d2h-code-line::selection,.selecting-left .d2h-code-side-line ::selection,.selecting-left .d2h-code-side-line::selection,.selecting-right td.d2h-code-linenumber::selection,.selecting-right td.d2h-code-side-linenumber ::selection,.selecting-right td.d2h-code-side-linenumber::selection{background:0 0}
+-</style>
+-
+-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js"></script>
+-
+-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
+-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/scala.min.js"></script>
+-
+-  <script>
+-!function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a="function"==typeof require&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}for(var i="function"==typeof require&&require,o=0;o<r.length;o++)s(r[o]);return s}({1:[function(require,module){(function(global){!function(){function Diff2HtmlUI(config){var cfg=config||{};cfg.diff?diffJson=Diff2Html.getJsonFromDiff(cfg.diff):cfg.json&&(diffJson=cfg.json),this._initSelection()}function synchronisedScroll($target,config){config.synchronisedScroll&&$target.find(".d2h-file-side-diff").scroll(function(){var $this=$(this);$this.closest(".d2h-file-wrapper").find(".d2h-file-side-diff").scrollLeft($this.scrollLeft())})}var highlightJS=require("./highlight.js-internals.js").HighlightJS,diffJson=null,defaultTarget="body",currentSelectionColumnId=-1;Diff2HtmlUI.prototype.draw=function(targetId,config){var cfg=config||{};cfg.inputFormat="json";var $target=this._getTarget(targetId);$target.html(Diff2Html.getPrettyHtml(diffJson,cfg)),synchronisedScroll($target,cfg)},Diff2HtmlUI.prototype.fileListCloseable=function(targetId,startVisible){function show(){$showBtn.hide(),$hideBtn.show(),$fileList.show()}function hide(){$hideBtn.hide(),$showBtn.show(),$fileList.hide()}var $target=this._getTarget(targetId),hashTag=this._getHashTag(),$showBtn=$target.find(".d2h-show"),$hideBtn=$target.find(".d2h-hide"),$fileList=$target.find(".d2h-file-list");"files-summary-show"===hashTag?show():"files-summary-hide"===hashTag?hide():startVisible?show():hide(),$showBtn.click(show),$hideBtn.click(hide)},Diff2HtmlUI.prototype.highlightCode=function(targetId){var that=this,$target=that._getTarget(targetId),$files=$target.find(".d2h-file-wrapper");$files.map(function(_i,file){var oldLinesState,newLinesState,$file=$(file),language=$file.data("lang"),$codeLines=$file.find(".d2h-code-line-ctn");$codeLines.map(function(_j,line){var lineState,$line=$(line),text=line.textContent,lineParent=line.parentNode;lineState=-1!==lineParent.className.indexOf("d2h-del")?oldLinesState:newLinesState;var result=hljs.getLanguage(language)?hljs.highlight(language,text,!0,lineState):hljs.highlightAuto(text);-1!==lineParent.className.indexOf("d2h-del")?oldLinesState=result.top:-1!==lineParent.className.indexOf("d2h-ins")?newLinesState=result.top:(oldLinesState=result.top,newLinesState=result.top);var originalStream=highlightJS.nodeStream(line);if(originalStream.length){var resultNode=document.createElementNS("http://www.w3.org/1999/xhtml","div");resultNode.innerHTML=result.value,result.value=highlightJS.mergeStreams(originalStream,highlightJS.nodeStream(resultNode),text)}$line.addClass("hljs"),$line.addClass(result.language),$line.html(result.value)})})},Diff2HtmlUI.prototype._getTarget=function(targetId){var $target;return"object"==typeof targetId&&targetId instanceof jQuery?$target=targetId:"string"==typeof targetId?$target=$(targetId):(console.error("Wrong target provided! Falling back to default value 'body'."),console.log("Please provide a jQuery object or a valid DOM query string."),$target=$(defaultTarget)),$target},Diff2HtmlUI.prototype._getHashTag=function(){var docUrl=document.URL,hashTagIndex=docUrl.indexOf("#"),hashTag=null;return-1!==hashTagIndex&&(hashTag=docUrl.substr(hashTagIndex+1)),hashTag},Diff2HtmlUI.prototype._distinct=function(collection){return collection.filter(function(v,i){return collection.indexOf(v)===i})},Diff2HtmlUI.prototype._initSelection=function(){var body=$("body"),that=this;body.on("mousedown",".d2h-diff-table",function(event){var target=$(event.target),table=target.closest(".d2h-diff-table");target.closest(".d2h-code-line,.d2h-code-side-line").length?(table.removeClass("selecting-left"),table.addClass("selecting-right"),currentSelectionColumnId=1):target.closest(".d2h-code-linenumber,.d2h-code-side-linenumber").length&&(table.removeClass("selecting-right"),table.addClass("selecting-left"),currentSelectionColumnId=0)}),body.on("copy",".d2h-diff-table",function(event){var clipboardData=event.originalEvent.clipboardData,text=that._getSelectedText();clipboardData.setData("text",text),event.preventDefault()})},Diff2HtmlUI.prototype._getSelectedText=function(){var sel=window.getSelection(),range=sel.getRangeAt(0),doc=range.cloneContents(),nodes=doc.querySelectorAll("tr"),text="",idx=currentSelectionColumnId;return 0===nodes.length?text=doc.textContent:[].forEach.call(nodes,function(tr,i){var td=tr.cells[1===tr.cells.length?0:idx];text+=(i?"\n":"")+td.textContent.replace(/(?:\r\n|\r|\n)/g,"")}),text},module.exports.Diff2HtmlUI=Diff2HtmlUI,global.Diff2HtmlUI=Diff2HtmlUI}()}).call(this,"undefined"!=typeof global?global:"undefined"!=typeof self?self:"undefined"!=typeof window?window:{})},{"./highlight.js-internals.js":2}],2:[function(require,module){!function(){function HighlightJS(){}function escape(value){return value.replace(/&/gm,"&amp;").replace(/</gm,"&lt;").replace(/>/gm,"&gt;")}function tag(node){return node.nodeName.toLowerCase()}HighlightJS.prototype.nodeStream=function(node){var result=[];return function _nodeStream(node,offset){for(var child=node.firstChild;child;child=child.nextSibling)3===child.nodeType?offset+=child.nodeValue.length:1===child.nodeType&&(result.push({event:"start",offset:offset,node:child}),offset=_nodeStream(child,offset),tag(child).match(/br|hr|img|input/)||result.push({event:"stop",offset:offset,node:child}));return offset}(node,0),result},HighlightJS.prototype.mergeStreams=function(original,highlighted,value){function selectStream(){return original.length&&highlighted.length?original[0].offset!==highlighted[0].offset?original[0].offset<highlighted[0].offset?original:highlighted:"start"===highlighted[0].event?original:highlighted:original.length?original:highlighted}function open(node){function attrStr(a){return" "+a.nodeName+'="'+escape(a.value)+'"'}result+="<"+tag(node)+Array.prototype.map.call(node.attributes,attrStr).join("")+">"}function close(node){result+="</"+tag(node)+">"}function render(event){("start"===event.event?open:close)(event.node)}for(var processed=0,result="",nodeStack=[];original.length||highlighted.length;){var stream=selectStream();if(result+=escape(value.substr(processed,stream[0].offset-processed)),processed=stream[0].offset,stream===original){nodeStack.reverse().forEach(close);do render(stream.splice(0,1)[0]),stream=selectStream();while(stream===original&&stream.length&&stream[0].offset===processed);nodeStack.reverse().forEach(open)}else"start"===stream[0].event?nodeStack.push(stream[0].node):nodeStack.pop(),render(stream.splice(0,1)[0])}return result+escape(value.substr(processed))},module.exports.HighlightJS=new HighlightJS}()},{}]},{},[1]);
+-</script>
+-
+-  <script>
+-    $(document).ready(function() {
+-      var diff2htmlUi = new Diff2HtmlUI();
+-      diff2htmlUi.fileListCloseable("#diff", undefined);
+-      diff2htmlUi.highlightCode('#diff');
+-    });
+-  </script>
+-</head>
+-<body style="text-align: center; font-family: 'Source Sans Pro',sans-serif;">
+-<h1>Diff to HTML by <a href="https://github.com/rtfpessoa">rtfpessoa</a></h1>
+-
+-<div id="diff">
+-  <div class="d2h-wrapper">
+-    
+-</div>
+-</div>
+-</body>
+-</html>
+diff -bdur --new-file 02/app/index.js-side.html 02/service/index.js-side.html
+--- 02/app/index.js-side.html	2017-01-10 15:39:48.111469000 -0500
++++ 02/service/index.js-side.html	1969-12-31 19:00:00.000000000 -0500
+@@ -1,44 +0,0 @@
+-<!doctype html>
+-<html lang="en">
+-<head>
+-  <meta charset="utf-8">
+-  <title>Diff to HTML by rtfpessoa</title>
+-
+-  <!--
+-      Diff to HTML (template.html)
+-      Author: rtfpessoa
+-  -->
+-
+-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/github.min.css">
+-
+-  <style>
+-.d2h-wrapper{text-align:left}.d2h-file-header{padding:5px 10px;border-bottom:1px solid #d8d8d8;background-color:#f7f7f7}.d2h-file-stats{display:-webkit-box;display:-ms-flexbox;display:flex;margin-left:auto;font-size:14px}.d2h-lines-added{text-align:right;border:1px solid #b4e2b4;border-radius:5px 0 0 5px;color:#399839;padding:2px;vertical-align:middle}.d2h-lines-deleted{text-align:left;border:1px solid #e9aeae;border-radius:0 5px 5px 0;color:#c33;padding:2px;vertical-align:middle;margin-left:1px}.d2h-file-name-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;font-family:"Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;font-size:15px}.d2h-file-name{white-space:nowrap;text-overflow:ellipsis;overflow-x:hidden;line-height:21px}.d2h-file-diff,.d2h-file-side-diff{overflow-x:scroll;overflow-y:hidden}.d2h-file-wrapper{border:1px solid #ddd;border-radius:3px;margin-bottom:1em}.d2h-diff-table{width:100%;border-collapse:collapse;font-family:Menlo,Consolas,monospace;font-size:13px}.d2h-diff-tbody>tr>td{height:20px;line-height:20px}.d2h-files-diff{display:block;width:100%;height:100%}.d2h-file-side-diff{display:inline-block;width:50%;margin-right:-4px;margin-bottom:-8px}.d2h-code-line{display:inline-block;white-space:nowrap;padding:0 10px;margin-left:80px}.d2h-code-side-line{display:inline-block;white-space:nowrap;padding:0 10px;margin-left:50px}.d2h-code-line del,.d2h-code-side-line del{display:inline-block;margin-top:-1px;text-decoration:none;background-color:#ffb6ba;border-radius:.2em}.d2h-code-line ins,.d2h-code-side-line ins{display:inline-block;margin-top:-1px;text-decoration:none;background-color:#97f295;border-radius:.2em;text-align:left}.d2h-code-line-ctn,.d2h-code-line-prefix{display:inline;background:0 0;padding:0;word-wrap:normal;white-space:pre}.d2h-code-linenumber,.d2h-code-side-linenumber{position:absolute;background-color:#fff;text-align:right;color:rgba(0,0,0,.3);cursor:pointer}.line-num1,.line-num2{width:40px;padding-left:3px;box-sizing:border-box;overflow:hidden;text-overflow:ellipsis}.line-num1{float:left}.line-num2{float:right}.d2h-code-linenumber{box-sizing:border-box;width:86px;padding-left:2px;padding-right:2px;border:solid #eee;border-width:0 1px}.d2h-code-side-linenumber{box-sizing:border-box;width:56px;padding-left:5px;padding-right:5px;border:solid #eee;border-width:0 1px;overflow:hidden;text-overflow:ellipsis}.d2h-del{background-color:#fee8e9;border-color:#e9aeae}.d2h-ins{background-color:#dfd;border-color:#b4e2b4}.d2h-info{background-color:#f8fafd;color:rgba(0,0,0,.3);border-color:#d5e4f2}.d2h-file-diff .d2h-del.d2h-change{background-color:#fdf2d0}.d2h-file-diff .d2h-ins.d2h-change{background-color:#ded}.d2h-file-list-wrapper{margin-bottom:10px}.d2h-file-list-wrapper a{text-decoration:none;color:#3572b0}.d2h-file-list-wrapper a:visited{color:#3572b0}.d2h-file-list-header{text-align:left}.d2h-file-list-title{font-weight:700}.d2h-file-list-line{display:-webkit-box;display:-ms-flexbox;display:flex;text-align:left}.d2h-file-list{display:block;list-style:none;padding:0;margin:0}.d2h-file-list>li{border-bottom:#ddd solid 1px;padding:5px 10px;margin:0}.d2h-file-list>li:last-child{border-bottom:none}.d2h-file-switch{display:none;font-size:10px;cursor:pointer}.d2h-icon-wrapper{line-height:31px}.d2h-icon{vertical-align:middle;margin-right:10px;fill:currentColor}.d2h-deleted{color:#c33}.d2h-added{color:#399839}.d2h-changed{color:#d0b44c}.d2h-moved{color:#3572b0}.d2h-tag{display:-webkit-box;display:-ms-flexbox;display:flex;font-size:10px;margin-left:5px;padding:0 2px;background-color:#fff}.d2h-deleted-tag{border:1px solid #c33}.d2h-added-tag{border:1px solid #399839}.d2h-changed-tag{border:1px solid #d0b44c}.d2h-moved-tag{border:1px solid #3572b0}.selecting-left .d2h-code-line,.selecting-left .d2h-code-line *,.selecting-left .d2h-code-side-line,.selecting-left .d2h-code-side-line *,.selecting-right td.d2h-code-linenumber,.selecting-right td.d2h-code-linenumber *,.selecting-right td.d2h-code-side-linenumber,.selecting-right td.d2h-code-side-linenumber *{-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.selecting-left .d2h-code-line ::-moz-selection,.selecting-left .d2h-code-line::-moz-selection,.selecting-left .d2h-code-side-line ::-moz-selection,.selecting-left .d2h-code-side-line::-moz-selection,.selecting-right td.d2h-code-linenumber::-moz-selection,.selecting-right td.d2h-code-side-linenumber ::-moz-selection,.selecting-right td.d2h-code-side-linenumber::-moz-selection{background:0 0}.selecting-left .d2h-code-line ::selection,.selecting-left .d2h-code-line::selection,.selecting-left .d2h-code-side-line ::selection,.selecting-left .d2h-code-side-line::selection,.selecting-right td.d2h-code-linenumber::selection,.selecting-right td.d2h-code-side-linenumber ::selection,.selecting-right td.d2h-code-side-linenumber::selection{background:0 0}
+-</style>
+-
+-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js"></script>
+-
+-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
+-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/scala.min.js"></script>
+-
+-  <script>
+-!function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a="function"==typeof require&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}for(var i="function"==typeof require&&require,o=0;o<r.length;o++)s(r[o]);return s}({1:[function(require,module){(function(global){!function(){function Diff2HtmlUI(config){var cfg=config||{};cfg.diff?diffJson=Diff2Html.getJsonFromDiff(cfg.diff):cfg.json&&(diffJson=cfg.json),this._initSelection()}function synchronisedScroll($target,config){config.synchronisedScroll&&$target.find(".d2h-file-side-diff").scroll(function(){var $this=$(this);$this.closest(".d2h-file-wrapper").find(".d2h-file-side-diff").scrollLeft($this.scrollLeft())})}var highlightJS=require("./highlight.js-internals.js").HighlightJS,diffJson=null,defaultTarget="body",currentSelectionColumnId=-1;Diff2HtmlUI.prototype.draw=function(targetId,config){var cfg=config||{};cfg.inputFormat="json";var $target=this._getTarget(targetId);$target.html(Diff2Html.getPrettyHtml(diffJson,cfg)),synchronisedScroll($target,cfg)},Diff2HtmlUI.prototype.fileListCloseable=function(targetId,startVisible){function show(){$showBtn.hide(),$hideBtn.show(),$fileList.show()}function hide(){$hideBtn.hide(),$showBtn.show(),$fileList.hide()}var $target=this._getTarget(targetId),hashTag=this._getHashTag(),$showBtn=$target.find(".d2h-show"),$hideBtn=$target.find(".d2h-hide"),$fileList=$target.find(".d2h-file-list");"files-summary-show"===hashTag?show():"files-summary-hide"===hashTag?hide():startVisible?show():hide(),$showBtn.click(show),$hideBtn.click(hide)},Diff2HtmlUI.prototype.highlightCode=function(targetId){var that=this,$target=that._getTarget(targetId),$files=$target.find(".d2h-file-wrapper");$files.map(function(_i,file){var oldLinesState,newLinesState,$file=$(file),language=$file.data("lang"),$codeLines=$file.find(".d2h-code-line-ctn");$codeLines.map(function(_j,line){var lineState,$line=$(line),text=line.textContent,lineParent=line.parentNode;lineState=-1!==lineParent.className.indexOf("d2h-del")?oldLinesState:newLinesState;var result=hljs.getLanguage(language)?hljs.highlight(language,text,!0,lineState):hljs.highlightAuto(text);-1!==lineParent.className.indexOf("d2h-del")?oldLinesState=result.top:-1!==lineParent.className.indexOf("d2h-ins")?newLinesState=result.top:(oldLinesState=result.top,newLinesState=result.top);var originalStream=highlightJS.nodeStream(line);if(originalStream.length){var resultNode=document.createElementNS("http://www.w3.org/1999/xhtml","div");resultNode.innerHTML=result.value,result.value=highlightJS.mergeStreams(originalStream,highlightJS.nodeStream(resultNode),text)}$line.addClass("hljs"),$line.addClass(result.language),$line.html(result.value)})})},Diff2HtmlUI.prototype._getTarget=function(targetId){var $target;return"object"==typeof targetId&&targetId instanceof jQuery?$target=targetId:"string"==typeof targetId?$target=$(targetId):(console.error("Wrong target provided! Falling back to default value 'body'."),console.log("Please provide a jQuery object or a valid DOM query string."),$target=$(defaultTarget)),$target},Diff2HtmlUI.prototype._getHashTag=function(){var docUrl=document.URL,hashTagIndex=docUrl.indexOf("#"),hashTag=null;return-1!==hashTagIndex&&(hashTag=docUrl.substr(hashTagIndex+1)),hashTag},Diff2HtmlUI.prototype._distinct=function(collection){return collection.filter(function(v,i){return collection.indexOf(v)===i})},Diff2HtmlUI.prototype._initSelection=function(){var body=$("body"),that=this;body.on("mousedown",".d2h-diff-table",function(event){var target=$(event.target),table=target.closest(".d2h-diff-table");target.closest(".d2h-code-line,.d2h-code-side-line").length?(table.removeClass("selecting-left"),table.addClass("selecting-right"),currentSelectionColumnId=1):target.closest(".d2h-code-linenumber,.d2h-code-side-linenumber").length&&(table.removeClass("selecting-right"),table.addClass("selecting-left"),currentSelectionColumnId=0)}),body.on("copy",".d2h-diff-table",function(event){var clipboardData=event.originalEvent.clipboardData,text=that._getSelectedText();clipboardData.setData("text",text),event.preventDefault()})},Diff2HtmlUI.prototype._getSelectedText=function(){var sel=window.getSelection(),range=sel.getRangeAt(0),doc=range.cloneContents(),nodes=doc.querySelectorAll("tr"),text="",idx=currentSelectionColumnId;return 0===nodes.length?text=doc.textContent:[].forEach.call(nodes,function(tr,i){var td=tr.cells[1===tr.cells.length?0:idx];text+=(i?"\n":"")+td.textContent.replace(/(?:\r\n|\r|\n)/g,"")}),text},module.exports.Diff2HtmlUI=Diff2HtmlUI,global.Diff2HtmlUI=Diff2HtmlUI}()}).call(this,"undefined"!=typeof global?global:"undefined"!=typeof self?self:"undefined"!=typeof window?window:{})},{"./highlight.js-internals.js":2}],2:[function(require,module){!function(){function HighlightJS(){}function escape(value){return value.replace(/&/gm,"&amp;").replace(/</gm,"&lt;").replace(/>/gm,"&gt;")}function tag(node){return node.nodeName.toLowerCase()}HighlightJS.prototype.nodeStream=function(node){var result=[];return function _nodeStream(node,offset){for(var child=node.firstChild;child;child=child.nextSibling)3===child.nodeType?offset+=child.nodeValue.length:1===child.nodeType&&(result.push({event:"start",offset:offset,node:child}),offset=_nodeStream(child,offset),tag(child).match(/br|hr|img|input/)||result.push({event:"stop",offset:offset,node:child}));return offset}(node,0),result},HighlightJS.prototype.mergeStreams=function(original,highlighted,value){function selectStream(){return original.length&&highlighted.length?original[0].offset!==highlighted[0].offset?original[0].offset<highlighted[0].offset?original:highlighted:"start"===highlighted[0].event?original:highlighted:original.length?original:highlighted}function open(node){function attrStr(a){return" "+a.nodeName+'="'+escape(a.value)+'"'}result+="<"+tag(node)+Array.prototype.map.call(node.attributes,attrStr).join("")+">"}function close(node){result+="</"+tag(node)+">"}function render(event){("start"===event.event?open:close)(event.node)}for(var processed=0,result="",nodeStack=[];original.length||highlighted.length;){var stream=selectStream();if(result+=escape(value.substr(processed,stream[0].offset-processed)),processed=stream[0].offset,stream===original){nodeStack.reverse().forEach(close);do render(stream.splice(0,1)[0]),stream=selectStream();while(stream===original&&stream.length&&stream[0].offset===processed);nodeStack.reverse().forEach(open)}else"start"===stream[0].event?nodeStack.push(stream[0].node):nodeStack.pop(),render(stream.splice(0,1)[0])}return result+escape(value.substr(processed))},module.exports.HighlightJS=new HighlightJS}()},{}]},{},[1]);
+-</script>
+-
+-  <script>
+-    $(document).ready(function() {
+-      var diff2htmlUi = new Diff2HtmlUI();
+-      diff2htmlUi.fileListCloseable("#diff", undefined);
+-      diff2htmlUi.highlightCode('#diff');
+-    });
+-  </script>
+-</head>
+-<body style="text-align: center; font-family: 'Source Sans Pro',sans-serif;">
+-<h1>Diff to HTML by <a href="https://github.com/rtfpessoa">rtfpessoa</a></h1>
+-
+-<div id="diff">
+-  <div class="d2h-wrapper">
+-    
+-</div>
+-</div>
+-</body>
+-</html>
+diff -bdur --new-file 02/app/package.json 02/service/package.json
+--- 02/app/package.json	2017-01-10 14:53:21.955398743 -0500
++++ 02/service/package.json	1969-12-31 19:00:00.000000000 -0500
+@@ -1,45 +0,0 @@
+-{
+-  "name": "Feathers-guide-02-app",
+-  "description": "Feathers-guide-02-app",
+-  "version": "0.0.0",
+-  "homepage": "",
+-  "main": "src/",
+-  "keywords": [
+-    "feathers"
+-  ],
+-  "license": "MIT",
+-  "repository": {},
+-  "author": {},
+-  "contributors": [],
+-  "bugs": {},
+-  "engines": {
+-    "node": ">= 0.12.0"
+-  },
+-  "scripts": {
+-    "test": "npm run jshint && npm run mocha",
+-    "jshint": "jshint src/. test/. --config",
+-    "start": "node src/",
+-    "mocha": "mocha test/ --recursive"
+-  },
+-  "dependencies": {
+-    "body-parser": "1.15.2",
+-    "compression": "1.6.2",
+-    "feathers": "2.0.3",
+-    "feathers-authentication": "0.7.12",
+-    "feathers-configuration": "0.2.3",
+-    "feathers-errors": "2.5.0",
+-    "feathers-hooks": "1.7.1",
+-    "feathers-nedb": "2.6.0",
+-    "feathers-rest": "1.5.2",
+-    "feathers-socketio": "1.4.2",
+-    "nedb": "1.8.0",
+-    "passport": "0.3.2",
+-    "serve-favicon": "2.3.2",
+-    "winston": "2.3.0"
+-  },
+-  "devDependencies": {
+-    "jshint": "2.9.4",
+-    "mocha": "3.2.0",
+-    "request": "2.79.0"
+-  }
+-}
+diff -bdur --new-file 02/app/public/feathers-app.js 02/service/public/feathers-app.js
+--- 02/app/public/feathers-app.js	2017-01-13 14:50:14.748020231 -0500
++++ 02/service/public/feathers-app.js	2017-01-10 15:48:17.769620432 -0500
+@@ -1,39 +1,27 @@
+ 
+-feathersClient
++feathersClients
+   .configure(feathers.hooks())
+   .configure(feathers.authentication({
+     storage: window.localStorage
+   }));
+ 
+-let jackId;
+-const users = feathersClient.service('/users');
+-
+-Promise.all([
+-  users.create({ email: 'jane.doe@gmail.com', password: '11111', role: 'admin' }),
+-  users.create({ email: 'john.doe@gmail.com', password: '22222', role: 'user' }),
+-  users.create({ email: 'judy.doe@gmail.com', password: '33333', role: 'user' }),
+-  users.create({ email: 'jack.doe@gmail.com', password: '44444', role: 'user' })
+-])
+-  .then(results => {
+-    console.log('created Jane Doe item\n', results[0]);
+-    console.log('created John Doe item\n', results[1]);
+-    console.log('created Judy Doe item\n', results[2]);
+-    console.log('created Jack Doe item\n', results[3]);
+-    
+-    jackId = results[3]._id;
++const teams = feathersClients.service('/teams');
+     
+-    return feathersClient.authenticate({
++feathersClients.authenticate({
+       type: 'local',
+       'email': 'jane.doe@gmail.com',
+       'password': '11111'
++})
++  .then(() => {
++    // Find team items, and join the user items of their members
++    teams.find({ query: { type: 'dungeon' }})
++      .then(results => {
++        console.log('\nAll dungeon teams\n', JSON.stringify(results.data, null, 2));
++      });
++    
++    teams.find({ query: { name: 'Lee family' }})
++      .then(results => {
++        console.log('\nLee family\n', JSON.stringify(results.data, null, 2));
++      });
+     })
+-      .then(() => console.log('\nAuthenticated successfully.\n '))
+-      .catch(err => console.error('\nError authenticating:', err));
+-  })
+-  .then(() => users.remove(jackId)
+-    .then(results => console.log('deleted Jack Doe item\n', results))
+-  )
+-  .then(() => users.find()
+-    .then(results => console.log('find all items\n', results))
+-  )
+-  .catch(err => console.log('Error occurred:', err));
++  .catch(err => console.log('\nError occurred:', err));
+diff -bdur --new-file 02/app/public/rest.html 02/service/public/rest.html
+--- 02/app/public/rest.html	2017-01-10 14:53:22.318075701 -0500
++++ 02/service/public/rest.html	2017-01-10 15:45:39.434857599 -0500
+@@ -1,6 +1,6 @@
+ <html>
+ <head>
+-  <title>Feathers REST client, with authentication</title>
++  <title>Feathers REST client, multiple services</title>
+   <style>
+     body {
+       font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+@@ -12,7 +12,7 @@
+ </head>
+ <body>
+ <h1>Feathers guide</h1>
+-<h2>Feathers REST client, with authentication</h2>
++<h2>Feathers REST client, multiple services</h2>
+ <br />
+ Open console to see results of <strong>feathers-rest</strong> calls.
+ <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/core-js/2.1.4/core.min.js"></script>
+diff -bdur --new-file 02/app/public/socketio.html 02/service/public/socketio.html
+--- 02/app/public/socketio.html	2017-01-10 14:53:22.496100989 -0500
++++ 02/service/public/socketio.html	2017-01-10 15:45:39.527701686 -0500
+@@ -1,6 +1,6 @@
+ <html>
+ <head>
+-  <title>Feathers Socketio client, with authentication</title>
++  <title>Feathers Socketio client, multiple services</title>
+   <style>
+     body {
+       font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+@@ -12,7 +12,7 @@
+ </head>
+ <body>
+ <h1>Feathers guide</h1>
+-<h2>Feathers Socketio client, with authentication</h2>
++<h2>Feathers Socketio client, multiple services</h2>
+ <br />
+ Open console to see results of <strong>feathers-socketio</strong> calls.
+ <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/core-js/2.1.4/core.min.js"></script>
+diff -bdur --new-file 02/app/src/app.js 02/service/src/app.js
+--- 02/app/src/app.js	2016-12-23 17:38:02.788000000 -0500
++++ 02/service/src/app.js	2016-12-25 10:41:50.656161151 -0500
+@@ -28,4 +28,47 @@
+   .configure(services)
+   .configure(middleware);
+ 
++loadDatabases(app);
++
+ module.exports = app;
++
++function loadDatabases(app) {
++  let userIds = [];
++  const teams = app.service('/teams');
++  const users = app.service('/users');
++  
++  console.log('\nClear databases.');
++  Promise.all([
++    teams.remove(null),
++    users.remove(null)
++  ])
++    .then (() => {
++      console.log('\nLoad users.');
++      return  Promise.all([
++        users.create({ email: 'jane.doe@gmail.com', password: '11111', role: 'admin, tank' }),
++        users.create({ email: 'john.doe@gmail.com', password: '22222', role: 'user, heals' }),
++        users.create({ email: 'judy.doe@gmail.com', password: '33333', role: 'user' }),
++        users.create({ email: 'jack.doe@gmail.com', password: '44444', role: 'user' }),
++        users.create({ email: 'tom.smith@gmail.com', password: '55555', role: 'user' }),
++        users.create({ email: 'bob.smith@gmail.com', password: '66666', role: 'user' }),
++        users.create({ email: 'joe.smith@gmail.com', password: '77777', role: 'user' }),
++        users.create({ email: 'tim.lee@gmail.com', password: '88888', role: 'user, damage' }),
++        users.create({ email: 'tod.lee@gmail.com', password: '99999', role: 'user' }),
++        users.create({ email: 'sam.lee@gmail.com', password: '00000', role: 'user' }),
++      ])
++    })
++    .then(results => {
++      userIds = results.map(user => user._id); // This way is not elegant but easy to understand.
++  
++      console.log('\nLoad teams.');
++      return Promise.all([
++        teams.create({ name: 'Doe family', type: 'family', memberIds: [userIds[0], userIds[1], userIds[2], userIds[3]]}),
++        teams.create({ name: 'Smith family', type: 'family', memberIds: [userIds[4], userIds[5], userIds[6]]}),
++        teams.create({ name: 'Lee family', type: 'family', memberIds: [userIds[7], userIds[8], userIds[9]]}),
++        teams.create({ name: 'Fires of Heaven', type: 'dungeon', memberIds: [userIds[0], userIds[1], userIds[7]]}),
++      ]);
++    })
++    .then(() => {
++      console.log('\nDatabases loaded.');
++    })
++}
+diff -bdur --new-file 02/app/src/services/index.js 02/service/src/services/index.js
+--- 02/app/src/services/index.js	2016-12-23 17:38:02.716000000 -0500
++++ 02/service/src/services/index.js	2016-12-24 10:50:25.710000000 -0500
+@@ -1,4 +1,5 @@
+ 'use strict';
++const teams = require('./teams');
+ const authentication = require('./authentication');
+ const user = require('./user');
+ 
+@@ -8,4 +9,5 @@
+   
+   app.configure(authentication);
+   app.configure(user);
++  app.configure(teams);
+ };
+diff -bdur --new-file 02/app/src/services/teams/hooks/index.js 02/service/src/services/teams/hooks/index.js
+--- 02/app/src/services/teams/hooks/index.js	1969-12-31 19:00:00.000000000 -0500
++++ 02/service/src/services/teams/hooks/index.js	2016-12-25 10:38:49.022092504 -0500
+@@ -0,0 +1,46 @@
++'use strict';
++
++const globalHooks = require('../../../hooks');
++const hooks = require('feathers-hooks');
++const auth = require('feathers-authentication').hooks;
++const { populate, serialize } = require('feathers-hooks-common'); // added
++
++const populateSchema = { // added
++  include: [{
++    service: 'users',
++    nameAs: 'members',
++    parentField: 'memberIds',
++    childField: '_id'
++  }]
++};
++
++const serializeSchema = { // added
++  exclude: ['_id', '_include'],
++  members: {
++    only: ['email', 'role']
++  }
++};
++
++exports.before = {
++  all: [
++    auth.verifyToken(),
++    auth.populateUser(),
++    auth.restrictToAuthenticated()
++  ],
++  find: [],
++  get: [],
++  create: [],
++  update: [],
++  patch: [],
++  remove: []
++};
++
++exports.after = {
++  all: [],
++  find: [ populate({ schema: populateSchema }), serialize(serializeSchema) ], // changed
++  get: [ populate({ schema: populateSchema }), serialize(serializeSchema) ], // changed
++  create: [],
++  update: [],
++  patch: [],
++  remove: []
++};
+diff -bdur --new-file 02/app/src/services/teams/index.js 02/service/src/services/teams/index.js
+--- 02/app/src/services/teams/index.js	1969-12-31 19:00:00.000000000 -0500
++++ 02/service/src/services/teams/index.js	2016-12-28 14:28:28.319189525 -0500
+@@ -0,0 +1,35 @@
++'use strict';
++
++const path = require('path');
++const NeDB = require('nedb');
++const service = require('feathers-nedb');
++const hooks = require('./hooks');
++
++module.exports = function(){
++  const app = this;
++
++  const db = new NeDB({
++    filename: path.join(app.get('nedb'), 'teams.db'),
++    autoload: true
++  });
++
++  let options = {
++    Model: db,
++    paginate: {
++      default: 5,
++      max: 25
++    }
++  };
++
++  // Initialize our service with any options it requires
++  app.use('/teams', service(options));
++
++  // Get our initialize service to that we can bind hooks
++  const teamsService = app.service('/teams');
++
++  // Set up our before hooks
++  teamsService.before(hooks.before);
++
++  // Set up our after hooks
++  teamsService.after(hooks.after);
++};
+diff -bdur --new-file 02/app/test/services/teams/index.test.js 02/service/test/services/teams/index.test.js
+--- 02/app/test/services/teams/index.test.js	1969-12-31 19:00:00.000000000 -0500
++++ 02/service/test/services/teams/index.test.js	2016-12-24 10:50:25.750000000 -0500
+@@ -0,0 +1,10 @@
++'use strict';
++
++const assert = require('assert');
++const app = require('../../../src/app');
++
++describe('teams service', function() {
++  it('registered the teams service', () => {
++    assert.ok(app.service('teams'));
++  });
++});

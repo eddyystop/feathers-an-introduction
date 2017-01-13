@@ -7,15 +7,16 @@ Let's add another service.
 
 ## Working example
 
-| Server code: [service/](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/service/)
-
-| Client code: [service/public/socketio.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/service/public/socketio.html)
+- Server code: [examples/step/02/service/](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/service/)
+- Client code: [service/public/socketio.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/service/public/socketio.html)
 and
-[service/public/feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/service/public/feathers-app.js)
-
-| Start the server: `node ./examples/step/02/service/src`
-
-| Point the browser at: `//localhost:3030/socketio.html`
+[feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/service/public/feathers-app.js)
+- Start the server: `node ./examples/step/02/service/src`
+- Point the browser at: `//localhost:3030/socketio.html`
+- Compare with the app on the last page
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-service-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-service-side.html)
 
 ## Generating a service
 
@@ -36,7 +37,7 @@ Does your service require users to be authenticated? Y (enter)
 Once again we remove the dependencies loaded by the generator
 as they are already installed at the root of `feathers-an-introduction`.
 
-View the changes the service generator made:
+- See the changes the service generator made:
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app1-line.html)
 |
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app1-side.html)
@@ -49,16 +50,14 @@ Its structured similarly to users.
 
 ## Loading the tables
 
-We added function `loadDatabases` to `service/src/app.js`.
+We added function loadDatabases to `service/src/app.js`.
 
-| View complete file
-[service/src/app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/service/src/app.js)
-View changes from file app/src/app.js:
+- See what changed:
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-service-src-app-line.html)
 |
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-service-src-app-side.html)
 
-It loads data into the users and teams tables.
+loadDatabases loads data into the users and teams tables.
 The team items contains the `user._id` of the team members.
 ```javascript
 {
