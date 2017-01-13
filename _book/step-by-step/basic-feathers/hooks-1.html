@@ -633,10 +633,10 @@ We&apos;ll be introducing specific hooks as we need them.</p>
 <li>Client code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/rest.html" target="_blank">common/public/rest.html</a>
 and
 <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js" target="_blank">feathers-app.js</a></li>
-<li>Start the server: <code>node ./examples/step/01/hooks/1</code></li>
+<li>Start the server: <code>node ./examples/step/01/hooks/2</code></li>
 <li>Point the browser at: <code>//localhost:3030/rest.html</code></li>
 <li>Compare with last page&apos;s server
-<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/websocket/1.js" target="_blank">examples/step/01/websocket/1.js</a>:
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/hooks/1.js" target="_blank">examples/step/01/hooks/1.js</a>:
 <a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-hooks-1-line.html" target="_blank">Unified</a>
 |
 <a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-hooks-1-side.html" target="_blank">Split</a></li>
@@ -737,7 +737,7 @@ They act on all the results returned by the operation.</p>
 <ul>
 <li><p><code>hook =&gt; hook.method === &apos;find&apos;</code> returns true if the database operation was a <code>find</code>.
 All hooks are passed a <a href="https://docs.feathersjs.com/hooks/usage.html#after-hooks" target="_blank">hook</a>
-which contains information about the operation.</p>
+object which contains information about the operation.</p>
 </li>
 <li><p><code>remove(&apos;password&apos;)</code>
 removes the <code>password</code> property from the results.</p>
@@ -777,10 +777,6 @@ created John Doe item
  Object {email: &quot;john.doe@gmail.com&quot;, role: &quot;user&quot;, createdAt: &quot;2016-12-28T16:19:01.665Z&quot;, updatedAt: &quot;2016-12-28T16:19:01.665Z&quot;, _id: &quot;YDGhVttoOtejjq3B&quot;}
 created Judy Doe item
  Object {email: &quot;judy.doe@gmail.com&quot;, role: &quot;user&quot;, createdAt: &quot;2016-12-28T16:19:02.354Z&quot;, updatedAt: &quot;2016-12-28T16:19:02.354Z&quot;, _id: &quot;XjAAImIfmTreqMN0&quot;}
-created Jack Doe item
- Object {email: &quot;jack.doe@gmail.com&quot;, role: &quot;user&quot;, createdAt: &quot;2016-12-28T16:19:02.421Z&quot;, updatedAt: &quot;2016-12-28T16:19:02.422Z&quot;, _id: &quot;s3jH9ysRP0fhlkDo&quot;}
-deleted Jack Doe item
- Object {email: &quot;jack.doe@gmail.com&quot;, role: &quot;user&quot;, createdAt: &quot;2016-12-28T16:19:02.421Z&quot;, updatedAt: &quot;2016-12-28T16:19:02.422Z&quot;, _id: &quot;s3jH9ysRP0fhlkDo&quot;}
 find all items
  [Object, Object, Object]
    0: Object
@@ -805,7 +801,6 @@ find all items
      role: &quot;user&quot;
      updatedAt: &quot;2016-12-28T16:19:01.665Z&quot;
    length: 3
-3 &quot;items returned.&quot;
 </code></pre>
 <ul>
 <li><code>createdAt</code> and <code>updatedAt</code> have been added to the items.</li>
@@ -858,7 +853,7 @@ because of the special coding we included in the example.</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Hooks, part 1","level":"1.2.2.6","depth":3,"next":{"title":"Hooks, part 2","level":"1.2.2.7","depth":3,"path":"step-by-step/basic-feathers/hooks-2.md","ref":"step-by-step/basic-feathers/hooks-2.md","articles":[]},"previous":{"title":"The \"ah-ha\" moment","level":"1.2.2.5","depth":3,"path":"step-by-step/basic-feathers/ah-ha.md","ref":"step-by-step/basic-feathers/ah-ha.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/hooks-1.md","mtime":"2017-01-13T18:44:27.412Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-13T18:44:58.681Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Hooks, part 1","level":"1.2.2.6","depth":3,"next":{"title":"Hooks, part 2","level":"1.2.2.7","depth":3,"path":"step-by-step/basic-feathers/hooks-2.md","ref":"step-by-step/basic-feathers/hooks-2.md","articles":[]},"previous":{"title":"The \"ah-ha\" moment","level":"1.2.2.5","depth":3,"path":"step-by-step/basic-feathers/ah-ha.md","ref":"step-by-step/basic-feathers/ah-ha.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/basic-feathers/hooks-1.md","mtime":"2017-01-13T18:52:45.645Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-13T19:00:04.173Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -12,10 +12,10 @@ We'll be introducing specific hooks as we need them.
 - Client code: [common/public/rest.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/rest.html)
 and
 [feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js)
-- Start the server: `node ./examples/step/01/hooks/1`
+- Start the server: `node ./examples/step/01/hooks/2`
 - Point the browser at: `//localhost:3030/rest.html`
 - Compare with last page's server
-[examples/step/01/websocket/1.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/websocket/1.js):
+[examples/step/01/hooks/1.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/hooks/1.js):
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-hooks-1-line.html)
 |
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-hooks-1-side.html)
@@ -138,7 +138,7 @@ They act on all the results returned by the operation.
 
 - `hook => hook.method === 'find'` returns true if the database operation was a `find`.
 All hooks are passed a [hook](https://docs.feathersjs.com/hooks/usage.html#after-hooks)
-which contains information about the operation.
+object which contains information about the operation.
 
 - `remove('password')`
 removes the `password` property from the results.
@@ -186,10 +186,6 @@ created John Doe item
  Object {email: "john.doe@gmail.com", role: "user", createdAt: "2016-12-28T16:19:01.665Z", updatedAt: "2016-12-28T16:19:01.665Z", _id: "YDGhVttoOtejjq3B"}
 created Judy Doe item
  Object {email: "judy.doe@gmail.com", role: "user", createdAt: "2016-12-28T16:19:02.354Z", updatedAt: "2016-12-28T16:19:02.354Z", _id: "XjAAImIfmTreqMN0"}
-created Jack Doe item
- Object {email: "jack.doe@gmail.com", role: "user", createdAt: "2016-12-28T16:19:02.421Z", updatedAt: "2016-12-28T16:19:02.422Z", _id: "s3jH9ysRP0fhlkDo"}
-deleted Jack Doe item
- Object {email: "jack.doe@gmail.com", role: "user", createdAt: "2016-12-28T16:19:02.421Z", updatedAt: "2016-12-28T16:19:02.422Z", _id: "s3jH9ysRP0fhlkDo"}
 find all items
  [Object, Object, Object]
    0: Object
@@ -214,7 +210,6 @@ find all items
      role: "user"
      updatedAt: "2016-12-28T16:19:01.665Z"
    length: 3
-3 "items returned."
 ```
 
 - `createdAt` and `updatedAt` have been added to the items.
