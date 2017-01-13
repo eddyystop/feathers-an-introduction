@@ -103,7 +103,7 @@ Validate the data we are to add using [ajv](https://github.com/epoberezkin/ajv).
 The service's [JSON schema](https://github.com/json-schema-org/json-schema-spec)
 is provided by `function userSchema`.
 
-> **JSON schema.** There are
+There are
 [good tutorials](https://code.tutsplus.com/tutorials/validating-data-with-json-schema-part-1--cms-25343)
 on validating data with JSON schema.
 
