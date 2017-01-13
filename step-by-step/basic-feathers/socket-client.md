@@ -9,7 +9,7 @@ We will use the popular Socket.io in this guide.
 
 ## Working example
 
-- Server code: [ examples/step/01/websocket/1.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/websocket/1.js)
+- Server code: [examples/step/01/websocket/1.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/websocket/1.js)
 - Client code: [common/public/socketio.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/socketio.html)
 and
 [feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js)

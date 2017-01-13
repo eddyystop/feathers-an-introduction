@@ -14,6 +14,11 @@ and
 [feathers-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/common/public/feathers-app.js)
 - Start the server: `node ./examples/step/01/hooks/1`
 - Point the browser at: `//localhost:3030/rest.html`
+- Compare with last page's server
+[examples/step/01/websocket/1.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/01/websocket/1.js):
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-hooks-1-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-hooks-1-side.html)
 
 ## Writing hooks
 
@@ -60,7 +65,7 @@ function userSchema() {
   };
 }
 ```
-- See what changed
+- See what changed:
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-hooks-1-line.html)
 |
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/01-hooks-1-side.html)
