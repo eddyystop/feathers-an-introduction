@@ -1,5 +1,5 @@
 --- 01/db-connector/1.js	2017-01-13 10:32:26.281818262 -0500
-+++ 01/rest/1.js	2017-01-13 09:46:27.384208386 -0500
++++ 01/rest/1.js	2017-01-13 12:18:58.699196007 -0500
 @@ -1,40 +1,22 @@
  
 -// Example - Create service on server with NeDB database
