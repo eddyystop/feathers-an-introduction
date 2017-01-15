@@ -6,15 +6,16 @@ and to rerun the tests of the last section using the client.
 
 ## Working example
 
-| Server code: [chat/server/client/](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/)
-
-| Client code: [chat/server/client/public/socketio.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/public/socketio.html)
+- Server code: [examples/chat/server/client/](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/)
+- Client code: [public/socketio.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/public/socketio.html)
 and
-[chat/server/client/public/socketio-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/public/socketio-app.js)
-
-| Start the server: `node ./examples/chat/server/client/src`
-
-| Point the browser at: `//localhost:3030/socketio.html`
+[socketio-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/public/socketio-app.js)
+- Start the server: `node ./examples/chat/server/client/src`
+- Point the browser at: `//localhost:3030/socketio.html`
+- Compare with the app on the last page
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/server-client-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/server-client-side.html)
 
 ## Client HTML
 

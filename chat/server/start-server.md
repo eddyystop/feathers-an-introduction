@@ -29,16 +29,17 @@ service with:
 
 ![generate message service](./assets/generate-service-message.jpg)
 
-We continued by generating a hook module we will later use to handle the
-[user avatar](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/start/src/services/user/hooks/gravatar.js)
-with:
+We continued by generating a
+[hook](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/start/src/services/user/hooks/gravatar.js)
+we will later use to handle the user avatar.
+
 ![generate gravatar hook](./assets/generate-hook-gravatar.jpg)
 
 ## Clearing the database
 
 Let's add code to
 [examples/chat/server/start/src/app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/start/src/app.js)
-clear the database each time this basic server is run.
+to clear the database each time this basic server is run.
 This'll help prevent confusion should the server be started multiple times.
 
 ```javascript

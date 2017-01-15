@@ -627,12 +627,18 @@
 Our goal is to get authentication working
 and to rerun the tests of the last section using the client.</p>
 <h2 id="working-example">Working example</h2>
-<p>| Server code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/" target="_blank">chat/server/client/</a></p>
-<p>| Client code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/public/socketio.html" target="_blank">chat/server/client/public/socketio.html</a>
+<ul>
+<li>Server code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/" target="_blank">examples/chat/server/client/</a></li>
+<li>Client code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/public/socketio.html" target="_blank">public/socketio.html</a>
 and
-<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/public/socketio-app.js" target="_blank">chat/server/client/public/socketio-app.js</a></p>
-<p>| Start the server: <code>node ./examples/chat/server/client/src</code></p>
-<p>| Point the browser at: <code>//localhost:3030/socketio.html</code></p>
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/public/socketio-app.js" target="_blank">socketio-app.js</a></li>
+<li>Start the server: <code>node ./examples/chat/server/client/src</code></li>
+<li>Point the browser at: <code>//localhost:3030/socketio.html</code></li>
+<li>Compare with the app on the last page
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/server-client-line.html" target="_blank">Unified</a>
+|
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/server-client-side.html" target="_blank">Split</a></li>
+</ul>
 <h2 id="client-html">Client HTML</h2>
 <p>The <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/public/socketio.html" target="_blank">client HTML</a>
 is similar to that used in
@@ -921,7 +927,7 @@ message created
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Starting the front-end","level":"1.3.1.2","depth":3,"next":{"title":"Finishing the server","level":"1.3.1.3","depth":3,"path":"chat/server/finish-server.md","ref":"chat/server/finish-server.md","articles":[]},"previous":{"title":"Starting the server","level":"1.3.1.1","depth":3,"path":"chat/server/start-server.md","ref":"chat/server/start-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"chat/server/start-front-end.md","mtime":"2017-01-11T15:44:51.605Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-15T19:41:15.816Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Starting the front-end","level":"1.3.1.2","depth":3,"next":{"title":"Finishing the server","level":"1.3.1.3","depth":3,"path":"chat/server/finish-server.md","ref":"chat/server/finish-server.md","articles":[]},"previous":{"title":"Starting the server","level":"1.3.1.1","depth":3,"path":"chat/server/start-server.md","ref":"chat/server/start-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"chat/server/start-front-end.md","mtime":"2017-01-15T19:53:37.366Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-15T19:54:00.268Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
