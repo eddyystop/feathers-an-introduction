@@ -38,7 +38,7 @@ function buildDiffDir {
 # diff files
 buildDiffDir server/start/ server/client/ _diff/server-client
 buildDiffDir server/client/ server/finish/ _diff/server-finish
-buildDiffDir server/finish/ client/ _diff/client-jquery .*/public/.*
+buildDiffDir server/finish/ client/ _diff/client-jquery .*public.*
 
 # restore original pwd
 cd ${startPwd}
