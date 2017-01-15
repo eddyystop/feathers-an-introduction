@@ -23,10 +23,10 @@ function buildDiffDir {
     echo $3
     #diff -bdur --new-file $1 $2 > $3.diff
 
-    if [ $4 == "" ] ; then
+    if [ -z "$4" ] ; then
         diff -bdur --new-file $1 $2 > $3.diff
     else
-        ediff -bdur -x $4 --new-file $1 $2 > $3.diff
+        diff -bdur -x $4 --new-file $1 $2 > $3.diff
     fi
 
 
