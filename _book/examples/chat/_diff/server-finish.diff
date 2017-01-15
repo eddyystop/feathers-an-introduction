@@ -1,28 +1,12 @@
-diff -bdur --new-file server/client/config/default.json server/finish/config/default.json
---- server/client/config/default.json	2017-01-01 14:24:18.298000000 -0500
-+++ server/finish/config/default.json	2017-01-01 10:47:06.818846111 -0500
-@@ -5,7 +5,7 @@
-   "public": "../public/",
-   "auth": {
-     "token": {
--      "secret": "S7zze1pglUkslStl/svi79vKZC+N4YTN4lm7ygziYm4whKaqL8pIRUiWzv+xLUWfGCneuFwc8wX6es4MyvDjtg=="
-+      "secret": "nK+lKctk9YXFR5BjeKwlrJ5jwLY92nckOYifvgaMQGfWGpfWu/4dhz1WxLirKobeDyx2vazy6hfDaJd7fxcPQg=="
-     },
-     "local": {}
-   }
 diff -bdur --new-file server/client/src/services/message/hooks/index.js server/finish/src/services/message/hooks/index.js
 --- server/client/src/services/message/hooks/index.js	2017-01-01 15:22:15.104069420 -0500
-+++ server/finish/src/services/message/hooks/index.js	2017-01-06 20:40:43.619801264 -0500
-@@ -1,8 +1,31 @@
- 'use strict';
- 
-+const restrictToSender = require('./restrict-to-sender');
-+
-+const process = require('./process');
-+
- const globalHooks = require('../../../hooks');
++++ server/finish/src/services/message/hooks/index.js	2017-01-15 15:14:05.848813634 -0500
+@@ -4,6 +4,28 @@
  const hooks = require('feathers-hooks');
  const auth = require('feathers-authentication').hooks;
+ 
++const restrictToSender = require('./restrict-to-sender');
++const process = require('./process');
 +const { setCreatedAt, populate, dePopulate, serialize } = require('feathers-hooks-common');
 +
 +const restrictToSenderOrServer = when(isProvider('external'), restrictToSender());
@@ -42,10 +26,11 @@ diff -bdur --new-file server/client/src/services/message/hooks/index.js server/f
 +    only: [ 'email', 'avatar' ]
 +  }
 +};
- 
++
  exports.before = {
    all: [
-@@ -12,17 +35,17 @@
+     auth.verifyToken(),
+@@ -12,17 +34,17 @@
    ],
    find: [],
    get: [],
@@ -118,26 +103,6 @@ diff -bdur --new-file server/client/src/services/message/hooks/restrict-to-sende
 +    });
 +  };
 +};
-diff -bdur --new-file server/client/src/services/user/hooks/index.js server/finish/src/services/user/hooks/index.js
---- server/client/src/services/user/hooks/index.js	2017-01-15 14:58:51.565627050 -0500
-+++ server/finish/src/services/user/hooks/index.js	2017-01-01 13:32:57.166846111 -0500
-@@ -5,7 +5,6 @@
- const globalHooks = require('../../../hooks');
- const hooks = require('feathers-hooks');
- const auth = require('feathers-authentication').hooks;
--const { remove } = require('feathers-hooks-common');
- 
- exports.before = {
-   all: [],
-@@ -42,7 +41,7 @@
- };
- 
- exports.after = {
--  all: [ remove('password') ],
-+  all: [hooks.remove('password')],
-   find: [],
-   get: [],
-   create: [],
 diff -bdur --new-file server/client/test/services/message/hooks/process.test.js server/finish/test/services/message/hooks/process.test.js
 --- server/client/test/services/message/hooks/process.test.js	1969-12-31 19:00:00.000000000 -0500
 +++ server/finish/test/services/message/hooks/process.test.js	2017-01-01 13:38:18.086846111 -0500
