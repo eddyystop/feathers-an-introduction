@@ -654,10 +654,10 @@ as they are already installed at the root of <code>feathers-an-introduction</cod
 <a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-app1-side.html" target="_blank">Split</a></li>
 </ul>
 <h2 id="app-structure">App structure</h2>
-<p>The teams service has been added to the app at <code>src/services/teams/</code>.
+<p>The teams service has been added to the app at src/services/teams/.
 Its structured similarly to users.</p>
 <h2 id="loading-the-tables">Loading the tables</h2>
-<p>We added function loadDatabases to <code>service/src/app.js</code>.</p>
+<p>We added function loadDatabases to service/src/app.js.</p>
 <ul>
 <li>See what changed:
 <a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-service-src-app-line.html" target="_blank">Unified</a>
@@ -665,7 +665,7 @@ Its structured similarly to users.</p>
 <a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-service-src-app-side.html" target="_blank">Split</a></li>
 </ul>
 <p>loadDatabases loads data into the users and teams tables.
-The team items contains the <code>user._id</code> of the team members.</p>
+The team item contains the <code>user._id</code> of its team members in <code>team.memberIds</code>.</p>
 <pre><code class="lang-javascript">{
   name: <span class="hljs-string">&apos;Doe family&apos;</span>,
   type: <span class="hljs-string">&apos;family&apos;</span>,
@@ -675,7 +675,7 @@ The team items contains the <code>user._id</code> of the team members.</p>
 </span></code></pre>
 <h2 id="populating-items">Populating items</h2>
 <p>Let&apos;s add some hooks to for teams in
-<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/service/src/services/teams/hooks/index.js" target="_blank">service/src/services/teams/hooks/index.js</a></p>
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/service/src/services/teams/hooks/index.js" target="_blank">src/services/teams/hooks/index.js</a></p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> { populate, serialize } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;feathers-hooks-common&apos;</span>);
 
 <span class="hljs-keyword">const</span> populateSchema = {
@@ -768,7 +768,7 @@ and only keep 2 from the newly joined members property.</p>
 <p><strong>Depopulate.</strong> Should you modify your base items and want to <code>patch</code> the new values back to the table,
 the dePopulate() hook will remove all joined and calculated properties for you.</p>
 </blockquote>
-<h2 id="recap-hooks-added">Recap hooks added</h2>
+<h4 id="-recap">- Recap</h4>
 <p>Let&apos;s recap the hooks we added to the generated service:
 <a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-service-teams-hooks-line.html" target="_blank">Unified</a>
 |
@@ -848,7 +848,7 @@ Lee family
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Adding a service","level":"1.2.3.2","depth":3,"next":{"title":"What's next?","level":"1.2.4","depth":2,"path":"step-by-step/what-next.md","ref":"step-by-step/what-next.md","articles":[]},"previous":{"title":"Generating an app","level":"1.2.3.1","depth":3,"path":"step-by-step/generators/app.md","ref":"step-by-step/generators/app.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/generators/service.md","mtime":"2017-01-13T20:22:20.387Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-13T20:25:31.289Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Adding a service","level":"1.2.3.2","depth":3,"next":{"title":"What's next?","level":"1.2.4","depth":2,"path":"step-by-step/what-next.md","ref":"step-by-step/what-next.md","articles":[]},"previous":{"title":"Generating an app","level":"1.2.3.1","depth":3,"path":"step-by-step/generators/app.md","ref":"step-by-step/generators/app.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"step-by-step/generators/service.md","mtime":"2017-01-13T20:33:46.455Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-15T19:12:28.089Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

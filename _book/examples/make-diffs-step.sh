@@ -27,6 +27,9 @@ function buildDiffDir {
 }
 
 # diff files
+buildDiffDir 02/app/ 02/app1/ _diff/02-app1
+buildDiffDir 02/app/ 02/service/ _diff/02-service
+
 buildDiff 01/db-connector/1.js 01/rest/1.js _diff/01-rest-1
 buildDiff 01/rest/1.js 01/rest/2.js _diff/01-rest-2
 buildDiff 01/db-connector/1.js 01/common/public/feathers-app.js _diff/01-rest-2-client
@@ -36,8 +39,6 @@ buildDiff 01/websocket/1.js 01/hooks/1.js _diff/01-hooks-1
 buildDiff 01/hooks/1.js 01/hooks/2.js _diff/01-hooks-2
 buildDiff 01/common/public/feathers-app-del.js 02/app/public/feathers-app.js _diff/02-app-feathers-app
 buildDiff 02/app/src/app.js 02/service/src/app.js _diff/02-service-src-app
-buildDiffDir 02/app/ 02/app1/ _diff/02-app1
-buildDiffDir 02/app/ 02/service/ _diff/02-service
 buildDiff 02/app1/src/services/teams/hooks/index.js 02/service/src/services/teams/hooks/index.js _diff/02-service-teams-hooks
 
 # restore original pwd

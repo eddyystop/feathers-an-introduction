@@ -39,12 +39,12 @@ as they are already installed at the root of `feathers-an-introduction`.
 
 ## App structure
 
-The teams service has been added to the app at `src/services/teams/`.
+The teams service has been added to the app at src/services/teams/.
 Its structured similarly to users.
 
 ## Loading the tables
 
-We added function loadDatabases to `service/src/app.js`.
+We added function loadDatabases to service/src/app.js.
 
 - See what changed:
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-service-src-app-line.html)
@@ -52,7 +52,7 @@ We added function loadDatabases to `service/src/app.js`.
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-service-src-app-side.html)
 
 loadDatabases loads data into the users and teams tables.
-The team items contains the `user._id` of the team members.
+The team item contains the `user._id` of its team members in `team.memberIds`.
 ```javascript
 {
   name: 'Doe family',
@@ -64,7 +64,7 @@ The team items contains the `user._id` of the team members.
 ## Populating items
 
 Let's add some hooks to for teams in
-[service/src/services/teams/hooks/index.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/service/src/services/teams/hooks/index.js)
+[src/services/teams/hooks/index.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/02/service/src/services/teams/hooks/index.js)
 
 ```javascript
 const { populate, serialize } = require('feathers-hooks-common');
@@ -179,7 +179,7 @@ and only keep 2 from the newly joined members property.
 > **Depopulate.** Should you modify your base items and want to `patch` the new values back to the table,
 the dePopulate() hook will remove all joined and calculated properties for you.
 
-## Recap hooks added
+#### - Recap
 
 Let's recap the hooks we added to the generated service:
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/step/_diff/02-service-teams-hooks-line.html)
