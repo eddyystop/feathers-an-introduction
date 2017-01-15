@@ -5,15 +5,12 @@ Here's an SPA written using jQuery.
 
 ## Working example
 
-| Source code: [examples/chat/client](https://github.com/eddyystop/feathers-an-introduction/tree/master/examples/chat/client)
-
-| Client code: [examples/chat/client/public/client.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/client/public/client.html)
+- Source code: [examples/chat/client](https://github.com/eddyystop/feathers-an-introduction/tree/master/examples/chat/client)
+- Client code: [public/client.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/client/public/client.html)
 and
-[examples/chat/client/public/client-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/client/public/client-app.js)
-
-| Start the server: `node ./examples/chat/client/src`
-
-| Point the browser at: `//localhost:3030/client.html`
+[client-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/client/public/client-app.js)
+- Start the server: `node ./examples/chat/client/src`
+- Point the browser at: `//localhost:3030/client.html`
 
 ## The client
 
