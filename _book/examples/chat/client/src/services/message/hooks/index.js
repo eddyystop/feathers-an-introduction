@@ -3,9 +3,11 @@
 const globalHooks = require('../../../hooks');
 const hooks = require('feathers-hooks');
 const auth = require('feathers-authentication').hooks;
+
 const restrictToSender = require('./restrict-to-sender');
 const process = require('./process');
 const { setCreatedAt, populate, dePopulate, serialize, when, isProvider } = require('feathers-hooks-common');
+
 const restrictToSenderOrServer = when(isProvider('external'), restrictToSender());
 
 const populateSchema = {
