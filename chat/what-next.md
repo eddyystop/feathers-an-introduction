@@ -10,7 +10,7 @@ We've seen how Feathers can be integrated with several frontend frameworks.
 You can now, basically, start thinking about developing your own apps.
 
 But first, you might want to read up on any
-[adapters](https://en.wikipedia.org/wiki/Adapter_(computing))
+[adapters](https://en.wikipedia.org/wiki/Adapter_(computing)
 which may be relevant to the
 [tech stack](http://www.pcmag.com/encyclopedia/term/61186/technology-stack)
 you plan to use.
