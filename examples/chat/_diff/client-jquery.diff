@@ -455,8 +455,8 @@ diff -bdur -x '.*/public/.*' --new-file server/finish/src/app.js client/src/app.
  module.exports = app;
 diff -bdur -x '.*/public/.*' --new-file server/finish/src/services/message/hooks/index.js client/src/services/message/hooks/index.js
 --- server/finish/src/services/message/hooks/index.js	2017-01-15 15:14:05.848813634 -0500
-+++ client/src/services/message/hooks/index.js	2017-01-15 16:11:02.113668068 -0500
-@@ -3,10 +3,9 @@
++++ client/src/services/message/hooks/index.js	2017-01-15 16:15:11.044011561 -0500
+@@ -3,11 +3,9 @@
  const globalHooks = require('../../../hooks');
  const hooks = require('feathers-hooks');
  const auth = require('feathers-authentication').hooks;
@@ -464,7 +464,8 @@ diff -bdur -x '.*/public/.*' --new-file server/finish/src/services/message/hooks
  const restrictToSender = require('./restrict-to-sender');
  const process = require('./process');
 -const { setCreatedAt, populate, dePopulate, serialize } = require('feathers-hooks-common');
+-
 +const { setCreatedAt, populate, dePopulate, serialize, when, isProvider } = require('feathers-hooks-common');
- 
  const restrictToSenderOrServer = when(isProvider('external'), restrictToSender());
  
+ const populateSchema = {

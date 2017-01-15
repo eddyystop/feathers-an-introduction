@@ -26,6 +26,7 @@ function buildDiffDir {
     if [ -z "$4" ] ; then
         diff -bdur --new-file $1 $2 > $3.diff
     else
+    echo ignore $4
         diff -bdur -x $4 --new-file $1 $2 > $3.diff
     fi
 
@@ -37,7 +38,7 @@ function buildDiffDir {
 # diff files
 buildDiffDir server/start/ server/client/ _diff/server-client
 buildDiffDir server/client/ server/finish/ _diff/server-finish
-buildDiffDir server/finish/ client/ _diff/client-jquery .*/public/.*
+buildDiffDir server/finish/ client/ _diff/client-jquery ".*/public/.*"
 
 # restore original pwd
 cd ${startPwd}
