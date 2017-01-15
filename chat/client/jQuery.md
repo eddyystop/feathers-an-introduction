@@ -11,6 +11,10 @@ and
 [client-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/client/public/client-app.js)
 - Start the server: `node ./examples/chat/client/src`
 - Point the browser at: `//localhost:3030/client.html`
+- Compare servers with the app on the last page
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-jquery-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-jquery-side.html)
 
 ## The client
 

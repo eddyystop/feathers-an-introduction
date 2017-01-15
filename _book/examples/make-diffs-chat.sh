@@ -21,15 +21,12 @@ function buildDiff {
 # diff a directory
 function buildDiffDir {
     echo $3
-    #diff -bdur --new-file $1 $2 > $3.diff
 
     if [ -z "$4" ] ; then
         diff -bdur --new-file $1 $2 > $3.diff
     else
-    echo ignore $4
         diff -bdur --exclude=$4 --new-file $1 $2 > $3.diff
     fi
-
 
     diff2html -i file -s line --su hidden -F $3-line.html -- $3.diff
     diff2html -i file -s side --su hidden -F $3-side.html -- $3.diff
