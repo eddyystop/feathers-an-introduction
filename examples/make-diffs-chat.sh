@@ -27,7 +27,7 @@ function buildDiffDir {
         diff -bdur --new-file $1 $2 > $3.diff
     else
     echo ignore $4
-        diff -bdur --exclude='$4' --new-file $1 $2 > $3.diff
+        diff -bdur --exclude='${$4}' --new-file $1 $2 > $3.diff
     fi
 
 
