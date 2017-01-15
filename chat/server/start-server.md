@@ -5,9 +5,8 @@ Let's handle the user avatar also.
 
 ## Working example
 
-| Source code: [chat/server/start](https://github.com/eddyystop/feathers-an-introduction/tree/master/examples/chat/server/start)
-
-| Run it: `node ./examples/chat/server/start/src`
+- Source code: [examples/chat/server/start](https://github.com/eddyystop/feathers-an-introduction/tree/master/examples/chat/server/start)
+- Run it: `node ./examples/chat/server/start/src`
 
 ## Basic scaffolding
 
@@ -30,7 +29,7 @@ service with:
 
 ![generate message service](./assets/generate-service-message.jpg)
 
-We continued by generating a hook for handling the
+We continued by generating a hook module we will later use to handle the
 [user avatar](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/start/src/services/user/hooks/gravatar.js)
 with:
 ![generate gravatar hook](./assets/generate-hook-gravatar.jpg)
@@ -38,7 +37,7 @@ with:
 ## Clearing the database
 
 Let's add code to
-[chat/server/start/src/app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/start/src/app.js)
+[examples/chat/server/start/src/app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/start/src/app.js)
 clear the database each time this basic server is run.
 This'll help prevent confusion should the server be started multiple times.
 
@@ -67,7 +66,7 @@ users table cleared.
 messages table cleared.
 ```
 
-Let's exercise the server with HTTP REST using these
+Let's exercise the server with these
 [curl](http://www.slashroot.in/curl-command-tutorial-linux-example-usage)
 commands:
 [import](../../examples/chat/server/start/curl-requests.sh)
@@ -87,7 +86,9 @@ POST message Anyone there?
 {"text":"Anyone there?","_id":"tcjSjPZQx8JoUCrz"}
 ```
 
-The password is not displayed due to the users' after remove hook
+The password is not displayed due as the
+[user hook module](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/start/src/services/user/hooks/index.js)
+contains remove as an after hook.
 
 ## Is anything wrong, unclear, missing?
 [Leave a comment.](https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Chat-Server-Start-server&body=Comment:Chat-Server-Start-server)

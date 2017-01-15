@@ -13,13 +13,13 @@ At a minimum the chat server needs to:
     - Allow users to only modify and delete their own messages.
 - real-time
     - Issue user events to authenticated users when a user is created or changed.
-    The password must be removed.
+    The password must not be sent.
     - Issue message events to authenticated users when a message is created or changed.
     - The message event data needs to contain both the message text
     and the user item for the user creating the message.
 
 > **Avatar.** We'll display an
-[avatar](https://en.wikipedia.org/wiki/Avatar_(computing))
+[avatar](http://techterms.com/definition/avatar)
 for each user so their messages may be easier to identify.
 
 We assume most readers are interested in developing modern
