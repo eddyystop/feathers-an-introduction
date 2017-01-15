@@ -5,6 +5,7 @@ const gravatar = require('./gravatar');
 const globalHooks = require('../../../hooks');
 const hooks = require('feathers-hooks');
 const auth = require('feathers-authentication').hooks;
+const { remove } = require('feathers-hooks-common');
 
 exports.before = {
   all: [],
@@ -41,7 +42,7 @@ exports.before = {
 };
 
 exports.after = {
-  all: [hooks.remove('password')],
+  all: [ remove('password') ],
   find: [],
   get: [],
   create: [],
