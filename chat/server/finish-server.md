@@ -85,7 +85,7 @@ Then copy the following into this
 We could have added authentication to messages back when we
 [created the service](./start-server.md#basic-scaffolding).
 However this now gives us a chance to manually add the authentication hooks for all methods into
-[src/services/message/hooks/index.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/finish/src/services/message/hooks/index.js).
+[message/hooks/index.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/finish/src/services/message/hooks/index.js).
 
 ```javascript
 exports.before = {
@@ -119,7 +119,6 @@ We want to add the creating user's item to the message item
 before the message is sent to any clients listening for messages.
 
 ```javascript
-// src/services/message/hooks/index
 const populateSchema = {
   include: [{
     service: 'users',
@@ -157,7 +156,6 @@ We won't want to include the joined user item
 should the client decide to change the message and patch the item in the database.
 
 ```javascript
-// src/services/message/hooks/index
 exports.before = {
   update: [ dePopulate(), restrictToSender() ],
   patch: [ dePopulate(), restrictToSender() ],
@@ -176,17 +174,27 @@ because of security considerations.
 However you usually won't have these security issues if the service call is
 being made on the server.
 
-> **Conditional hooks.** Feathers
+> **Conditional hooks.**
+Feathers permits you to
+[run a hook conditionally](https://docs.feathersjs.com/v/auk/hooks/common/conditional.html)
+, perhaps depending on the provider,
+the user authorization, if the user created the record, etc.
+These features add decision making capabilities to your hooks.
 
 > **Different hooks for different folks.**
 You should develop the habit of reviewing which hooks you want to run
 for the client, then which you want to run for the server.
 This habit will save you having to track down unexpected behaviors.
 
+> **Workflow.**
+Conditional hooks may be used to create workflows or processes.
+You may, for example, have a metric service for sending time series data to a metrics cluster
+and want to call it from different places to send different key/value pairs.
+
 We want a client to be able to only remove its own user's messages,
 but we must allow the server to remove them all
 as we erase the databases in
-[`src/app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/finish/src/app.js)
+[src/app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/finish/src/app.js)
 before we start the server.
  
 ```javascript
@@ -205,15 +213,6 @@ It throws if the user did not create the message.
 - `when` runs `restrictToSender()` if the service call was not made by the server.
 - `restrictToSenderOrServer` - As you can see, hooks are just functions
 and they can be manipulated with code.
-
-## Recap
-
-Let's recap all the changes we have made.
-
-View changes from examples/chat/server/client:
-[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/server-finish-line.html)
-|
-[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/server-finish-side.html)
 
 ## The results
 
