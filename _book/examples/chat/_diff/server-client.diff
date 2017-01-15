@@ -230,20 +230,6 @@ diff -bdur --new-file server/start/src/services/message/index.js server/client/s
 +  // Send message events only to authenticated users.
 +  messageService.filter((data, connection) => connection.user ? data : false);
  };
-diff -bdur --new-file server/start/src/services/user/hooks/index.js server/client/src/services/user/hooks/index.js
---- server/start/src/services/user/hooks/index.js	2017-01-01 15:25:29.978169726 -0500
-+++ server/client/src/services/user/hooks/index.js	2017-01-02 18:10:26.423704869 -0500
-@@ -20,7 +20,9 @@
-     auth.restrictToAuthenticated(),
-     auth.restrictToOwner({ ownerField: '_id' })
-   ],
--  create: [auth.hashPassword(), gravatar()],
-+  create: [() => {
-+    console.log('create hook'); },
-+    auth.hashPassword(), gravatar()],
-   update: [
-     auth.verifyToken(),
-     auth.populateUser(),
 diff -bdur --new-file server/start/src/services/user/index.js server/client/src/services/user/index.js
 --- server/start/src/services/user/index.js	2017-01-01 14:24:18.338846111 -0500
 +++ server/client/src/services/user/index.js	2017-01-03 08:20:05.400088340 -0500

@@ -5,15 +5,16 @@ Let's complete that server now.
 
 ## Working example
 
-| Source code: [chat/server/finish](https://github.com/eddyystop/feathers-an-introduction/tree/master/examples/chat/server/finish)
-
-| Client code: [chat/server/finish/public/socketio.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/finish/public/socketio.html)
+- Source code: [chat/server/finish](https://github.com/eddyystop/feathers-an-introduction/tree/master/examples/chat/server/finish)
+- Client code: [chat/server/finish/public/socketio.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/finish/public/socketio.html)
 and
 [chat/server/finish/public/socketio-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/finish/public/socketio-app.js)
-
-| Start the server: `node ./examples/chat/server/finish/src`
-
-| Point the browser at: `//localhost:3030/socketio.html`
+- Start the server: `node ./examples/chat/server/finish/src`
+- Point the browser at: `//localhost:3030/socketio.html`
+- Compare with the app on the last page
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/server-finish-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/server-finish-side.html)
 
 ## Completing the server requirements
 

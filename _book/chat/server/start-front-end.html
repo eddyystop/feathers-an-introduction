@@ -709,7 +709,9 @@ So when the button <code>to-signin-user</code>, the router is called to display 
 </li>
 </ul>
 <h2 id="feathers-events-on-the-client">Feathers events on the client</h2>
-<p>The client responds to Feathers events:</p>
+<p>The
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/public/socketio-app.js" target="_blank">client</a>
+responds to Feathers events:</p>
 <pre><code class="lang-javascript">
 <span class="hljs-comment">// Feathers</span>
 <span class="hljs-keyword">let</span> userList = [];
@@ -747,14 +749,14 @@ Information is logged every time there is a change in the messages table.</p>
 <h2 id="feathers-events-on-the-server">Feathers events on the server</h2>
 <p>We don&apos;t want to send users or messages events to clients
 until they have authenticated their users.
-So we have to set up event filters on the
-<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/src/services/user/index.js" target="_blank">chat/server/client/src/services/user/index.js</a></p>
+So we set up event filters on
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/src/services/user/index.js" target="_blank">user/index.js</a></p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// Send user events only to authenticated users. The remove hook already removed the password.</span>
 userService.filter((data, connection) =&gt; connection.user ? data : <span class="hljs-literal">false</span>);
 <span class="hljs-string">`
 </span></code></pre>
 <p>and
-<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/src/services/message/index.js" target="_blank">chat/server/client/src/services/message/index.js</a></p>
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/src/services/message/index.js" target="_blank">message/index.js</a></p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// Send message events only to authenticated users.</span>
 messageService.filter((data, connection) =&gt; connection.user ? data : <span class="hljs-literal">false</span>);
 <span class="hljs-string">`
@@ -927,7 +929,7 @@ message created
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Starting the front-end","level":"1.3.1.2","depth":3,"next":{"title":"Finishing the server","level":"1.3.1.3","depth":3,"path":"chat/server/finish-server.md","ref":"chat/server/finish-server.md","articles":[]},"previous":{"title":"Starting the server","level":"1.3.1.1","depth":3,"path":"chat/server/start-server.md","ref":"chat/server/start-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"chat/server/start-front-end.md","mtime":"2017-01-15T19:53:37.366Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-15T19:54:00.268Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Starting the front-end","level":"1.3.1.2","depth":3,"next":{"title":"Finishing the server","level":"1.3.1.3","depth":3,"path":"chat/server/finish-server.md","ref":"chat/server/finish-server.md","articles":[]},"previous":{"title":"Starting the server","level":"1.3.1.1","depth":3,"path":"chat/server/start-server.md","ref":"chat/server/start-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"chat/server/start-front-end.md","mtime":"2017-01-15T20:03:15.436Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-15T20:10:53.909Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

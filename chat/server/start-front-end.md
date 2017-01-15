@@ -75,7 +75,9 @@ So when the button `to-signin-user`, the router is called to display the `sign-i
 
 ## Feathers events on the client
 
-The client responds to Feathers events:
+The
+[client](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/public/socketio-app.js)
+responds to Feathers events:
 [import:'events'](../../examples/chat/server/client/public/socketio-app.js)
 
 - `userList` will contain the users, once we ourselves are authenticated.
@@ -91,15 +93,15 @@ Information is logged every time there is a change in the messages table.
 
 We don't want to send users or messages events to clients
 until they have authenticated their users.
-So we have to set up event filters on the
-[chat/server/client/src/services/user/index.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/src/services/user/index.js)
+So we set up event filters on
+[user/index.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/src/services/user/index.js)
 
 ```javascript
 // Send user events only to authenticated users. The remove hook already removed the password.
 userService.filter((data, connection) => connection.user ? data : false);
 ````
 and
-[chat/server/client/src/services/message/index.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/src/services/message/index.js)
+[message/index.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/client/src/services/message/index.js)
 ```javascript
 // Send message events only to authenticated users.
 messageService.filter((data, connection) => connection.user ? data : false);
