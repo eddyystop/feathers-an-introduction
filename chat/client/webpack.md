@@ -35,7 +35,7 @@ We moved our dependencies from the script tags (
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-html-line.html)
 |
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-html-side.html)
-) to the app itself ()
+) to the app itself (
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-client-line.html)
 |
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-client-side.html)
@@ -43,7 +43,7 @@ We moved our dependencies from the script tags (
 
 We added a
 [Webpack configuration file](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/client/webpack/webpack.config.js)
-along with its dependencies and a build script ()
+along with its dependencies and a build script (
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-package-line.html)
 |
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-package-side.html)
