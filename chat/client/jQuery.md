@@ -5,11 +5,11 @@ Here's an SPA written using jQuery.
 
 ## Working example
 
-- Source code: [examples/chat/client](https://github.com/eddyystop/feathers-an-introduction/tree/master/examples/chat/client)
-- Client code: [public/client.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/client/public/client.html)
+- Source code: [examples/chat/client/jquery](https://github.com/eddyystop/feathers-an-introduction/tree/master/examples/chat/client/jquery)
+- Client code: [public/client.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/client/jquery/public/client.html)
 and
-[client-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/client/public/client-app.js)
-- Start the server: `node ./examples/chat/client/src`
+[client-app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/client/jquery/public/client-app.js)
+- Start the server: `node ./examples/chat/client/jquery/src`
 - Point the browser at: `//localhost:3030/client.html`
 - Compare servers with the app on the last page
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-jquery-line.html)
@@ -43,7 +43,7 @@ These email addresses are:
 
 #### To run this client:
 
-- Start the server with `node ./examples/chat/client/src`.
+- Start the server with `node ./examples/chat/client/jquery/src`.
 - Point a browser tab at `//localhost:3030/client.html`.
     - Switch to Sign Up route.
     - Enter an email and password. Then press `Add user`.
