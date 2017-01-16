@@ -25,7 +25,9 @@ function buildDiffDir {
     if [ -z "$4" ] ; then
         diff -bdur --new-file $1 $2 > $3.diff
     else
-        diff -bdur --exclude=$4 --new-file $1 $2 > $3.diff
+        exclude=$4
+   echo diff -bdur --exclude-from=${startPwd}/examples/$4 --new-file $1 $2
+        diff -bdur --exclude-from=${startPwd}/examples/$4 --new-file $1 $2 > $3.diff
     fi
 
     diff2html -i file -s line --su hidden -F $3-line.html -- $3.diff
@@ -35,7 +37,9 @@ function buildDiffDir {
 # diff files
 buildDiffDir server/start/ server/client/ _diff/server-client
 buildDiffDir server/client/ server/finish/ _diff/server-finish
-buildDiffDir server/finish/ client/jquery _diff/client-jquery *public*
+buildDiffDir server/finish/ client/jquery _diff/client-jquery make-diffs-ignore-public.txt
+buildDiffDir client/jquery client/webpack _diff/client-webpack make-diffs-ignore-public.txt
+buildDiff client/jquery/public/client.html client/webpack/public/client.html _diff/client-webpack-html
 
 # restore original pwd
 cd ${startPwd}

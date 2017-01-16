@@ -59,13 +59,16 @@
     "gitbook-plugin-feathers-collapsible-menu": "^1.0.2",
     "gitbook-plugin-heading-anchors": "^1.0.3",
     "gitbook-plugin-include-codeblock": "2.2.0",
+    "moment": "2.17.1",
     "nedb": "1.8.0",
     "passport": "0.3.2",
     "serve-favicon": "2.3.2",
+    "socket.io-client": "1.7.2",
     "winston": "2.3.0"
   },
   "devDependencies": {
     "gitbook-cli": "^2.3.0",
-    "semistandard": "9.2.1"
+    "semistandard": "9.2.1",
+    "webpack": "2.2.0-rc.4"
   }
 }
