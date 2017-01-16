@@ -1,6 +1,6 @@
-diff -bdur '--exclude-from=/home/johnsz/shared/repos/feathers-an-introduction/examples/make-diffs-ignore-public.txt' --new-file client/jquery/client/index.js client/webpack/client/index.js
---- client/jquery/client/index.js	1969-12-31 19:00:00.000000000 -0500
-+++ client/webpack/client/index.js	2017-01-15 21:13:50.702013335 -0500
+diff -bdur '--exclude-from=/home/johnsz/shared/repos/feathers-an-introduction/examples/make-diffs-ignore-public.txt' --new-file client/jquery/client/app.js client/webpack/client/app.js
+--- client/jquery/client/app.js	1969-12-31 19:00:00.000000000 -0500
++++ client/webpack/client/app.js	2017-01-15 21:13:50.702013335 -0500
 @@ -0,0 +1,192 @@
 +
 +/* globals feathersClient: 0, feathers: 0 */

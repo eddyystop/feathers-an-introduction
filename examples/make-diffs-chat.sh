@@ -40,6 +40,7 @@ buildDiffDir server/client/ server/finish/ _diff/server-finish
 buildDiffDir server/finish/ client/jquery _diff/client-jquery make-diffs-ignore-public.txt
 buildDiffDir client/jquery client/webpack _diff/client-webpack make-diffs-ignore-public.txt
 buildDiff client/jquery/public/client.html client/webpack/public/client.html _diff/client-webpack-html
+buildDiff client/jquery/public/client-app.js client/webpack/client/app.js _diff/client-webpack-client
 
 # restore original pwd
 cd ${startPwd}

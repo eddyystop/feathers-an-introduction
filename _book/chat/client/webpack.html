@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Starting the server · GitBook</title>
+        <title>Using Webpack · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -49,10 +49,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="start-front-end.html" />
+    <link rel="next" href="oauth.html" />
     
     
-    <link rel="prev" href="readme.html" />
+    <link rel="prev" href="jQuery.html" />
     
 
     </head>
@@ -385,9 +385,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="readme.html">
+        <li class="chapter " data-level="1.3.1" data-path="../server/readme.html">
             
-                <a href="readme.html">
+                <a href="../server/readme.html">
             
                     
                     Server >>
@@ -399,9 +399,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1.1" data-path="start-server.html">
+        <li class="chapter " data-level="1.3.1.1" data-path="../server/start-server.html">
             
-                <a href="start-server.html">
+                <a href="../server/start-server.html">
             
                     
                     Starting the server
@@ -412,9 +412,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.1.2" data-path="start-front-end.html">
+        <li class="chapter " data-level="1.3.1.2" data-path="../server/start-front-end.html">
             
-                <a href="start-front-end.html">
+                <a href="../server/start-front-end.html">
             
                     
                     Starting the front-end
@@ -425,9 +425,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.1.3" data-path="finish-server.html">
+        <li class="chapter " data-level="1.3.1.3" data-path="../server/finish-server.html">
             
-                <a href="finish-server.html">
+                <a href="../server/finish-server.html">
             
                     
                     Finishing the server
@@ -438,9 +438,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.1.4" data-path="user-mgnt.html">
+        <li class="chapter " data-level="1.3.1.4" data-path="../server/user-mgnt.html">
             
-                <a href="user-mgnt.html">
+                <a href="../server/user-mgnt.html">
             
                     
                     User management
@@ -456,9 +456,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="../client/readme.html">
+        <li class="chapter " data-level="1.3.2" data-path="readme.html">
             
-                <a href="../client/readme.html">
+                <a href="readme.html">
             
                     
                     Client >>
@@ -470,9 +470,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.2.1" data-path="../client/jQuery.html">
+        <li class="chapter " data-level="1.3.2.1" data-path="jQuery.html">
             
-                <a href="../client/jQuery.html">
+                <a href="jQuery.html">
             
                     
                     jQuery client
@@ -483,9 +483,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2.2" data-path="../client/webpack.html">
+        <li class="chapter active" data-level="1.3.2.2" data-path="webpack.html">
             
-                <a href="../client/webpack.html">
+                <a href="webpack.html">
             
                     
                     Using Webpack
@@ -496,9 +496,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2.3" data-path="../client/oauth.html">
+        <li class="chapter " data-level="1.3.2.3" data-path="oauth.html">
             
-                <a href="../client/oauth.html">
+                <a href="oauth.html">
             
                     
                     OAuth jQuery client
@@ -509,9 +509,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2.4" data-path="../client/other-clients.html">
+        <li class="chapter " data-level="1.3.2.4" data-path="other-clients.html">
             
-                <a href="../client/other-clients.html">
+                <a href="other-clients.html">
             
                     
                     Clients for other frameworks
@@ -620,7 +620,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Starting the server</a>
+        <a href="../.." >Using Webpack</a>
     </h1>
 </div>
 
@@ -635,90 +635,66 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="starting-the-server">Starting the server</h1>
-<p>The server needs authentication, which automatically creates <code>users</code>, and <code>messages</code>.
-Let&apos;s handle the user avatar also.</p>
+                                <h1 id="using-webpack">Using Webpack</h1>
+<p>Its now time to use our chat server with a comprehensive client.
+Here&apos;s an SPA written using jQuery.</p>
 <h2 id="working-example">Working example</h2>
 <ul>
-<li>Source code: <a href="https://github.com/eddyystop/feathers-an-introduction/tree/master/examples/chat/server/start" target="_blank">examples/chat/server/start</a></li>
-<li>Run it: <code>node ./examples/chat/server/start/src</code></li>
-</ul>
-<h2 id="basic-scaffolding">Basic scaffolding</h2>
-<p>We generated the app with:</p>
-<pre><code class="lang-text">mkdir examples/chat/server/start
-cd examples/chat/server/start
-start$ feathers generate
-</code></pre>
-<p><img src="assets/generate-chat.jpg" alt="generate chat app"></p>
-<p>This generated the
-<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/start/src/services/authentication/index.js" target="_blank">authentication</a>
+<li>Source code: <a href="https://github.com/eddyystop/feathers-an-introduction/tree/master/examples/chat/client/webpack" target="_blank">examples/chat/client/webpack</a></li>
+<li>Client code: <a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/client/webpack/public/client.html" target="_blank">public/client.html</a>
 and
-<a href="https://github.com/eddyystop/feathers-an-introduction/tree/master/examples/chat/server/start/src/services/user" target="_blank">users</a>
-services.
-We then generated the
-<a href="https://github.com/eddyystop/feathers-an-introduction/tree/master/examples/chat/server/start/src/services/message" target="_blank">messages</a>
-service with:</p>
-<p><img src="assets/generate-service-message.jpg" alt="generate message service"></p>
-<p>We continued by generating a
-<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/start/src/services/user/hooks/gravatar.js" target="_blank">hook</a>
-we will later use to handle the user avatar.</p>
-<p><img src="assets/generate-hook-gravatar.jpg" alt="generate gravatar hook"></p>
-<h2 id="clearing-the-database">Clearing the database</h2>
-<p>Let&apos;s add code to
-<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/start/src/app.js" target="_blank">examples/chat/server/start/src/app.js</a>
-to clear the database each time this basic server is run.
-This&apos;ll help prevent confusion should the server be started multiple times.</p>
-<pre><code class="lang-javascript"><span class="hljs-comment">// examples/chat/server/start/src/app.js</span>
-app.service(<span class="hljs-string">&apos;/users&apos;</span>).remove(<span class="hljs-literal">null</span>)
-  .then(() =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;users table cleared.&apos;</span>))
-  .catch(err =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;ERROR clearing users table:&apos;</span>, err));
-
-app.service(<span class="hljs-string">&apos;/messages&apos;</span>).remove(<span class="hljs-literal">null</span>)
-  .then(() =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;messages table cleared.&apos;</span>))
-  .catch(err =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;ERROR clearing messages table:&apos;</span>, err));
-</code></pre>
-<ul>
-<li><code>service.remove(null)</code> deletes all of that service&apos;s items.</li>
+<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/client/webpack/public/client/app.js" target="_blank">client/app.js</a></li>
+<li>Start the server: <code>node ./examples/chat/client/webpack/src</code></li>
+<li>Point the browser at: <code>//localhost:3030/client.html</code></li>
+<li>Compare servers with the app on the last page
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-line.html" target="_blank">Unified</a>
+|
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-side.html" target="_blank">Split</a></li>
+<li>Compare the HTML with the app on the last page
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-html-line.html" target="_blank">Unified</a>
+|
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-html-side.html" target="_blank">Split</a></li>
+<li>Compare the client with the app on the last page
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-client-line.html" target="_blank">Unified</a>
+|
+<a href="http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-client-side.html" target="_blank">Split</a></li>
 </ul>
-<blockquote>
-<p><strong>Remove.</strong> You have to be careful not to accidentally pass <code>null</code>.
-One way to protect yourself is by using a before hook that throws on <code>null</code>.</p>
-</blockquote>
-<h2 id="running-the-server">Running the server</h2>
-<p>Start the server with <code>node ./examples/chat/server/start/src</code> and you will see:</p>
-<pre><code class="lang-text">Feathers application started on localhost:3030
-users table cleared.
-messages table cleared.
-</code></pre>
-<p>Let&apos;s exercise the server with these
-<a href="http://www.slashroot.in/curl-command-tutorial-linux-example-usage" target="_blank">curl</a>
-commands:</p>
-<pre><code class="lang-sh"><span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;\nPOST user john@gmail.com\n&quot;</span>
-curl -H <span class="hljs-string">&apos;Content-Type: application/json&apos;</span> --data-binary <span class="hljs-string">&apos;{ &quot;email&quot;: &quot;john@gmail.com&quot;, &quot;password&quot;: &quot;john123&quot; }&apos;</span> http://localhost:3030/users/
-<span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;\nPOST message Hello.\n&quot;</span>
-curl -H <span class="hljs-string">&apos;Content-Type: application/json&apos;</span> --data-binary <span class="hljs-string">&apos;{ &quot;text&quot;: &quot;Hello.&quot; }&apos;</span> http://localhost:3030/messages/
-<span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;\nPOST message Hello again!\n&quot;</span>
-curl -H <span class="hljs-string">&apos;Content-Type: application/json&apos;</span> --data-binary <span class="hljs-string">&apos;{ &quot;text&quot;: &quot;Hello again!&quot; }&apos;</span> http://localhost:3030/messages/
-<span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;\nPOST message Anyone there?\n&quot;</span>
-curl -H <span class="hljs-string">&apos;Content-Type: application/json&apos;</span> --data-binary <span class="hljs-string">&apos;{ &quot;text&quot;: &quot;Anyone there?&quot; }&apos;</span> http://localhost:3030/messages/
-</code></pre>
-<p>Run them on another terminal with <code>./examples/chat/server/start/curl-requests.sh</code>
-and the following is displayed:</p>
-<pre><code class="lang-text">feathers-an-introduction$ ./examples/chat/server/start/curl-requests.sh
-POST user john@gmail.com
-{&quot;email&quot;:&quot;john@gmail.com&quot;,&quot;avatar&quot;:&quot;https://s.gravatar.com/avatar/1f9d9a9efc2f523b2f09629444632b5c?s=60&quot;,&quot;_id&quot;:&quot;WZl8x0bsbP5JW1Po&quot;}
-POST message Hello.
-{&quot;text&quot;:&quot;Hello.&quot;,&quot;_id&quot;:&quot;ObRdBmk5joooylTx&quot;}
-POST message Hello again!
-{&quot;text&quot;:&quot;Hello again!&quot;,&quot;_id&quot;:&quot;KZ2Kjp9nnGMta8zP&quot;}
-POST message Anyone there?
-{&quot;text&quot;:&quot;Anyone there?&quot;,&quot;_id&quot;:&quot;tcjSjPZQx8JoUCrz&quot;}
-</code></pre>
-<p>The password is not displayed due as the
-<a href="https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/server/start/src/services/user/hooks/index.js" target="_blank">user hook module</a>
-contains remove as an after hook.</p>
+<h2 id="the-client">The client</h2>
+<p>This jQuery client uses only Feathers features we have already covered.
+Nothing new is introduced.</p>
+<p>The client is very straight forward.
+There are a huge number of online resources for jQuery if you have any questions
+regarding the jQuery code.</p>
+<h2 id="running-the-example">Running the example</h2>
+<p>Our chat room design obtains user avatars from <a href="http://en.gravatar.com/" target="_blank">Gravatar</a>.
+Gravatar allows you to select an image for yourself in one place
+that many sites will use.
+This includes many WordPress sites, github, stackoverflow and more.</p>
+<p>Its easy to create your own avatar and it&apos;ll make running this client more interesting.
+You can also add local user items in this example
+using email addresses which should have existing avatars.
+These email addresses are:</p>
+<ul>
+<li>daff@neyeon.com</li>
+<li>e.kryski@gmail.com</li>
+<li>cory.m.smith@gmail.com</li>
+<li>johnsz9999@gmail.com</li>
+</ul>
+<h4 id="to-run-this-client">To run this client:</h4>
+<ul>
+<li>Start the server with <code>node ./examples/chat/client/webpack/src</code>.</li>
+<li>Point a browser tab at <code>//localhost:3030/client.html</code>.<ul>
+<li>Switch to Sign Up route.</li>
+<li>Enter an email and password. Then press <code>Add user</code>.</li>
+<li>On the Sign In route, enter that email and password. Then Press <code>Sign in</code>.</li>
+<li>On the Chat route, type a message and press <code>Send</code>.</li>
+</ul>
+</li>
+<li>On another browser tab, repeat the same process.</li>
+<li>Each tab should be displaying everyone&apos;s text messages.</li>
+</ul>
 <h2 id="is-anything-wrong-unclear-missing">Is anything wrong, unclear, missing?</h2>
-<p><a href="https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Chat-Server-Start-server&amp;body=Comment:Chat-Server-Start-server" target="_blank">Leave a comment.</a></p>
+<p><a href="https://github.com/eddyystop/feathers-an-introduction/issues/new?title=Comment:Chat-Client-jQuery&amp;body=Comment:Chat-Client-jQuery" target="_blank">Leave a comment.</a></p>
 
                                 
                                 </section>
@@ -746,12 +722,12 @@ contains remove as an after hook.</p>
 
             
                 
-                <a href="readme.html" class="navigation navigation-prev " aria-label="Previous page: Server >>">
+                <a href="jQuery.html" class="navigation navigation-prev " aria-label="Previous page: jQuery client">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="start-front-end.html" class="navigation navigation-next " aria-label="Next page: Starting the front-end">
+                <a href="oauth.html" class="navigation navigation-next " aria-label="Next page: OAuth jQuery client">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -762,7 +738,7 @@ contains remove as an after hook.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Starting the server","level":"1.3.1.1","depth":3,"next":{"title":"Starting the front-end","level":"1.3.1.2","depth":3,"path":"chat/server/start-front-end.md","ref":"chat/server/start-front-end.md","articles":[]},"previous":{"title":"Server >>","level":"1.3.1","depth":2,"path":"chat/server/readme.md","ref":"chat/server/readme.md","articles":[{"title":"Starting the server","level":"1.3.1.1","depth":3,"path":"chat/server/start-server.md","ref":"chat/server/start-server.md","articles":[]},{"title":"Starting the front-end","level":"1.3.1.2","depth":3,"path":"chat/server/start-front-end.md","ref":"chat/server/start-front-end.md","articles":[]},{"title":"Finishing the server","level":"1.3.1.3","depth":3,"path":"chat/server/finish-server.md","ref":"chat/server/finish-server.md","articles":[]},{"title":"User management","level":"1.3.1.4","depth":3,"path":"chat/server/user-mgnt.md","ref":"chat/server/user-mgnt.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"chat/server/start-server.md","mtime":"2017-01-15T19:49:08.779Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-16T13:56:45.049Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Using Webpack","level":"1.3.2.2","depth":3,"next":{"title":"OAuth jQuery client","level":"1.3.2.3","depth":3,"path":"chat/client/oauth.md","ref":"chat/client/oauth.md","articles":[]},"previous":{"title":"jQuery client","level":"1.3.2.1","depth":3,"path":"chat/client/jQuery.md","ref":"chat/client/jQuery.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["feathers-collapsible-menu","heading-anchors","include-codeblock"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"heading-anchors":{},"highlight":{},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"feathers-collapsible-menu":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"chat/client/webpack.md","mtime":"2017-01-16T13:55:56.111Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-16T13:56:45.049Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

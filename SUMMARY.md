@@ -29,6 +29,7 @@
         * [User management](chat/server/user-mgnt.md)
     * [Client >>](chat/client/readme.md)
         * [jQuery client](chat/client/jQuery.md)
+        * [Using Webpack](chat/client/webpack.md)
         * [OAuth jQuery client](chat/client/oauth.md)
         * [Clients for other frameworks](chat/client/other-clients.md)
     * [What's next?](chat/what-next.md)
