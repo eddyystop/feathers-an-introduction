@@ -1,20 +1,21 @@
 # Using Webpack
 
-Its now time to use our chat server with a comprehensive client.
-Here's an SPA written using jQuery.
+We loaded our dependencies using script tags so far.
+A proper SPA should package them into a bundle during a build step,
+and load that bundle with a single script tag.
+
+Webpack is commonly used for such a build step,
+and we will be using Webpack 2.
 
 ## Working example
 
 - Source code: [examples/chat/client/webpack](https://github.com/eddyystop/feathers-an-introduction/tree/master/examples/chat/client/webpack)
 - Client code: [public/client.html](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/client/webpack/public/client.html)
 and
-[client/app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/client/webpack/public/client/app.js)
-- Start the server: `node ./examples/chat/client/webpack/src`
+[client/app.js](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/client/webpack/client/app.js)
+- Build the bundle: `cd ./examples/chat/client/webpack && webpack`
+- Start the server: `node ./src`
 - Point the browser at: `//localhost:3030/client.html`
-- Compare servers with the app on the last page
-[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-line.html)
-|
-[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-side.html)
 - Compare the HTML with the app on the last page
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-html-line.html)
 |
@@ -23,35 +24,46 @@ and
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-client-line.html)
 |
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-client-side.html)
+- Compare configuration with the app on the last page
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-side.html)
 
-## The client
+## Our bundle
 
-This jQuery client uses only Feathers features we have already covered.
-Nothing new is introduced.
+We moved our dependencies from the script tags
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-html-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-html-side.html)
+to the app itself
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-client-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-client-side.html)
+.
 
-The client is very straight forward.
-There are a huge number of online resources for jQuery if you have any questions
-regarding the jQuery code.
+We added a
+[Webpack configuration file](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/client/webpack/webpack.config.js)
+along with its dependencies and a build script
+[Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-package-line.html)
+|
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-package-side.html).
+
+Our Webpack configuration is well explained in
+[an introductory article.](https://blog.madewithenvy.com/getting-started-with-webpack-2-ed2b86c68783#.8ica6x1m8).
+Its important to remember we are using Webpack 2, not the original Webpack.
+
+## Install dependencies
+
+We have to run Webpack locally, so we have to install our local dependencies.
+
+```text
+cd ./examples/chat/client/webpack
+npm install
+```
 
 ## Running the example
 
-Our chat room design obtains user avatars from [Gravatar](http://en.gravatar.com/).
-Gravatar allows you to select an image for yourself in one place
-that many sites will use.
-This includes many WordPress sites, github, stackoverflow and more.
-
-Its easy to create your own avatar and it'll make running this client more interesting.
-You can also add local user items in this example
-using email addresses which should have existing avatars.
-These email addresses are:
-- daff@neyeon.com
-- e.kryski@gmail.com
-- cory.m.smith@gmail.com
-- johnsz9999@gmail.com
-
-#### To run this client:
-
-- Start the server with `node ./examples/chat/client/webpack/src`.
+- Build the bundle and start the server with `npm run build`.
 - Point a browser tab at `//localhost:3030/client.html`.
     - Switch to Sign Up route.
     - Enter an email and password. Then press `Add user`.

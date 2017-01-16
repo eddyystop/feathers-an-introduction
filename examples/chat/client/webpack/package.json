@@ -19,7 +19,8 @@
     "test": "npm run jshint && npm run mocha",
     "jshint": "jshint src/. test/. --config",
     "start": "node src/",
-    "mocha": "mocha test/ --recursive"
+    "mocha": "mocha test/ --recursive",
+    "build": "webpack && npm run start"
   },
   "dependencies": {
     "body-parser": "1.15.2",

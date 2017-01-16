@@ -193,20 +193,20 @@ diff -bdur '--exclude-from=../make-diffs-ignore-public.txt' --new-file client/jq
 +    </li>`
 +  );
 +}
-diff -bdur '--exclude-from=../make-diffs-ignore-public.txt' --new-file client/jquery/data/messages.db client/webpack/data/messages.db
---- client/jquery/data/messages.db	1969-12-31 19:00:00.000000000 -0500
-+++ client/webpack/data/messages.db	2017-01-16 09:23:02.718101109 -0500
-@@ -0,0 +1 @@
-+{"text":"a1aaaa","userId":"takJ4SHplG58tnyA","createdAt":{"$$date":1484576582714},"_id":"4Ssh8WAcGiTdY3pX"}
-diff -bdur '--exclude-from=../make-diffs-ignore-public.txt' --new-file client/jquery/data/users.db client/webpack/data/users.db
---- client/jquery/data/users.db	1969-12-31 19:00:00.000000000 -0500
-+++ client/webpack/data/users.db	2017-01-16 09:22:52.296893108 -0500
-@@ -0,0 +1 @@
-+{"email":"a","password":"$2a$10$BQpy3DG0Xpc/EN88PnJGEeBfhC3eE9BRMb10/E.E5ivl.coZuiIEG","avatar":"https://s.gravatar.com/avatar/0cc175b9c0f1b6a831c399e269772661?s=60","_id":"takJ4SHplG58tnyA"}
 diff -bdur '--exclude-from=../make-diffs-ignore-public.txt' --new-file client/jquery/package.json client/webpack/package.json
 --- client/jquery/package.json	2017-01-01 11:01:23.034000000 -0500
-+++ client/webpack/package.json	2017-01-16 09:21:24.997265109 -0500
-@@ -27,20 +27,25 @@
++++ client/webpack/package.json	2017-01-16 09:57:36.116624199 -0500
+@@ -19,7 +19,8 @@
+     "test": "npm run jshint && npm run mocha",
+     "jshint": "jshint src/. test/. --config",
+     "start": "node src/",
+-    "mocha": "mocha test/ --recursive"
++    "mocha": "mocha test/ --recursive",
++    "build": "webpack && npm run start"
+   },
+   "dependencies": {
+     "body-parser": "1.15.2",
+@@ -27,20 +28,25 @@
      "cors": "2.8.1",
      "feathers": "2.0.3",
      "feathers-authentication": "0.7.12",
