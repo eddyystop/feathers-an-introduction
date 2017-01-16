@@ -1,9 +1,8 @@
 
-/* globals feathersClient: 0, feathers: 0 */
-const moment = require('moment');
 const $ = require('jquery');
-const feathers = require('feathers-client');
 const io = require('socket.io-client');
+const feathers = require('feathers-client');
+const moment = require('moment');
 
 var serverUrl = 'http://localhost:3030';
 const socket = io(serverUrl);

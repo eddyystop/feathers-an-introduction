@@ -26,8 +26,8 @@ function buildDiffDir {
         diff -bdur --new-file $1 $2 > $3.diff
     else
         exclude=$4
-   echo diff -bdur --exclude-from=${startPwd}/examples/$4 --new-file $1 $2
-        diff -bdur --exclude-from=${startPwd}/examples/$4 --new-file $1 $2 > $3.diff
+   echo diff -bdur --exclude-from=../$4 --new-file $1 $2
+        diff -bdur --exclude-from=../$4 --new-file $1 $2 > $3.diff
     fi
 
     diff2html -i file -s line --su hidden -F $3-line.html -- $3.diff

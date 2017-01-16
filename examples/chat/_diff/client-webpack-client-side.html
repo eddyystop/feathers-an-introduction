@@ -37,13 +37,13 @@
 
 <div id="diff">
   <div class="d2h-wrapper">
-    <div id="d2h-128927" class="d2h-file-wrapper" data-lang="702013335 -0500">
+    <div id="d2h-493742" class="d2h-file-wrapper" data-lang="517726968 -0500">
     <div class="d2h-file-header">
       <span class="d2h-file-name-wrapper">
     <span class="d2h-icon-wrapper"><svg aria-hidden="true" class="d2h-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12">
     <path d="M6 5H2v-1h4v1zM2 8h7v-1H2v1z m0 2h7v-1H2v1z m0 2h7v-1H2v1z m10-7.5v9.5c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V2c0-0.55 0.45-1 1-1h7.5l3.5 3.5z m-1 0.5L8 2H1v12h10V5z"></path>
 </svg></span>
-    <span class="d2h-file-name">client/{jquery/public/client-app.js	2017-01-05 09:33:29.548365710 -0500 → webpack/client/app.js	2017-01-15 21:13:50.702013335 -0500}</span>
+    <span class="d2h-file-name">client/{jquery/public/client-app.js	2017-01-05 09:33:29.548365710 -0500 → webpack/client/app.js	2017-01-16 08:59:58.517726968 -0500}</span>
     <span class="d2h-tag d2h-moved d2h-moved-tag">RENAMED</span></span>
     </div>
     <div class="d2h-files-diff">
@@ -54,7 +54,7 @@
                     <tr>
     <td class="d2h-code-side-linenumber d2h-info"></td>
     <td class="d2h-info">
-        <div class="d2h-code-side-line d2h-info">@@ -1,5 +1,15 @@</div>
+        <div class="d2h-code-side-line d2h-info">@@ -1,5 +1,14 @@</div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
@@ -66,21 +66,13 @@
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
+    <td class="d2h-code-side-linenumber d2h-del">
       2
     </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line d2h-cntx">
-            <span class="d2h-code-line-prefix"> </span>
-            <span class="d2h-code-line-ctn">/* globals feathersClient: 0, feathers: 0 */</span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line d2h-cntx">
+    <td class="d2h-del">
+        <div class="d2h-code-side-line d2h-del">
+            <span class="d2h-code-line-prefix">-</span>
+            <span class="d2h-code-line-ctn"><del>/*</del> <del>globals</del> <del>feathersClient:</del> <del>0, feathers: 0 */</del></span>
         </div>
     </td>
 </tr><tr>
@@ -207,13 +199,13 @@
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
+    <td class="d2h-code-side-linenumber d2h-ins">
       2
     </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line d2h-cntx">
-            <span class="d2h-code-line-prefix"> </span>
-            <span class="d2h-code-line-ctn">/* globals feathersClient: 0, feathers: 0 */</span>
+    <td class="d2h-ins">
+        <div class="d2h-code-side-line d2h-ins">
+            <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn"><ins>const</ins> <ins>$</ins> <ins>=</ins> <ins>require('jquery');</ins></span>
         </div>
     </td>
 </tr><tr>
@@ -223,7 +215,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">const moment = require('moment');</span>
+            <span class="d2h-code-line-ctn">const io = require('socket.io-client');</span>
         </div>
     </td>
 </tr><tr>
@@ -233,7 +225,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">const $ = require('jquery');</span>
+            <span class="d2h-code-line-ctn">const feathers = require('feathers-client');</span>
         </div>
     </td>
 </tr><tr>
@@ -243,7 +235,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">const feathers = require('feathers-client');</span>
+            <span class="d2h-code-line-ctn">const moment = require('moment');</span>
         </div>
     </td>
 </tr><tr>
@@ -253,7 +245,6 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">const io = require('socket.io-client');</span>
         </div>
     </td>
 </tr><tr>
@@ -263,6 +254,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">var serverUrl = 'http://localhost:3030';</span>
         </div>
     </td>
 </tr><tr>
@@ -272,7 +264,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">var serverUrl = 'http://localhost:3030';</span>
+            <span class="d2h-code-line-ctn">const socket = io(serverUrl);</span>
         </div>
     </td>
 </tr><tr>
@@ -282,7 +274,6 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">const socket = io(serverUrl);</span>
         </div>
     </td>
 </tr><tr>
@@ -292,6 +283,7 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
+            <span class="d2h-code-line-ctn">const feathersClient = feathers()</span>
         </div>
     </td>
 </tr><tr>
@@ -301,17 +293,16 @@
     <td class="d2h-ins">
         <div class="d2h-code-side-line d2h-ins">
             <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">const feathersClient = feathers()</span>
+            <span class="d2h-code-line-ctn">  .configure(feathers.socketio(socket));</span>
         </div>
     </td>
 </tr><tr>
-    <td class="d2h-code-side-linenumber d2h-ins">
+    <td class="d2h-code-side-linenumber d2h-cntx">
       12
     </td>
-    <td class="d2h-ins">
-        <div class="d2h-code-side-line d2h-ins">
-            <span class="d2h-code-line-prefix">+</span>
-            <span class="d2h-code-line-ctn">  .configure(feathers.socketio(socket));</span>
+    <td class="d2h-cntx">
+        <div class="d2h-code-side-line d2h-cntx">
+            <span class="d2h-code-line-prefix"> </span>
         </div>
     </td>
 </tr><tr>
@@ -321,21 +312,12 @@
     <td class="d2h-cntx">
         <div class="d2h-code-side-line d2h-cntx">
             <span class="d2h-code-line-prefix"> </span>
-        </div>
-    </td>
-</tr><tr>
-    <td class="d2h-code-side-linenumber d2h-cntx">
-      14
-    </td>
-    <td class="d2h-cntx">
-        <div class="d2h-code-side-line d2h-cntx">
-            <span class="d2h-code-line-prefix"> </span>
             <span class="d2h-code-line-ctn">// Routing</span>
         </div>
     </td>
 </tr><tr>
     <td class="d2h-code-side-linenumber d2h-cntx">
-      15
+      14
     </td>
     <td class="d2h-cntx">
         <div class="d2h-code-side-line d2h-cntx">
