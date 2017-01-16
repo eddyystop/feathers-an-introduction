@@ -1,10 +1,10 @@
 # Using Webpack
 
-We loaded our dependencies using script tags so far.
-A proper SPA should package them into a bundle during a build step,
+We've loaded our dependencies using script tags so far.
+An SPA should package them, along with our app, into a bundle during a build step,
 and load that bundle with a single script tag.
 
-Webpack is commonly used for such a build step,
+[Webpack](https://webpack.github.io/) is commonly used for such a build step,
 and we will be using Webpack 2.
 
 ## Working example
@@ -31,22 +31,23 @@ and
 
 ## Our bundle
 
-We moved our dependencies from the script tags
+We moved our dependencies from the script tags (
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-html-line.html)
 |
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-html-side.html)
-to the app itself
+) to the app itself ()
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-client-line.html)
 |
 [Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-client-side.html)
-.
+).
 
 We added a
 [Webpack configuration file](https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/client/webpack/webpack.config.js)
-along with its dependencies and a build script
+along with its dependencies and a build script ()
 [Unified](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-package-line.html)
 |
-[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-package-side.html).
+[Split](http://htmlpreview.github.io/?https://github.com/eddyystop/feathers-an-introduction/blob/master/examples/chat/_diff/client-webpack-package-side.html)
+).
 
 Our Webpack configuration is well explained in
 [an introductory article.](https://blog.madewithenvy.com/getting-started-with-webpack-2-ed2b86c68783#.8ica6x1m8).
@@ -63,6 +64,7 @@ npm install
 
 ## Running the example
 
+- Move to the local directory: `cd ./examples/chat/client/webpack`.
 - Build the bundle and start the server with `npm run build`.
 - Point a browser tab at `//localhost:3030/client.html`.
     - Switch to Sign Up route.
