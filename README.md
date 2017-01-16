@@ -1,5 +1,9 @@
 # feathers-an-introduction
 
+**DEPRECATED. Goodbye, adiós, au revoir, auf Wiedersehen, zàijiàn.**
+
+This repo has been moved to `feathersjs/feathers-guide`.
+
 ## Installing the guides and examples
 
 #### Install Node

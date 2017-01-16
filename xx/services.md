@@ -1,2 +1,0 @@
-# Feathers Services
-
